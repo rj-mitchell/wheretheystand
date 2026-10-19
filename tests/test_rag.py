@@ -274,7 +274,8 @@ def test_a_lead_in_after_an_uncited_sentence_is_not_flagged_but_the_sentence_is(
 def test_the_date_after_a_citation_is_not_flagged():
     from hansard.rag.verify import _classify_uncited
 
-    for when in (" (16 September 2025).\n", " (March 2024)", " (2019),\n"):
+    for when in (" (16 September 2025).\n", " (March 2024)", " (2019),\n", " on 12 November 2025.\n",
+                 " (written answer, 12 October 2026).\n"):
         assert [s.status for s in _classify_uncited(when, False)] == ["connective"], when
     assert [s.status for s in _classify_uncited(" (16 September 2025), when it rose by 4%.\n", False)] == [
         "unsupported"]
@@ -314,14 +315,25 @@ def test_local_contributions_are_scored_down_not_dropped():
     assert scored[1].score == scored[0].score * params.local_factor
 
 
-def test_saved_briefings_no_longer_flag_dates():
-    from hansard.rag.verify import relabel_dates
+def test_saved_briefings_are_rechecked_by_the_current_rules():
+    from hansard.rag.verify import recheck_flags
 
     answer = {"segments": [{"text": "X said it worked", "status": "cited"},
                            {"text": " (16 September 2025).\n", "status": "unsupported"},
-                           {"text": "Prices rose sharply.", "status": "unsupported"}],
+                           {"text": "Prices rose by 4% in the year to March, the fastest rise since 1992.",
+                            "status": "unsupported"}],
               "unsupported_segments": 2, "grounded_ratio": 0.3}
-    out = relabel_dates(answer)
+    out = recheck_flags(answer)
     assert [s["status"] for s in out["segments"]] == ["cited", "connective", "unsupported"]
-    assert out["unsupported_segments"] == 1 and out["grounded_ratio"] == round(16 / 36, 3)
-    assert relabel_dates({"segments": []}) == {"segments": []} and relabel_dates(None) is None
+    assert out["unsupported_segments"] == 1 and out["grounded_ratio"] == round(16 / (16 + 68), 3)
+    assert recheck_flags({"segments": []}) == {"segments": []} and recheck_flags(None) is None
+
+
+def test_the_devolution_note_is_not_a_point_to_check():
+    from hansard.rag.verify import _classify_uncited
+
+    for note in ("These bodies decide many of these subjects for their own nations. ",
+                 "These bodies decide many matters for their own nations and are not the UK Parliament. "):
+        assert [s.status for s in _classify_uncited(note, False)] == ["connective"], note
+    # the full stop closing one citation, before the lead-in to the next
+    assert [s.status for s in _classify_uncited(". Jane Smith said that ", True)] == ["connective"]
