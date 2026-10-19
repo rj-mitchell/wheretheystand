@@ -342,7 +342,8 @@ def test_the_devolution_note_is_not_a_point_to_check():
 
     for note in ("These bodies decide many of these subjects for their own nations. ",
                  "These bodies decide many matters for their own nations and are not the UK Parliament. ",
-                 "The Senedd is a separate parliament that decides education for Wales. "):
+                 "The Senedd is a separate parliament that decides education for Wales. ",
+                 "These bodies decide different matters from Westminster. "):
         assert [s.status for s in _classify_uncited(note, False)] == ["connective"], note
     # the full stop closing one citation, before the lead-in to the next
     assert [s.status for s in _classify_uncited(". Jane Smith said that ", True)] == ["connective"]
@@ -370,3 +371,17 @@ def test_a_follow_up_is_read_with_the_earlier_answer(indexed_settings):
     prompt = sent["messages"][0]["content"]
     assert "Palantir NHS" in prompt and "use the break clause in 2027" in prompt
     assert plan.search_text == "Palantir NHS contract break clause"
+
+
+def test_a_citation_across_two_paragraphs_is_accepted():
+    from hansard.rag.sources import Source
+    from hansard.rag.verify import verify
+
+    src = Source(1, "record", "A member", "u", ["(3) The assessment must estimate the cost of—",
+                                                "(a) implementation of this Act, and", "(b) the cap."])
+    block = {"text": "It sought a cost estimate", "citations": [{"search_result_index": 0, "cited_text":
+             "the cost of—(a) implementation of this Act, and(b) the cap."}]}
+    report = verify([block], [src])
+    assert report.citations_invalid == 0 and report.segments[0].status == "cited"
+    wrong = {"text": "x", "citations": [{"search_result_index": 0, "cited_text": "the costs of—(a) implementation"}]}
+    assert verify([wrong], [src]).citations_invalid == 1

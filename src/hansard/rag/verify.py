@@ -25,6 +25,12 @@ def _norm(text: str) -> str:
     return _WS.sub(" ", text).strip().lower()
 
 
+def _compact(text: str) -> str:
+    """For checking a citation: the characters without any spacing. A citation that runs across two paragraphs of
+    a source comes back with them joined directly ("and(b) implementation"), not with the space between them."""
+    return _WS.sub("", _norm(text))
+
+
 @dataclass
 class Segment:
     text: str
@@ -126,7 +132,8 @@ _EVIDENCE_NOTE = re.compile(
     r"(were|was) not relevant|been excluded|the records (are|were|contain|include|cover)|little (was|is) (found|said)|"
     r"nothing (was|is) found|no stated position|written questions only|"
     r"decides? (many|most|some)? ?(of )?(these |the |such )?(subjects|matters|areas|policies) for (its|their) own "
-    r"nations?|(is|are) (a )?separate (parliament|legislature)s?\b|"
+    r"nations?|(is|are) (a )?separate (parliament|legislature)s?\b|decides? (different|separate|their own) "
+    r"(matters|subjects|policies)\b|"
     r"^\W*(about the evidence|notes?)\b\W*:)", re.I)
 # a note about the evidence that reports what someone said ("Smith said", "he argued") is a claim, not a note;
 # "what was said" or "nothing said by Benn" is not
@@ -213,7 +220,7 @@ def verify(blocks: list[dict[str, Any]], sources: list[Source]) -> Verification:
             idx = c.get("search_result_index", c.get("document_index"))
             src = by_index.get(idx)
             cited_text = c.get("cited_text") or ""
-            if src is None or _norm(cited_text) not in _norm("\n\n".join(src.blocks)):
+            if src is None or _compact(cited_text) not in _compact("\n\n".join(src.blocks)):
                 invalid += 1
                 continue
             if src.n not in nums:
