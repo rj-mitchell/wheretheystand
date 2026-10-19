@@ -154,3 +154,13 @@ describe("typographic quotes", () => {
     expect(typographic('<p>"One"</p><p>"Two"</p>')).toBe("<p>“One”</p><p>“Two”</p>");
   });
 });
+
+describe("group labels", () => {
+  it("stand on their own line above the text that follows", () => {
+    const html = renderAnswer("**Committee witnesses - supportive**\nDr Price-Forbes said it works.");
+    expect(html).toMatch(/<p><strong>Committee witnesses - supportive<\/strong><\/p>\s*<p>Dr Price-Forbes/);
+  });
+  it("leave a bold phrase inside a sentence alone", () => {
+    expect(renderAnswer("A **bold** word.\nNext line.")).toContain("<strong>bold</strong> word.");
+  });
+});
