@@ -79,8 +79,10 @@ class Verification:
         }
 
 
-# the date of the contribution just cited, in brackets after its citation: "[Source 2] (16 September 2025)."
-_DATE_ONLY = re.compile(r"^\W*\(\s*(?:\d{1,2}\s+)?(?:[A-Z][a-z]+\s+)?\d{4}\s*\)\W*$")
+# the date of the contribution just cited, after its citation: "[Source 2] (16 September 2025).",
+# "on 12 November 2025.", "(written answer, 12 October 2026)."
+_DATE_ONLY = re.compile(r"^\W*(?:on\s+)?\(?\s*(?:(?:written|oral)\s+(?:answer|question|statement)s?,?\s*)?"
+                        r"(?:\d{1,2}\s+)?(?:[A-Z][a-z]+\s+)?\d{4}\s*\)?\W*$")
 
 
 def _is_connective(text: str) -> bool:
@@ -94,13 +96,21 @@ def _is_connective(text: str) -> bool:
     return len(stripped) <= _CONNECTIVE_MAX and not re.search(r"\d{4}|£|%", stripped)
 
 
-def relabel_dates(answer: dict[str, Any] | None) -> dict[str, Any] | None:
-    """A briefing checked before bracketed dates were recognised: those dates are no longer points to check."""
+def recheck_flags(answer: dict[str, Any] | None) -> dict[str, Any] | None:
+    """A saved briefing's points to check, judged again by the current rules: a passage since recognised as a date,
+    a join or a note about the evidence is no longer one. Nothing is ever newly flagged."""
     segs = (answer or {}).get("segments")
-    if not segs or not any(x.get("status") == "unsupported" and _DATE_ONLY.match(x["text"].strip()) for x in segs):
+    if not segs:
         return answer
-    segs = [{**x, "status": "connective"} if x.get("status") == "unsupported" and _DATE_ONLY.match(x["text"].strip())
-            else x for x in segs]
+
+    def cleared(i: int) -> bool:
+        nxt = i + 1 < len(segs) and segs[i + 1].get("status") == "cited"
+        return all(x.status == "connective" for x in _classify_uncited(segs[i]["text"], nxt))
+
+    fixed = {i for i, x in enumerate(segs) if x.get("status") == "unsupported" and cleared(i)}
+    if not fixed:
+        return answer
+    segs = [{**x, "status": "connective"} if i in fixed else x for i, x in enumerate(segs)]
     cited = sum(len(x["text"]) for x in segs if x.get("status") == "cited")
     unsupported = sum(len(x["text"]) for x in segs if x.get("status") in ("unsupported", "invalid"))
     return {**answer, "segments": segs,
@@ -115,6 +125,8 @@ _EVIDENCE_NOTE = re.compile(
     r"no (division|voting) records|evidence (base|is|set)|gaps?\b|caveats?\b|cannot be (reported|attributed)|"
     r"(were|was) not relevant|been excluded|the records (are|were|contain|include|cover)|little (was|is) (found|said)|"
     r"nothing (was|is) found|no stated position|written questions only|"
+    r"decides? (many|most|some)? ?(of )?(these |the |such )?(subjects|matters|areas|policies) for (its|their) own "
+    r"nations?|"
     r"^\W*(about the evidence|notes?)\b\W*:)", re.I)
 # a note about the evidence that reports what someone said ("Smith said", "he argued") is a claim, not a note;
 # "what was said" or "nothing said by Benn" is not
@@ -144,7 +156,8 @@ def _classify_uncited(text: str, next_is_cited: bool) -> list[Segment]:
             tail = lines[-1][cut:]
             if len(tail.strip()) <= _ATTRIBUTION_MAX and not tail.rstrip().endswith("."):
                 lines[-1:] = [lines[-1][:cut], tail]
-                claims.add(len(lines) - 2)
+                if re.search(r"\w", lines[-2]):  # a bare full stop closing the citation before is no claim
+                    claims.add(len(lines) - 2)
     out: list[Segment] = []
     for i, line in enumerate(lines):
         last = i == len(lines) - 1
