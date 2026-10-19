@@ -48,9 +48,15 @@ export function demoteHeadings(html: string): string {
   return html.replace(/<(\/?)h([1-6])\b/g, (_m, close: string, level: string) => `<${close}h${Math.min(Number(level) + 2, 6)}`);
 }
 
+/** A line that is only a bold group label ("**Ministers - supportive**") stands on its own above its text: the
+ * briefing writes it with a single line break, which markdown would run into the paragraph that follows. */
+export function separateLabels(md: string): string {
+  return md.replace(/^([ \t]*\*\*[^*\n]+\*\*:?)[ \t]*\n(?=[ \t]*\S)/gm, "$1\n\n");
+}
+
 /** Render answer markdown to sanitised HTML with clickable [Source n] badges. */
 export function renderAnswer(md: string): string {
-  let html = demoteHeadings(marked.parse(md, { async: false }) as string);
+  let html = demoteHeadings(marked.parse(separateLabels(md), { async: false }) as string);
   html = html.replace(/⁣⟦S:([\d,]+)⟧⁣/g, (_m, nums: string) =>
     nums
       .split(",")
@@ -69,7 +75,7 @@ export function renderAnswer(md: string): string {
 
 /** Plain streaming text (no citations yet). */
 export function renderPlain(md: string): string {
-  return typographic(DOMPurify.sanitize(demoteHeadings(marked.parse(md, { async: false }) as string)));
+  return typographic(DOMPurify.sanitize(demoteHeadings(marked.parse(separateLabels(md), { async: false }) as string)));
 }
 
 /** Printers' quotation marks and apostrophes (“ ” ‘ ’) in place of typewriter ones, in the text only (never inside

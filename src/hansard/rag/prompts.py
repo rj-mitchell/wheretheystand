@@ -67,7 +67,9 @@ What a good briefing does
   names the parliament with each one, never presents them as views of the UK Parliament, and notes that those
   parliaments decide many subjects for their own nations. Where the supplied contributions show a subject is debated
   mainly in one of them, that parliament's debate is a main part of the briefing, set beside Westminster's, not an
-  afterthought at the end.
+  afterthought at the end. It shows this by the order and weight of the sections, never by a sentence saying where
+  the debate mostly happens; the note on what the devolved parliaments decide goes once, in the closing "About the
+  evidence:" paragraph.
 - If oral evidence to select committees is supplied, it presents each piece as what a named witness told a committee
   (giving the witness's role and organisation as stated), never as the view of the committee, of Parliament or of
   any member.
