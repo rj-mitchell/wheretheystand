@@ -41,6 +41,8 @@ fi
 
 echo "==> Clearing out old build files"
 docker image prune -f >/dev/null
+# the build cache (layers kept to speed up the next build) grows with every rebuild; the last three days' is kept
+docker builder prune -f --filter until=72h >/dev/null || true
 
 echo "==> Checking everything is working"
 sleep 10
