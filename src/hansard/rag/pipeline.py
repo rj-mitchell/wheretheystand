@@ -112,13 +112,16 @@ def rerank_query(plan: QueryPlan, how: str | None) -> str:
 
 
 # the start of a witness's opening statement
-_INTRODUCTION = re.compile(r"\b(my name is|by way of introduction|thank you (very much )?(for|,)[^.]{0,60}"
-                           r"(opportunity|inviting|having me)|i am the [\w -]{0,60}(of|at) )", re.I)
-# an answer that declines to comment, or only promises to follow up
+_INTRODUCTION = re.compile(r"\b(my name is|by way of introduction|(thank you|thanks|i thank you)( very much)?( for|,)"
+                           r"[^.]{0,80}(opportunity|inviting|invitation|having me|invited)|i am the [\w -]{0,60}"
+                           r"(of|at) )", re.I)
+# an answer that declines to comment, passes the question to someone else, or only promises to follow up
 _NOTHING_SAID = re.compile(r"\b((would|could) not (want to |wish to |be able to )?comment|(not|unable) (be )?(able |in a "
                            r"position )?to comment|can(no|')t comment|no comment|(i am|i'm) (always )?happy to (meet|write"
                            r"|follow up|come back)|(i will|i'll|we will|we'll) (have to )?(write to|come back to) (you|the "
-                           r"committee))\b", re.I)
+                           r"committee)|you (should|would|might|may|will) (perhaps |probably |need to |want to |have to )?"
+                           r"(talk|speak|ask|put that|direct that) (to|with)|(that|this) (is|would be) (a question|one|"
+                           r"better asked|best put) (for|to)|i (would|will|must) (have to )?refer you to)\b", re.I)
 # Without an embedding model to compare them, the first few found of each (summary, comprehensive)
 FEW_EDMS, FEW_EVIDENCE, FEW_DEVOLVED = (2, 3), (3, 5), (2, 3)
 # how many may be chosen, at most, of each kind (devolved: of each parliament)
