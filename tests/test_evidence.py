@@ -117,6 +117,8 @@ def test_an_opening_statement_gives_way_to_an_answer_from_the_same_session():
 
     assert _INTRODUCTION.search("Thank you very much, Chair, for the opportunity to speak to you today. By way of "
                                 "introduction, my name is Louis Mosley.")
+    assert _INTRODUCTION.search("I will say something to start. Thanks very much for inviting me to give evidence.")
+    assert _INTRODUCTION.search("I thank you, Lord Jay, and the sub-committee for the kind invitation to speak to you.")
     assert not _INTRODUCTION.search("The contract gives the NHS no protection if the supplier walks away.")
 
 
@@ -125,6 +127,8 @@ def test_weak_answers_are_not_quoted():
 
     assert _NOTHING_SAID.search("As an official, I would not want to comment on the specifics around Palantir")
     assert _NOTHING_SAID.search("I am always happy to meet colleagues to talk about this.")
+    assert _NOTHING_SAID.search("You should perhaps talk to my colleague, Mike Potter, who runs the CDDO.")
+    assert _NOTHING_SAID.search("That is a question for the Department rather than for me.")
     assert not _NOTHING_SAID.search("There is nothing to suggest that the UK lacks the capability to build it.")
     assert not _NOTHING_SAID.search("I don't know whether that was wise, but the contract gives the NHS no exit.")
 
