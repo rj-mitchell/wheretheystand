@@ -103,6 +103,16 @@ export default function App() {
   const [meta, setMeta] = useState<Meta | null>(null);
   const [settings, setSettings] = useState<Settings>(() => loadSettings());
   const [turns, setTurns] = useState<Turn[]>([]);
+  // a follow-up's new briefing, to bring into view once it is on the page
+  const scrollToTurn = useRef<string | null>(null);
+  useEffect(() => {
+    const id = scrollToTurn.current;
+    const el = id ? document.getElementById(`turn-${id}`) : null;
+    if (!el) return;
+    scrollToTurn.current = null;
+    const still = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+    el.scrollIntoView({ block: "start", behavior: still ? "auto" : "smooth" });
+  }, [turns]);
   // a question handed over from another page, such as an MP's page ("What has … said about …?")
   const [question, setQuestion] = useState(() => {
     try {
@@ -345,6 +355,7 @@ export default function App() {
     const stage = (key: "plan" | "sources" | "text" | "check") => (t: Turn) => ({
       stages: { ...(t.stages ?? { start: Date.now() }), [key]: t.stages?.[key] ?? Date.now() },
     });
+    if (!replaceId && turns.length) scrollToTurn.current = id; // a follow-up: show where its answer is written
     setTurns((ts) => (replaceId ? ts.map((t) => (t.id === id ? turn : t)) : [...ts, turn]));
     const earlier = turns.filter((t) => t.id !== id && t.status === "done");
     // what each earlier question searched for, so a follow-up ("what about the Lords?") keeps the topic and filters
@@ -701,7 +712,7 @@ export default function App() {
           </section>
         )}
         {turns.map((t) => (
-          <article key={t.id} className="turn">
+          <article key={t.id} id={`turn-${t.id}`} className="turn">
             {t.topic && <TopicHeader topic={t.topic} preparedAt={t.preparedAt} recordsUpTo={t.recordsUpTo} />}
             {t.comparing !== undefined && (
               <p className="eyebrow">
