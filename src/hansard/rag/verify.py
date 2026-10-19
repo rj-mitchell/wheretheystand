@@ -79,15 +79,33 @@ class Verification:
         }
 
 
+# the date of the contribution just cited, in brackets after its citation: "[Source 2] (16 September 2025)."
+_DATE_ONLY = re.compile(r"^\W*\(\s*(?:\d{1,2}\s+)?(?:[A-Z][a-z]+\s+)?\d{4}\s*\)\W*$")
+
+
 def _is_connective(text: str) -> bool:
     t = text.strip()
-    if not t:
+    if not t or _DATE_ONLY.match(t):
         return True
     if t.startswith("#") or t.endswith(":"):
         return True
     # bullet markers, joins between cited spans, short transitions
     stripped = re.sub(r"^[\s\-*•\d.)]+", "", t)
     return len(stripped) <= _CONNECTIVE_MAX and not re.search(r"\d{4}|£|%", stripped)
+
+
+def relabel_dates(answer: dict[str, Any] | None) -> dict[str, Any] | None:
+    """A briefing checked before bracketed dates were recognised: those dates are no longer points to check."""
+    segs = (answer or {}).get("segments")
+    if not segs or not any(x.get("status") == "unsupported" and _DATE_ONLY.match(x["text"].strip()) for x in segs):
+        return answer
+    segs = [{**x, "status": "connective"} if x.get("status") == "unsupported" and _DATE_ONLY.match(x["text"].strip())
+            else x for x in segs]
+    cited = sum(len(x["text"]) for x in segs if x.get("status") == "cited")
+    unsupported = sum(len(x["text"]) for x in segs if x.get("status") in ("unsupported", "invalid"))
+    return {**answer, "segments": segs,
+            "unsupported_segments": sum(1 for x in segs if x.get("status") == "unsupported"),
+            "grounded_ratio": round(1.0 if not cited + unsupported else cited / (cited + unsupported), 3)}
 
 
 _LABEL = re.compile(r"^\s*(#+ .*|\*\*[^*]+\*\*:?)\s*$")

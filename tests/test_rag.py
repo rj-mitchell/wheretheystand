@@ -271,6 +271,15 @@ def test_a_lead_in_after_an_uncited_sentence_is_not_flagged_but_the_sentence_is(
     assert [s.status for s in _classify_uncited("- Keir Mather (Selby), 10 August 2026, said ", True)] == ["connective"]
 
 
+def test_the_date_after_a_citation_is_not_flagged():
+    from hansard.rag.verify import _classify_uncited
+
+    for when in (" (16 September 2025).\n", " (March 2024)", " (2019),\n"):
+        assert [s.status for s in _classify_uncited(when, False)] == ["connective"], when
+    assert [s.status for s in _classify_uncited(" (16 September 2025), when it rose by 4%.\n", False)] == [
+        "unsupported"]
+
+
 def test_openers_about_the_records_are_dropped():
     from hansard.rag.verify import Segment, drop_preambles
 
@@ -303,3 +312,16 @@ def test_local_contributions_are_scored_down_not_dropped():
     scored = rank([local, national], set(), params)
     assert [s.candidate.record_id for s in scored] == ["a", "b"]
     assert scored[1].score == scored[0].score * params.local_factor
+
+
+def test_saved_briefings_no_longer_flag_dates():
+    from hansard.rag.verify import relabel_dates
+
+    answer = {"segments": [{"text": "X said it worked", "status": "cited"},
+                           {"text": " (16 September 2025).\n", "status": "unsupported"},
+                           {"text": "Prices rose sharply.", "status": "unsupported"}],
+              "unsupported_segments": 2, "grounded_ratio": 0.3}
+    out = relabel_dates(answer)
+    assert [s["status"] for s in out["segments"]] == ["cited", "connective", "unsupported"]
+    assert out["unsupported_segments"] == 1 and out["grounded_ratio"] == round(16 / 36, 3)
+    assert relabel_dates({"segments": []}) == {"segments": []} and relabel_dates(None) is None
