@@ -131,8 +131,8 @@ _EVIDENCE_NOTE = re.compile(
     r"no (division|voting) records|evidence (base|is|set)|gaps?\b|caveats?\b|cannot be (reported|attributed)|"
     r"(were|was) not relevant|been excluded|the records (are|were|contain|include|cover)|little (was|is) (found|said)|"
     r"nothing (was|is) found|no stated position|written questions only|"
-    r"decides? (many|most|some)? ?(of )?(these |the |such )?(subjects|matters|areas|policies) for (its|their) own "
-    r"nations?|(is|are) (a )?separate (parliament|legislature)s?\b|decides? (different|separate|their own) "
+    r"decides? (many|most|some)? ?(of )?(these |the |such )?(subjects|matters|areas|policies) for ((its|their) own "
+    r"nations?|wales|scotland|northern ireland)|(is|are) (a )?separate (parliament|legislature)s?\b|decides? (different|separate|their own) "
     r"(matters|subjects|policies)\b|"
     r"^\W*(about the evidence|notes?)\b\W*:)", re.I)
 # a note about the evidence that reports what someone said ("Smith said", "he argued") is a claim, not a note;

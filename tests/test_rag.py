@@ -343,7 +343,8 @@ def test_the_devolution_note_is_not_a_point_to_check():
     for note in ("These bodies decide many of these subjects for their own nations. ",
                  "These bodies decide many matters for their own nations and are not the UK Parliament. ",
                  "The Senedd is a separate parliament that decides education for Wales. ",
-                 "These bodies decide different matters from Westminster. "):
+                 "These bodies decide different matters from Westminster. ",
+                 "The Senedd decides many subjects for Wales, so this was a decision on consent. "):
         assert [s.status for s in _classify_uncited(note, False)] == ["connective"], note
     # the full stop closing one citation, before the lead-in to the next
     assert [s.status for s in _classify_uncited(". Jane Smith said that ", True)] == ["connective"]
