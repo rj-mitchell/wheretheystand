@@ -81,6 +81,10 @@ rerank_query = "both"       # what passages are compared with: question | keywor
 model = "claude-sonnet-5-5"
 summary_sources = 24
 comprehensive_sources = 40
+# places for early day motions, the devolved parliaments and committee evidence, chosen by closeness in meaning to
+# the question; closer ones can also take the places of weaker Westminster sources (see src/hansard/rag/blend.py)
+side_sources = 10
+comprehensive_side_sources = 15
 summary_effort = "medium"
 comprehensive_effort = "high"
 query_parse_effort = "low"

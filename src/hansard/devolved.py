@@ -175,27 +175,35 @@ class DevolvedStore:
 
     def relevant(self, keywords: list[str], *, date_from: str | None = None, date_to: str | None = None,
                  per_body: int = 2, min_words: int = 60) -> list[dict[str, Any]]:
-        """The best-matching members' contributions in each parliament (all the words, ranked by relevance)."""
+        """The best-matching members' contributions in each parliament: those with all the words first, then, if
+        there are too few, those with all but one of them, each ranked by relevance."""
         words = [w for w in keywords if re.fullmatch(r"[\w'’-]+", w)][:5]
         if not words:
             return []
-        match = " ".join(f'"{w}"' for w in words)
+        matches = [" ".join(f'"{w}"' for w in words)]
+        if len(words) >= 3:  # any of the ways of leaving one word out
+            matches.append(" OR ".join("(" + " ".join(f'"{w}"' for w in words if w != skip) + ")" for skip in words))
         out = []
         with self.connect() as con:
             for leg in LEGISLATURES:
-                where = ["speech_text MATCH ?", "s.legislature = ?", "s.person_id IS NOT NULL",
-                         "length(s.text) >= ?"]
-                params: list[Any] = [match, leg, min_words * 5]
-                if date_from:
-                    where.append("s.date >= ?")
-                    params.append(str(date_from))
-                if date_to:
-                    where.append("s.date <= ?")
-                    params.append(str(date_to))
-                rows = con.execute(f"""
-                    SELECT s.* FROM speech_text JOIN speeches s ON s.id = speech_text.rowid
-                    WHERE {' AND '.join(where)} ORDER BY bm25(speech_text, 1.0, 3.0, 2.0, 0.0) LIMIT ?""",
-                                   [*params, per_body * 4]).fetchall()
+                rows: list[Any] = []
+                for match in matches:
+                    if len(rows) >= per_body * 4:
+                        break
+                    where = ["speech_text MATCH ?", "s.legislature = ?", "s.person_id IS NOT NULL",
+                             "length(s.text) >= ?"]
+                    params: list[Any] = [match, leg, min_words * 5]
+                    if date_from:
+                        where.append("s.date >= ?")
+                        params.append(str(date_from))
+                    if date_to:
+                        where.append("s.date <= ?")
+                        params.append(str(date_to))
+                    have = {r["id"] for r in rows}
+                    rows += [r for r in con.execute(f"""
+                        SELECT s.* FROM speech_text JOIN speeches s ON s.id = speech_text.rowid
+                        WHERE {' AND '.join(where)} ORDER BY bm25(speech_text, 1.0, 3.0, 2.0, 0.0) LIMIT ?""",
+                                                    [*params, per_body * 4]).fetchall() if r["id"] not in have]
                 seen: set[str] = set()
                 for r in rows:  # one contribution per member, so a few speakers do not fill the evidence
                     if r["person_id"] in seen:

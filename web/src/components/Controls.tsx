@@ -113,7 +113,7 @@ export function Controls({ settings, onChange, answersEnabled }: Props) {
             checked={settings.scope.evidence ?? false}
             onChange={(e) => scope({ evidence: e.target.checked })}
           />
-          Witnesses' evidence to committees (since 2022)
+          Witnesses' evidence to committees
         </label>
       </fieldset>
     </section>
