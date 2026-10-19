@@ -94,6 +94,32 @@ def test_witnesses_are_told_apart_from_members():
     assert witness_for("Lord Jay of Ewelme", listed) is None and witness_for("John Bell", listed) is None
 
 
+def test_witnesses_are_read_from_the_transcript_when_parliament_lists_none():
+    from hansard.sources.evidence import header_witnesses, witness_for
+
+    header = ["Health and Social Care Committee", "Members present: Layla Moran (Chair); Ben Coleman.",
+              "Questions 1 - 144", "Witnesses",
+              "I: Dr Sarah Scobie, Deputy Director of Research, Nuffield Trust; Professor Sir Nigel Shadbolt, Executive "
+              "Chair, Open Data Institute; and Matt Hennessy, Chief Data and Analytical Officer Network.",
+              "II: Rob Thompson, Chief Digital, Data and Technology Officer, Department of Health and Social Care and "
+              "NHS England.", "Examination of witnesses"]
+    listed = header_witnesses(header)
+    assert [w["name"] for w in listed] == ["Dr Sarah Scobie", "Professor Sir Nigel Shadbolt", "Matt Hennessy",
+                                           "Rob Thompson"]
+    assert listed[3] == {"name": "Rob Thompson", "role": "Chief Digital, Data and Technology Officer",
+                         "organisation": "Department of Health and Social Care and NHS England"}
+    assert witness_for("Professor Sir Nigel Shadbolt", listed) and witness_for("Ben Coleman", listed) is None
+    assert header_witnesses(["Members present: A; B.", "Questions 1-10"]) == []
+
+
+def test_an_opening_statement_gives_way_to_an_answer_from_the_same_session():
+    from hansard.rag.pipeline import _INTRODUCTION
+
+    assert _INTRODUCTION.search("Thank you very much, Chair, for the opportunity to speak to you today. By way of "
+                                "introduction, my name is Louis Mosley.")
+    assert not _INTRODUCTION.search("The contract gives the NHS no protection if the supplier walks away.")
+
+
 def test_briefings_can_include_committee_evidence(indexed_settings):
     from hansard.embed.base import HashingEmbedder
     from hansard.engine import Engine, Scope
