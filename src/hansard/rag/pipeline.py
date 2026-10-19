@@ -423,6 +423,18 @@ class Pipeline:
                         "inquiry": s.get("inquiry"), "inquiry_id": s.get("inquiry_id"), "url": s.get("url")})
             if len(out) >= wanted:
                 break
+        # the question each answer was given to ("No, categorically not" means nothing without it): the turn before,
+        # when it was put by someone other than a witness
+        try:
+            before = store.turns_by_key([(e["session_id"], e["ord"] - 1) for e in out])
+        except Exception:
+            log.exception("could not read the questions put to witnesses")
+            before = {}
+        for e in out:
+            q = before.get((e["session_id"], e["ord"] - 1))
+            if q and q.get("speaker") and not witness_for(q["speaker"], sessions[e["session_id"]]["witnesses"]):
+                words = q["text"] if len(q["text"]) <= 600 else q["text"][:600].rsplit(" ", 1)[0] + " ..."
+                e["asked"] = {"speaker": q["speaker"], "text": words}
         return out
 
     def find_devolved(self, plan: QueryPlan, req: AskRequest) -> list[dict[str, Any]]:
