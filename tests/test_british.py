@@ -59,3 +59,16 @@ def test_loaded_words_are_flagged_only_outside_quotations():
     assert words == [(0, "admitted"), (2, "attacked")]
     f = segs[0].loaded[0]
     assert segs[0].text[f["start"]:f["end"]] == "admitted"
+
+
+def test_claimed_counts_only_as_a_verb_of_saying():
+    from hansard.rag.neutral import LOADED, still_loaded
+
+    assert not LOADED.search("He questioned the benefits claimed for the trial and the claimed savings.")
+    assert LOADED.search("Jones claimed that the plan had failed.") and LOADED.search("as Smith claimed, ")
+    saved = {"segments": [{"text": "He questioned the benefits claimed for the trial", "status": "connective",
+                           "loaded": [{"start": 31, "end": 38, "word": "claimed"}]},
+                          {"text": "Jones claimed that it failed", "status": "connective",
+                           "loaded": [{"start": 6, "end": 13, "word": "claimed"}]}], "loaded_words": 2}
+    out = still_loaded(saved)
+    assert out["loaded_words"] == 1 and not out["segments"][0]["loaded"] and out["segments"][1]["loaded"]

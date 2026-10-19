@@ -16,6 +16,7 @@ from datetime import date
 from typing import Any
 
 from hansard.rag.interests import without_public_office
+from hansard.rag.neutral import still_loaded
 from hansard.rag.verify import recheck_flags
 from hansard.store.state import StateDB, utcnow
 
@@ -137,7 +138,7 @@ def public_view(b: dict[str, Any]) -> dict[str, Any]:
         "candidates": sources.get("candidates"),
         "semantic": sources.get("semantic"),
         "evidence": sources.get("evidence"),
-        "answer": recheck_flags(final.get("answer")),
+        "answer": still_loaded(recheck_flags(final.get("answer"))),
         "interests": without_public_office(final.get("interests")),
     }
 
