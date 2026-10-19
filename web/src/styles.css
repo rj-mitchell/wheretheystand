@@ -1339,6 +1339,15 @@ legend,
   --flow-space: 0.4em;
 }
 
+/* a bold group label on its own line ("Ministers - supportive"): more room above, its text close below */
+.answer-body > p:has(> strong:only-child) {
+  --flow-space: 1.5em;
+}
+
+.answer-body > p:has(> strong:only-child) + * {
+  --flow-space: 0.35em;
+}
+
 .answer-body :is(ul, ol) {
   padding-inline-start: 1.2em;
 }
