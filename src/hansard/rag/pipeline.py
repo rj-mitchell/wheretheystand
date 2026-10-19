@@ -114,6 +114,11 @@ def rerank_query(plan: QueryPlan, how: str | None) -> str:
 # the start of a witness's opening statement
 _INTRODUCTION = re.compile(r"\b(my name is|by way of introduction|thank you (very much )?(for|,)[^.]{0,60}"
                            r"(opportunity|inviting|having me)|i am the [\w -]{0,60}(of|at) )", re.I)
+# an answer that declines to comment, or only promises to follow up
+_NOTHING_SAID = re.compile(r"\b((would|could) not (want to |wish to |be able to )?comment|(not|unable) (be )?(able |in a "
+                           r"position )?to comment|can(no|')t comment|no comment|(i am|i'm) (always )?happy to (meet|write"
+                           r"|follow up|come back)|(i will|i'll|we will|we'll) (have to )?(write to|come back to) (you|the "
+                           r"committee))\b", re.I)
 # Without an embedding model to compare them, the first few found of each (summary, comprehensive)
 FEW_EDMS, FEW_EVIDENCE, FEW_DEVOLVED = (2, 3), (3, 5), (2, 3)
 # how many may be chosen, at most, of each kind (devolved: of each parliament)
@@ -362,7 +367,15 @@ class Pipeline:
             if self._evidence is None:
                 self._evidence = (EvidenceStore(evidence_path(self.settings)), Committees(committees_path(self.settings)))
             store, committees = self._evidence
-            turns = merge_ranked(store.relevant(keywords(plan.search_text)), self.evidence_by_meaning(store, plan))
+            words = keywords(plan.search_text)
+            turns = merge_ranked(store.relevant(words), self.evidence_by_meaning(store, plan))
+            # an answer found by meaning alone must still name something particular to the question ("Palantir"),
+            # not only its general words ("company", "NHS"); and one that declines to comment says nothing to quote
+            rare = store.distinctive(words)
+            if rare:
+                named = re.compile(r"\b(" + "|".join(re.escape(w) for w in rare) + ")", re.I)
+                turns = [t for t in turns if named.search(t["text"])]
+            turns = [t for t in turns if not _NOTHING_SAID.search(t["text"][:300])]
             # a witness's opening statement (who they are, what their organisation does) only if nothing else they
             # said matched: their answers to the committee's questions carry their views
             turns.sort(key=lambda t: bool(_INTRODUCTION.search(t["text"][:400])))

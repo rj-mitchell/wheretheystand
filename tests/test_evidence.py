@@ -120,6 +120,24 @@ def test_an_opening_statement_gives_way_to_an_answer_from_the_same_session():
     assert not _INTRODUCTION.search("The contract gives the NHS no protection if the supplier walks away.")
 
 
+def test_weak_answers_are_not_quoted():
+    from hansard.rag.pipeline import _NOTHING_SAID
+
+    assert _NOTHING_SAID.search("As an official, I would not want to comment on the specifics around Palantir")
+    assert _NOTHING_SAID.search("I am always happy to meet colleagues to talk about this.")
+    assert not _NOTHING_SAID.search("There is nothing to suggest that the UK lacks the capability to build it.")
+    assert not _NOTHING_SAID.search("I don't know whether that was wise, but the contract gives the NHS no exit.")
+
+
+def test_answers_must_name_something_particular_to_the_question(tmp_path):
+    store = EvidenceStore(tmp_path / "evidence.sqlite")
+    common = [{"question": str(i), "speaker": "Jane Doe", "text": f"The company told the NHS about waiting lists {i}."}
+              for i in range(200)]
+    store.save(1, ["Committee"], common + [{"question": "201", "speaker": "Jane Doe",
+                                            "text": "Palantir runs the platform for the NHS."}])
+    assert store.distinctive(["palantir", "nhs", "company", "unheard"]) == ["palantir"]
+
+
 def test_briefings_can_include_committee_evidence(indexed_settings):
     from hansard.embed.base import HashingEmbedder
     from hansard.engine import Engine, Scope
