@@ -8,8 +8,8 @@ def rec(party, occasions=None):
     return {"speaker": {"party": party}, "occasions": occasions}
 
 
-def holyrood(n):
-    return ("devolved", {"legislature": "scottish-parliament", "n": n})
+def holyrood(n, debate=None):
+    return ("devolved", {"legislature": "scottish-parliament", "n": n, "key": debate or f"day{n}"})
 
 
 def test_weak_matches_are_left_out_and_strong_ones_fill_the_places():
@@ -17,7 +17,7 @@ def test_weak_matches_are_left_out_and_strong_ones_fill_the_places():
     side = [("edms", {"n": 1}), ("evidence", {"n": 2}), holyrood(3)]
     kept, chosen = blend(records, [0.7, 0.7, 0.7], side, [0.5, 0.8, 0.75], floor=0.64, budget=10, keep=2, caps=CAPS)
     assert kept == records, "room to spare: no Westminster record gives way"
-    assert chosen == {"edms": [], "evidence": [{"n": 2}], "devolved": [{"legislature": "scottish-parliament", "n": 3}]}
+    assert chosen == {"edms": [], "evidence": [{"n": 2}], "devolved": [holyrood(3)[1]]}
 
 
 def test_a_subject_argued_in_holyrood_takes_the_places_of_weaker_westminster_records():
@@ -53,3 +53,9 @@ def test_similarity_uses_the_closest_window_of_a_long_contribution():
     e = HashingEmbedder()
     near, far = similarities(e, "minimum unit pricing alcohol", ["minimum unit pricing of alcohol", "bus timetables"])
     assert near > far
+
+
+def test_no_more_than_three_from_one_devolved_debate():
+    side = [holyrood(i, debate="2019-06-13") for i in range(6)] + [holyrood(9)]
+    _, chosen = blend([], [], side, [0.9] * 6 + [0.7], floor=0.6, budget=10, keep=0, caps=CAPS)
+    assert [d["n"] for d in chosen["devolved"]] == [0, 1, 2, 9]

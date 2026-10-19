@@ -10,7 +10,7 @@ Then:
 * anything below the floor of related text is dropped, so a weak match never takes a place just because its search
   found something;
 * the best of the rest take up to ``budget`` places beside the Westminster records (no more than ``caps`` of each
-  kind, and of each devolved parliament);
+  kind, of each devolved parliament, and three from any one devolved debate);
 * a further one closer to the question than the weakest Westminster record takes that record's place, down to
   ``keep`` Westminster records. A record that is the only one from its party, or that comes from a member who
   keeps raising the subject, keeps its place, so the balance chosen for the Westminster records survives.
@@ -27,6 +27,7 @@ import numpy as np
 
 WINDOW = 1500  # characters compared at a time: about a passage of the main index
 WINDOWS = 2    # the first two windows of a long contribution
+PER_DEBATE = 3  # devolved contributions from any one debate
 
 
 def windows(text: str) -> list[str]:
@@ -105,6 +106,10 @@ def blend(records: list[dict[str, Any]], record_sims: list[float | None],
         limit = caps.get("devolved", 0) if b.startswith("devolved:") else cap_of.get(b, 0)
         if taken.get(b, 0) >= limit:
             continue
+        kind, item = side[i]
+        debate = (item.get("legislature"), item.get("key"), item.get("major"), item.get("minor"))
+        if kind == "devolved" and taken.get(debate, 0) >= PER_DEBATE:
+            continue  # one afternoon's argument is not the whole of a parliament's
         if len(chosen) < budget:
             chosen.add(i)
         else:
@@ -116,6 +121,8 @@ def blend(records: list[dict[str, Any]], record_sims: list[float | None],
             dropped.add(j)
             chosen.add(i)
         taken[b] = taken.get(b, 0) + 1
+        if kind == "devolved":
+            taken[debate] = taken.get(debate, 0) + 1
     kept_side: dict[str, list] = {"edms": [], "devolved": [], "evidence": []}
     for i, (kind, item) in enumerate(side):
         if i in chosen:
