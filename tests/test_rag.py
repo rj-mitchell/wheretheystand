@@ -346,3 +346,27 @@ def test_the_devolution_note_is_not_a_point_to_check():
         assert [s.status for s in _classify_uncited(note, False)] == ["connective"], note
     # the full stop closing one citation, before the lead-in to the next
     assert [s.status for s in _classify_uncited(". Jane Smith said that ", True)] == ["connective"]
+
+
+def test_a_follow_up_is_read_with_the_earlier_answer(indexed_settings):
+    from types import SimpleNamespace
+
+    from hansard.rag.query_parse import ParsedQuery, parse_with_model
+
+    sent = {}
+
+    def parse(**kw):
+        sent.update(kw)
+        out = ParsedQuery.model_construct(
+            search_text="Palantir NHS contract break clause", date_from=None, date_to=None, houses=[], regions=[],
+            parties=[], offices=[], genders=[], age_bands=[], tenure=[], majority_bands=[], seat_types=[],
+            portfolios=[], wants_votes=False, interpretation="x", group_by="role", speakers=[])
+        return SimpleNamespace(stop_reason="end_turn", parsed_output=out, usage=None)
+
+    client = SimpleNamespace(messages=SimpleNamespace(parse=parse))
+    history = [{"question": "What has been said about Palantir in the NHS?", "topic": "Palantir NHS",
+                "answer": "Backbenchers urged ministers to use the break clause in 2027."}]
+    plan, _ = parse_with_model(client, indexed_settings, "what about the break clause?", history, [])
+    prompt = sent["messages"][0]["content"]
+    assert "Palantir NHS" in prompt and "use the break clause in 2027" in prompt
+    assert plan.search_text == "Palantir NHS contract break clause"

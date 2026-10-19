@@ -339,7 +339,10 @@ Rules:
   the Lords?", "and since 2024?", "how did they vote?", "which Labour MPs?"), keep the earlier topic and filters
   and change only what the follow-up changes: search_text keeps the earlier topic, and a new filter replaces the
   one it contradicts ("what about the Lords?" after a question about MPs sets houses to ["lords"] and drops
-  MP-only filters such as regions). A question on a new subject starts afresh.
+  MP-only filters such as regions). A follow-up that names something within the earlier topic, or mentioned in
+  the earlier answer ("what about the break clause?", "and the cost?", "what did Wrigley say?"), narrows it:
+  search_text is the earlier topic plus that thing ("Palantir NHS contract break clause"), never the new words
+  alone. A question on a new subject starts afresh.
 - interpretation: one plain sentence describing the filters you chose, in British English (British spelling,
   dates written as 9 October 2026)."""
 
@@ -376,6 +379,9 @@ def parse_with_model(client, settings, question: str, history: list[dict[str, st
         convo += "\n".join(f"- {h['question']}" + (f" [searched for: {h['topic']}" + (f"; {h['scope']}" if h.get("scope") else "")
                                                    + "]" if h.get("topic") else "")
                            for h in history[-4:]) + "\n\n"
+        last = (history[-1].get("answer") or "").strip()
+        if last:  # what the follow-up may refer to ("the break clause") is often named only in the answer
+            convo += f"The start of the answer to the last of them:\n{last[:800]}\n\n"
     resp = client.messages.parse(
         model=parse_model(settings),
         max_tokens=2000,
