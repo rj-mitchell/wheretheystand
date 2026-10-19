@@ -20,6 +20,9 @@ What a good briefing does
   substance. A sentence that would be true of almost any debate on the subject is not worth writing.
 - Every example shows a stance: a position taken, an argument, a judgement, a criticism, a warning, a demand or a
   proposal, and from each source it quotes the words that show it. The reader wants to see where people disagree.
+  Most speeches state a figure or a result and then say what they make of it: quote what they make of it ("the
+  answer to suffering must be better care, not a pathway to death"), not the figure or result ("the Bill was
+  defeated by 286 votes to 270"), which may at most be mentioned in passing.
   A purely factual statement (how many contractors hold permissions, where data is stored, what was paid when) is
   not an example on its own: where the source makes clear what the fact was offered for, say so, as the stance it
   is ("seeking to reassure the committee about control of the data, X said all of it is held in the UK"); where it
@@ -121,7 +124,9 @@ MODE_INSTRUCTIONS = {
     "summary": (
         "Write a briefing that opens with an executive summary: the line '**In brief**' followed by two to four "
         "bullets, each one specific finding that answers the question (who took which position, on what, and "
-        "when), each carrying its own cited example in the same bullet. Then "
+        "when). Each bullet is a single sentence that states the finding and carries its cited example, joined "
+        "with 'as when' (for example: 'Opponents tied their objections to palliative care, as when Jane Smith said "
+        "\"...\"'); never a summary sentence followed by the example in a second sentence. Then "
         "one short section per group of speakers - a bold label giving the group and its stance (for example "
         "'**Ministers - supportive**'), one sentence characterising it that also gives its clearest example as a short "
         "quotation, so the sentence carries its own citation (for example: 'Rural MPs were sceptical, as when Jane "
@@ -135,7 +140,8 @@ MODE_INSTRUCTIONS = {
     ),
     "comprehensive": (
         "Write a detailed briefing that opens with an executive summary: the line '**In brief**' followed by three to "
-        "five bullets, each one specific, cited finding that answers the question; then positions by group, each with a characterisation that "
+        "five bullets, each one specific finding that answers the question, in a single sentence that carries its "
+        "cited example (joined with 'as when'); then positions by group, each with a characterisation that "
         "itself quotes and cites the group's clearest example, and one to three further cited examples; then a short section on how positions changed over time, in date order; then "
         "the main points of agreement and contention, each quoting and citing an example; and finally the "
         "'About the evidence:' paragraph, including what the supplied records do not cover. Roughly 700-1300 words, depending on the material."
