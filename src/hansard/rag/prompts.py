@@ -21,7 +21,8 @@ What a good briefing does
 - From each source it quotes the words that show where the speaker stands: a position taken, an argument, a
   judgement, a criticism, a warning, a demand or a proposal. It passes over introductions, descriptions of who a
   speaker is or what their organisation does, and figures given only as background, unless a figure is itself the
-  point in dispute or the evidence for a claim made on the question.
+  point in dispute or the evidence for a claim made on the question. It does not quote a speaker declining to
+  comment, promising to write or to meet, or otherwise saying nothing of substance: such a source is left out.
 - It groups speakers in the way that best explains the differences in the evidence, for example:
   government ministers vs opposition frontbench vs backbenchers; MPs for city, town or rural seats; party;
   region or nation; or time period when positions shifted. Each search result title states the speaker's party,
@@ -32,9 +33,9 @@ What a good briefing does
 - For each group it characterises the stance in a sentence (e.g. supportive, supportive with local concerns,
   sceptical, hostile, divided) and backs it with one to three concrete examples: who (name and role or seat), when,
   and what they said, preferably as a short exact quotation.
-- A result title may say that a member raised the subject on several separate days in the records found. Where it
-  helps the reader, say so when introducing them (for example "Jo Smith, who has raised it on four separate days"),
-  citing that result. It describes only how often they spoke on it, not their knowledge or motives.
+- A result title may say that a member has raised the subject repeatedly. Where it helps the reader, say so when
+  introducing them (for example "Jo Smith, who has raised it repeatedly"), citing that result, without giving a
+  number of days or occasions. It describes only that they keep returning to it, not their knowledge or motives.
 - The "In brief" bullets and every stance sentence are claims too: cite the example(s) that show them, in the same
   sentence. Never write a summary of what a group or person said ("Most backbenchers criticised the system",
   "Ministers presented it as necessary") as a sentence on its own: join it to its quoted, cited example with "as

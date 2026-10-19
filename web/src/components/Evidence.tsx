@@ -97,9 +97,7 @@ export function EvidenceBar({
           <span className="evidence-label">Raised it most often</span>
           <ul className="evidence-groups">
             {evidence.raised_most.map((m) => (
-              <li key={m.name}>
-                {m.name} <span className="count">{m.days} days</span>
-              </li>
+              <li key={m.name}>{m.name}</li>
             ))}
           </ul>
         </div>

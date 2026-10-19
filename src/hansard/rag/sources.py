@@ -134,8 +134,8 @@ def record_source(n: int, r: dict[str, Any], facets: set[str] | bool = False, gr
     heading = r.get("heading") or r.get("minor_heading") or r.get("major_heading") or ""
     kind_label = {"question": "Written question", "answer": "Written answer", "statement": "Written statement"}.get(
         r["record_type"], r["chamber"])
-    raised = f"raised this subject on {r['occasions']} separate days in the records found" if r.get("occasions") \
-        else None
+    # how many days depends on which records a search finds, so the briefing is told only that it was repeatedly
+    raised = "has raised this subject repeatedly (on several separate days)" if r.get("occasions") else None
     title = " — ".join(x for x in (r.get("compare_side"), speaker_label(r, facets), raised,
                                    f"{kind_label}, {r['chamber']}" if kind_label != r["chamber"] else r["chamber"],
                                    _fmt_date(r["date"]), ref, heading) if x)

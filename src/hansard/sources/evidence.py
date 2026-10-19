@@ -181,6 +181,24 @@ class EvidenceStore:
         return {"session_id": session_id, "title": t["title"], "header": json.loads(t["header"] or "[]"),
                 "turns": [dict(r) for r in turns]}
 
+    def distinctive(self, words: list[str], share: float = 0.01) -> list[str]:
+        """Those of the words found in under ``share`` of all answers ("Palantir", not "company" or "NHS"): an answer
+        that mentions none of them is not specific enough to the question to quote. Counted once per word."""
+        cache = self.__dict__.setdefault("_word_counts", {})
+        out = []
+        with self.connect() as con:
+            if "" not in cache:
+                cache[""] = con.execute("SELECT count(*) FROM turns").fetchone()[0] or 1
+            for w in words:
+                if not re.fullmatch(r"[\w'’-]+", w):
+                    continue
+                if w not in cache:
+                    cache[w] = con.execute("SELECT count(*) FROM turn_text WHERE turn_text MATCH ?",
+                                           (f'"{w}"',)).fetchone()[0]
+                if 0 < cache[w] < share * cache[""]:
+                    out.append(w)
+        return out
+
     def headers(self, session_ids: set[int]) -> dict[int, list[str]]:
         """{session_id: the transcript's header paragraphs}."""
         if not session_ids:
