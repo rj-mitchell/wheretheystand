@@ -98,9 +98,22 @@
             subject most often.
           </li>
           <li>
+            <strong>The rest of the record takes the room its relevance earns.</strong> Early day motions, the
+            Scottish Parliament, the Senedd, the Northern Ireland Assembly and witnesses' evidence to committees are
+            searched alongside. Everything found is compared in meaning with the question by the same local model, so
+            all of it is on one scale: a weak match is left out, and the closest take up to ten places (fifteen in
+            a comprehensive briefing) beside the Westminster sources. Anything closer to the question than the
+            weakest Westminster source can then take its place, up to half of them, though never the only source
+            from a party or from a member who keeps raising the subject. So a subject argued mainly in Holyrood or in
+            committee brings in more of that record, and the number of sources stays the same.
+          </li>
+          <li>
             <strong>The briefing is written only from those sources.</strong> The briefing is written by an AI model
             (Claude, made by Anthropic). It receives only the sources found, is instructed to use no other knowledge,
-            and must attach a citation to every statement about what anyone said.
+            and must attach a citation to every statement about what anyone said. It connects the sources where they
+            meet (a concern raised in the Commons and put to witnesses, a policy decided differently in Holyrood),
+            but always names a devolved parliament, and presents a witness's words as evidence to a committee, never
+            as the view of Parliament.
           </li>
           <li>
             <strong>The briefing is then checked automatically.</strong> Every passage behind a citation is checked
@@ -268,8 +281,8 @@
             on devolution</a> sets out the full position.
           </li>
           <li>
-            Briefings cover Westminster unless you turn on the devolved parliaments under Settings; their debates
-            can always be read on the <a href="/devolved">devolved parliaments</a> pages.
+            Briefings include the devolved parliaments unless you turn them off under Settings; their debates can
+            also be read on the <a href="/devolved">devolved parliaments</a> pages.
           </li>
         </ul>
 
@@ -492,8 +505,8 @@
             Committees, inquiries, reports, government responses and oral evidence witnesses from the UK Parliament
             <a href="https://committees.parliament.uk/">Committees</a> data, under the Open Parliament Licence v3.0,
             refreshed weekly. Organisations are counted by name as given, so one body listed under two names is
-            counted twice. Oral evidence transcripts (from 2014) come from the same service. Briefings may cite a
-            few witnesses' answers, found both by their words and by meaning (the same local model as the rest of the
+            counted twice. Oral evidence transcripts (from 2014) come from the same service. Briefings may cite
+            witnesses' answers, found both by their words and by meaning (the same local model as the rest of the
             record): a transcript speaker is used only when they match a listed
             witness, so the chair's and members' questions are left out, and the answers are presented as evidence
             to a committee, not as the view of the committee or of Parliament.
@@ -501,8 +514,8 @@
           <li>
             The official reports of the Scottish Parliament, the Senedd and the Northern Ireland Assembly, via
             TheyWorkForYou, under the Open Parliament Licence and the equivalent licences of each parliament, with
-            members' devolved seats and parties from ParlParse. They are kept apart from Westminster search, and
-            appear in briefings only when you turn them on, in their own labelled section.
+            members' devolved seats and parties from ParlParse. They are searched apart from Westminster, and appear
+            in briefings, always labelled with their parliament, unless you turn them off.
           </li>
           <li>
             Political donations from the <a href="https://search.electoralcommission.org.uk/">Electoral Commission's

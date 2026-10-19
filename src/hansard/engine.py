@@ -66,8 +66,8 @@ class Scope:
     pbc: bool = True       # Public Bill Committee debates
     votes: bool = True     # division (voting) records
     edms: bool = True      # early day motions and who signed them
-    devolved: bool = True   # the Scottish Parliament, the Senedd and the NI Assembly (reported in their own section)
-    evidence: bool = True   # witnesses' oral evidence to select committees (reported in their own section)
+    devolved: bool = True   # the Scottish Parliament, the Senedd and the NI Assembly (always labelled as such)
+    evidence: bool = True   # witnesses' oral evidence to select committees (labelled as evidence to a committee)
 
     def sources(self) -> list[str]:
         s = set(ORAL_SOURCES)

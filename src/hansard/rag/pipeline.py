@@ -111,6 +111,24 @@ def rerank_query(plan: QueryPlan, how: str | None) -> str:
     return f"{plan.question} ({plan.search_text})"
 
 
+# Without an embedding model to compare them, the first few found of each (summary, comprehensive)
+FEW_EDMS, FEW_EVIDENCE, FEW_DEVOLVED = (2, 3), (3, 5), (2, 3)
+# how many may be chosen, at most, of each kind (devolved: of each parliament)
+SIDE_CAPS = {False: {"edms": 3, "evidence": 6, "devolved": 8}, True: {"edms": 4, "evidence": 8, "devolved": 12}}
+
+
+def first_few(side: dict[str, list], comprehensive: bool) -> dict[str, list]:
+    """The first few found of each kind (of each devolved parliament), as their own searches ranked them."""
+    kept = {"edms": side["edms"][:FEW_EDMS[comprehensive]], "evidence": side["evidence"][:FEW_EVIDENCE[comprehensive]],
+            "devolved": []}
+    per_body: dict[str, int] = {}
+    for d in side["devolved"]:
+        per_body[d.get("legislature")] = per_body.get(d.get("legislature"), 0) + 1
+        if per_body[d.get("legislature")] <= FEW_DEVOLVED[comprehensive]:
+            kept["devolved"].append(d)
+    return kept
+
+
 class Pipeline:
     def __init__(self, settings: Settings, engine: Engine | None = None, client=None, today: date | None = None):
         self.settings = settings
@@ -215,8 +233,9 @@ class Pipeline:
         side = {"votes": req.scope.votes and plan.wants_votes, "edms": getattr(req.scope, "edms", True),
                 "devolved": getattr(req.scope, "devolved", False), "evidence": getattr(req.scope, "evidence", False)}
         lookups = {"votes": lambda: self.votes.find(plan.search_text, plan.filters, limit=4),
-                   "edms": lambda: self.find_edms(plan, req), "devolved": lambda: self.find_devolved(plan, req),
-                   "evidence": lambda: self.find_evidence(plan, req)}
+                   "edms": lambda: self.compared("edms", self.find_edms(plan, req), plan),
+                   "devolved": lambda: self.compared("devolved", self.find_devolved(plan, req), plan),
+                   "evidence": lambda: self.compared("evidence", self.find_evidence(plan, req), plan)}
         with ThreadPoolExecutor(max_workers=4) as pool:
             pending = {k: pool.submit(lookups[k]) for k, wanted in side.items() if wanted}
             if plan.compare:
@@ -230,9 +249,66 @@ class Pipeline:
         divisions = found.get("votes", [])
         if req.scope.votes and not plan.wants_votes and not result.records:
             divisions = self.votes.find(plan.search_text, plan.filters, limit=4)
-        edms, devolved, evidence = found.get("edms", []), found.get("devolved", []), found.get("evidence", [])
-        return result, divisions, build_sources(result.records, divisions, plan_facets(plan), plan.group_by, edms,
-                                                devolved, evidence)
+        side_found = {k: found.get(k, []) for k in ("edms", "devolved", "evidence")}
+        result, side_found = self.make_room(plan, req, result, side_found, limit)
+        return result, divisions, build_sources(result.records, divisions, plan_facets(plan), plan.group_by,
+                                                side_found["edms"], side_found["devolved"], side_found["evidence"])
+
+    def compared(self, kind: str, items: list[dict[str, Any]], plan: QueryPlan) -> list[dict[str, Any]]:
+        """Each item with its closeness in meaning to the question (``_sim``), worked out while the main search runs.
+        Left out if there is no embedding model or it fails; ``make_room`` then keeps the first few."""
+        from hansard.rag.blend import side_text, similarities
+
+        embedder = self.engine.embedder
+        if embedder is None or not items:
+            return items
+        try:
+            for item, sim in zip(items, similarities(embedder, plan.search_text, [side_text(kind, i) for i in items]),
+                                 strict=True):
+                item["_sim"] = sim
+        except Exception:  # never let this step break a briefing
+            log.exception("could not compare %s with the question", kind)
+        return items
+
+    def make_room(self, plan: QueryPlan, req: AskRequest, result, side: dict[str, list], limit: int):
+        """Choose among the motions, devolved contributions and witnesses' answers found, and how many Westminster
+        records they may replace, by how close each is in meaning to the question (see ``hansard.rag.blend``).
+        Without an embedding model, the first few of each are kept, as their own searches ranked them."""
+        from dataclasses import replace
+
+        from hansard.rag.blend import blend, similarities
+        from hansard.rank.evidence import evidence_summary
+
+        comprehensive = req.mode == "comprehensive"
+        pairs = [(k, item) for k in ("edms", "devolved", "evidence") for item in side[k]]
+        embedder = self.engine.embedder
+        if not pairs:
+            return result, side
+        side_sims = [item.pop("_sim", None) for _, item in pairs]
+        if embedder is None or None in side_sims:
+            return result, first_few(side, comprehensive)
+        a = self.settings.answer
+        lo, hi = getattr(embedder, "similarity_range", (0.5, 0.85))
+        floor = float(a.get("side_min_similarity", lo + 0.4 * (hi - lo)))
+        try:
+            record_sims: list[float | None] = [(r.get("ranking") or {}).get("semantic") for r in result.records]
+            missing = [i for i, s in enumerate(record_sims) if s is None]
+            for i, s in zip(missing, similarities(embedder, plan.search_text,
+                                                  [result.records[i].get("excerpt") or "" for i in missing]),
+                            strict=True):
+                record_sims[i] = s
+        except Exception:  # never let this step break a briefing: keep the first few of each
+            log.exception("could not compare the other records with the question")
+            return result, first_few(side, comprehensive)
+        records, kept = blend(
+            result.records, record_sims, pairs, side_sims, floor=floor,
+            budget=int(a.get("comprehensive_side_sources" if comprehensive else "side_sources",
+                             15 if comprehensive else 10)),
+            keep=max(limit // 2, 1), caps=SIDE_CAPS[comprehensive],
+            persistent=int(self.settings.ranking.get("min_occasions", 3)))
+        if len(records) != len(result.records):
+            result = replace(result, records=records, evidence=evidence_summary(records))
+        return result, kept
 
     def local_question(self, plan: QueryPlan) -> bool:
         """A question about a place, a region, a kind of seat or particular members: their local matters belong."""
@@ -278,7 +354,7 @@ class Pipeline:
 
         if not evidence_path(self.settings).exists() or not committees_path(self.settings).exists():
             return []
-        wanted = 5 if req.mode == "comprehensive" else 3
+        wanted = 12 if req.mode == "comprehensive" else 8  # a pool to choose from (see make_room)
         try:
             if self._evidence is None:
                 self._evidence = (EvidenceStore(evidence_path(self.settings)), Committees(committees_path(self.settings)))
@@ -341,7 +417,7 @@ class Pipeline:
             found = store.relevant(keywords(plan.search_text),
                                    date_from=plan.filters.date_from and plan.filters.date_from.isoformat(),
                                    date_to=plan.filters.date_to and plan.filters.date_to.isoformat(),
-                                   per_body=3 if req.mode == "comprehensive" else 2)
+                                   per_body=12 if req.mode == "comprehensive" else 8)  # a pool (see make_room)
         except Exception:  # never let the devolved record break a briefing
             log.exception("devolved parliaments unavailable")
             return []
@@ -373,7 +449,7 @@ class Pipeline:
             found = self._edms.relevant(keywords(plan.search_text),
                                         date_from=plan.filters.date_from and plan.filters.date_from.isoformat(),
                                         date_to=plan.filters.date_to and plan.filters.date_to.isoformat(),
-                                        limit=3 if req.mode == "comprehensive" else 2)
+                                        limit=6 if req.mode == "comprehensive" else 4)  # a pool (see make_room)
             pairs = [(s["mnis"], s["signed"]) for e in found for s in e["sponsors"]]
             pairs += [(e["primary_mnis"], e["date_tabled"]) for e in found if e["primary_mnis"]]
             members = members_by_parliament_id(self.engine.con, pairs)
