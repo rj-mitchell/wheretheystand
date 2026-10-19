@@ -236,9 +236,14 @@ _ELLIPSIS = re.compile(r"\s*(?:\.\.\.|\u2026|\[[^\]]{0,40}\])\s*")
 _WORDS = re.compile(r"[^a-z0-9]+")
 
 
+_REPEATED = re.compile(r"\b(\w+)(?: \1\b)+")
+
+
 def _words(text: str) -> str:
-    """Lower-case words only: punctuation, quote marks and spacing are not what a quotation is checked on."""
-    return " " + _WORDS.sub(" ", text.lower().replace("\u2019", "'").replace("'", "")).strip() + " "
+    """Lower-case words only: punctuation, quote marks and spacing are not what a quotation is checked on, nor a
+    word printed twice in a row in the record ("the positioning of of that company")."""
+    words = _WORDS.sub(" ", text.lower().replace("\u2019", "'").replace("'", "")).strip()
+    return " " + _REPEATED.sub(r"\1", words) + " "
 
 
 def _found(quote: str, haystack: str) -> bool:

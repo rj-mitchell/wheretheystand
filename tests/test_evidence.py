@@ -170,6 +170,8 @@ def test_briefings_can_include_committee_evidence(indexed_settings):
         assert ev[0].meta["witness"]["organisation"] == "Passenger Watch"
         assert "not a view of Parliament" in ev[0].blocks[0] and "Transport Committee" in ev[0].title
         assert ev[0].url == "/evidence/77#t1"
+        assert ev[0].blocks[1] == "Asked by The Chair: Welcome. What has happened to fares?", "the question it answers"
+        assert ev[0].blocks[2] == "The witness answered:"
     finally:
         for path in paths:
             for suffix in ("", "-wal", "-shm"):

@@ -244,6 +244,14 @@ def test_quotations_are_checked_word_for_word():
     assert report.to_dict()["quotes_unverified"] == 1
 
 
+def test_a_word_printed_twice_in_the_record_does_not_make_a_misquote():
+    from hansard.rag.verify import _found, _words
+
+    record = _words("but more with the positioning of of that company, where its profits are made")
+    assert _found("more with the positioning of that company", record)
+    assert not _found("the positioning of the company", record)
+
+
 def test_pipeline_reports_checked_quotations(indexed_settings):
     out = answer_once(pipeline(indexed_settings, FakeClient()), AskRequest("What has been said about trial by jury?"))
     assert out["final"]["answer"]["quotes_unverified"] == 0

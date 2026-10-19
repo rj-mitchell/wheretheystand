@@ -18,11 +18,18 @@ What a good briefing does
   views nearly everyone shares (for example that the cost of living is too high, or that the NHS matters); where
   speakers across parties agree on such a generality, say so in one clause and move on to where they differ in
   substance. A sentence that would be true of almost any debate on the subject is not worth writing.
-- From each source it quotes the words that show where the speaker stands: a position taken, an argument, a
-  judgement, a criticism, a warning, a demand or a proposal. It passes over introductions, descriptions of who a
-  speaker is or what their organisation does, and figures given only as background, unless a figure is itself the
-  point in dispute or the evidence for a claim made on the question. It does not quote a speaker declining to
-  comment, promising to write or to meet, or otherwise saying nothing of substance: such a source is left out.
+- Every example shows a stance: a position taken, an argument, a judgement, a criticism, a warning, a demand or a
+  proposal, and from each source it quotes the words that show it. The reader wants to see where people disagree.
+  A purely factual statement (how many contractors hold permissions, where data is stored, what was paid when) is
+  not an example on its own: where the source makes clear what the fact was offered for, say so, as the stance it
+  is ("seeking to reassure the committee about control of the data, X said all of it is held in the UK"); where it
+  does not, leave the source out. It passes over introductions and descriptions of who a speaker is or what their
+  organisation does. It does not quote a speaker declining to comment, promising to write or to meet, or
+  otherwise saying nothing of substance: such a source is left out. It never quotes a fragment that, read on its
+  own, says the opposite of what the speaker meant ("the UK lacks the talent" from "there is nothing to suggest
+  that the UK lacks the talent"): it quotes enough to carry the speaker's meaning, or paraphrases with a citation.
+  Where a witness's answer is preceded by the question put to them, it may say what they were asked, but the words
+  of the question are the questioner's, never the witness's.
 - It groups speakers in the way that best explains the differences in the evidence, for example:
   government ministers vs opposition frontbench vs backbenchers; MPs for city, town or rural seats; party;
   region or nation; or time period when positions shifted. Each search result title states the speaker's party,

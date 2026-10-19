@@ -240,6 +240,8 @@ def evidence_source(n: int, e: dict[str, Any]) -> Source:
     blocks = [f"{where[0].upper() + where[1:]}, {_fmt_date(e['date'])}"
               f"{', inquiry: ' + e['inquiry'] if e.get('inquiry') else ''}. {who}, a witness answering the "
               "committee's questions (evidence to a committee, not a view of Parliament):",
+              *([f"Asked by {e['asked']['speaker']}: {e['asked']['text']}", "The witness answered:"]
+                if e.get("asked") else []),
               *[p for p in e["text"].split("\n\n") if p.strip()]]
     meta = {"date": e["date"], "chamber": "Committee evidence", "committee": committee, "inquiry": e.get("inquiry"),
             "inquiry_id": e.get("inquiry_id"), "session_id": e["session_id"], "witness": w,
