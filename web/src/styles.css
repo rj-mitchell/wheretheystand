@@ -775,6 +775,7 @@ legend,
   display: flex;
   flex-direction: column;
   gap: var(--space-s);
+  scroll-margin-block-start: var(--space-s); /* a follow-up scrolled into view keeps a little room above it */
 }
 
 /* a question reads like a debate heading: a small-capital kicker, then the title */
