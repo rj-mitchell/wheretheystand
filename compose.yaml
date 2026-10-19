@@ -1,0 +1,15 @@
+# Run Where They Stand on your own computer at http://localhost:8000
+# (step by step: "Try it on your own computer" in README.md).
+# For a public server with a domain and HTTPS, use deploy/docker-compose.yml instead.
+name: hansardgpt-local   # kept from the old name so existing local data is reused
+services:
+  app:
+    build: .
+    command: ["hansard", "serve", "--host", "0.0.0.0", "--port", "8000"]
+    volumes:
+      - hansard-data:/data
+    ports:
+      - "127.0.0.1:8000:8000"   # only this computer can open it
+
+volumes:
+  hansard-data:

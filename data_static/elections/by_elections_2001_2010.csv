@@ -1,0 +1,21 @@
+year,date,constituency,region,electorate,votes,winner,winner_votes,runner_up,runner_up_votes,majority,result,winner_name,paper
+2001,2001-11-22,Ipswich,,68244,27405,Labour,11881,Conservative,7794,4087,Lab Hold,Chris Mole,RP05/34
+2002,2002-02-14,Ogmore,,52209,18376,Labour,9548,Plaid Cymru,3827,5721,Lab Hold,Huw Irranca-Davies,RP05/34
+2003,2003-09-18,Brent East,,57558,20852,Liberal Democrat,8158,Labour,7040,1118,LD Gain,Sarah Teather,RP05/34
+2004,2004-07-15,Birmingham Hodge Hill,,53940,20439,Labour,7451,Liberal Democrat,6991,460,Lab Hold,Liam Byrne,RP05/34
+2004,2004-07-15,Leicester South,,72514,29408,Liberal Democrat,10274,Labour,8620,1654,LD Gain,Parmjit Singh Gill,RP05/34
+2004,2004-09-30,Hartlepool,,68517,31362,Labour,12752,Liberal Democrat,10719,2033,Lab Hold,Iain Wright,RP05/34
+2005,2005-07-15,Cheadle,,68051,37567,Liberal Democrat,19593,Conservative,15936,3657,LD Hold,Mark Hunter,RP10/50
+2005,2005-09-29,Livingston,,76365,29477,Labour,12319,Scottish National Party,9639,2680,Lab Hold,Jim Devine,RP10/50
+2006,2006-02-09,Dunfermline and West Fife,,71017,34578,Liberal Democrat,12391,Labour,10591,1800,LD Gain,Willie Rennie,RP10/50
+2006,2006-06-29,Blaenau Gwent,,52512,27165,Independent,12543,Labour,10059,2484,Ind Hold,Dai Davies,RP10/50
+2006,2006-06-29,Bromley & Chislehurst,,71818,29052,Conservative,11621,Liberal Democrat,10988,633,Con Hold,Robert Neill,RP10/50
+2007,2007-07-19,"Ealing, Southall",,85262,36618,Labour,15188,Liberal Democrat,10118,5070,Lab Hold,Virendra Kumar Sharma,RP10/50
+2007,2007-07-19,Sedgefield,,67314,27962,Labour,12528,Liberal Democrat,5572,6956,Lab Hold,Philip Wilson,RP10/50
+2008,2008-05-22,Crewe & Nantwich,,71963,41498,Conservative,20539,Labour,12679,7860,Con Gain,Edward Timpson,RP10/50
+2008,2008-06-26,Henley,,69086,34761,Conservative,19796,Liberal Democrat,9680,10116,Con Hold,John Howell,RP10/50
+2008,2008-07-10,Haltemprice & Howden,,70100,23911,Conservative,17113,Green,1758,15355,Con Hold,David Michael Davis,RP10/50
+2008,2008-07-24,Glasgow East,,62051,26174,Scottish National Party,11277,Labour,10912,365,SNP Gain,John Mason,RP10/50
+2008,2008-11-06,Glenrothes,,69155,36195,Labour,19946,Scottish National Party,13209,6737,Lab Hold,Lindsay Roy,RP10/50
+2009,2009-07-23,Norwich North,,75124,34377,Conservative,13591,Labour,6243,7348,Con Gain,Chloe Smith,RP10/50
+2009,2009-11-12,Glasgow North East,,62475,20595,Labour,12231,Scottish National Party,4120,8111,Lab Win,Willie Bain,RP10/50

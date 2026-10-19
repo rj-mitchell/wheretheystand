@@ -1,0 +1,11 @@
+[Unit]
+Description=Run the Where They Stand sync twice a day (UK time)
+
+[Timer]
+OnCalendar=*-*-* 07:15:00 Europe/London
+OnCalendar=*-*-* 19:15:00 Europe/London
+Persistent=true
+RandomizedDelaySec=300
+
+[Install]
+WantedBy=timers.target

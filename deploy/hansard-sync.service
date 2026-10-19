@@ -1,0 +1,11 @@
+[Unit]
+Description=Where They Stand daily sync (member data, new Hansard, index, embeddings)
+After=docker.service
+Requires=docker.service
+
+[Service]
+Type=oneshot
+WorkingDirectory=/opt/hansardgpt/deploy
+ExecStart=/usr/bin/docker compose run --rm -T app hansard sync --embed-minutes 240
+TimeoutStartSec=6h
+Nice=10

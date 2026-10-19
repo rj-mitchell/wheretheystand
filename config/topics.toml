@@ -1,0 +1,134 @@
+# Topic briefings: standing questions, each with a permanent page at /topics/<slug>, kept up to date by the sync.
+#
+# Wording matters: each question must be neutral, name no side, and ask about positions rather than assume an
+# answer. Keep the period in the question ("over the past twelve months") so each refresh covers recent debate.
+#
+#   slug          the page address: lower-case words joined by hyphens; never change it once published
+#   title         shown on the page and in search results
+#   question      what is asked each time the briefing is written
+#   area          heading it is listed under on /topics
+#   description   one line under the title
+#   refresh_days  the least time between rewrites (default 7); a rewrite also needs new, different evidence
+#
+# Each rewrite costs about 11p. Sixteen topics refreshed weekly, when their evidence has changed, cost roughly
+# £2 to £6 a month.
+
+# ---- The economy and living costs ----
+
+[[topic]]
+slug = "cost-of-living"
+title = "The cost of living"
+area = "The economy and living costs"
+question = "What positions have MPs and peers taken on the cost of living over the past twelve months?"
+description = "Prices, bills and household incomes."
+
+[[topic]]
+slug = "energy-bills-and-net-zero"
+title = "Energy bills and net zero"
+area = "The economy and living costs"
+question = "What positions have MPs and peers taken on energy bills and the move to net zero over the past twelve months?"
+description = "Energy prices, renewables, nuclear, oil and gas, and climate targets."
+
+[[topic]]
+slug = "housing-and-planning"
+title = "Housing and planning"
+area = "The economy and living costs"
+question = "What positions have MPs and peers taken on housebuilding, planning and renting over the past twelve months?"
+description = "New homes, the planning system, renters and the cost of housing."
+
+[[topic]]
+slug = "farming"
+title = "Farming and food"
+area = "The economy and living costs"
+question = "What positions have MPs and peers taken on farming and food production over the past twelve months?"
+description = "Farm support, tax, trade and food security."
+
+# ---- Public services ----
+
+[[topic]]
+slug = "nhs-waiting-times"
+title = "NHS waiting times"
+area = "Public services"
+question = "What positions have MPs and peers taken on NHS waiting times over the past twelve months?"
+description = "Waiting lists, A&E, GP access and capacity."
+
+[[topic]]
+slug = "social-care"
+title = "Adult social care"
+area = "Public services"
+question = "What positions have MPs and peers taken on adult social care over the past twelve months?"
+description = "Funding, the workforce and the future of care."
+
+[[topic]]
+slug = "special-educational-needs"
+title = "Special educational needs"
+area = "Public services"
+question = "What positions have MPs and peers taken on support for children with special educational needs and disabilities over the past twelve months?"
+description = "SEND provision, funding and assessments."
+
+[[topic]]
+slug = "welfare-and-disability-benefits"
+title = "Welfare and disability benefits"
+area = "Public services"
+question = "What positions have MPs and peers taken on welfare and disability benefits over the past twelve months?"
+description = "Benefit levels, eligibility, work and reform."
+
+[[topic]]
+slug = "prisons-and-sentencing"
+title = "Prisons and sentencing"
+area = "Public services"
+question = "What positions have MPs and peers taken on prison capacity and sentencing over the past twelve months?"
+description = "Prison places, early release and sentencing reform."
+
+[[topic]]
+slug = "local-government-funding"
+title = "Local government funding"
+area = "Public services"
+question = "What positions have MPs and peers taken on the funding of local councils over the past twelve months?"
+description = "Council finances, services and reorganisation."
+
+# ---- Society and rights ----
+
+[[topic]]
+slug = "immigration-and-asylum"
+title = "Immigration and asylum"
+area = "Society and rights"
+question = "What positions have MPs and peers taken on immigration and asylum, including small boat crossings, over the past twelve months?"
+description = "Legal migration, asylum, small boats and returns."
+
+[[topic]]
+slug = "assisted-dying"
+title = "Assisted dying"
+area = "Society and rights"
+question = "What arguments have MPs and peers made for and against assisted dying over the past twelve months?"
+description = "A conscience issue: views cut across parties."
+
+[[topic]]
+slug = "online-safety"
+title = "Online safety and social media"
+area = "Society and rights"
+question = "What positions have MPs and peers taken on online safety and social media over the past twelve months?"
+description = "Children online, platforms, harms and free expression."
+
+[[topic]]
+slug = "artificial-intelligence"
+title = "Artificial intelligence"
+area = "Society and rights"
+question = "What positions have MPs and peers taken on artificial intelligence over the past twelve months?"
+description = "Regulation, jobs, public services and safety."
+
+# ---- The UK in the world ----
+
+[[topic]]
+slug = "defence-and-ukraine"
+title = "Defence spending and Ukraine"
+area = "The UK in the world"
+question = "What positions have MPs and peers taken on defence spending and support for Ukraine over the past twelve months?"
+description = "The armed forces, budgets and the war in Ukraine."
+
+[[topic]]
+slug = "uk-eu-relations"
+title = "Relations with the EU"
+area = "The UK in the world"
+question = "What positions have MPs and peers taken on the UK's relationship with the European Union over the past twelve months?"
+description = "Trade, borders, security and cooperation."

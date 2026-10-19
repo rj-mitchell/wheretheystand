@@ -1,0 +1,10 @@
+[Unit]
+Description=Back up Where They Stand every night (UK time)
+
+[Timer]
+OnCalendar=*-*-* 03:30:00 Europe/London
+Persistent=true
+RandomizedDelaySec=300
+
+[Install]
+WantedBy=timers.target

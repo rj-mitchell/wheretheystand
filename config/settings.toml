@@ -1,0 +1,160 @@
+# Where They Stand settings. Paths are relative to the repository root unless absolute.
+# Environment overrides: HANSARD_DATA_DIR, HANSARD_CONFIG, ANTHROPIC_API_KEY.
+
+[paths]
+data_dir = "data"
+
+[archive]
+# From the 1997 general election. Seats before the 2010 boundaries take their region from the
+# same-named later seat or data_static/geo/pre2010_regions.csv; posts held by people who left
+# before 2010 come from parlparse's ministers.json. Some record types start later (the Lords
+# from November 1999, Westminster Hall 2000, written answers 2001, written statements 2002).
+start_date = "1997-05-01"
+# TheyWorkForYou scrapedxml directories to ingest.
+record_dirs = ["debates", "westminhall", "lordspages", "wrans", "lordswrans", "wms", "lordswms", "standing"]
+
+[sources]
+twfy_rsync = "data.theyworkforyou.com::parldata/scrapedxml"
+twfy_https = "https://www.theyworkforyou.com/pwdata/scrapedxml"
+parlparse_repo = "https://github.com/mysociety/parlparse"
+parlparse_branch = "master"
+
+[regions]
+# Named groups the query parser can use ("northern MPs" -> northern).
+northern = ["North East", "North West", "Yorkshire and The Humber"]
+midlands = ["East Midlands", "West Midlands"]
+southern = ["London", "South East", "South West", "East of England"]
+devolved_nations = ["Scotland", "Wales", "Northern Ireland"]
+
+[ranking]
+candidates_bm25 = 300
+candidates_vector = 300
+# Meaning search. The index compares compressed vectors and on its own finds only about two thirds of the truly
+# nearest passages; re-checking 5x the candidates against the full vectors finds over 90% (measured on 14 sample
+# searches) for a few milliseconds more. vector_nprobes is how many index partitions each search reads (LanceDB's
+# default is 20). `hansard reindex-vectors` rebuilds the index for the current number of vectors, measures both
+# settings against an exact search and saves the fastest that finds as much as the best.
+vector_refine_factor = 5
+# vector_nprobes = 20
+# Weight of normalised BM25 vs cosine similarity in the relevance score.
+bm25_weight = 0.5
+# Recency factor = floor + (1 - floor) * 0.5 ** (age_years / half_life).
+# Slider s in [0, 1]: s = 0 disables decay; otherwise half_life = min_half_life_years / s.
+recency_floor = 0.35
+min_half_life_years = 2.0
+default_recency = 0.5
+# Role weight slider W in [1.0, 2.0]; authority = 1 + (W - 1) * m.
+default_role_weight = 1.5
+# m by speaker's office on the speech date (max over concurrent offices).
+m_gov_match = 1.0
+m_gov_other = 0.5
+m_shadow_match = 0.6
+m_shadow_other = 0.3
+m_chair_match = 1.0
+m_chair_other = 0.5
+# An ordinary (not chairing) member of a select committee on the question's subject, on the date.
+m_member_match = 0.3
+# A contribution about one place (a town's bus route, a constituency's station) is scored down by this factor
+# for a question that is not itself about a place, region, kind of seat or member, so national points lead.
+local_factor = 0.7
+# Below this best relevance score the engine answers "no records found".
+no_records_threshold = 0.2
+# Evidence selection for briefings: balance across speaker groups (ministers,
+# opposition, committee chairs, city/town/rural backbenchers, peers).
+max_per_speaker = 2
+min_relevance_ratio = 0.25
+# Members who raised the subject on at least this many separate days among the records found (not as ministers)
+# are included first, up to max_persistent of them, most persistent first: those who keep returning to a subject.
+min_occasions = 3
+max_persistent = 4
+# Re-ranking: a small model on the server takes a second, closer look at the best candidates (no cost per question).
+# Off for now: on the test set it raised the share of sources directly on the question from 64% to 68% (re-ranking
+# 100) without narrowing the balance, but added about 5 seconds per search on a 4-core machine. See docs/EVALUATION.md.
+# reranker = "Xenova/ms-marco-MiniLM-L-6-v2"
+rerank_top = 100            # how many of the best candidates it re-reads
+rerank_weight = 0.6         # share of the final relevance it decides
+rerank_query = "both"       # what passages are compared with: question | keywords | both
+
+[answer]
+# Sonnet: about 13s and 5 US cents a briefing on the test set, against Opus's 21s and 11 cents, with similar
+# accuracy (eval/runs, October 2026). "claude-opus-5-5" writes slightly fuller briefings if cost allows.
+model = "claude-sonnet-5-5"
+summary_sources = 24
+comprehensive_sources = 40
+summary_effort = "medium"
+comprehensive_effort = "high"
+query_parse_effort = "low"
+# The model that reads each question and chooses the filters (defaults to the model above). On the 62-question test
+# set (eval/), Haiku chose every filter right on 60 (Opus: 62), about twice as fast, at a thirtieth of the cost
+# (about 0.01p a question), so it also reads the question for "Sources only".
+query_parse_model = "claude-haiku-5-5"
+# While a briefing is written, the same small model checks the quoted members' register entries that applied on the
+# day for any that concern the subject of what they said; matches are flagged on the sources (rag/interests.py).
+interests_check = true
+max_tokens = 16000
+# Server-side refusal fallback (beta). Disable if your account or platform rejects it.
+use_fallbacks = true
+
+[embedding]
+# "fastembed" (local ONNX model; weights fetched once from Hugging Face and pinned)
+# or "hashing" (deterministic, offline; for tests and the sample demo only).
+backend = "fastembed"
+# snowflake-arctic-embed-xs: 384 dims, ~2.6x faster than bge-small on CPU with similar
+# retrieval quality (benchmarked on this project; see README).
+model = "snowflake/snowflake-arctic-embed-xs"
+dim = 384
+passage_words = 250
+# Small batches: same CPU throughput as 64, a fifth of the memory (ONNX attention buffers).
+batch_size = 8
+
+[usage]
+# The site is public; each new model-written briefing costs money.
+# Every this many new briefings in a day, a visitor is shown a short note on what the site costs, with the donation
+# link (only when [site] donate_url is set). Going through to the donation page stops it for the rest of the day.
+support_reminder_every = 10
+# A backstop against automated use, not an everyday limit (the reminder above does that job).
+per_visitor_daily_questions = 40   # anonymous visitors (keyed by a salted hash of their IP address)
+per_user_daily_questions = 60      # signed-in users, when invite-only sign-in is on
+requests_per_minute = 20           # questions and searches per visitor
+answer_cache_hours = 168           # identical questions are not re-run until new records arrive (or a week)
+daily_spend_cap_usd = 10.0
+monthly_spend_cap_usd = 150.0
+# USD per million tokens, used for spend tracking only.
+price_input_per_mtok = 4.0
+price_output_per_mtok = 20.0
+price_cache_read_per_mtok = 0.2
+cache_write_multiplier = 1.25
+
+# Prices for other models, where they differ from the above (Claude Opus 5.5).
+[usage.models."claude-sonnet-5-5"]
+price_input_per_mtok = 2.0
+price_output_per_mtok = 10.0
+price_cache_read_per_mtok = 0.2
+
+[usage.models."claude-haiku-5-5"]
+# for prompts up to 100,000 tokens, which covers every call this site makes
+price_input_per_mtok = 0.1
+price_output_per_mtok = 0.5
+price_cache_read_per_mtok = 0.01
+
+[auth]
+# Public by default. Set required = true for an invite-only site (accounts are
+# created with `hansard user add`). Admin endpoints need HANSARD_ADMIN_TOKEN either way.
+required = false
+session_days = 14
+
+[sync]
+# UK local times the systemd timer runs `hansard sync`.
+times = ["07:15", "19:15"]
+
+[site]
+# The "Support this site" link (a Ko-fi or similar page). Empty: the link is not shown anywhere.
+# HANSARD_DONATE_URL in the server's .env overrides this.
+donate_url = "https://ko-fi.com/wheretheystand"
+
+[topics]
+# Topic briefings (/topics): standing questions listed in config/topics.toml, refreshed by the sync.
+enabled = true
+file = "topics.toml"
+max_per_run = 4             # at most this many rewrites per sync (the sync runs twice a day)
+unchanged_overlap = 0.8     # not rewritten when this share of the sources is the same as last time

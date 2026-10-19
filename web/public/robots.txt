@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /admin
+
+Sitemap: https://wheretheystand.uk/sitemap.xml
+Sitemap: https://wheretheystand.uk/sitemap-people.xml
+Sitemap: https://wheretheystand.uk/sitemap-briefings.xml
+Sitemap: https://wheretheystand.uk/sitemap-bills.xml
+Sitemap: https://wheretheystand.uk/sitemap-committees.xml
+Sitemap: https://wheretheystand.uk/sitemap-edms.xml
+Sitemap: https://wheretheystand.uk/sitemap-groups.xml
+Sitemap: https://wheretheystand.uk/sitemap-devolved.xml

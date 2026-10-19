@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+
+<!DOCTYPE publicwhip
+[
+<!ENTITY ndash   "&#8211;">
+<!ENTITY mdash   "&#8212;">
+<!ENTITY iexcl   "&#161;">
+<!ENTITY divide  "&#247;">
+<!ENTITY euro    "&#8364;">
+<!ENTITY trade   "&#8482;">
+<!ENTITY bull    "&#8226;">
+<!ENTITY lsquo   "&#8216;">
+<!ENTITY rsquo   "&#8217;">
+<!ENTITY sbquo   "&#8218;">
+<!ENTITY ldquo   "&#8220;">
+<!ENTITY rdquo   "&#8221;">
+<!ENTITY bdquo   "&#8222;">
+<!ENTITY dagger  "&#8224;">
+
+<!ENTITY Ouml   "&#214;" >
+<!ENTITY szlig  "&#223;" >
+<!ENTITY agrave "&#224;" >
+<!ENTITY aacute "&#225;" >
+<!ENTITY acirc  "&#226;" >
+<!ENTITY atilde "&#227;" >
+<!ENTITY auml   "&#228;" >
+<!ENTITY ccedil "&#231;" >
+<!ENTITY egrave "&#232;" >
+<!ENTITY eacute "&#233;" >
+<!ENTITY ecirc  "&#234;" >
+<!ENTITY euml   "&#235;" >
+<!ENTITY iacute "&#237;" >
+<!ENTITY icirc  "&#238;" >
+<!ENTITY iuml	"&#239;" >
+<!ENTITY ntilde "&#241;" >
+<!ENTITY nbsp   "&#160;" >
+<!ENTITY oacute "&#243;" >
+<!ENTITY ocirc  "&#244;" >
+<!ENTITY ouml   "&#246;" >
+<!ENTITY oslash "&#248;" >
+<!ENTITY uacute "&#250;" >
+<!ENTITY uuml   "&#252;" >
+<!ENTITY thorn  "&#254;" >
+
+<!ENTITY pound  "&#163;" >
+<!ENTITY sect   "&#167;" >
+<!ENTITY copy   "&#169;" >
+<!ENTITY reg    "&#174;" >
+<!ENTITY deg    "&#176;" >
+<!ENTITY plusmn "&#177;" >
+<!ENTITY sup2   "&#178;" >
+<!ENTITY micro  "&#181;" >
+<!ENTITY para   "&#182;" >
+<!ENTITY middot "&#183;" >
+<!ENTITY ordm   "&#186;" >
+<!ENTITY frac14 "&#188;" >
+<!ENTITY frac12 "&#189;" >
+<!ENTITY frac34 "&#190;" >
+<!ENTITY oelig "&#339;" >
+<!ENTITY aelig  "&#230;" >
+
+]>
+
+<publicwhip scrapeversion="a" latest="yes">
+
+<major-heading id="uk.org.publicwhip/wrans/2012-03-07a.91811.mh" oldstyleid="uk.org.publicwhip/wrans/2012-03-07a.731W.0" nospeaker="true" colnum="731W" url="http://www.publications.parliament.uk/pa/cm201212/cmhansrd/cm120307/text/120307w0001.htm#12030774000004">
+	TREASURY
+</major-heading>
+
+
+<minor-heading id="uk.org.publicwhip/wrans/2012-03-07a.95771.h" oldstyleid="uk.org.publicwhip/wrans/2012-03-07a.731W.1" nospeaker="true" colnum="731W" url="http://www.publications.parliament.uk/pa/cm201212/cmhansrd/cm120307/text/120307w0001.htm#12030774002422">
+	Bank of England: Scotland
+</minor-heading>
+
+
+<ques id="uk.org.publicwhip/wrans/2012-03-07a.95771.q0" oldstyleid="uk.org.publicwhip/wrans/2012-03-07a.731W.2" speakerid="uk.org.publicwhip/member/40274" speakername="William Bain" colnum="731W" url="http://www.publications.parliament.uk/pa/cm201212/cmhansrd/cm120307/text/120307w0001.htm#12030774002422">
+	<p pid="a.731W.2/1" qnum="95771">To ask the Chancellor of the Exchequer whether any preparations have been made for any change in the functions or remit of the Bank of England as they apply to Scotland in the event of Scotland leaving the UK.</p>
+</ques>
+
+
+<reply id="uk.org.publicwhip/wrans/2012-03-07a.95771.r0" oldstyleid="uk.org.publicwhip/wrans/2012-03-07a.731W.3" speakerid="uk.org.publicwhip/member/40331" speakername="Danny Alexander" colnum="731W" url="http://www.publications.parliament.uk/pa/cm201212/cmhansrd/cm120307/text/120307w0001.htm#12030774002423">
+	<p pid="a.731W.3/1">The Government are clear that Scotland benefits from being part of UK and the UK benefits from having Scotland within it. The Government are not making plans for independence as we are confident that people in Scotland will continue to support the United Kingdom in any referendum.</p>
+</reply>
+
+
+<minor-heading id="uk.org.publicwhip/wrans/2012-03-07a.98221.h" oldstyleid="uk.org.publicwhip/wrans/2012-03-07a.732W.0" nospeaker="true" colnum="732W" url="http://www.publications.parliament.uk/pa/cm201212/cmhansrd/cm120307/text/120307w0001.htm#12030774002424">
+	Capital Allowances
+</minor-heading>
+
+
+<gidredirect oldgid="uk.org.publicwhip/wrans/2012-03-07a.98222.h" newgid="uk.org.publicwhip/wrans/2012-03-07a.98221.h" matchtype="altques"/>
+
+
+<ques id="uk.org.publicwhip/wrans/2012-03-07a.98221.q0" oldstyleid="uk.org.publicwhip/wrans/2012-03-07a.732W.1" speakerid="uk.org.publicwhip/member/40635" speakername="Chris White" colnum="732W" url="http://www.publications.parliament.uk/pa/cm201212/cmhansrd/cm120307/text/120307w0001.htm#12030774002424">
+	<p pid="a.732W.1/1">To ask the Chancellor of the Exchequer </p>
+	<p pid="a.732W.1/2" class="numindent" qnum="98222">(1)  what the cost to the public purse was of capital allowances in each of the last three years;</p>
+	<p pid="a.732W.1/3" class="numindent" qnum="98221">(2)  what the cost to the public purse was of the annual investment allowance in each of the last three years.</p>
+</ques>
+
+
+<reply id="uk.org.publicwhip/wrans/2012-03-07a.98221.r0" oldstyleid="uk.org.publicwhip/wrans/2012-03-07a.732W.2" speakerid="uk.org.publicwhip/member/40559" speakername="David Gauke" colnum="732W" url="http://www.publications.parliament.uk/pa/cm201212/cmhansrd/cm120307/text/120307w0001.htm#12030774002425">
+	<p pid="a.732W.2/1">Information on the costs of capital allowances and the annual investment allowance in 2010-11 and 2011-12 is available in HMRC published statistics:</p>
+	<p pid="a.732W.2/2"><a href="http://www.hmrc.gov.uk/stats/tax_expenditures/table1-5.pdf">http://www.hmrc.gov.uk/stats/tax_expenditures/table1-5.pdf</a></p>
+	<p pid="a.732W.2/3">The cost of capital allowances in 2009-10 was £19 billion (of which the annual investment allowance accounted for £1.5 billion.</p>
+</reply>
+
+
+<minor-heading id="uk.org.publicwhip/wrans/2012-03-07a.98104.h" oldstyleid="uk.org.publicwhip/wrans/2012-03-07a.732W.3" nospeaker="true" colnum="732W" url="http://www.publications.parliament.uk/pa/cm201212/cmhansrd/cm120307/text/120307w0001.htm#12030774002426">
+	Capital Gains Tax
+</minor-heading>
+
+
+<ques id="uk.org.publicwhip/wrans/2012-03-07a.98104.q0" oldstyleid="uk.org.publicwhip/wrans/2012-03-07a.732W.4" speakerid="uk.org.publicwhip/member/40150" speakername="Jonathan Edwards" colnum="732W" url="http://www.publications.parliament.uk/pa/cm201212/cmhansrd/cm120307/text/120307w0001.htm#12030774002426">
+	<p pid="a.732W.4/1" qnum="98104">To ask the Chancellor of the Exchequer what estimate he has made of the additional revenue raised as a result of changes to capital gains tax since May 2010.</p>
+</ques>
+
+
+<reply id="uk.org.publicwhip/wrans/2012-03-07a.98104.r0" oldstyleid="uk.org.publicwhip/wrans/2012-03-07a.732W.5" speakerid="uk.org.publicwhip/member/40559" speakername="David Gauke" colnum="732W" url="http://www.publications.parliament.uk/pa/cm201212/cmhansrd/cm120307/text/120307w0001.htm#12030774002427">
+	<p pid="a.732W.5/1">Estimates of additional capital gains tax revenue resulting from changes since May 2010 have been published in the summer Budget 2010, Budget 2011 and autumn statement 2011 reports. Estimates from these publications for each of the measures are given in the following table:</p>
+	<table>
+		<tbody>
+			<tr pid="a.732W.5/4"> <td colspan="8" rowspan="1"><i>£ million</i></td> </tr>
+			<tr pid="a.732W.5/5"> <td colspan="1" rowspan="1"> </td> <td colspan="1" rowspan="1"><i>2010-11</i></td> <td colspan="1" rowspan="1"><i>2011-12</i></td> <td colspan="1" rowspan="1"><i>2012-13</i></td> <td colspan="1" rowspan="1"><i>2013-14</i></td> <td colspan="1" rowspan="1"><i>2014-15</i></td> <td colspan="1" rowspan="1"><i>2015-16</i></td> <td colspan="1" rowspan="1"><i>2016-1</i> <i>7</i></td> </tr>
+			<tr pid="a.732W.5/6"> <td colspan="1" rowspan="1"><i>Summer Budget 2010:</i></td> <td colspan="1" rowspan="1"> </td> <td colspan="1" rowspan="1"> </td> <td colspan="1" rowspan="1"> </td> <td colspan="1" rowspan="1"> </td> <td colspan="1" rowspan="1"> </td> <td colspan="1" rowspan="1"> </td> <td colspan="1" rowspan="1"> </td> </tr>
+			<tr pid="a.732W.5/7"> <td colspan="1" rowspan="1">Capital gains tax: increase rate for higher rate taxpayers to 28% and increase in Entrepreneurs' Relief to £5 million from 23 June 2010</td> <td colspan="1" rowspan="1">0</td> <td colspan="1" rowspan="1">725</td> <td colspan="1" rowspan="1">825</td> <td colspan="1" rowspan="1">850</td> <td colspan="1" rowspan="1">925</td> <td colspan="1" rowspan="1"><sup>(1)</sup>&#8212;</td> <td colspan="1" rowspan="1"><sup>(1)</sup>&#8212;</td> </tr>
+			<tr pid="a.732W.5/8"> <td colspan="1" rowspan="1"> </td> <td colspan="1" rowspan="1"> </td> <td colspan="1" rowspan="1"> </td> <td colspan="1" rowspan="1"> </td> <td colspan="1" rowspan="1"> </td> <td colspan="1" rowspan="1"> </td> <td colspan="1" rowspan="1"> </td> <td colspan="1" rowspan="1"> </td> </tr>
+			<tr pid="a.732W.5/9"> <td colspan="1" rowspan="1"><i>Budget 2011:</i></td> <td colspan="1" rowspan="1"> </td> <td colspan="1" rowspan="1"> </td> <td colspan="1" rowspan="1"> </td> <td colspan="1" rowspan="1"> </td> <td colspan="1" rowspan="1"> </td> <td colspan="1" rowspan="1"> </td> <td colspan="1" rowspan="1"> </td> </tr>
+			<tr pid="a.732W.5/10"> <td colspan="1" rowspan="1">Capital gains tax increase Entrepreneurs' relief lifetime limit to £10 million</td> <td colspan="1" rowspan="1">n/a</td> <td colspan="1" rowspan="1">0</td> <td colspan="1" rowspan="1">-50</td> <td colspan="1" rowspan="1">-70</td> <td colspan="1" rowspan="1">-90</td> <td colspan="1" rowspan="1">-100</td> <td colspan="1" rowspan="1"><sup>(1)</sup>&#8212;</td> </tr>
+			<tr pid="a.732W.5/11"> <td colspan="1" rowspan="1"> </td> <td colspan="1" rowspan="1"> </td> <td colspan="1" rowspan="1"> </td> <td colspan="1" rowspan="1"> </td> <td colspan="1" rowspan="1"> </td> <td colspan="1" rowspan="1"> </td> <td colspan="1" rowspan="1"> </td> <td colspan="1" rowspan="1"> </td> </tr>
+			<tr pid="a.732W.5/12"> <td colspan="1" rowspan="1"><i>Autumn statement 2011:</i></td> <td colspan="1" rowspan="1"> </td> <td colspan="1" rowspan="1"> </td> <td colspan="1" rowspan="1"> </td> <td colspan="1" rowspan="1"> </td> <td colspan="1" rowspan="1"> </td> <td colspan="1" rowspan="1"> </td> <td colspan="1" rowspan="1"> </td> </tr>
+			<tr pid="a.732W.5/13"> <td colspan="1" rowspan="1">Seed Enterprise Investment Scheme and CGT holiday for investments made into the scheme in 2012-13<sup>(2)</sup></td> <td colspan="1" rowspan="1">n/a</td> <td colspan="1" rowspan="1">0</td> <td colspan="1" rowspan="1">0</td> <td colspan="1" rowspan="1">-50</td> <td colspan="1" rowspan="1">-25</td> <td colspan="1" rowspan="1">-20</td> <td colspan="1" rowspan="1">-20</td> </tr>
+			<tr pid="a.732W.5/14"> <td colspan="1" rowspan="1"> </td> <td colspan="1" rowspan="1"> </td> <td colspan="1" rowspan="1"> </td> <td colspan="1" rowspan="1"> </td> <td colspan="1" rowspan="1"> </td> <td colspan="1" rowspan="1"> </td> <td colspan="1" rowspan="1"> </td> <td colspan="1" rowspan="1"> </td> </tr>
+			<tr pid="a.732W.5/15"> <td colspan="1" rowspan="1"><i>Autumn statement 2011:</i></td> <td colspan="1" rowspan="1"> </td> <td colspan="1" rowspan="1"> </td> <td colspan="1" rowspan="1"> </td> <td colspan="1" rowspan="1"> </td> <td colspan="1" rowspan="1"> </td> <td colspan="1" rowspan="1"> </td> <td colspan="1" rowspan="1"> </td> </tr>
+			<tr pid="a.732W.5/16"> <td colspan="1" rowspan="1">Freeze annual exempt amount for 2012-13</td> <td colspan="1" rowspan="1">n/a</td> <td colspan="1" rowspan="1">0</td> <td colspan="1" rowspan="1">0</td> <td colspan="1" rowspan="1">25</td> <td colspan="1" rowspan="1">25</td> <td colspan="1" rowspan="1">25</td> <td colspan="1" rowspan="1">30</td> </tr>
+			<tr pid="a.732W.5/17"> <td colspan="8" rowspan="1"><sup>(1)</sup> No figures given <sup>(2)</sup> The cost of the SEIS scheme is mainly income tax relief.</td> </tr>
+		</tbody>
+	</table>
+</reply>
+
+
+<minor-heading id="uk.org.publicwhip/wrans/2012-03-07a.98537.h" oldstyleid="uk.org.publicwhip/wrans/2012-03-07a.732W.6" nospeaker="true" colnum="732W" url="http://www.publications.parliament.uk/pa/cm201212/cmhansrd/cm120307/text/120307w0001.htm#12030774002428">
+	Capital Gains Tax: Second Homes
+</minor-heading>
+
+
+</publicwhip>

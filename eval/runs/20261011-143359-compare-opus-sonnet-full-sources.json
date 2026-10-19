@@ -1,0 +1,126 @@
+{
+ "stage": "compare",
+ "a": "claude-opus-5-5",
+ "b": "claude-sonnet-5-5",
+ "judge": "claude-opus-5-5",
+ "rows": [
+  {
+   "id": "wind",
+   "accuracy": "tie",
+   "balance": "claude-opus-5-5",
+   "coverage": "claude-opus-5-5",
+   "clarity": "claude-opus-5-5",
+   "overall": "claude-opus-5-5",
+   "reason": "Both quote accurately. A counts a ministerial written answer (Shanks) as a city MP's view, which is weak evidence of constituency stance. B's 'span 2013 to 2026' slightly misstates the records, since Source 22 dates from 2012. B is more balanced: it flags that the rural sceptics are all Conservatives, so seat type and party are confounded. It also covers more material, including Davies, Kearns and the moratorium context, and it is organised a little more cleanly."
+  },
+  {
+   "id": "nhs-waiting",
+   "accuracy": "tie",
+   "balance": "tie",
+   "coverage": "claude-opus-5-5",
+   "clarity": "claude-sonnet-5-5",
+   "overall": "tie",
+   "reason": "Both briefings are accurate and neutral, and both correctly note that many items are unanswered written questions. A includes useful figures: Merron's 18-week performance and Gill's adult versus children mental health referral data. B covers more members, including Prinsley, Pochin's substantive question and Smyth's interim-target claim, so it edges coverage. B has some awkwardness, such as the dangling 'whether she plans' and near-verbatim text without quotation marks, so A reads more cleanly. Overall the differences are small."
+  },
+  {
+   "id": "assisted-dying",
+   "accuracy": "claude-opus-5-5",
+   "balance": "claude-sonnet-5-5",
+   "coverage": "claude-sonnet-5-5",
+   "clarity": "tie",
+   "overall": "claude-opus-5-5",
+   "reason": "Briefing B attributes to Baroness O'Loan a quote ('The answer to these problems is not to be found in killing people…') that does not appear in Source 18, which is truncated. That is a fabricated quote. Briefing A's quotes all check out against the sources. B is somewhat more balanced and complete: it notes Leigh's in-principle support for assisted dying, flags Fenton-Glynn as dissent within Labour, and gives Kamall's 'no collective view' line. A labels a Labour sceptic but does not name him in that section. Clarity is comparable. Because B invents a quote, A is preferable to publish."
+  },
+  {
+   "id": "labour-tuition",
+   "accuracy": "claude-sonnet-5-5",
+   "balance": "tie",
+   "coverage": "claude-sonnet-5-5",
+   "clarity": "tie",
+   "overall": "claude-sonnet-5-5",
+   "reason": "Briefing B attributes a quotation to Maskell, \"tuition fees represent a broken system that creates barriers\", that does not appear in Source 23; it paraphrases separate remarks of hers as if they were verbatim. It also places Maskell under 'opposition frontbench' on fees, although her role was shadow minister for DCMS, not education. Briefing A's quotations and attributions all check out against the sources. Its coverage is also wider, including Hillier's committee findings, Beales, Atkinson and Timms, which B omits or mentions only briefly. Both briefings are neutral and note dissent among backbenchers (Alaba). Both are similarly clear and well organised."
+  },
+  {
+   "id": "northern-rail",
+   "accuracy": "claude-opus-5-5",
+   "balance": "claude-opus-5-5",
+   "coverage": "claude-sonnet-5-5",
+   "clarity": "claude-opus-5-5",
+   "overall": "claude-opus-5-5",
+   "reason": "Briefing B covers more ground, adding Clive Betts, Haigh's call for public ownership and Snowden's questions. However, its headline overstates by saying MPs 'from all parties' criticised reliability, when the Conservatives quoted mostly backed projects. Its closing 'Not covered' note is garbled. It also wrongly says no backbench written question was answered, when Source 1 answers Grahame Morris's question in Source 9. Briefing A is accurate, neutral and clearly organised, though it omits Betts and Snowden."
+  },
+  {
+   "id": "since-2024-election",
+   "accuracy": "tie",
+   "balance": "tie",
+   "coverage": "claude-sonnet-5-5",
+   "clarity": "tie",
+   "overall": "tie",
+   "reason": "Both briefings are broadly well-sourced and use similar groupings. Accuracy and clarity: A's headline repeats the Younger quotation as a stray duplicated sentence, and its notes overlook Van Mierlo's written question (Source 14). B repeatedly runs verbatim source wording into its text without quotation marks, which blurs attribution and reads awkwardly. These flaws roughly offset each other. Balance: both are fair, with similar framing of each group and no evident editorialising. Coverage: A includes the SNP's Kirsty Blackman, whom B omits entirely, giving A a slight edge. B does add Timms's implementation answer and Davies's call to scrap the benefit cap. Overall: the differences are small, so a tie."
+  },
+  {
+   "id": "ministers-energy",
+   "accuracy": "tie",
+   "balance": "tie",
+   "coverage": "claude-opus-5-5",
+   "clarity": "claude-opus-5-5",
+   "overall": "claude-opus-5-5",
+   "reason": "Both briefings quote the sources accurately and use neutral language. B covers a wider range of the arguments in the sources: no premium paid to suppliers, the cap as a temporary measure, the 'fossil fuel penalty', the review of Ofgem's role, the £45 VAT saving and the inflation effect. It also groups them helpfully by period, showing how the Labour defence moved from clean power to specific bill cuts. Consistent dates and roles make B clearer. A's comparison section is useful, but it covers fewer arguments."
+  },
+  {
+   "id": "benn-ni",
+   "accuracy": "tie",
+   "balance": "tie",
+   "coverage": "tie",
+   "clarity": "tie",
+   "overall": "tie",
+   "reason": "Both briefings quote Sources 1 and 2 faithfully and correctly flag that the evidence base is narrow. B slightly overreaches by saying Benn rejected the unnamed Member's argument while 'defending the Windsor framework against that argument'. Source 1 does not explicitly make that link, though the reading is plausible. A's headings ('critical of leave advocates') are fair characterisations. Both use neutral tone and give the same coverage of the remarks and the gaps. A is a little more structured; B is more concise. The differences are minor."
+  },
+  {
+   "id": "gender-compare",
+   "accuracy": "claude-sonnet-5-5",
+   "balance": "tie",
+   "coverage": "claude-opus-5-5",
+   "clarity": "claude-opus-5-5",
+   "overall": "claude-sonnet-5-5",
+   "reason": "Both briefings attribute to Robin Walker a quote about tax-free childcare being 'not touched' that does not appear in the truncated Source 12, so both contain a fabrication. B adds a second unsupported claim: that Walker argued against restricting 30 hours to working families because it discourages higher qualifications. B also has a muddled count of non-ministerial contributions. A is therefore more accurate. Both are neutral and similarly balanced. B's coverage is broader: it covers the Treasury ministers' matching answers on the Tax-Free Childcare cap, the education ministers' similar descriptions of the 30-hours offer, and contributions from Johnston and Jenkyns. B is also somewhat clearer and better organised, while A has a grammatical slip. On balance, A's fewer fabrications make it preferable to publish."
+  },
+  {
+   "id": "loaded",
+   "accuracy": "tie",
+   "balance": "tie",
+   "coverage": "claude-opus-5-5",
+   "clarity": "claude-sonnet-5-5",
+   "overall": "tie",
+   "reason": "Both briefings are accurately sourced, with correct quotes and attributions, and neither states a view of its own. Each gives a counterpoint on safeguards or evaluation: A cites Churchill's safeguards and B cites Sharma's commitment to evaluate. B covers slightly more ground, including the refusal to share data for the University of Glasgow study and the explicit 'balance' framing. A is cleaner to read, whereas B carries awkward verbatim question fragments such as '(a)... and b)' and unquoted ellipses. The two differences roughly offset each other."
+  }
+ ],
+ "tally": {
+  "accuracy": {
+   "tie": 6,
+   "claude-opus-5-5": 2,
+   "claude-sonnet-5-5": 2
+  },
+  "balance": {
+   "claude-opus-5-5": 2,
+   "tie": 7,
+   "claude-sonnet-5-5": 1
+  },
+  "coverage": {
+   "claude-opus-5-5": 5,
+   "claude-sonnet-5-5": 4,
+   "tie": 1
+  },
+  "clarity": {
+   "claude-opus-5-5": 4,
+   "claude-sonnet-5-5": 2,
+   "tie": 4
+  },
+  "overall": {
+   "claude-opus-5-5": 4,
+   "tie": 4,
+   "claude-sonnet-5-5": 2
+  }
+ },
+ "cost_usd": 0.757
+}

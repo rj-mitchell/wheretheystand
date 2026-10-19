@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <!--#include head-->
+    <title>Data and API — Where They Stand</title>
+    <meta name="description" content="Free, read-only access to the data behind Where They Stand: search the record, debates, votes, bills, early day motions, committees and the devolved parliaments, as JSON or RSS." />
+    <link rel="canonical" href="https://wheretheystand.uk/developers" />
+  </head>
+  <body>
+    <div class="app page">
+      <!--#include header-->
+      <main id="main" tabindex="-1" class="prose">
+        <h1>Data and API</h1>
+        <p class="lede">
+          Researchers, journalists and developers can use the data behind this site directly. Everything here is free,
+          read-only and needs no key. None of it uses AI: briefings are only available on the site.
+        </p>
+
+        <nav class="toc" aria-label="On this page">
+          <ol>
+            <li><a href="#terms">Terms and fair use</a></li>
+            <li><a href="#search">Search the record</a></li>
+            <li><a href="#endpoints">Other endpoints</a></li>
+            <li><a href="#feeds">RSS feeds</a></li>
+            <li><a href="#elsewhere">Better sources for bulk data</a></li>
+          </ol>
+        </nav>
+
+        <h2 id="terms">Terms and fair use</h2>
+        <ul>
+          <li>
+            Parliamentary information is licensed under the
+            <a href="https://www.parliament.uk/site-information/copyright-parliament/open-parliament-licence/">Open Parliament Licence v3.0</a>;
+            please credit it, and Where They Stand, when you use it.
+          </li>
+          <li>
+            Requests are limited per visitor (about 20 a minute, shared with the rest of the site). If you get a 429
+            response, wait a minute. Please do not use the API to copy the whole archive: the sources listed below
+            are better for that.
+          </li>
+          <li>
+            The API is in beta and may change.
+          </li>
+        </ul>
+
+        <h2 id="search">Search the record</h2>
+        <p>
+          <code>GET /api/v1/search?q=onshore wind</code> returns the contributions in the Westminster record since 1997
+          that best match the words, ranked by relevance (by keyword and by meaning), with the speaker as they were on
+          the day. It may take a few seconds.
+        </p>
+        <dl class="defs">
+          <dt><code>q</code></dt>
+          <dd>The words to search for (required).</dd>
+          <dt><code>date_from</code>, <code>date_to</code></dt>
+          <dd>Limit to dates, written as YYYY-MM-DD.</dd>
+          <dt><code>house</code></dt>
+          <dd><code>commons</code> or <code>lords</code>.</dd>
+          <dt><code>party</code></dt>
+          <dd>A party identifier, for example <code>labour</code>, <code>conservative</code>, <code>liberal-democrat</code>, <code>scottish-national-party</code>, <code>reform</code>, <code>green</code>.</dd>
+          <dt><code>written</code></dt>
+          <dd><code>false</code> to leave out written questions, answers and statements.</dd>
+          <dt><code>limit</code></dt>
+          <dd>Up to 50 results (default 20).</dd>
+        </dl>
+        <p>
+          Each result has the record's identifier (TheyWorkForYou's), date, House, chamber, type, heading, speaker (name,
+          party, constituency and parlparse person identifier), an excerpt, the Hansard column or question number, links
+          to the official record and TheyWorkForYou, and a relevance score between 0 and 1.
+        </p>
+
+        <h2 id="endpoints">Other endpoints</h2>
+        <p>These return JSON and are what the site's own pages use.</p>
+        <dl class="defs">
+          <dt><code>/api/people?q=</code>, <code>/api/people/{number}</code></dt>
+          <dd>MPs and peers: memberships, roles, recent contributions, voting record, registered interests, early day motions.</dd>
+          <dt><code>/api/debates/{date}/{chamber}/{slug}</code></dt>
+          <dd>A whole debate in order. <code>chamber</code> is <code>commons</code>, <code>lords</code>, <code>westminster-hall</code> or <code>public-bill-committee</code>; the address is the same as the debate's page on this site.</dd>
+          <dt><code>/api/week?start=YYYY-MM-DD</code></dt>
+          <dd>One sitting week: debates by day and chamber, every vote with its kind, written statements.</dd>
+          <dt><code>/api/bills</code>, <code>/api/bills/{slug}</code></dt>
+          <dd>Bills since 1997, their sittings and their votes, with what each vote was on.</dd>
+          <dt><code>/api/trends?q=&amp;by=</code></dt>
+          <dd>How often words were used each year, with totals for context. <code>by</code> is <code>all</code>, <code>party</code>, <code>house</code>, <code>nation</code> or <code>parliaments</code>.</dd>
+          <dt><code>/api/edms?q=&amp;person=</code>, <code>/api/edms/{id}</code></dt>
+          <dd>Early day motions and who signed them, with each member's party on the day they signed.</dd>
+          <dt><code>/api/committees</code>, <code>/api/committees/{id}</code>, <code>/api/inquiries/{id}</code>, <code>/api/witnesses?q=</code></dt>
+          <dd>Committees, their inquiries, reports and government responses, and who gave oral evidence.</dd>
+          <dt><code>/api/devolved</code>, <code>/api/devolved/search?q=&amp;leg=</code>, <code>/api/devolved/{leg}/{key}</code></dt>
+          <dd>The Scottish Parliament (<code>scottish-parliament</code>), the Senedd (<code>senedd</code>) and the Northern Ireland Assembly (<code>ni-assembly</code>).</dd>
+        </dl>
+
+        <h2 id="feeds">RSS feeds</h2>
+        <ul>
+          <li><code>/feeds/people/{number}.xml</code>: what a member has said, newest first.</li>
+          <li><code>/feeds/topics.xml</code>, <code>/feeds/bills.xml</code>, <code>/feeds/edms.xml</code>, <code>/feeds/committee-reports.xml</code>, <code>/feeds/corrections.xml</code>.</li>
+        </ul>
+
+        <h2 id="elsewhere">Better sources for bulk data</h2>
+        <p>For whole datasets, go to the sources this site is built on:</p>
+        <ul>
+          <li><a href="https://www.theyworkforyou.com/pwdata/">TheyWorkForYou's data</a> and <a href="https://github.com/mysociety/parlparse">ParlParse</a> (mySociety): the Hansard record and member data.</li>
+          <li><a href="https://developer.parliament.uk/">UK Parliament's developer hub</a>: members, divisions, bills, committees, written questions and early day motions.</li>
+          <li>The <a href="https://github.com/rj-mitchell/wheretheystand">source code of this site</a>, to run your own copy.</li>
+        </ul>
+      </main>
+      <!--#include footer-->
+    </div>
+    <script type="module" src="/src/pages.ts"></script>
+  </body>
+</html>

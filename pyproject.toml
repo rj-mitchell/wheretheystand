@@ -1,0 +1,59 @@
+[project]
+name = "hansard"
+version = "0.1.0"
+description = "Verifiable UK Parliamentary research engine over Hansard, with cited, auditable answers."
+readme = "README.md"
+license = "AGPL-3.0-only"
+requires-python = ">=3.12"
+dependencies = [
+    "anthropic>=0.69",
+    "argon2-cffi>=23.1",
+    "duckdb>=1.1",
+    "fastapi>=0.115",
+    "httpx>=0.27",
+    "lancedb>=0.17",
+    "lxml>=5.3",
+    "numpy>=1.26",
+    "pillow>=11",
+    "pyarrow>=17",
+    "pydantic>=2.8",
+    "typer>=0.12",
+    "uvicorn[standard]>=0.30",
+]
+
+[project.optional-dependencies]
+# Local open-source embedding models (ONNX runtime). Weights are downloaded once
+# from Hugging Face at setup and pinned; no data is fetched from Hugging Face.
+embed = ["fastembed>=0.4"]
+
+[project.scripts]
+hansard = "hansard.cli:app"
+
+[dependency-groups]
+dev = [
+    "psutil>=6.0",
+    "pytest>=8.3",
+    "ruff>=0.6",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/hansard"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "SIM"]
+ignore = ["E501"]
+
+[tool.ruff.lint.flake8-bugbear]
+extend-immutable-calls = ["typer.Option", "typer.Argument", "fastapi.Depends", "fastapi.params.Depends"]

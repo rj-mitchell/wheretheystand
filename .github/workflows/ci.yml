@@ -1,0 +1,79 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  python:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v3
+        with:
+          version: "0.5.11"
+      - run: uv python install 3.12
+      - run: uv sync --frozen --python 3.12
+      - run: uv run ruff check src tests scripts
+      - run: uv run pytest
+
+  web:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: web
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm test
+      - run: npm run build
+
+  # The server image must build, and the site must start inside it (on the offline sample data).
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: docker/setup-buildx-action@v3
+      - uses: docker/build-push-action@v6
+        with:
+          context: .
+          load: true
+          tags: wheretheystand:ci
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+      - name: Start the site on the sample data
+        run: |
+          docker run -d --name wts -p 8000:8000 wheretheystand:ci \
+            sh -c "hansard bootstrap --sample && exec hansard serve --host 0.0.0.0 --port 8000"
+          for i in $(seq 1 60); do
+            curl -fsS http://localhost:8000/api/health && break
+            sleep 2
+          done
+      - name: Check the pages respond
+        run: |
+          curl -fsS http://localhost:8000/ | grep -q "Where They Stand"
+          curl -fsS http://localhost:8000/methodology | grep -q "Methodology"
+          curl -fsS http://localhost:8000/corrections | grep -q "Report a problem"
+          curl -fsS http://localhost:8000/api/status | grep -q "latest_record"
+          curl -fsS -X POST http://localhost:8000/api/search -H "Content-Type: application/json" \
+            -d '{"question": "trial by jury"}' | grep -q '"sources"'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Accessibility check (axe, WCAG 2.2 AA, light and dark, desktop and phone)
+        run: |
+          mkdir -p /tmp/a11y && cp scripts/a11y.mjs /tmp/a11y/
+          cd /tmp/a11y
+          npm init -y > /dev/null
+          npm install --no-audit --no-fund playwright@1.47.2 axe-core@4.10.0
+          npx playwright install --with-deps chromium
+          node a11y.mjs http://localhost:8000
+      - name: Show the container log if anything failed
+        if: failure()
+        run: docker logs wts || true

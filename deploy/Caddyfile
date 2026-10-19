@@ -1,0 +1,36 @@
+{
+	# Cloudflare's proxy addresses (kept current by deploy/caddy-local.sh): a request from one of them carries the
+	# visitor's own address in CF-Connecting-IP, which is then used for rate limits and visit counts
+	import /etc/caddy/local/proxies.caddy
+}
+
+{$DOMAIN} {
+	# the certificate: Caddy's own from Let's Encrypt, or Cloudflare's origin certificate once behind its proxy
+	# (deploy/cloudflare.sh)
+	import /etc/caddy/local/site.caddy
+	encode zstd gzip
+	# built files have a fingerprint in their name, so a browser can keep them for a year without asking again
+	@fingerprinted path /assets/*
+	header @fingerprinted Cache-Control "public, max-age=31536000, immutable"
+	# flush_interval -1 streams answers to the browser as they are written (server-sent events)
+	reverse_proxy app:8000 {
+		flush_interval -1
+		# the visitor's address only (from Cloudflare's header when the request came through it), never one a
+		# visitor added themselves
+		header_up X-Forwarded-For {client_ip}
+	}
+	header {
+		Strict-Transport-Security "max-age=31536000; includeSubDomains"
+		X-Content-Type-Options "nosniff"
+		X-Frame-Options "DENY"
+		Referrer-Policy "strict-origin-when-cross-origin"
+		Content-Security-Policy "default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; connect-src 'self'; frame-ancestors 'none'"
+		# Cloudflare must pass pages on as they are: this stops it adding its own analytics script (Web Analytics
+		# can be switched on for a site by default), which the privacy notice says this site does not use
+		+Cache-Control "no-transform"
+	}
+}
+
+# www and the other domain names: one permanent redirect to the main address, made by this server, or by Cloudflare
+# once its redirect rules are set up (deploy/cloudflare.sh redirects on)
+import /etc/caddy/local/redirects.caddy

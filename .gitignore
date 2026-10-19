@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+dist/
+build/
+
+# Local data (fetched / generated; never committed)
+/data/
+/var/
+
+# Web
+web/node_modules/
+web/dist/
+web/coverage/
+
+# Env / secrets
+.env
+.env.*
+!.env.example
+
+# OS / editors
+.DS_Store
+.idea/
+.vscode/
+web/*.tsbuildinfo
+
+# server backups (deploy/docker-compose.yml)
+deploy/backups/
+
+# This server's own Caddy settings and certificates (deploy/caddy-local.sh, deploy/cloudflare.sh)
+/deploy/local/
+
+# scripts' cache of downloaded answers
+/.cache/
+
+# full test-set runs (large; their summaries are kept)
+/eval/runs/*-sources-*.json
+!/eval/runs/*-sources-summary.json
+/eval/runs/*-briefings-*.json

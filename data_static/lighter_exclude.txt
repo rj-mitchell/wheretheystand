@@ -1,0 +1,6 @@
+# Moments left off the lighter side page, one per line: a record ID (uk.org.publicwhip/...) or a phrase from the
+# quoted words (case does not matter). Lines starting with # are notes. Tributes, grave subjects and short or
+# formulaic lines are left out by rule (src/hansard/lighter.py); this list is for anything the rules miss.
+decades of pain and hurt
+I think the Minister has got the message
+I do thank my hon. Friend for that intervention

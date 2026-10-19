@@ -1,0 +1,9 @@
+[Unit]
+Description=Restart Where They Stand if it has stopped answering
+After=docker.service
+Requires=docker.service
+
+[Service]
+Type=oneshot
+ExecStart=/bin/bash /opt/hansardgpt/deploy/watchdog.sh
+TimeoutStartSec=5min

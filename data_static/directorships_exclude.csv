@@ -1,0 +1,3 @@
+# Companies House officer records wrongly matched to a member. person_id as in parlparse (or * for any member);
+# officer_id is the part of the Companies House officer address between /officers/ and /appointments.
+person_id,officer_id,reason

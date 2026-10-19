@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <!--#include head-->
+    <title>Donations to MPs — Where They Stand</title>
+    <meta name="description" content="Political donations to MPs and their local parties, as registered with the Electoral Commission: the biggest donors, the latest donations, and every MP's record." />
+    <link rel="canonical" href="https://wheretheystand.uk/donations" />
+  </head>
+  <body>
+    <div class="app page">
+      <!--#include header-->
+      <main id="main" tabindex="-1" class="prose">
+        <h1>Donations to MPs</h1>
+        <p class="lede">
+          Political donations to MPs, and to their local parties, as reported to the Electoral Commission. Search for a
+          donor, or open any MP's page to see the donations they received.
+        </p>
+        <p class="small">
+          The Electoral Commission publishes donations above the reporting limits, with the donor's name. A donation is
+          not a finding of wrongdoing. Donations are matched to MPs by name and date, so a few may be missing; every
+          entry links to the Commission's own record. See <a href="/methodology#donations">how they are matched</a>.
+          Donations to parties nationally, loans, and election spending are not shown here: search them on the
+          <a href="https://search.electoralcommission.org.uk/" rel="noreferrer">Electoral Commission's register</a>. Who
+          owns and runs a company that gave is on <a href="https://find-and-update.company-information.service.gov.uk/" rel="noreferrer">Companies
+          House</a>.
+        </p>
+        <p class="small muted">
+          Contains Electoral Commission Information © Electoral Commission and/or database right.
+        </p>
+        <div id="donations-root"><p class="muted">Loading…</p></div>
+      </main>
+      <!--#include footer-->
+    </div>
+    <script type="module" src="/src/donations.tsx"></script>
+  </body>
+</html>

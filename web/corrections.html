@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <!--#include head-->
+    <link rel="alternate" type="application/rss+xml" title="Where They Stand: corrections" href="/feeds/corrections.xml" />
+    <title>Corrections and problems — Where They Stand</title>
+    <meta name="description" content="Errors found in Where They Stand briefings, briefings that have been withdrawn, and how to report a problem." />
+    <link rel="canonical" href="https://wheretheystand.uk/corrections" />
+  </head>
+  <body>
+    <div class="app page">
+      <!--#include header-->
+      <main id="main" tabindex="-1" class="prose">
+        <h1>Corrections and problems</h1>
+        <p class="lede">
+          Tell us about a problem, and see errors found in briefings and briefings that have been withdrawn. Every
+          report is read, and anything put right is listed here. <a href="#report">Report a problem</a>.
+        </p>
+
+        <h2>Corrections log</h2>
+        <div id="corrections-live" aria-live="polite"><p class="muted">Loading…</p></div>
+
+        <h2 id="report">Report a problem</h2>
+        <p>
+          If a briefing gets something wrong, misrepresents what someone said, or you have any other concern, please
+          tell us. The quickest way is the "Report a problem" link under the briefing itself, which tells us which
+          briefing you mean. You can also use this form, or email
+          <a href="mailto:admin@wheretheystand.uk">admin@wheretheystand.uk</a>.
+        </p>
+        <p>
+          Briefings are written by AI from the official record. Where a briefing is wrong, it is withdrawn and listed
+          above. The record itself is Parliament's: to correct Hansard, contact the
+          <a href="https://hansard.parliament.uk/about">Hansard editors</a>.
+        </p>
+        <form class="report-form" id="report-form" novalidate>
+          <fieldset>
+            <legend>What is wrong?</legend>
+            <label><input type="radio" name="kind" value="correction" checked /> An error in a briefing</label>
+            <label><input type="radio" name="kind" value="complaint" /> Someone is represented unfairly</label>
+            <label><input type="radio" name="kind" value="general" /> Something else</label>
+          </fieldset>
+          <label>
+            Address of the briefing, if there is one
+            <input name="briefing" type="url" inputmode="url" placeholder="https://wheretheystand.uk/b/…" maxlength="200" />
+          </label>
+          <label>
+            Details
+            <textarea name="message" rows="5" minlength="10" maxlength="4000" required></textarea>
+          </label>
+          <label>
+            Your email (optional, only so we can reply)
+            <input name="contact" type="email" autocomplete="email" maxlength="200" />
+          </label>
+          <label class="trap" aria-hidden="true">
+            Leave this empty
+            <input name="website" tabindex="-1" autocomplete="off" />
+          </label>
+          <p class="form-error" id="report-error" role="alert" hidden></p>
+          <div class="form-actions">
+            <button type="submit" class="secondary">Send report</button>
+          </div>
+          <p class="muted small">
+            Reports are private. Your email is deleted once the report is dealt with. See the
+            <a href="/privacy">privacy notice</a>.
+          </p>
+        </form>
+        <p class="report-sent" id="report-sent" role="status" hidden>
+          Thank you. Your report has been received.
+        </p>
+        <p class="small feed-link"><a href="/feeds/corrections.xml">Follow corrections in a feed reader (RSS)</a></p>
+      </main>
+      <!--#include footer-->
+    </div>
+    <script type="module" src="/src/pages.ts"></script>
+  </body>
+</html>

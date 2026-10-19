@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <!--#include head-->
+    <title>Accessibility — Where They Stand</title>
+    <meta name="description" content="How accessible Where They Stand is, how it was tested, known limitations, and how to report a problem." />
+    <link rel="canonical" href="https://wheretheystand.uk/accessibility" />
+  </head>
+  <body>
+    <div class="app page">
+      <!--#include header-->
+      <main id="main" tabindex="-1" class="prose">
+        <h1>Accessibility</h1>
+        <p class="lede">
+          Where They Stand should be usable by everyone, including people who use a screen reader, a keyboard, voice
+          control or magnification.
+        </p>
+
+        <h2>What you can expect</h2>
+        <ul>
+          <li>Text can be enlarged to 200% or more without loss of content, and the layout adapts to small screens.</li>
+          <li>Every part of the site can be used with a keyboard alone. A "Skip to main content" link is the first stop.</li>
+          <li>
+            Pages follow your device's light or dark setting, respect "reduce motion", and keep working with
+            high-contrast (forced colours) modes.
+          </li>
+          <li>Text and controls meet the colour contrast levels in the guidelines.</li>
+          <li>
+            Progress while a briefing is prepared ("Searching", "Preparing a sourced briefing") and its completion are
+            announced to screen readers.
+          </li>
+          <li>Citations are buttons labelled with the source they open, such as "Open source 3".</li>
+          <li>The site uses no cookies and needs no account.</li>
+        </ul>
+
+        <h2>Standard and testing</h2>
+        <p>
+          The site aims to meet the
+          <a href="https://www.w3.org/TR/WCAG22/">Web Content Accessibility Guidelines (WCAG) 2.2</a> at level AA.
+          It was last tested on 10 October 2026. Every page, and the main interactive states (a briefing, the filter
+          editor, an open source, the report form), were checked with the axe-core automated checker at desktop and
+          phone sizes in light and dark modes, with no failures found. Keyboard use was checked by hand.
+        </p>
+        <p>
+          Automated checks find only some problems, so testing with assistive technology users is still to do. If
+          something does not work for you, please tell us.
+        </p>
+
+        <h2>Known limitations</h2>
+        <ul>
+          <li>
+            Briefings are written by AI. They are checked for citations, not for plain English, so some may be harder
+            to read than we would like.
+          </li>
+          <li>
+            Quotations are reproduced exactly as they appear in Hansard, including its formatting and any errors, so
+            that they can be checked against the official record.
+          </li>
+          <li>
+            Links to the official record and to TheyWorkForYou go to sites we do not run, whose accessibility we cannot
+            control.
+          </li>
+        </ul>
+
+        <h2>Reporting a problem</h2>
+        <p>
+          If you find something hard to use, or need information in a different format, email
+          <a href="mailto:admin@wheretheystand.uk">admin@wheretheystand.uk</a> or use the
+          <a href="/corrections#report">report form</a>. We aim to reply within 10 working days.
+        </p>
+      </main>
+      <!--#include footer-->
+    </div>
+    <script type="module" src="/src/pages.ts"></script>
+  </body>
+</html>

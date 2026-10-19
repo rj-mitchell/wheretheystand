@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <!--#include head-->
+    <title>Admin — Where They Stand</title>
+    <meta name="robots" content="noindex, nofollow" />
+  </head>
+  <body>
+    <div class="app page">
+      <!--#include header-->
+      <main id="main" tabindex="-1" class="prose admin">
+        <h1>Admin</h1>
+        <form id="admin-login" class="report-form">
+          <label>
+            Admin token
+            <input id="admin-token" type="password" autocomplete="current-password" required />
+          </label>
+          <p class="muted small">
+            The token is in <code>/opt/hansardgpt/deploy/.env</code> on the server (<code>HANSARD_ADMIN_TOKEN</code>).
+            It is kept only in this browser tab and forgotten when the tab closes.
+          </p>
+          <p class="form-error" id="admin-error" role="alert" hidden></p>
+          <div class="form-actions"><button type="submit" class="secondary">Open</button></div>
+        </form>
+        <div id="admin-panel" hidden>
+          <p class="form-actions"><button type="button" class="link small" id="admin-refresh">Refresh</button>
+            <button type="button" class="link small" id="admin-signout">Forget token</button></p>
+          <div id="admin-alerts" role="status"></div>
+          <section aria-labelledby="h-spend"><h2 id="h-spend">Spending</h2><div id="admin-spend"></div></section>
+          <section aria-labelledby="h-reports"><h2 id="h-reports">Open reports</h2><div id="admin-reports"></div></section>
+          <section aria-labelledby="h-tasks"><h2 id="h-tasks">Is it working? (last 30 days)</h2><div id="admin-tasks"></div></section>
+          <section aria-labelledby="h-feedback"><h2 id="h-feedback">Feedback</h2><div id="admin-feedback"></div></section>
+          <section aria-labelledby="h-visits"><h2 id="h-visits">Visits (last 30 days)</h2><div id="admin-visits"></div></section>
+          <section aria-labelledby="h-popular"><h2 id="h-popular">Popular questions (last 30 days)</h2><div id="admin-popular"></div></section>
+          <section aria-labelledby="h-failures"><h2 id="h-failures">Recent failures</h2><div id="admin-failures"></div></section>
+          <section aria-labelledby="h-briefings"><h2 id="h-briefings">Recent briefings</h2><div id="admin-briefings"></div></section>
+          <section aria-labelledby="h-featured">
+            <h2 id="h-featured">Featured briefings</h2>
+            <p class="muted small">Listed on the Topics page and opened to search engines. Choose briefings that are balanced, well sourced and of lasting interest.</p>
+            <form id="feature-form" class="report-form">
+              <label for="feature-briefing">Briefing address or id</label>
+              <input id="feature-briefing" required placeholder="https://wheretheystand.uk/b/…" />
+              <label for="feature-title">Title (optional: the question is used otherwise)</label>
+              <input id="feature-title" maxlength="200" />
+              <label for="feature-blurb">One-line description (optional: the opening of the briefing is used otherwise)</label>
+              <input id="feature-blurb" maxlength="600" />
+              <p class="form-actions"><button type="submit" class="primary">Feature this briefing</button></p>
+              <p class="form-error" id="feature-error" role="alert" hidden></p>
+            </form>
+            <div id="admin-featured"></div>
+          </section>
+          <section aria-labelledby="h-topics"><h2 id="h-topics">Topic briefings</h2>
+            <p class="muted small">The list is in config/topics.toml. Topics are refreshed by the twice-daily update, a few at a time, only when the evidence has changed.</p>
+            <div id="admin-topics"></div></section>
+          <section aria-labelledby="h-updates"><h2 id="h-updates">Recent updates</h2><div id="admin-updates"></div></section>
+        </div>
+      </main>
+    </div>
+    <script type="module" src="/src/admin.ts"></script>
+  </body>
+</html>

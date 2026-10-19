@@ -1,0 +1,125 @@
+{
+ "stage": "compare",
+ "a": "claude-opus-5-5",
+ "b": "claude-sonnet-5-5",
+ "judge": "claude-opus-5-5",
+ "rows": [
+  {
+   "id": "wind",
+   "accuracy": "claude-sonnet-5-5",
+   "balance": "claude-opus-5-5",
+   "coverage": "claude-opus-5-5",
+   "clarity": "claude-opus-5-5",
+   "overall": "claude-opus-5-5",
+   "reason": "Both briefings attribute quotations to Hayes [14] and Yeo [17] that do not appear in those truncated extracts. B has more of these unsupported quotes (the 'moratorium' line and two Yeo phrases). It also gives the span as 2013–2026, although Source 22 is from 2012. A's error is smaller, so A edges accuracy. On balance, B is stronger because it flags that the rural sceptics are all Conservatives, so seat type and party cannot be separated. B also covers more of the sources, including Davies, Kearns, Chadwick and Brown. Its structure is clearer, while A repeats the Hayes quote. Overall B is preferable, though both need their fabricated quotes corrected."
+  },
+  {
+   "id": "nhs-waiting",
+   "accuracy": "tie",
+   "balance": "tie",
+   "coverage": "claude-opus-5-5",
+   "clarity": "tie",
+   "overall": "claude-opus-5-5",
+   "reason": "Both briefings contain material not found in the supplied extracts, so neither wins on accuracy. Briefing A cites figures from Gill's 'table', which does not appear in the excerpt, and quotes from Twist and Jones beyond the extracts. Briefing B also quotes Twist and Jones ('cart before the horse', '12 times more patients') beyond the extracts. Their levels of unsupported content are comparable. Both use neutral language and note that many items are unanswered written questions. Briefing B covers more of the sources: Smyth's statement that the 65% interim target was met, Prinsley on audiology data, and Pochin's question on referral-to-list delays. Briefing A only mentions Pochin as stating no position. Both are well organised, so clarity is level. Briefing B is slightly preferable because of its broader coverage."
+  },
+  {
+   "id": "assisted-dying",
+   "accuracy": "claude-opus-5-5",
+   "balance": "claude-sonnet-5-5",
+   "coverage": "tie",
+   "clarity": "tie",
+   "overall": "tie",
+   "reason": "Both briefings rely on quotes that do not appear in the supplied extracts. Both use the Prinsley 'complementary' line and the Heylings 'either/or' line, and both use O'Loan material that is not shown. A also has an unsupported Moran quote. B has an unsupported Kamall 'no collective view' quote and misquotes Leigh as saying 'I am in favour of assisted dying'; the source says 'assisted to die in a dignified way', which is ambiguous and seems to refer to palliative care, so B's version distorts it. A therefore edges accuracy. B handles internal dissent more explicitly, setting Fenton-Glynn's Labour dissent against Opher and noting Leigh's nuance, which gives it a slight edge on balance. Coverage and clarity are similar, so the overall difference is small."
+  },
+  {
+   "id": "labour-tuition",
+   "accuracy": "claude-opus-5-5",
+   "balance": "tie",
+   "coverage": "claude-sonnet-5-5",
+   "clarity": "tie",
+   "overall": "claude-opus-5-5",
+   "reason": "Both briefings attribute to Source 10 quotes that are not in it (\"abolish tuition fees\" and \"marketisation… has failed\"). Both also rely on quotes from truncated Sources 17 and 23 that cannot be checked. A adds further unsupported quotes: Hillier on \"mis-selling\" and \"50:50\", Beales, and Sewards on a graduate tax. B's Sewards quote and its use of Sources 2 and 4 are verifiable, so B has fewer unsupported claims. A covers more speakers (Timms, Hillier, Beales, Atkinson), but some of that coverage rests on unsupported material. Balance and clarity are comparable. B is preferable to publish."
+  },
+  {
+   "id": "northern-rail",
+   "accuracy": "claude-opus-5-5",
+   "balance": "tie",
+   "coverage": "claude-sonnet-5-5",
+   "clarity": "claude-opus-5-5",
+   "overall": "claude-sonnet-5-5",
+   "reason": "Both briefings rely on text that is cut off in the visible sources: the Haigh, Jones and Smart freight quotes. B also adds a public-ownership call. B's closing note is garbled. It also wrongly says no backbench written questions were answered, when Source 1 answers Morris's question (Source 9). B's headline also overstates 'all parties' as criticising reliability. A is therefore slightly more accurate and cleaner. A does lump the government backbencher Morris in with the opposition. B covers more of the sources (Betts, Snowden) and groups them more helpfully by party and period, noting Labour's shift from opposition to government. On balance B is the better briefing to publish, with fixes."
+  },
+  {
+   "id": "since-2024-election",
+   "accuracy": "claude-sonnet-5-5",
+   "balance": "tie",
+   "coverage": "tie",
+   "clarity": "tie",
+   "overall": "claude-sonnet-5-5",
+   "reason": "Both briefings invent material. Each puts words in Helen Hayes's mouth (\"I am proud to vote for it today\"), invents a benefit-cap point for Lord Sikka, and gives Baroness Bennett a \"missed opportunity\" line that is not in Source 15. B goes further: it attributes to Ann Davies, under Source 22, an urging to scrap the benefit cap that Source 22 does not contain. B also runs source wording into its sentences without quotation marks, which blurs paraphrase and quotation. A repeats a sentence in its headline. A also wrongly says Lib Dem material appears only via Daby, overlooking Van Mierlo, whom B correctly notes. Both are neutral in tone and cover similar ground: A includes Blackman, B includes the Source 2 implementation answer. On balance A has slightly fewer accuracy problems."
+  },
+  {
+   "id": "ministers-energy",
+   "accuracy": "claude-opus-5-5",
+   "balance": "tie",
+   "coverage": "claude-opus-5-5",
+   "clarity": "claude-opus-5-5",
+   "overall": "claude-opus-5-5",
+   "reason": "Both briefings attribute a quotation to Andrew Bowie that does not appear in the truncated Source 18. A's is \"remain in force until the end of March 2024\"; B's is \"the tariff cap was always intended to be a temporary measure\". A also adds unsupported wording to the Rees-Mogg extract (\"for households, businesses and others\"), so B is slightly more accurate. B covers more: Fahnbulleh's clean-energy rationale, Stuart's point on the EPG premium, Hunt's Ofgem review and Bell's inflation figure. It also groups Labour's shift from clean-power arguments to specific bill cuts more clearly, with dates throughout. Both are neutral in tone."
+  },
+  {
+   "id": "benn-ni",
+   "accuracy": "tie",
+   "balance": "tie",
+   "coverage": "tie",
+   "clarity": "tie",
+   "overall": "tie",
+   "reason": "Both briefings quote Benn's two 25 March 2026 contributions accurately and note the narrow evidence base. Each adds a minor inference. A says Benn described the agreement as the basis of progress. B says he was defending the Windsor framework against the unnamed member's argument, although that argument concerned the Good Friday agreement. B also asserts the records lack Benn's reply to Jessica Toale, which is not certain. Both are neutral. They cover the same material: the Good Friday agreement anniversary, the Windsor framework and Brexit, and the SPS negotiations. Each has a sensible gaps section. A's headline and thematic grouping are slightly more structured, while B is a little more concise. The differences are small."
+  },
+  {
+   "id": "gender-compare",
+   "accuracy": "claude-sonnet-5-5",
+   "balance": "tie",
+   "coverage": "claude-opus-5-5",
+   "clarity": "tie",
+   "overall": "claude-sonnet-5-5",
+   "reason": "Both briefings include material not found in the truncated extracts, notably the two Robin Walker quotes. A also invents a Paul Waugh quote. B goes further: it quotes Olivia Bailey from text that is cut off in Source 1, adds a Walker argument about higher qualifications, and paraphrases Coutinho in Source 13 beyond the extract. That gives B more unsupported claims. B covers more and draws more useful cross-gender comparisons, using Johnston, Jenkyns, Glen and Trott. Both are neutral and add similar caveats. On clarity, B is fuller and well structured but has an awkward evidence note, while A is concise but has minor slips. A's fewer fabrications make it preferable to publish."
+  },
+  {
+   "id": "loaded",
+   "accuracy": "claude-sonnet-5-5",
+   "balance": "tie",
+   "coverage": "tie",
+   "clarity": "tie",
+   "overall": "claude-sonnet-5-5",
+   "reason": "Source 7 is truncated, and both briefings quote Rutley lines that do not appear in it, such as 'we do not think it is unreasonable that all overpayments are repayable'. Briefing B goes further. It adds two more invented Rutley quotes ('balance our duty to the taxpayer…' and 'strike the right balance…'). It also claims overpayments include those 'caused by official error' and says the Source 5 project was a 'University of Glasgow study of the health impacts of sanctions'; neither detail is in the sources. Briefing A also slightly completes a truncated quote from Source 2, but it invents less overall. On balance both are neutral and decline to judge motive. On coverage each includes items the other omits: A has Tomlinson and Churchill's safeguards, B has Prentis and Sharma's lack of assessment. Clarity is comparable. A is preferable because it is more accurate."
+  }
+ ],
+ "tally": {
+  "accuracy": {
+   "claude-sonnet-5-5": 4,
+   "tie": 2,
+   "claude-opus-5-5": 4
+  },
+  "balance": {
+   "claude-opus-5-5": 1,
+   "tie": 8,
+   "claude-sonnet-5-5": 1
+  },
+  "coverage": {
+   "claude-opus-5-5": 4,
+   "tie": 4,
+   "claude-sonnet-5-5": 2
+  },
+  "clarity": {
+   "claude-opus-5-5": 3,
+   "tie": 7
+  },
+  "overall": {
+   "claude-opus-5-5": 4,
+   "tie": 2,
+   "claude-sonnet-5-5": 4
+  }
+ },
+ "cost_usd": 0.5659
+}

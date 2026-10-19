@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <!--#include head-->
+    <title>Status — Where They Stand</title>
+    <meta name="description" content="Whether Where They Stand is working, and how up to date its record of Parliament is." />
+    <link rel="canonical" href="https://wheretheystand.uk/status" />
+  </head>
+  <body>
+    <div class="app page">
+      <!--#include header-->
+      <main id="main" tabindex="-1" class="prose">
+        <h1>Status</h1>
+        <p class="lede">Whether the service is working, and how up to date its record of Parliament is.</p>
+        <div id="status-live" aria-live="polite"><p class="muted">Checking…</p></div>
+        <h2>How updates work</h2>
+        <p>
+          New Hansard records and changes to members' roles are brought in twice a day, at about 07:15 and 19:15 UK
+          time. Records appear after Parliament publishes them, usually the next working day. Corrections that
+          Parliament makes to earlier records replace the old versions.
+        </p>
+        <p>
+          The record here starts in May 1997. For earlier debates, use
+          <a href="https://www.theyworkforyou.com/" rel="noreferrer">TheyWorkForYou</a> (Commons debates back to 1918) or
+          <a href="https://api.parliament.uk/historic-hansard/" rel="noreferrer">Historic Hansard</a> (1803 to 2005). For
+          today's and coming business, see Parliament's <a href="https://whatson.parliament.uk/" rel="noreferrer">What's
+          on</a> calendar.
+        </p>
+        <h2>When briefings are paused</h2>
+        <p>
+          Each briefing costs money to write, so there is a daily and a monthly budget, and each visitor can request a
+          limited number of new briefings a day. When a limit is reached, new briefings pause until it resets at
+          midnight UTC. Searching the record, and briefings that have already been written for the same question,
+          keep working.
+        </p>
+      </main>
+      <!--#include footer-->
+    </div>
+    <script type="module" src="/src/pages.ts"></script>
+  </body>
+</html>

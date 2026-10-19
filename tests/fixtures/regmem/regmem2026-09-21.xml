@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Invented entries in the format of TheyWorkForYou's register files, for tests only. -->
+<twfy>
+  <regmem personid="uk.org.publicwhip/person/10669" membername="Test Member One" date="2026-09-21">
+    <category type="1" name="Employment and earnings">
+      <record>
+        <item class="interest">
+        <div class="interest-item" id="1">
+                <h4 class="interest-summary">Writing articles - Example Publishing Limited</h4>
+            <ul class="interest-details-list">
+        <li class="interest-detail">
+            <span class="interest-detail-name">Job Title: </span>
+                <span class="interest-detail-value">Writing articles</span>
+        </li>
+        <li class="interest-detail">
+            <span class="interest-detail-name">Payer Name: </span>
+                <span class="interest-detail-value">Example Publishing Limited</span>
+        </li>
+        <li class="interest-detail">
+            <span class="interest-detail-name">Payer Public Address: </span>
+                <span class="interest-detail-value">1 Example Street, London</span>
+        </li>
+                <li class="registration-date">Registration Date: 03 June 2026</li>
+                <li class="published-date">Published Date: 03 June 2026</li>
+            </ul>
+            <h5 class="child-item-header">Specific work or payments</h5>
+            <div class="interest-child-items" id="parent-1">
+        <div class="interest-item" id="2">
+                <h6 class="interest-summary">Payment received on 01 September 2026 - &#163;300.00</h6>
+            <ul class="interest-details-list">
+        <li class="interest-detail">
+            <span class="interest-detail-name">Value: </span>
+                <span class="interest-detail-value">300.00</span>
+        </li>
+        <li class="interest-detail">
+            <span class="interest-detail-name">Received Date: </span>
+                <span class="interest-detail-value">2026-09-01</span>
+        </li>
+                <li class="registration-date">Registration Date: 01 September 2026</li>
+            </ul>
+        </div>
+            </div>
+        </div>
+</item>
+      </record>
+    </category>
+    <category type="3" name="Gifts, benefits and hospitality from UK sources">
+      <record>
+        <item class="interest">
+        <div class="interest-item" id="3">
+                <h4 class="interest-summary">Example Sports Club - &#163;500.00</h4>
+            <ul class="interest-details-list">
+        <li class="interest-detail">
+            <span class="interest-detail-name">Payment Description: </span>
+                <span class="interest-detail-value">Two tickets to a match</span>
+        </li>
+        <li class="interest-detail">
+            <span class="interest-detail-name">Donor Name: </span>
+                <span class="interest-detail-value">Example Sports Club</span>
+        </li>
+        <li class="interest-detail">
+            <span class="interest-detail-name">Donor Company Name: </span>
+                <span class="interest-detail-value">Example Sports Club</span>
+        </li>
+        <li class="interest-detail">
+            <span class="interest-detail-name">Donor Public Address: </span>
+                <span class="interest-detail-value">2 Example Road, Leeds</span>
+        </li>
+                <li class="registration-date">Registration Date: 02 July 2026</li>
+            </ul>
+        </div>
+</item>
+      </record>
+    </category>
+  </regmem>
+  <regmem personid="uk.org.publicwhip/person/10777" membername="Test Member Two" date="2026-09-21">
+    <category type="8" name="Miscellaneous">
+      <record>
+        <item class="interest">Older-style entry written as plain text.</item>
+      </record>
+    </category>
+  </regmem>
+</twfy>

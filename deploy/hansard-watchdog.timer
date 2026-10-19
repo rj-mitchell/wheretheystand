@@ -1,0 +1,9 @@
+[Unit]
+Description=Check every two minutes that Where They Stand is answering
+
+[Timer]
+OnBootSec=5min
+OnUnitActiveSec=2min
+
+[Install]
+WantedBy=timers.target

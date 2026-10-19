@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <!--#include head-->
+    <link rel="alternate" type="application/rss+xml" title="Where They Stand: updated topic briefings" href="/feeds/topics.xml" />
+    <title>Topic briefings — Where They Stand</title>
+    <meta name="description" content="Where MPs and peers stand on the issues Parliament keeps returning to, from the cost of living to defence: sourced briefings kept up to date from the official record." />
+    <link rel="canonical" href="https://wheretheystand.uk/topics" />
+  </head>
+  <body>
+    <div class="app page">
+      <!--#include header-->
+      <main id="main" tabindex="-1" class="prose">
+        <h1>Topic briefings</h1>
+        <p class="lede">
+          Where MPs and peers stand on the issues Parliament keeps returning to, kept up to date as new debates,
+          questions and statements arrive.
+        </p>
+        <p>
+          Each is written in the same way as any other briefing: from the official record only, with each point
+          linked to its source. A topic is rewritten when Parliament has said something new on it, at most once a week, and earlier
+          versions are kept. For anything not listed here, <a href="/">ask your own question</a>. For impartial
+          background and statistics on each subject, the
+          <a href="https://commonslibrary.parliament.uk/" rel="noreferrer">House of Commons Library</a> is the place to
+          start.
+        </p>
+
+        <div id="topics-live" aria-live="polite"><p class="muted">Loading…</p></div>
+
+        <section id="featured" hidden>
+          <h2>Featured briefings</h2>
+          <p>Briefings asked by readers that we think are especially useful.</p>
+          <ul class="topic-list" id="featured-list"></ul>
+        </section>
+
+        <h2 id="how-chosen">How topics are chosen</h2>
+        <p>
+          Topics cover the subjects most debated in Parliament, across every area of policy, and each question is
+          worded neutrally: it names no side and asks what positions have been taken, not whether any of them is
+          right. To suggest a topic, email <a href="mailto:admin@wheretheystand.uk">admin@wheretheystand.uk</a>.
+        </p>
+        <p class="small feed-link"><a href="/feeds/topics.xml">Follow updated topic briefings in a feed reader (RSS)</a></p>
+      </main>
+      <!--#include footer-->
+    </div>
+    <script type="module" src="/src/topicsIndex.ts"></script>
+  </body>
+</html>

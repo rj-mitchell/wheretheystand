@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <!--#include head-->
+    <title>MPs and peers — Where They Stand</title>
+    <meta name="description" content="Any MP or peer since 1997, by name, constituency or party: what they have said in Parliament, their roles, majorities, votes and interests." />
+    <link rel="canonical" href="https://wheretheystand.uk/people" />
+  </head>
+  <body>
+    <div class="app page">
+      <!--#include header-->
+      <main id="main" tabindex="-1" class="prose">
+        <h1>MPs and peers</h1>
+        <p class="lede">What each member has said in Parliament, with their roles, majorities and votes.</p>
+        <h2 id="find">Find a member</h2>
+        <label for="people-search">Name, constituency or party</label>
+        <p class="muted small" id="people-search-hint">Sitting MPs and peers are listed below. Type three letters or more
+          to include former MPs and peers since 1997.</p>
+        <input id="people-search" type="search" class="people-search" aria-describedby="people-search-hint" placeholder="for example Benn, Leeds or Green" />
+        <details class="page-more" id="your-mp">
+          <summary>Find an MP by postcode</summary>
+        <form id="postcode-form" class="ask-about" novalidate>
+          <label for="postcode">Your postcode</label>
+          <div class="ask-row">
+            <input id="postcode" name="postcode" autocomplete="postal-code" placeholder="for example SW1A 0AA" maxlength="10" required />
+            <button type="submit" class="primary">Find</button>
+          </div>
+          <p class="form-error" id="postcode-error" role="alert" hidden></p>
+          <p class="muted small">The postcode is looked up with the UK Parliament's own service and is not stored.</p>
+          <p class="small elsewhere">
+            <span class="muted">Elsewhere:</span> write to your MP, councillors or devolved representatives with
+            <a href="https://www.writetothem.com/" rel="noreferrer">WriteToThem</a>; see who is standing in an election
+            near you on <a href="https://whocanivotefor.co.uk/" rel="noreferrer">Who Can I Vote For?</a>
+          </p>
+        </form>
+
+        </details>
+        <details class="page-more">
+          <summary>What each member's page shows</summary>
+        <p>From the official records:</p>
+        <ul class="ask-why">
+          <li><strong>What they have said:</strong> their latest speeches, questions and statements, and a timeline of
+            what they said and how they voted on any topic you choose.</li>
+          <li><strong>How they voted:</strong> how often they took part, and the votes where they went against most
+            of their party (free votes excepted).</li>
+          <li><strong>Seats and majorities</strong> at each election since 1997, for MPs.</li>
+          <li><strong>Roles:</strong> government, opposition and select committee posts, with dates.</li>
+          <li><strong>Registered interests:</strong> jobs, gifts, visits, shareholdings and more, from the Commons,
+            Lords and devolved registers, and what has changed in the past year.</li>
+          <li><strong>Money and companies:</strong> political donations to them and to their local party, and their
+            roles in companies registered at Companies House.</li>
+          <li><strong>Groups and campaigns:</strong> the all-party groups they belong to or run, early day motions
+            they tabled or signed, and evidence they gave to committees.</li>
+          <li><strong>Elsewhere:</strong> links to their pages on Parliament's website, TheyWorkForYou and other
+            free sites.</li>
+        </ul>
+
+        </details>
+        <div id="people-live" aria-live="polite"><p class="muted">Loading…</p></div>
+      </main>
+      <!--#include footer-->
+    </div>
+    <script type="module" src="/src/peopleIndex.ts"></script>
+  </body>
+</html>

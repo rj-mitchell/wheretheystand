@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE publicwhip [
+<!ENTITY ndash "&#8211;">
+<!ENTITY mdash "&#8212;">
+<!ENTITY iexcl "&#161;">
+<!ENTITY divide "&#247;">
+<!ENTITY euro "&#8364;">
+<!ENTITY trade "&#8482;">
+<!ENTITY bull "&#8226;">
+<!ENTITY lsquo "&#8216;">
+<!ENTITY rsquo "&#8217;">
+<!ENTITY sbquo "&#8218;">
+<!ENTITY ldquo "&#8220;">
+<!ENTITY rdquo "&#8221;">
+<!ENTITY bdquo "&#8222;">
+<!ENTITY dagger "&#8224;">
+
+<!ENTITY Ouml "&#214;">
+<!ENTITY szlig "&#223;">
+<!ENTITY agrave "&#224;">
+<!ENTITY aacute "&#225;">
+<!ENTITY acirc "&#226;">
+<!ENTITY atilde "&#227;">
+<!ENTITY auml "&#228;">
+<!ENTITY ccedil "&#231;">
+<!ENTITY egrave "&#232;">
+<!ENTITY eacute "&#233;">
+<!ENTITY ecirc "&#234;">
+<!ENTITY euml "&#235;">
+<!ENTITY iacute "&#237;">
+<!ENTITY icirc "&#238;">
+<!ENTITY iuml "&#239;">
+<!ENTITY ntilde "&#241;">
+<!ENTITY nbsp "&#160;">
+<!ENTITY oacute "&#243;">
+<!ENTITY ocirc "&#244;">
+<!ENTITY ouml "&#246;">
+<!ENTITY oslash "&#248;">
+<!ENTITY uacute "&#250;">
+<!ENTITY uuml "&#252;">
+<!ENTITY thorn "&#254;">
+
+<!ENTITY pound "&#163;">
+<!ENTITY sect "&#167;">
+<!ENTITY copy "&#169;">
+<!ENTITY reg "&#174;">
+<!ENTITY deg "&#176;">
+<!ENTITY plusmn "&#177;">
+<!ENTITY sup2 "&#178;">
+<!ENTITY micro "&#181;">
+<!ENTITY para "&#182;">
+<!ENTITY middot "&#183;">
+<!ENTITY ordm "&#186;">
+<!ENTITY frac14 "&#188;">
+<!ENTITY frac12 "&#189;">
+<!ENTITY frac34 "&#190;">
+<!ENTITY oelig "&#339;">
+<!ENTITY aelig "&#230;">
+]>
+<publicwhip latest="yes" scrapeversion="a">
+
+<major-heading colnum="827" id="uk.org.publicwhip/debate/2012-03-07a.827.0" nospeaker="true" time="11:30:00" url="http://www.publications.parliament.uk/pa/cm201212/cmhansrd/cm120307/debtext/120307-0001.htm#12030753000011">
+	BUSINESS BEFORE QUESTIONS
+</major-heading>
+  
+<minor-heading colnum="827" id="uk.org.publicwhip/debate/2012-03-07a.827.1" nospeaker="true" time="11:30:00" url="http://www.publications.parliament.uk/pa/cm201212/cmhansrd/cm120307/debtext/120307-0001.htm#12030753000017">
+	British Museum (Clocks and Watches)
+</minor-heading>
+  
+<oral-heading colnum="827" id="uk.org.publicwhip/debate/2012-03-07a.827.3" nospeaker="true" time="11:30:00" url="http://www.publications.parliament.uk/pa/cm201212/cmhansrd/cm120307/debtext/120307-0001.htm#12030753000006">
+	ORAL ANSWERS TO QUESTIONS
+</oral-heading>
+  
+<major-heading colnum="827" id="uk.org.publicwhip/debate/2012-03-07a.827.4" nospeaker="true" time="11:30:00" url="http://www.publications.parliament.uk/pa/cm201212/cmhansrd/cm120307/debtext/120307-0001.htm#120307-0001.htm_dpthd0">
+	NORTHERN IRELAND
+</major-heading>
+  
+<minor-heading colnum="827" id="uk.org.publicwhip/debate/2012-03-07a.827.6" nospeaker="true" time="11:30:00" url="http://www.publications.parliament.uk/pa/cm201212/cmhansrd/cm120307/debtext/120307-0001.htm#12030753000019">
+	Security Situation
+</minor-heading>
+  
+<minor-heading colnum="829" id="uk.org.publicwhip/debate/2012-03-07a.829.4" nospeaker="true" time="11:30:00" url="http://www.publications.parliament.uk/pa/cm201212/cmhansrd/cm120307/debtext/120307-0001.htm#12030753000020">
+	United Kingdom
+</minor-heading>
+  
+<minor-heading colnum="831" id="uk.org.publicwhip/debate/2012-03-07a.831.1" nospeaker="true" time="11:30:00" url="http://www.publications.parliament.uk/pa/cm201212/cmhansrd/cm120307/debtext/120307-0001.htm#12030753000021">
+	Bill of Rights
+</minor-heading>
+  
+<minor-heading colnum="832" id="uk.org.publicwhip/debate/2012-03-07a.832.3" nospeaker="true" time="11:30:00" url="http://www.publications.parliament.uk/pa/cm201212/cmhansrd/cm120307/debtext/120307-0001.htm#12030753000022">
+	Pat Finucane Review
+</minor-heading>
+  
+<minor-heading colnum="833" id="uk.org.publicwhip/debate/2012-03-07a.833.7" nospeaker="true" time="11:30:00" url="http://www.publications.parliament.uk/pa/cm201212/cmhansrd/cm120307/debtext/120307-0001.htm#12030753000023">
+	Inward Investment
+</minor-heading>
+  
+<minor-heading colnum="835" id="uk.org.publicwhip/debate/2012-03-07a.835.1" nospeaker="true" time="11:30:00" url="http://www.publications.parliament.uk/pa/cm201212/cmhansrd/cm120307/debtext/120307-0001.htm#12030753000024">
+	Economic Development
+</minor-heading>
+  
+<minor-heading colnum="836" id="uk.org.publicwhip/debate/2012-03-07a.836.2" nospeaker="true" time="11:30:00" url="http://www.publications.parliament.uk/pa/cm201212/cmhansrd/cm120307/debtext/120307-0001.htm#12030753000025">
+	Defence Capability
+</minor-heading>
+  
+<major-heading colnum="837" id="uk.org.publicwhip/debate/2012-03-07a.837.0" nospeaker="true" time="11:30:00" url="http://www.publications.parliament.uk/pa/cm201212/cmhansrd/cm120307/debtext/120307-0001.htm#120307-0001.htm_dpthd1">
+	PRIME MINISTER
+</major-heading>
+  
+<minor-heading colnum="837" id="uk.org.publicwhip/debate/2012-03-07a.837.2" nospeaker="true" time="11:30:00" url="http://www.publications.parliament.uk/pa/cm201212/cmhansrd/cm120307/debtext/120307-0001.htm#12030753000026">
+	Engagements
+</minor-heading>
+  
+<minor-heading colnum="844" id="uk.org.publicwhip/debate/2012-03-07a.844.2" nospeaker="true" time="11:30:00" url="http://www.publications.parliament.uk/pa/cm201212/cmhansrd/cm120307/debtext/120307-0001.htm#12030753000027">
+	Visits (Central Ayrshire)
+</minor-heading>
+  
+<minor-heading colnum="844" id="uk.org.publicwhip/debate/2012-03-07a.844.7" nospeaker="true" time="11:30:00" url="http://www.publications.parliament.uk/pa/cm201212/cmhansrd/cm120307/debtext/120307-0001.htm#12030753000028">
+	Engagements
+</minor-heading>
+  
+<minor-heading colnum="849" id="uk.org.publicwhip/debate/2012-03-07a.849.0" nospeaker="true" time="11:30:00" url="http://www.publications.parliament.uk/pa/cm201212/cmhansrd/cm120307/debtext/120307-0001.htm#12030753000001">
+	Diamond Jubilee
+</minor-heading>
+  
+<major-heading colnum="879" id="uk.org.publicwhip/debate/2012-03-07a.879.0" nospeaker="true" time="014:27:00" url="http://www.publications.parliament.uk/pa/cm201212/cmhansrd/cm120307/debtext/120307-0002.htm#12030753000004">
+	Points of Order
+</major-heading>
+  
+<major-heading colnum="882" id="uk.org.publicwhip/debate/2012-03-07a.882.0" nospeaker="true" time="014:29:00" url="http://www.publications.parliament.uk/pa/cm201212/cmhansrd/cm120307/debtext/120307-0002.htm#12030753000003">
+	Speaker&#8217;s Statement
+</major-heading>
+  
+<major-heading colnum="883" id="uk.org.publicwhip/debate/2012-03-07a.883.0" nospeaker="true" time="014:37:00" url="http://www.publications.parliament.uk/pa/cm201212/cmhansrd/cm120307/debtext/120307-0002.htm#12030753000007">
+	Opposition Day
+</major-heading>
+  
+<minor-heading colnum="883" id="uk.org.publicwhip/debate/2012-03-07a.883.1" nospeaker="true" time="014:37:00" url="http://www.publications.parliament.uk/pa/cm201212/cmhansrd/cm120307/debtext/120307-0002.htm#12030753000016">
+	[Unallotted Half Day]
+	 &#8212; 
+	Changing Perceptions of Northern Ireland
+</minor-heading>
+  
+<minor-heading colnum="928" id="uk.org.publicwhip/debate/2012-03-07a.928.0" nospeaker="true" time="017:20:00" url="http://www.publications.parliament.uk/pa/cm201212/cmhansrd/cm120307/debtext/120307-0003.htm#12030763000003">
+	Backbench Business
+	 &#8212; 
+	[Unallotted part day]
+	 &#8212; 
+	Sergei Magnitsky
+</minor-heading>
+  
+<minor-heading colnum="952" id="uk.org.publicwhip/debate/2012-03-07a.952.0" nospeaker="true" time="018:55:00" url="http://www.publications.parliament.uk/pa/cm201212/cmhansrd/cm120307/debtext/120307-0004.htm#12030763000002">
+	Employment Support
+</minor-heading>
+  
+<minor-heading colnum="973" id="uk.org.publicwhip/debate/2012-03-07a.973.5" nospeaker="true" time="018:59:00" url="http://www.publications.parliament.uk/pa/cm201212/cmhansrd/cm120307/debtext/120307-0004.htm#12030785000001">
+	Business without Debate
+</minor-heading>
+  
+<major-heading colnum="973" id="uk.org.publicwhip/debate/2012-03-07a.973.6" nospeaker="true" time="018:59:00" url="http://www.publications.parliament.uk/pa/cm201212/cmhansrd/cm120307/debtext/120307-0004.htm#12030785000004">
+	DELEGATED LEGISLATION
+</major-heading>
+  
+<minor-heading colnum="973" id="uk.org.publicwhip/debate/2012-03-07a.973.8" nospeaker="true" time="018:59:00" url="http://www.publications.parliament.uk/pa/cm201212/cmhansrd/cm120307/debtext/120307-0004.htm#12030785000009">
+	Social Security
+</minor-heading>
+  
+<minor-heading colnum="973" id="uk.org.publicwhip/debate/2012-03-07a.973.10" nospeaker="true" time="018:59:00" url="http://www.publications.parliament.uk/pa/cm201212/cmhansrd/cm120307/debtext/120307-0004.htm#12030785000010">
+	Social Security
+</minor-heading>
+  
+<major-heading colnum="973" id="uk.org.publicwhip/debate/2012-03-07a.973.12" nospeaker="true" time="018:59:00" url="http://www.publications.parliament.uk/pa/cm201212/cmhansrd/cm120307/debtext/120307-0004.htm#12030785000005">
+	EUROPEAN UNION DOCUMENTS
+</major-heading>
+  
+<minor-heading colnum="974" id="uk.org.publicwhip/debate/2012-03-07a.974.0" nospeaker="true" time="018:59:00" url="http://www.publications.parliament.uk/pa/cm201212/cmhansrd/cm120307/debtext/120307-0004.htm#12030785000011">
+	EU Structural Cohesion Funds
+</minor-heading>
+  
+<major-heading colnum="974" id="uk.org.publicwhip/debate/2012-03-07a.974.2" nospeaker="true" time="018:59:00" url="http://www.publications.parliament.uk/pa/cm201212/cmhansrd/cm120307/debtext/120307-0004.htm#12030785000006">
+	BUSINESS OF THE HOUSE (12 MARCH)
+</major-heading>
+  
+<major-heading colnum="974" id="uk.org.publicwhip/debate/2012-03-07a.974.4" nospeaker="true" time="018:59:00" url="http://www.publications.parliament.uk/pa/cm201212/cmhansrd/cm120307/debtext/120307-0004.htm#12030785000007">
+	BUSINESS OF THE HOUSE (13 MARCH)
+</major-heading>
+  
+<major-heading colnum="974" id="uk.org.publicwhip/debate/2012-03-07a.974.6" nospeaker="true" time="018:59:00" url="http://www.publications.parliament.uk/pa/cm201212/cmhansrd/cm120307/debtext/120307-0004.htm#12030785000008">
+	PETITIONS
+</major-heading>
+  
+<minor-heading colnum="974" id="uk.org.publicwhip/debate/2012-03-07a.974.7" nospeaker="true" time="018:59:00" url="http://www.publications.parliament.uk/pa/cm201212/cmhansrd/cm120307/debtext/120307-0004.htm#12030785000665">
+	Post Office Services (Torphichen, West Lothian)
+</minor-heading>
+  
+<minor-heading colnum="975" id="uk.org.publicwhip/debate/2012-03-07a.975.0" nospeaker="true" time="020:17:00" url="http://www.publications.parliament.uk/pa/cm201212/cmhansrd/cm120307/debtext/120307-0004.htm#12030785000666">
+	Health and Social Care Bill
+</minor-heading>
+  
+<minor-heading colnum="976" id="uk.org.publicwhip/debate/2012-03-07a.976.0" nospeaker="true" time="020:19:00" url="http://www.publications.parliament.uk/pa/cm201212/cmhansrd/cm120307/debtext/120307-0004.htm#12030785000067">
+	Historical Enquiries Team
+</minor-heading>
+  
+<major-heading colnum="983" id="uk.org.publicwhip/debate/2012-03-07a.983.0" nospeaker="true" time="020:43:00" url="http://www.publications.parliament.uk/pa/cm201212/cmhansrd/cm120307/debtext/120307-0004.htm#12030785000003">
+	Deferred Division
+</major-heading>
+  
+<minor-heading colnum="983" id="uk.org.publicwhip/debate/2012-03-07a.983.1" nospeaker="true" time="020:43:00" url="http://www.publications.parliament.uk/pa/cm201212/cmhansrd/cm120307/debtext/120307-0004.htm#12030785000012">
+	safety of offshore oil and gas activities
+</minor-heading>
+  
+<division colnum="983" divdate="2012-03-07" divnumber="484" id="uk.org.publicwhip/debate/2012-03-07a.983.3" nospeaker="true" time="020:43:00" url="http://www.publications.parliament.uk/pa/cm201212/cmhansrd/cm120307/debtext/120307-0004.htm#12030785000659">
+    <divisioncount ayes="308" noes="183" tellerayes="0" tellernoes="0"/>
+    <mplist vote="aye">
+      <mpname id="uk.org.publicwhip/member/40523" vote="aye">Adams, Nigel</mpname>
+      <mpname id="uk.org.publicwhip/member/40661" vote="aye">Afriyie, Adam</mpname>
+      <mpname id="uk.org.publicwhip/member/40638" vote="aye">Aldous, Peter</mpname>
+      <mpname id="uk.org.publicwhip/member/40331" vote="aye">Alexander, rh Danny</mpname>
+      <mpname id="uk.org.publicwhip/member/40565" vote="aye">Amess, Mr David</mpname>
+      <mpname id="uk.org.publicwhip/member/40489" vote="aye">Andrew, Stuart</mpname>
+      </mplist>
+    <mplist vote="no">
+      <mpname id="uk.org.publicwhip/member/40289" vote="no">Abbott, Ms Diane</mpname>
+      <mpname id="uk.org.publicwhip/member/40684" vote="no">Abrahams, Debbie</mpname>
+      <mpname id="uk.org.publicwhip/member/40185" vote="no">Ainsworth, rh Mr Bob</mpname>
+      <mpname id="uk.org.publicwhip/member/40474" vote="no">Alexander, rh Mr Douglas</mpname>
+      <mpname id="uk.org.publicwhip/member/40363" vote="no">Alexander, Heidi</mpname>
+      <mpname id="uk.org.publicwhip/member/40075" vote="no">Ali, Rushanara</mpname>
+      </mplist>
+  </division>
+
+</publicwhip>

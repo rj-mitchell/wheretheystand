@@ -1,0 +1,4204 @@
+{
+ "fetched_at": "2026-10-11T10:40:04+00:00",
+ "representations": {
+  "1388": [
+   {
+    "end": "2019-11-06",
+    "id": 3315,
+    "name": "Belfast North",
+    "start": "2010-05-06"
+   },
+   {
+    "end": "2010-05-06",
+    "id": 197,
+    "name": "Belfast North",
+    "start": "2001-06-07"
+   }
+  ],
+  "1409": [
+   {
+    "end": null,
+    "id": 4426,
+    "name": "East Londonderry",
+    "start": "2024-07-04"
+   },
+   {
+    "end": "2024-05-30",
+    "id": 3463,
+    "name": "East Londonderry",
+    "start": "2010-05-06"
+   },
+   {
+    "end": "2010-05-06",
+    "id": 988,
+    "name": "East Londonderry",
+    "start": "2001-06-07"
+   }
+  ],
+  "1466": [
+   {
+    "end": null,
+    "id": 4313,
+    "name": "South West Wiltshire",
+    "start": "2024-07-04"
+   },
+   {
+    "end": "2024-05-30",
+    "id": 3759,
+    "name": "South West Wiltshire",
+    "start": "2010-05-06"
+   },
+   {
+    "end": "2010-05-06",
+    "id": 3144,
+    "name": "Westbury",
+    "start": "2001-06-07"
+   }
+  ],
+  "1467": [
+   {
+    "end": "2016-09-12",
+    "id": 3859,
+    "name": "Witney",
+    "start": "2010-05-06"
+   },
+   {
+    "end": "2010-05-06",
+    "id": 3206,
+    "name": "Witney",
+    "start": "2001-06-07"
+   }
+  ],
+  "1482": [
+   {
+    "end": null,
+    "id": 3902,
+    "name": "Beverley and Holderness",
+    "start": "2024-07-04"
+   },
+   {
+    "end": "2024-05-30",
+    "id": 3321,
+    "name": "Beverley and Holderness",
+    "start": "2010-05-06"
+   },
+   {
+    "end": "2010-05-06",
+    "id": 230,
+    "name": "Beverley and Holderness",
+    "start": "2005-05-05"
+   }
+  ],
+  "1529": [
+   {
+    "end": "2019-11-06",
+    "id": 3756,
+    "name": "South West Hertfordshire",
+    "start": "2010-05-06"
+   },
+   {
+    "end": "2010-05-06",
+    "id": 2687,
+    "name": "South West Hertfordshire",
+    "start": "2005-05-05"
+   }
+  ],
+  "1535": [
+   {
+    "end": "2015-03-30",
+    "id": 1561,
+    "name": "Inverness, Nairn, Badenoch and Strathspey",
+    "start": "2005-05-05"
+   }
+  ],
+  "1555": [
+   {
+    "end": "2019-11-06",
+    "id": 3689,
+    "name": "Putney",
+    "start": "2010-05-06"
+   },
+   {
+    "end": "2010-05-06",
+    "id": 2387,
+    "name": "Putney",
+    "start": "2005-05-05"
+   }
+  ],
+  "1586": [
+   {
+    "end": "2024-05-30",
+    "id": 3855,
+    "name": "Windsor",
+    "start": "2010-05-06"
+   },
+   {
+    "end": "2010-05-06",
+    "id": 3195,
+    "name": "Windsor",
+    "start": "2005-05-05"
+   }
+  ],
+  "1610": [
+   {
+    "end": "2015-03-30",
+    "id": 1206,
+    "name": "Glasgow North East",
+    "start": "2009-11-12"
+   }
+  ],
+  "172": [
+   {
+    "end": null,
+    "id": 4074,
+    "name": "Hackney North and Stoke Newington",
+    "start": "2024-07-04"
+   },
+   {
+    "end": "2024-05-30",
+    "id": 3506,
+    "name": "Hackney North and Stoke Newington",
+    "start": "2010-05-06"
+   },
+   {
+    "end": "2010-05-06",
+    "id": 1333,
+    "name": "Hackney North and Stoke Newington",
+    "start": "1997-05-01"
+   },
+   {
+    "end": "1997-05-01",
+    "id": 1332,
+    "name": "Hackney North and Stoke Newington",
+    "start": "1987-06-11"
+   }
+  ],
+  "185": [
+   {
+    "end": null,
+    "id": 4120,
+    "name": "Islington North",
+    "start": "2024-07-04"
+   },
+   {
+    "end": "2024-05-30",
+    "id": 3549,
+    "name": "Islington North",
+    "start": "2010-05-06"
+   },
+   {
+    "end": "2010-05-06",
+    "id": 1583,
+    "name": "Islington North",
+    "start": "1997-05-01"
+   },
+   {
+    "end": "1997-05-01",
+    "id": 1582,
+    "name": "Islington North",
+    "start": "1983-06-09"
+   }
+  ],
+  "274": [
+   {
+    "end": "2021-11-05",
+    "id": 3648,
+    "name": "North Shropshire",
+    "start": "2010-05-06"
+   },
+   {
+    "end": "2010-05-06",
+    "id": 2152,
+    "name": "North Shropshire",
+    "start": "1997-05-01"
+   }
+  ],
+  "306": [
+   {
+    "end": "2015-03-30",
+    "id": 3427,
+    "name": "Coventry North East",
+    "start": "2010-05-06"
+   },
+   {
+    "end": "2010-05-06",
+    "id": 760,
+    "name": "Coventry North East",
+    "start": "1997-05-01"
+   },
+   {
+    "end": "1997-05-01",
+    "id": 759,
+    "name": "Coventry North East",
+    "start": "1992-04-09"
+   }
+  ],
+  "350": [
+   {
+    "end": null,
+    "id": 4302,
+    "name": "South Holland and The Deepings",
+    "start": "2024-07-04"
+   },
+   {
+    "end": "2024-05-30",
+    "id": 3744,
+    "name": "South Holland and The Deepings",
+    "start": "2010-05-06"
+   },
+   {
+    "end": "2010-05-06",
+    "id": 2658,
+    "name": "South Holland and The Deepings",
+    "start": "1997-05-01"
+   }
+  ],
+  "360": [
+   {
+    "end": "2019-11-06",
+    "id": 3495,
+    "name": "Gedling",
+    "start": "2010-05-06"
+   },
+   {
+    "end": "2010-05-06",
+    "id": 1192,
+    "name": "Gedling",
+    "start": "1997-05-01"
+   }
+  ],
+  "3943": [
+   {
+    "end": "2024-05-30",
+    "id": 3394,
+    "name": "Carmarthen East and Dinefwr",
+    "start": "2010-05-06"
+   }
+  ],
+  "3985": [
+   {
+    "end": "2024-05-30",
+    "id": 3515,
+    "name": "Harlow",
+    "start": "2010-05-06"
+   }
+  ],
+  "3989": [
+   {
+    "end": "2024-05-30",
+    "id": 3486,
+    "name": "Filton and Bradley Stoke",
+    "start": "2010-05-06"
+   }
+  ],
+  "4025": [
+   {
+    "end": "2024-05-30",
+    "id": 3604,
+    "name": "Mid Derbyshire",
+    "start": "2010-05-06"
+   }
+  ],
+  "4032": [
+   {
+    "end": null,
+    "id": 4007,
+    "name": "Daventry",
+    "start": "2024-07-04"
+   },
+   {
+    "end": "2024-05-30",
+    "id": 3688,
+    "name": "Pudsey",
+    "start": "2010-05-06"
+   }
+  ],
+  "4038": [
+   {
+    "end": null,
+    "id": 4352,
+    "name": "Swindon South",
+    "start": "2024-07-04"
+   },
+   {
+    "end": "2018-05-09",
+    "id": 3575,
+    "name": "Lewisham East",
+    "start": "2010-05-06"
+   }
+  ],
+  "4057": [
+   {
+    "end": "2023-06-12",
+    "id": 3720,
+    "name": "Selby and Ainsty",
+    "start": "2010-05-06"
+   }
+  ],
+  "4069": [
+   {
+    "end": "2024-05-30",
+    "id": 3834,
+    "name": "Waveney",
+    "start": "2010-05-06"
+   }
+  ],
+  "4114": [
+   {
+    "end": "2017-05-03",
+    "id": 3831,
+    "name": "Warwick and Leamington",
+    "start": "2010-05-06"
+   }
+  ],
+  "413": [
+   {
+    "end": null,
+    "id": 4138,
+    "name": "Leeds South",
+    "start": "2024-07-04"
+   },
+   {
+    "end": "2024-05-30",
+    "id": 3565,
+    "name": "Leeds Central",
+    "start": "2010-05-06"
+   },
+   {
+    "end": "2010-05-06",
+    "id": 1688,
+    "name": "Leeds Central",
+    "start": "1999-06-10"
+   }
+  ],
+  "4138": [
+   {
+    "end": null,
+    "id": 3901,
+    "name": "Bethnal Green and Stepney",
+    "start": "2024-07-04"
+   },
+   {
+    "end": "2024-05-30",
+    "id": 3320,
+    "name": "Bethnal Green and Bow",
+    "start": "2010-05-06"
+   }
+  ],
+  "4212": [
+   {
+    "end": null,
+    "id": 4230,
+    "name": "Oldham East and Saddleworth",
+    "start": "2024-07-04"
+   },
+   {
+    "end": "2024-05-30",
+    "id": 3670,
+    "name": "Oldham East and Saddleworth",
+    "start": "2011-01-13"
+   }
+  ],
+  "4243": [
+   {
+    "end": null,
+    "id": 3889,
+    "name": "Barnsley North",
+    "start": "2024-07-04"
+   },
+   {
+    "end": "2024-05-30",
+    "id": 3302,
+    "name": "Barnsley Central",
+    "start": "2011-03-03"
+   }
+  ],
+  "429": [
+   {
+    "end": null,
+    "id": 4399,
+    "name": "Widnes and Halewood",
+    "start": "2024-07-04"
+   },
+   {
+    "end": "2024-05-30",
+    "id": 3511,
+    "name": "Halton",
+    "start": "2010-05-06"
+   },
+   {
+    "end": "2010-05-06",
+    "id": 1351,
+    "name": "Halton",
+    "start": "1997-05-01"
+   }
+  ],
+  "4362": [
+   {
+    "end": null,
+    "id": 4172,
+    "name": "Melton and Syston",
+    "start": "2024-07-04"
+   },
+   {
+    "end": "2024-05-30",
+    "id": 3401,
+    "name": "Charnwood",
+    "start": "2015-05-07"
+   }
+  ],
+  "4399": [
+   {
+    "end": null,
+    "id": 4158,
+    "name": "Louth and Horncastle",
+    "start": "2024-07-04"
+   },
+   {
+    "end": "2024-05-30",
+    "id": 3587,
+    "name": "Louth and Horncastle",
+    "start": "2015-05-07"
+   }
+  ],
+  "44": [
+   {
+    "end": "2021-10-15",
+    "id": 3762,
+    "name": "Southend West",
+    "start": "2010-05-06"
+   },
+   {
+    "end": "2010-05-06",
+    "id": 2716,
+    "name": "Southend West",
+    "start": "1997-05-01"
+   },
+   {
+    "end": "1997-05-01",
+    "id": 143,
+    "name": "Basildon",
+    "start": "1983-06-09"
+   }
+  ],
+  "4401": [
+   {
+    "end": "2024-05-30",
+    "id": 3300,
+    "name": "Banbury",
+    "start": "2015-05-07"
+   }
+  ],
+  "4449": [
+   {
+    "end": null,
+    "id": 4255,
+    "name": "Redcar",
+    "start": "2024-07-04"
+   },
+   {
+    "end": "2019-11-06",
+    "id": 3693,
+    "name": "Redcar",
+    "start": "2015-05-07"
+   }
+  ],
+  "4464": [
+   {
+    "end": null,
+    "id": 4070,
+    "name": "Great Grimsby and Cleethorpes",
+    "start": "2024-07-04"
+   },
+   {
+    "end": "2019-11-06",
+    "id": 3502,
+    "name": "Great Grimsby",
+    "start": "2015-05-07"
+   }
+  ],
+  "4508": [
+   {
+    "end": "2019-11-06",
+    "id": 3778,
+    "name": "Stoke-on-Trent North",
+    "start": "2015-05-07"
+   }
+  ],
+  "4571": [
+   {
+    "end": null,
+    "id": 4281,
+    "name": "Sheffield Brightside and Hillsborough",
+    "start": "2024-07-04"
+   },
+   {
+    "end": "2024-05-30",
+    "id": 3724,
+    "name": "Sheffield, Brightside and Hillsborough",
+    "start": "2016-05-05"
+   }
+  ],
+  "462": [
+   {
+    "end": "2014-01-07",
+    "id": 3873,
+    "name": "Wythenshawe and Sale East",
+    "start": "2010-05-06"
+   },
+   {
+    "end": "2010-05-06",
+    "id": 3273,
+    "name": "Wythenshawe and Sale East",
+    "start": "1997-05-01"
+   }
+  ],
+  "4631": [
+   {
+    "end": null,
+    "id": 4003,
+    "name": "Croydon West",
+    "start": "2024-07-04"
+   },
+   {
+    "end": "2024-05-30",
+    "id": 3432,
+    "name": "Croydon Central",
+    "start": "2017-06-08"
+   }
+  ],
+  "4634": [
+   {
+    "end": null,
+    "id": 4471,
+    "name": "Edinburgh West",
+    "start": "2024-07-04"
+   },
+   {
+    "end": "2024-05-30",
+    "id": 1054,
+    "name": "Edinburgh West",
+    "start": "2017-06-08"
+   }
+  ],
+  "4641": [
+   {
+    "end": null,
+    "id": 4226,
+    "name": "Nottingham North and Kimberley",
+    "start": "2024-07-04"
+   },
+   {
+    "end": "2024-05-30",
+    "id": 3665,
+    "name": "Nottingham North",
+    "start": "2017-06-08"
+   }
+  ],
+  "4645": [
+   {
+    "end": null,
+    "id": 4130,
+    "name": "Kingston upon Hull West and Haltemprice",
+    "start": "2024-07-04"
+   },
+   {
+    "end": "2024-05-30",
+    "id": 3560,
+    "name": "Kingston upon Hull West and Hessle",
+    "start": "2017-06-08"
+   }
+  ],
+  "467": [
+   {
+    "end": null,
+    "id": 3985,
+    "name": "Chorley",
+    "start": "2024-07-04"
+   },
+   {
+    "end": "2024-05-30",
+    "id": 3413,
+    "name": "Chorley",
+    "start": "2010-05-06"
+   },
+   {
+    "end": "2010-05-06",
+    "id": 681,
+    "name": "Chorley",
+    "start": "1997-05-01"
+   }
+  ],
+  "4682": [
+   {
+    "end": null,
+    "id": 4242,
+    "name": "Plymouth Sutton and Devonport",
+    "start": "2024-07-04"
+   },
+   {
+    "end": "2024-05-30",
+    "id": 3680,
+    "name": "Plymouth, Sutton and Devonport",
+    "start": "2017-06-08"
+   }
+  ],
+  "4742": [
+   {
+    "end": null,
+    "id": 4308,
+    "name": "South Shropshire",
+    "start": "2024-07-04"
+   },
+   {
+    "end": "2024-05-30",
+    "id": 3864,
+    "name": "Wolverhampton South West",
+    "start": "2019-12-12"
+   }
+  ],
+  "4743": [
+   {
+    "end": null,
+    "id": 3883,
+    "name": "Ashfield",
+    "start": "2024-07-04"
+   },
+   {
+    "end": "2024-05-30",
+    "id": 3296,
+    "name": "Ashfield",
+    "start": "2019-12-12"
+   }
+  ],
+  "4769": [
+   {
+    "end": null,
+    "id": 4322,
+    "name": "St Albans",
+    "start": "2024-07-04"
+   },
+   {
+    "end": "2024-05-30",
+    "id": 3765,
+    "name": "St Albans",
+    "start": "2019-12-12"
+   }
+  ],
+  "4788": [
+   {
+    "end": null,
+    "id": 4249,
+    "name": "Putney",
+    "start": "2024-07-04"
+   },
+   {
+    "end": "2024-05-30",
+    "id": 3689,
+    "name": "Putney",
+    "start": "2019-12-12"
+   }
+  ],
+  "4828": [
+   {
+    "end": null,
+    "id": 4155,
+    "name": "Liverpool Wavertree",
+    "start": "2024-07-04"
+   },
+   {
+    "end": "2024-05-30",
+    "id": 3583,
+    "name": "Liverpool, Wavertree",
+    "start": "2019-12-12"
+   }
+  ],
+  "4844": [
+   {
+    "end": null,
+    "id": 4334,
+    "name": "Stockton West",
+    "start": "2024-07-04"
+   },
+   {
+    "end": "2024-05-30",
+    "id": 3776,
+    "name": "Stockton South",
+    "start": "2019-12-12"
+   }
+  ],
+  "4976": [
+   {
+    "end": null,
+    "id": 3978,
+    "name": "Chester North and Neston",
+    "start": "2024-07-04"
+   },
+   {
+    "end": "2024-05-30",
+    "id": 3416,
+    "name": "City of Chester",
+    "start": "2022-12-01"
+   }
+  ],
+  "5032": [
+   {
+    "end": null,
+    "id": 4084,
+    "name": "Harrogate and Knaresborough",
+    "start": "2024-07-04"
+   }
+  ],
+  "5044": [
+   {
+    "end": null,
+    "id": 4043,
+    "name": "Erewash",
+    "start": "2024-07-04"
+   }
+  ],
+  "5045": [
+   {
+    "end": null,
+    "id": 4087,
+    "name": "Hartlepool",
+    "start": "2024-07-04"
+   }
+  ],
+  "5062": [
+   {
+    "end": null,
+    "id": 4393,
+    "name": "West Suffolk",
+    "start": "2024-07-04"
+   }
+  ],
+  "5074": [
+   {
+    "end": null,
+    "id": 4306,
+    "name": "South Ribble",
+    "start": "2024-07-04"
+   }
+  ],
+  "5089": [
+   {
+    "end": null,
+    "id": 4113,
+    "name": "Huntingdon",
+    "start": "2024-07-04"
+   }
+  ],
+  "5097": [
+   {
+    "end": null,
+    "id": 4316,
+    "name": "Southend East and Rochford",
+    "start": "2024-07-04"
+   }
+  ],
+  "5100": [
+   {
+    "end": null,
+    "id": 4174,
+    "name": "Mid Bedfordshire",
+    "start": "2024-07-04"
+   }
+  ],
+  "5101": [
+   {
+    "end": null,
+    "id": 3941,
+    "name": "Bridgwater",
+    "start": "2024-07-04"
+   }
+  ],
+  "5112": [
+   {
+    "end": null,
+    "id": 4204,
+    "name": "North Durham",
+    "start": "2024-07-04"
+   }
+  ],
+  "5131": [
+   {
+    "end": null,
+    "id": 4117,
+    "name": "Ipswich",
+    "start": "2024-07-04"
+   }
+  ],
+  "5155": [
+   {
+    "end": null,
+    "id": 4494,
+    "name": "Stirling and Strathallan",
+    "start": "2024-07-04"
+   }
+  ],
+  "5158": [
+   {
+    "end": null,
+    "id": 4071,
+    "name": "Great Yarmouth",
+    "start": "2024-07-04"
+   }
+  ],
+  "5164": [
+   {
+    "end": null,
+    "id": 4211,
+    "name": "North Norfolk",
+    "start": "2024-07-04"
+   }
+  ],
+  "5169": [
+   {
+    "end": null,
+    "id": 3942,
+    "name": "Bridlington and The Wolds",
+    "start": "2024-07-04"
+   }
+  ],
+  "5180": [
+   {
+    "end": null,
+    "id": 3888,
+    "name": "Barking",
+    "start": "2024-07-04"
+   }
+  ],
+  "5196": [
+   {
+    "end": null,
+    "id": 4453,
+    "name": "Alloa and Grangemouth",
+    "start": "2024-07-04"
+   }
+  ],
+  "5197": [
+   {
+    "end": null,
+    "id": 4294,
+    "name": "Solihull West and Shirley",
+    "start": "2024-07-04"
+   }
+  ],
+  "5202": [
+   {
+    "end": null,
+    "id": 3931,
+    "name": "Bournemouth West",
+    "start": "2024-07-04"
+   }
+  ],
+  "5204": [
+   {
+    "end": null,
+    "id": 4053,
+    "name": "Finchley and Golders Green",
+    "start": "2024-07-04"
+   }
+  ],
+  "5205": [
+   {
+    "end": null,
+    "id": 4304,
+    "name": "South Norfolk",
+    "start": "2024-07-04"
+   }
+  ],
+  "5213": [
+   {
+    "end": null,
+    "id": 4477,
+    "name": "Glasgow South West",
+    "start": "2024-07-04"
+   }
+  ],
+  "5218": [
+   {
+    "end": null,
+    "id": 4212,
+    "name": "North Northumberland",
+    "start": "2024-07-04"
+   }
+  ],
+  "5236": [
+   {
+    "end": null,
+    "id": 4233,
+    "name": "Ossett and Denby Dale",
+    "start": "2024-07-04"
+   }
+  ],
+  "5250": [
+   {
+    "end": null,
+    "id": 4355,
+    "name": "Taunton and Wellington",
+    "start": "2024-07-04"
+   }
+  ],
+  "5255": [
+   {
+    "end": null,
+    "id": 4118,
+    "name": "Isle of Wight East",
+    "start": "2024-07-04"
+   }
+  ],
+  "5288": [
+   {
+    "end": null,
+    "id": 4347,
+    "name": "Surrey Heath",
+    "start": "2024-07-04"
+   }
+  ],
+  "5290": [
+   {
+    "end": null,
+    "id": 4328,
+    "name": "Stafford",
+    "start": "2024-07-04"
+   }
+  ],
+  "5291": [
+   {
+    "end": null,
+    "id": 4516,
+    "name": "Monmouthshire",
+    "start": "2024-07-04"
+   }
+  ],
+  "5311": [
+   {
+    "end": null,
+    "id": 4480,
+    "name": "Gordon and Buchan",
+    "start": "2024-07-04"
+   }
+  ],
+  "5314": [
+   {
+    "end": null,
+    "id": 3945,
+    "name": "Brighton Pavilion",
+    "start": "2024-07-04"
+   }
+  ],
+  "5321": [
+   {
+    "end": null,
+    "id": 4401,
+    "name": "Wimbledon",
+    "start": "2024-07-04"
+   }
+  ],
+  "5335": [
+   {
+    "end": null,
+    "id": 3981,
+    "name": "Chichester",
+    "start": "2024-07-04"
+   }
+  ],
+  "5356": [
+   {
+    "end": null,
+    "id": 4432,
+    "name": "North Antrim",
+    "start": "2024-07-04"
+   }
+  ],
+  "56": [
+   {
+    "end": "2015-03-30",
+    "id": 3643,
+    "name": "North East Hampshire",
+    "start": "2010-05-06"
+   },
+   {
+    "end": "2010-05-06",
+    "id": 2136,
+    "name": "North East Hampshire",
+    "start": "1997-05-01"
+   },
+   {
+    "end": "1997-05-01",
+    "id": 3040,
+    "name": "Wanstead and Woodford",
+    "start": "1987-06-11"
+   }
+  ],
+  "632": [
+   {
+    "end": null,
+    "id": 4485,
+    "name": "Lothian East",
+    "start": "2024-07-04"
+   },
+   {
+    "end": "2015-03-30",
+    "id": 2286,
+    "name": "Paisley and Renfrewshire South",
+    "start": "2005-05-05"
+   },
+   {
+    "end": "2005-05-05",
+    "id": 2290,
+    "name": "Paisley South",
+    "start": "1997-11-06"
+   }
+  ]
+ },
+ "results": {
+  "1054": [
+   {
+    "date": "2010-05-06",
+    "electorate": 65159,
+    "general": true,
+    "majority": 3803,
+    "party": "Liberal Democrat",
+    "result": "LD Hold",
+    "title": "2010 General Election",
+    "votes": 46447
+   },
+   {
+    "date": "2015-05-07",
+    "electorate": 71717,
+    "general": true,
+    "majority": 3210,
+    "party": "Scottish National Party",
+    "result": "SNP Gain",
+    "title": "2015 General Election",
+    "votes": 54858
+   },
+   {
+    "date": "2017-06-08",
+    "electorate": 71500,
+    "general": true,
+    "majority": 2988,
+    "party": "Liberal Democrat",
+    "result": "LD Gain",
+    "title": "2017 General Election",
+    "votes": 52795
+   },
+   {
+    "date": "2019-12-12",
+    "electorate": 72507,
+    "general": true,
+    "majority": 3769,
+    "party": "Liberal Democrat",
+    "result": "LD Hold",
+    "title": "2019 General Election",
+    "votes": 54533
+   }
+  ],
+  "1192": [],
+  "1206": [
+   {
+    "date": "2010-05-06",
+    "electorate": 59861,
+    "general": true,
+    "majority": 15942,
+    "party": "Labour",
+    "result": "Lab Gain",
+    "title": "2010 General Election",
+    "votes": 29409
+   },
+   {
+    "date": "2015-05-07",
+    "electorate": 66678,
+    "general": true,
+    "majority": 9222,
+    "party": "Scottish National Party",
+    "result": "SNP Gain",
+    "title": "2015 General Election",
+    "votes": 37857
+   },
+   {
+    "date": "2017-06-08",
+    "electorate": 59931,
+    "general": true,
+    "majority": 242,
+    "party": "Labour",
+    "result": "Lab Gain",
+    "title": "2017 General Election",
+    "votes": 31775
+   },
+   {
+    "date": "2019-12-12",
+    "electorate": 61075,
+    "general": true,
+    "majority": 2548,
+    "party": "Scottish National Party",
+    "result": "SNP Gain",
+    "title": "2019 General Election",
+    "votes": 33925
+   }
+  ],
+  "1332": [],
+  "1333": [],
+  "1351": [],
+  "143": [],
+  "1561": [
+   {
+    "date": "2010-05-06",
+    "electorate": 72528,
+    "general": true,
+    "majority": 8765,
+    "party": "Liberal Democrat",
+    "result": "LD Hold",
+    "title": "2010 General Election",
+    "votes": 47086
+   },
+   {
+    "date": "2015-05-07",
+    "electorate": 77628,
+    "general": true,
+    "majority": 10809,
+    "party": "Scottish National Party",
+    "result": "SNP Gain",
+    "title": "2015 General Election",
+    "votes": 57613
+   },
+   {
+    "date": "2017-06-08",
+    "electorate": 76844,
+    "general": true,
+    "majority": 4924,
+    "party": "Scottish National Party",
+    "result": "SNP Hold",
+    "title": "2017 General Election",
+    "votes": 52801
+   },
+   {
+    "date": "2019-12-12",
+    "electorate": 78059,
+    "general": true,
+    "majority": 10440,
+    "party": "Scottish National Party",
+    "result": "SNP Hold",
+    "title": "2019 General Election",
+    "votes": 54810
+   }
+  ],
+  "1582": [],
+  "1583": [],
+  "1688": [],
+  "197": [],
+  "2136": [],
+  "2152": [],
+  "2286": [
+   {
+    "date": "2010-05-06",
+    "electorate": 61197,
+    "general": true,
+    "majority": 16614,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2010 General Election",
+    "votes": 39998
+   },
+   {
+    "date": "2015-05-07",
+    "electorate": 61281,
+    "general": true,
+    "majority": 5684,
+    "party": "Scottish National Party",
+    "result": "SNP Gain",
+    "title": "2015 General Election",
+    "votes": 46226
+   },
+   {
+    "date": "2017-06-08",
+    "electorate": 61344,
+    "general": true,
+    "majority": 2541,
+    "party": "Scottish National Party",
+    "result": "SNP Hold",
+    "title": "2017 General Election",
+    "votes": 41712
+   },
+   {
+    "date": "2019-12-12",
+    "electorate": 64385,
+    "general": true,
+    "majority": 10679,
+    "party": "Scottish National Party",
+    "result": "SNP Hold",
+    "title": "2019 General Election",
+    "votes": 43084
+   }
+  ],
+  "2290": [],
+  "230": [],
+  "2387": [],
+  "2658": [],
+  "2687": [],
+  "2716": [],
+  "3040": [],
+  "3144": [],
+  "3195": [],
+  "3206": [],
+  "3273": [],
+  "3296": [
+   {
+    "date": "2010-05-06",
+    "electorate": 77379,
+    "general": true,
+    "majority": 192,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2010 General Election",
+    "votes": 48196
+   },
+   {
+    "date": "2015-05-07",
+    "electorate": 77091,
+    "general": true,
+    "majority": 8820,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2015 General Election",
+    "votes": 47409
+   },
+   {
+    "date": "2017-06-08",
+    "electorate": 78076,
+    "general": true,
+    "majority": 441,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2017 General Election",
+    "votes": 49993
+   },
+   {
+    "date": "2019-12-12",
+    "electorate": 78204,
+    "general": true,
+    "majority": 5733,
+    "party": "Conservative",
+    "result": "Con Gain",
+    "title": "2019 General Election",
+    "votes": 48980
+   }
+  ],
+  "3300": [
+   {
+    "date": "2010-05-06",
+    "electorate": 84379,
+    "general": true,
+    "majority": 18227,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2010 General Election",
+    "votes": 56241
+   },
+   {
+    "date": "2015-05-07",
+    "electorate": 86420,
+    "general": true,
+    "majority": 18395,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2015 General Election",
+    "votes": 58008
+   },
+   {
+    "date": "2017-06-08",
+    "electorate": 83824,
+    "general": true,
+    "majority": 12399,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2017 General Election",
+    "votes": 61562
+   },
+   {
+    "date": "2019-12-12",
+    "electorate": 90116,
+    "general": true,
+    "majority": 16813,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2019 General Election",
+    "votes": 62921
+   }
+  ],
+  "3302": [
+   {
+    "date": "2010-05-06",
+    "electorate": 65543,
+    "general": true,
+    "majority": 11093,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2010 General Election",
+    "votes": 37001
+   },
+   {
+    "date": "2011-03-03",
+    "electorate": 65471,
+    "general": false,
+    "majority": 11771,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2011-03-03 Barnsley Central By-election",
+    "votes": 24219
+   },
+   {
+    "date": "2015-05-07",
+    "electorate": 64534,
+    "general": true,
+    "majority": 12435,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2015 General Election",
+    "votes": 36560
+   },
+   {
+    "date": "2017-06-08",
+    "electorate": 64204,
+    "general": true,
+    "majority": 15546,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2017 General Election",
+    "votes": 39087
+   },
+   {
+    "date": "2019-12-12",
+    "electorate": 65277,
+    "general": true,
+    "majority": 3571,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2019 General Election",
+    "votes": 36903
+   }
+  ],
+  "3315": [
+   {
+    "date": "2010-05-06",
+    "electorate": 65504,
+    "general": true,
+    "majority": 2224,
+    "party": "Democratic Unionist Party",
+    "result": "DUP Hold",
+    "title": "2010 General Election",
+    "votes": 36993
+   },
+   {
+    "date": "2015-05-07",
+    "electorate": 68553,
+    "general": true,
+    "majority": 5326,
+    "party": "Democratic Unionist Party",
+    "result": "DUP Hold",
+    "title": "2015 General Election",
+    "votes": 40593
+   },
+   {
+    "date": "2017-06-08",
+    "electorate": 68249,
+    "general": true,
+    "majority": 2081,
+    "party": "Democratic Unionist Party",
+    "result": "DUP Hold",
+    "title": "2017 General Election",
+    "votes": 45936
+   },
+   {
+    "date": "2019-12-12",
+    "electorate": 72225,
+    "general": true,
+    "majority": 1943,
+    "party": "Sinn F\u00e9in",
+    "result": "SF Gain",
+    "title": "2019 General Election",
+    "votes": 49037
+   }
+  ],
+  "3320": [
+   {
+    "date": "2010-05-06",
+    "electorate": 81243,
+    "general": true,
+    "majority": 11574,
+    "party": "Labour",
+    "result": "Lab Gain",
+    "title": "2010 General Election",
+    "votes": 50728
+   },
+   {
+    "date": "2015-05-07",
+    "electorate": 82727,
+    "general": true,
+    "majority": 24317,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2015 General Election",
+    "votes": 52924
+   },
+   {
+    "date": "2017-06-08",
+    "electorate": 86075,
+    "general": true,
+    "majority": 35393,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2017 General Election",
+    "votes": 59825
+   },
+   {
+    "date": "2019-12-12",
+    "electorate": 88262,
+    "general": true,
+    "majority": 37524,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2019 General Election",
+    "votes": 60562
+   }
+  ],
+  "3321": [
+   {
+    "date": "2010-05-06",
+    "electorate": 79318,
+    "general": true,
+    "majority": 12987,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2010 General Election",
+    "votes": 53199
+   },
+   {
+    "date": "2015-05-07",
+    "electorate": 80805,
+    "general": true,
+    "majority": 12203,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2015 General Election",
+    "votes": 52677
+   },
+   {
+    "date": "2017-06-08",
+    "electorate": 80657,
+    "general": true,
+    "majority": 14042,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2017 General Election",
+    "votes": 55638
+   },
+   {
+    "date": "2019-12-12",
+    "electorate": 79696,
+    "general": true,
+    "majority": 20448,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2019 General Election",
+    "votes": 53542
+   }
+  ],
+  "3394": [
+   {
+    "date": "2010-05-06",
+    "electorate": 52385,
+    "general": true,
+    "majority": 3481,
+    "party": "Plaid Cymru",
+    "result": "PC Hold",
+    "title": "2010 General Election",
+    "votes": 38011
+   },
+   {
+    "date": "2015-05-07",
+    "electorate": 55750,
+    "general": true,
+    "majority": 5599,
+    "party": "Plaid Cymru",
+    "result": "PC Hold",
+    "title": "2015 General Election",
+    "votes": 39399
+   },
+   {
+    "date": "2017-06-08",
+    "electorate": 55976,
+    "general": true,
+    "majority": 3908,
+    "party": "Plaid Cymru",
+    "result": "PC Hold",
+    "title": "2017 General Election",
+    "votes": 41029
+   },
+   {
+    "date": "2019-12-12",
+    "electorate": 57419,
+    "general": true,
+    "majority": 1809,
+    "party": "Plaid Cymru",
+    "result": "PC Hold",
+    "title": "2019 General Election",
+    "votes": 41002
+   }
+  ],
+  "3401": [
+   {
+    "date": "2010-05-06",
+    "electorate": 74473,
+    "general": true,
+    "majority": 15029,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2010 General Election",
+    "votes": 53542
+   },
+   {
+    "date": "2015-05-07",
+    "electorate": 77269,
+    "general": true,
+    "majority": 16931,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2015 General Election",
+    "votes": 52261
+   },
+   {
+    "date": "2017-06-08",
+    "electorate": 78071,
+    "general": true,
+    "majority": 16341,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2017 General Election",
+    "votes": 55176
+   },
+   {
+    "date": "2019-12-12",
+    "electorate": 79534,
+    "general": true,
+    "majority": 22397,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2019 General Election",
+    "votes": 55365
+   }
+  ],
+  "3413": [
+   {
+    "date": "2010-05-06",
+    "electorate": 70976,
+    "general": true,
+    "majority": 2593,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2010 General Election",
+    "votes": 49774
+   },
+   {
+    "date": "2015-05-07",
+    "electorate": 74679,
+    "general": true,
+    "majority": 4530,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2015 General Election",
+    "votes": 51712
+   },
+   {
+    "date": "2017-06-08",
+    "electorate": 76404,
+    "general": true,
+    "majority": 7512,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2017 General Election",
+    "votes": 55634
+   },
+   {
+    "date": "2019-12-12",
+    "electorate": 78177,
+    "general": true,
+    "majority": 17392,
+    "party": "Speaker",
+    "result": "Spk Gain",
+    "title": "2019 General Election",
+    "votes": 39870
+   }
+  ],
+  "3416": [
+   {
+    "date": "2010-05-06",
+    "electorate": 70131,
+    "general": true,
+    "majority": 2583,
+    "party": "Conservative",
+    "result": "Con Gain",
+    "title": "2010 General Election",
+    "votes": 46790
+   },
+   {
+    "date": "2015-05-07",
+    "electorate": 74485,
+    "general": true,
+    "majority": 93,
+    "party": "Labour",
+    "result": "Lab Gain",
+    "title": "2015 General Election",
+    "votes": 51161
+   },
+   {
+    "date": "2017-06-08",
+    "electorate": 72859,
+    "general": true,
+    "majority": 9176,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2017 General Election",
+    "votes": 56421
+   },
+   {
+    "date": "2019-12-12",
+    "electorate": 76057,
+    "general": true,
+    "majority": 6164,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2019 General Election",
+    "votes": 54560
+   },
+   {
+    "date": "2022-12-01",
+    "electorate": 69367,
+    "general": false,
+    "majority": 10974,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2022-12-01 City of Chester By-election",
+    "votes": 28475
+   }
+  ],
+  "3427": [
+   {
+    "date": "2010-05-06",
+    "electorate": 73035,
+    "general": true,
+    "majority": 11775,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2010 General Election",
+    "votes": 43383
+   },
+   {
+    "date": "2015-05-07",
+    "electorate": 75462,
+    "general": true,
+    "majority": 12274,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2015 General Election",
+    "votes": 42231
+   },
+   {
+    "date": "2017-06-08",
+    "electorate": 75759,
+    "general": true,
+    "majority": 15580,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2017 General Election",
+    "votes": 46508
+   },
+   {
+    "date": "2019-12-12",
+    "electorate": 76006,
+    "general": true,
+    "majority": 7692,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2019 General Election",
+    "votes": 44444
+   }
+  ],
+  "3432": [
+   {
+    "date": "2010-05-06",
+    "electorate": 76349,
+    "general": true,
+    "majority": 2879,
+    "party": "Conservative",
+    "result": "Con Gain",
+    "title": "2010 General Election",
+    "votes": 49667
+   },
+   {
+    "date": "2015-05-07",
+    "electorate": 78171,
+    "general": true,
+    "majority": 165,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2015 General Election",
+    "votes": 52941
+   },
+   {
+    "date": "2017-06-08",
+    "electorate": 80045,
+    "general": true,
+    "majority": 5652,
+    "party": "Labour",
+    "result": "Lab Gain",
+    "title": "2017 General Election",
+    "votes": 57091
+   },
+   {
+    "date": "2019-12-12",
+    "electorate": 81407,
+    "general": true,
+    "majority": 5949,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2019 General Election",
+    "votes": 54045
+   }
+  ],
+  "3463": [
+   {
+    "date": "2010-05-06",
+    "electorate": 63220,
+    "general": true,
+    "majority": 5355,
+    "party": "Democratic Unionist Party",
+    "result": "DUP Hold",
+    "title": "2010 General Election",
+    "votes": 34950
+   },
+   {
+    "date": "2015-05-07",
+    "electorate": 66926,
+    "general": true,
+    "majority": 7804,
+    "party": "Democratic Unionist Party",
+    "result": "DUP Hold",
+    "title": "2015 General Election",
+    "votes": 34714
+   },
+   {
+    "date": "2017-06-08",
+    "electorate": 67038,
+    "general": true,
+    "majority": 8842,
+    "party": "Democratic Unionist Party",
+    "result": "DUP Hold",
+    "title": "2017 General Election",
+    "votes": 41030
+   },
+   {
+    "date": "2019-12-12",
+    "electorate": 69246,
+    "general": true,
+    "majority": 9607,
+    "party": "Democratic Unionist Party",
+    "result": "DUP Hold",
+    "title": "2019 General Election",
+    "votes": 39302
+   }
+  ],
+  "3486": [
+   {
+    "date": "2010-05-06",
+    "electorate": 69003,
+    "general": true,
+    "majority": 6914,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2010 General Election",
+    "votes": 48301
+   },
+   {
+    "date": "2015-05-07",
+    "electorate": 71310,
+    "general": true,
+    "majority": 9838,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2015 General Election",
+    "votes": 49101
+   },
+   {
+    "date": "2017-06-08",
+    "electorate": 72483,
+    "general": true,
+    "majority": 4190,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2017 General Election",
+    "votes": 50702
+   },
+   {
+    "date": "2019-12-12",
+    "electorate": 74016,
+    "general": true,
+    "majority": 5646,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2019 General Election",
+    "votes": 53752
+   }
+  ],
+  "3495": [
+   {
+    "date": "2010-05-06",
+    "electorate": 70866,
+    "general": true,
+    "majority": 1859,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2010 General Election",
+    "votes": 48190
+   },
+   {
+    "date": "2015-05-07",
+    "electorate": 70000,
+    "general": true,
+    "majority": 2986,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2015 General Election",
+    "votes": 47998
+   },
+   {
+    "date": "2017-06-08",
+    "electorate": 71223,
+    "general": true,
+    "majority": 4694,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2017 General Election",
+    "votes": 51682
+   },
+   {
+    "date": "2019-12-12",
+    "electorate": 71366,
+    "general": true,
+    "majority": 679,
+    "party": "Conservative",
+    "result": "Con Gain",
+    "title": "2019 General Election",
+    "votes": 49953
+   }
+  ],
+  "3502": [
+   {
+    "date": "2010-05-06",
+    "electorate": 61229,
+    "general": true,
+    "majority": 714,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2010 General Election",
+    "votes": 32954
+   },
+   {
+    "date": "2015-05-07",
+    "electorate": 59200,
+    "general": true,
+    "majority": 4540,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2015 General Election",
+    "votes": 33731
+   },
+   {
+    "date": "2017-06-08",
+    "electorate": 61743,
+    "general": true,
+    "majority": 2565,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2017 General Election",
+    "votes": 35521
+   },
+   {
+    "date": "2019-12-12",
+    "electorate": 61409,
+    "general": true,
+    "majority": 7331,
+    "party": "Conservative",
+    "result": "Con Gain",
+    "title": "2019 General Election",
+    "votes": 33087
+   }
+  ],
+  "3506": [
+   {
+    "date": "2010-05-06",
+    "electorate": 73906,
+    "general": true,
+    "majority": 14461,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2010 General Election",
+    "votes": 46461
+   },
+   {
+    "date": "2015-05-07",
+    "electorate": 88153,
+    "general": true,
+    "majority": 24008,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2015 General Election",
+    "votes": 49887
+   },
+   {
+    "date": "2017-06-08",
+    "electorate": 85058,
+    "general": true,
+    "majority": 35139,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2017 General Election",
+    "votes": 56298
+   },
+   {
+    "date": "2019-12-12",
+    "electorate": 92462,
+    "general": true,
+    "majority": 33188,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2019 General Election",
+    "votes": 56864
+   }
+  ],
+  "3511": [
+   {
+    "date": "2010-05-06",
+    "electorate": 68846,
+    "general": true,
+    "majority": 15504,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2010 General Election",
+    "votes": 41338
+   },
+   {
+    "date": "2015-05-07",
+    "electorate": 72818,
+    "general": true,
+    "majority": 20285,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2015 General Election",
+    "votes": 45023
+   },
+   {
+    "date": "2017-06-08",
+    "electorate": 73457,
+    "general": true,
+    "majority": 25405,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2017 General Election",
+    "votes": 49518
+   },
+   {
+    "date": "2019-12-12",
+    "electorate": 71930,
+    "general": true,
+    "majority": 18975,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2019 General Election",
+    "votes": 46203
+   }
+  ],
+  "3515": [
+   {
+    "date": "2010-05-06",
+    "electorate": 67583,
+    "general": true,
+    "majority": 4925,
+    "party": "Conservative",
+    "result": "Con Gain",
+    "title": "2010 General Election",
+    "votes": 43878
+   },
+   {
+    "date": "2015-05-07",
+    "electorate": 67994,
+    "general": true,
+    "majority": 8350,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2015 General Election",
+    "votes": 44251
+   },
+   {
+    "date": "2017-06-08",
+    "electorate": 67699,
+    "general": true,
+    "majority": 7031,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2017 General Election",
+    "votes": 44846
+   },
+   {
+    "date": "2019-12-12",
+    "electorate": 68078,
+    "general": true,
+    "majority": 14063,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2019 General Election",
+    "votes": 43354
+   }
+  ],
+  "3549": [
+   {
+    "date": "2010-05-06",
+    "electorate": 68119,
+    "general": true,
+    "majority": 12401,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2010 General Election",
+    "votes": 44554
+   },
+   {
+    "date": "2015-05-07",
+    "electorate": 73326,
+    "general": true,
+    "majority": 21194,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2015 General Election",
+    "votes": 49234
+   },
+   {
+    "date": "2017-06-08",
+    "electorate": 74831,
+    "general": true,
+    "majority": 33215,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2017 General Election",
+    "votes": 54928
+   },
+   {
+    "date": "2019-12-12",
+    "electorate": 75162,
+    "general": true,
+    "majority": 26188,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2019 General Election",
+    "votes": 53805
+   }
+  ],
+  "3560": [
+   {
+    "date": "2010-05-06",
+    "electorate": 57264,
+    "general": true,
+    "majority": 5742,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2010 General Election",
+    "votes": 31505
+   },
+   {
+    "date": "2015-05-07",
+    "electorate": 59100,
+    "general": true,
+    "majority": 9333,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2015 General Election",
+    "votes": 31803
+   },
+   {
+    "date": "2017-06-08",
+    "electorate": 60181,
+    "general": true,
+    "majority": 8025,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2017 General Election",
+    "votes": 34565
+   },
+   {
+    "date": "2019-12-12",
+    "electorate": 60192,
+    "general": true,
+    "majority": 2856,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2019 General Election",
+    "votes": 31356
+   }
+  ],
+  "3565": [
+   {
+    "date": "2010-05-06",
+    "electorate": 81266,
+    "general": true,
+    "majority": 10645,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2010 General Election",
+    "votes": 37394
+   },
+   {
+    "date": "2015-05-07",
+    "electorate": 81799,
+    "general": true,
+    "majority": 16967,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2015 General Election",
+    "votes": 45048
+   },
+   {
+    "date": "2017-06-08",
+    "electorate": 89537,
+    "general": true,
+    "majority": 23698,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2017 General Election",
+    "votes": 47673
+   },
+   {
+    "date": "2019-12-12",
+    "electorate": 90971,
+    "general": true,
+    "majority": 19270,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2019 General Election",
+    "votes": 49284
+   }
+  ],
+  "3575": [
+   {
+    "date": "2010-05-06",
+    "electorate": 65926,
+    "general": true,
+    "majority": 6216,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2010 General Election",
+    "votes": 41719
+   },
+   {
+    "date": "2015-05-07",
+    "electorate": 66913,
+    "general": true,
+    "majority": 14333,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2015 General Election",
+    "votes": 42923
+   },
+   {
+    "date": "2017-06-08",
+    "electorate": 68124,
+    "general": true,
+    "majority": 21213,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2017 General Election",
+    "votes": 47201
+   },
+   {
+    "date": "2018-06-14",
+    "electorate": 66140,
+    "general": false,
+    "majority": 5629,
+    "party": "Labour",
+    "result": "Labour hold",
+    "title": "2018-06-14 Lewisham East By-election",
+    "votes": 21979
+   },
+   {
+    "date": "2019-12-12",
+    "electorate": 67857,
+    "general": true,
+    "majority": 17008,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2019 General Election",
+    "votes": 44815
+   }
+  ],
+  "3583": [
+   {
+    "date": "2010-05-06",
+    "electorate": 62518,
+    "general": true,
+    "majority": 7167,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2010 General Election",
+    "votes": 37914
+   },
+   {
+    "date": "2015-05-07",
+    "electorate": 61549,
+    "general": true,
+    "majority": 24303,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2015 General Election",
+    "votes": 40974
+   },
+   {
+    "date": "2017-06-08",
+    "electorate": 62411,
+    "general": true,
+    "majority": 29466,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2017 General Election",
+    "votes": 43640
+   },
+   {
+    "date": "2019-12-12",
+    "electorate": 63458,
+    "general": true,
+    "majority": 27085,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2019 General Election",
+    "votes": 43377
+   }
+  ],
+  "3587": [
+   {
+    "date": "2010-05-06",
+    "electorate": 77650,
+    "general": true,
+    "majority": 13871,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2010 General Election",
+    "votes": 50494
+   },
+   {
+    "date": "2015-05-07",
+    "electorate": 74870,
+    "general": true,
+    "majority": 14977,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2015 General Election",
+    "votes": 50336
+   },
+   {
+    "date": "2017-06-08",
+    "electorate": 79007,
+    "general": true,
+    "majority": 19641,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2017 General Election",
+    "votes": 52771
+   },
+   {
+    "date": "2019-12-12",
+    "electorate": 79634,
+    "general": true,
+    "majority": 28868,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2019 General Election",
+    "votes": 52332
+   }
+  ],
+  "3604": [
+   {
+    "date": "2010-05-06",
+    "electorate": 66074,
+    "general": true,
+    "majority": 11292,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2010 General Election",
+    "votes": 47342
+   },
+   {
+    "date": "2015-05-07",
+    "electorate": 67477,
+    "general": true,
+    "majority": 12774,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2015 General Election",
+    "votes": 47729
+   },
+   {
+    "date": "2017-06-08",
+    "electorate": 67466,
+    "general": true,
+    "majority": 11616,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2017 General Election",
+    "votes": 50371
+   },
+   {
+    "date": "2019-12-12",
+    "electorate": 67442,
+    "general": true,
+    "majority": 15385,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2019 General Election",
+    "votes": 49356
+   }
+  ],
+  "3643": [
+   {
+    "date": "2010-05-06",
+    "electorate": 72196,
+    "general": true,
+    "majority": 18597,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2010 General Election",
+    "votes": 52939
+   },
+   {
+    "date": "2015-05-07",
+    "electorate": 76918,
+    "general": true,
+    "majority": 29916,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2015 General Election",
+    "votes": 54000
+   },
+   {
+    "date": "2017-06-08",
+    "electorate": 74576,
+    "general": true,
+    "majority": 27772,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2017 General Election",
+    "votes": 57627
+   },
+   {
+    "date": "2019-12-12",
+    "electorate": 78954,
+    "general": true,
+    "majority": 20211,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2019 General Election",
+    "votes": 59270
+   }
+  ],
+  "3648": [
+   {
+    "date": "2010-05-06",
+    "electorate": 78930,
+    "general": true,
+    "majority": 15828,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2010 General Election",
+    "votes": 51869
+   },
+   {
+    "date": "2015-05-07",
+    "electorate": 78858,
+    "general": true,
+    "majority": 16494,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2015 General Election",
+    "votes": 52573
+   },
+   {
+    "date": "2017-06-08",
+    "electorate": 80535,
+    "general": true,
+    "majority": 16355,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2017 General Election",
+    "votes": 55599
+   },
+   {
+    "date": "2019-12-12",
+    "electorate": 83258,
+    "general": true,
+    "majority": 22949,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2019 General Election",
+    "votes": 56513
+   },
+   {
+    "date": "2021-12-16",
+    "electorate": 82314,
+    "general": false,
+    "majority": 5925,
+    "party": "Liberal Democrat",
+    "result": "LD Gain ",
+    "title": "2021-12-16 North Shropshire By-election",
+    "votes": 38022
+   }
+  ],
+  "3665": [
+   {
+    "date": "2010-05-06",
+    "electorate": 63240,
+    "general": true,
+    "majority": 8138,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2010 General Election",
+    "votes": 34285
+   },
+   {
+    "date": "2015-05-07",
+    "electorate": 65918,
+    "general": true,
+    "majority": 11860,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2015 General Election",
+    "votes": 35343
+   },
+   {
+    "date": "2017-06-08",
+    "electorate": 66886,
+    "general": true,
+    "majority": 11160,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2017 General Election",
+    "votes": 38319
+   },
+   {
+    "date": "2019-12-12",
+    "electorate": 66495,
+    "general": true,
+    "majority": 4490,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2019 General Election",
+    "votes": 35320
+   }
+  ],
+  "3670": [
+   {
+    "date": "2010-05-06",
+    "electorate": 72557,
+    "general": true,
+    "majority": 103,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2010 General Election",
+    "votes": 44520
+   },
+   {
+    "date": "2011-01-13",
+    "electorate": 72788,
+    "general": false,
+    "majority": 3558,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2011-01-13 Oldham East and Saddleworth By-election",
+    "votes": 34786
+   },
+   {
+    "date": "2015-05-07",
+    "electorate": 71475,
+    "general": true,
+    "majority": 6002,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2015 General Election",
+    "votes": 44483
+   },
+   {
+    "date": "2017-06-08",
+    "electorate": 72184,
+    "general": true,
+    "majority": 8182,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2017 General Election",
+    "votes": 47037
+   },
+   {
+    "date": "2019-12-12",
+    "electorate": 72120,
+    "general": true,
+    "majority": 1499,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2019 General Election",
+    "votes": 46164
+   }
+  ],
+  "3680": [
+   {
+    "date": "2010-05-06",
+    "electorate": 72938,
+    "general": true,
+    "majority": 1149,
+    "party": "Conservative",
+    "result": "Con Gain",
+    "title": "2010 General Election",
+    "votes": 43894
+   },
+   {
+    "date": "2015-05-07",
+    "electorate": 73274,
+    "general": true,
+    "majority": 523,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2015 General Election",
+    "votes": 47963
+   },
+   {
+    "date": "2017-06-08",
+    "electorate": 76584,
+    "general": true,
+    "majority": 6807,
+    "party": "Labour",
+    "result": "Lab Gain",
+    "title": "2017 General Election",
+    "votes": 51208
+   },
+   {
+    "date": "2019-12-12",
+    "electorate": 77852,
+    "general": true,
+    "majority": 4757,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2019 General Election",
+    "votes": 53176
+   }
+  ],
+  "3688": [
+   {
+    "date": "2010-05-06",
+    "electorate": 69257,
+    "general": true,
+    "majority": 1659,
+    "party": "Conservative",
+    "result": "Con Gain",
+    "title": "2010 General Election",
+    "votes": 49083
+   },
+   {
+    "date": "2015-05-07",
+    "electorate": 70533,
+    "general": true,
+    "majority": 4501,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2015 General Election",
+    "votes": 50927
+   },
+   {
+    "date": "2017-06-08",
+    "electorate": 72622,
+    "general": true,
+    "majority": 331,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2017 General Election",
+    "votes": 53959
+   },
+   {
+    "date": "2019-12-12",
+    "electorate": 73212,
+    "general": true,
+    "majority": 3517,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2019 General Election",
+    "votes": 54215
+   }
+  ],
+  "3689": [
+   {
+    "date": "2010-05-06",
+    "electorate": 63371,
+    "general": true,
+    "majority": 10053,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2010 General Election",
+    "votes": 40785
+   },
+   {
+    "date": "2015-05-07",
+    "electorate": 63923,
+    "general": true,
+    "majority": 10180,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2015 General Election",
+    "votes": 42813
+   },
+   {
+    "date": "2017-06-08",
+    "electorate": 65031,
+    "general": true,
+    "majority": 1554,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2017 General Election",
+    "votes": 46894
+   },
+   {
+    "date": "2019-12-12",
+    "electorate": 65556,
+    "general": true,
+    "majority": 4774,
+    "party": "Labour",
+    "result": "Lab Gain",
+    "title": "2019 General Election",
+    "votes": 50467
+   }
+  ],
+  "3693": [
+   {
+    "date": "2010-05-06",
+    "electorate": 67127,
+    "general": true,
+    "majority": 5214,
+    "party": "Liberal Democrat",
+    "result": "LD Gain",
+    "title": "2010 General Election",
+    "votes": 41963
+   },
+   {
+    "date": "2015-05-07",
+    "electorate": 64826,
+    "general": true,
+    "majority": 10388,
+    "party": "Labour",
+    "result": "Lab Gain",
+    "title": "2015 General Election",
+    "votes": 40919
+   },
+   {
+    "date": "2017-06-08",
+    "electorate": 66836,
+    "general": true,
+    "majority": 9485,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2017 General Election",
+    "votes": 42560
+   },
+   {
+    "date": "2019-12-12",
+    "electorate": 65864,
+    "general": true,
+    "majority": 3527,
+    "party": "Conservative",
+    "result": "Con Gain",
+    "title": "2019 General Election",
+    "votes": 40842
+   }
+  ],
+  "3720": [
+   {
+    "date": "2010-05-06",
+    "electorate": 72804,
+    "general": true,
+    "majority": 12265,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2010 General Election",
+    "votes": 51728
+   },
+   {
+    "date": "2015-05-07",
+    "electorate": 76082,
+    "general": true,
+    "majority": 13557,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2015 General Election",
+    "votes": 52804
+   },
+   {
+    "date": "2017-06-08",
+    "electorate": 75918,
+    "general": true,
+    "majority": 13772,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2017 General Election",
+    "votes": 56076
+   },
+   {
+    "date": "2019-12-12",
+    "electorate": 78398,
+    "general": true,
+    "majority": 20137,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2019 General Election",
+    "votes": 56418
+   },
+   {
+    "date": "2023-07-20",
+    "electorate": 80150,
+    "general": false,
+    "majority": 4161,
+    "party": "Labour",
+    "result": "Lab Gain",
+    "title": "2023-07-20 Selby and Ainsty By-election",
+    "votes": 35807
+   }
+  ],
+  "3724": [
+   {
+    "date": "2010-05-06",
+    "electorate": 67740,
+    "general": true,
+    "majority": 13632,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2010 General Election",
+    "votes": 38914
+   },
+   {
+    "date": "2015-05-07",
+    "electorate": 70874,
+    "general": true,
+    "majority": 13807,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2015 General Election",
+    "votes": 40053
+   },
+   {
+    "date": "2016-05-05",
+    "electorate": 68439,
+    "general": false,
+    "majority": 9590,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2016-05-05 Sheffield, Brightside and Hillsborough By-election",
+    "votes": 22581
+   },
+   {
+    "date": "2017-06-08",
+    "electorate": 70344,
+    "general": true,
+    "majority": 19143,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2017 General Election",
+    "votes": 41870
+   },
+   {
+    "date": "2019-12-12",
+    "electorate": 69333,
+    "general": true,
+    "majority": 12274,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2019 General Election",
+    "votes": 39600
+   }
+  ],
+  "3744": [
+   {
+    "date": "2010-05-06",
+    "electorate": 76243,
+    "general": true,
+    "majority": 21880,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2010 General Election",
+    "votes": 50188
+   },
+   {
+    "date": "2015-05-07",
+    "electorate": 76460,
+    "general": true,
+    "majority": 18567,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2015 General Election",
+    "votes": 49207
+   },
+   {
+    "date": "2017-06-08",
+    "electorate": 76374,
+    "general": true,
+    "majority": 24897,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2017 General Election",
+    "votes": 50315
+   },
+   {
+    "date": "2019-12-12",
+    "electorate": 75975,
+    "general": true,
+    "majority": 30838,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2019 General Election",
+    "votes": 49179
+   }
+  ],
+  "3756": [
+   {
+    "date": "2010-05-06",
+    "electorate": 78248,
+    "general": true,
+    "majority": 14920,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2010 General Election",
+    "votes": 56750
+   },
+   {
+    "date": "2015-05-07",
+    "electorate": 79668,
+    "general": true,
+    "majority": 23263,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2015 General Election",
+    "votes": 57267
+   },
+   {
+    "date": "2017-06-08",
+    "electorate": 81087,
+    "general": true,
+    "majority": 19550,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2017 General Election",
+    "votes": 60653
+   },
+   {
+    "date": "2019-12-12",
+    "electorate": 80499,
+    "general": true,
+    "majority": 14408,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2019 General Election",
+    "votes": 61191
+   }
+  ],
+  "3759": [
+   {
+    "date": "2010-05-06",
+    "electorate": 71647,
+    "general": true,
+    "majority": 10367,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2010 General Election",
+    "votes": 49018
+   },
+   {
+    "date": "2015-05-07",
+    "electorate": 73018,
+    "general": true,
+    "majority": 18168,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2015 General Election",
+    "votes": 51643
+   },
+   {
+    "date": "2017-06-08",
+    "electorate": 76898,
+    "general": true,
+    "majority": 18326,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2017 General Election",
+    "votes": 54751
+   },
+   {
+    "date": "2019-12-12",
+    "electorate": 77969,
+    "general": true,
+    "majority": 21630,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2019 General Election",
+    "votes": 54895
+   }
+  ],
+  "3762": [
+   {
+    "date": "2010-05-06",
+    "electorate": 66918,
+    "general": true,
+    "majority": 7270,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2010 General Election",
+    "votes": 43606
+   },
+   {
+    "date": "2015-05-07",
+    "electorate": 66876,
+    "general": true,
+    "majority": 14021,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2015 General Election",
+    "votes": 44509
+   },
+   {
+    "date": "2017-06-08",
+    "electorate": 67677,
+    "general": true,
+    "majority": 10000,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2017 General Election",
+    "votes": 47191
+   },
+   {
+    "date": "2019-12-12",
+    "electorate": 69043,
+    "general": true,
+    "majority": 14459,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2019 General Election",
+    "votes": 46537
+   },
+   {
+    "date": "2022-02-03",
+    "electorate": 66354,
+    "general": false,
+    "majority": 12280,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2022-02-03 Southend West By-election",
+    "votes": 14858
+   }
+  ],
+  "3765": [
+   {
+    "date": "2010-05-06",
+    "electorate": 70058,
+    "general": true,
+    "majority": 2305,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2010 General Election",
+    "votes": 52835
+   },
+   {
+    "date": "2015-05-07",
+    "electorate": 75825,
+    "general": true,
+    "majority": 12732,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2015 General Election",
+    "votes": 54433
+   },
+   {
+    "date": "2017-06-08",
+    "electorate": 72811,
+    "general": true,
+    "majority": 6109,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2017 General Election",
+    "votes": 56998
+   },
+   {
+    "date": "2019-12-12",
+    "electorate": 73727,
+    "general": true,
+    "majority": 6293,
+    "party": "Liberal Democrat",
+    "result": "LD Gain",
+    "title": "2019 General Election",
+    "votes": 57599
+   }
+  ],
+  "3776": [
+   {
+    "date": "2010-05-06",
+    "electorate": 73840,
+    "general": true,
+    "majority": 332,
+    "party": "Conservative",
+    "result": "Con Gain",
+    "title": "2010 General Election",
+    "votes": 50284
+   },
+   {
+    "date": "2015-05-07",
+    "electorate": 75111,
+    "general": true,
+    "majority": 5046,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2015 General Election",
+    "votes": 51797
+   },
+   {
+    "date": "2017-06-08",
+    "electorate": 75625,
+    "general": true,
+    "majority": 888,
+    "party": "Labour",
+    "result": "Lab Gain",
+    "title": "2017 General Election",
+    "votes": 53824
+   },
+   {
+    "date": "2019-12-12",
+    "electorate": 76870,
+    "general": true,
+    "majority": 5260,
+    "party": "Conservative",
+    "result": "Con Gain",
+    "title": "2019 General Election",
+    "votes": 54802
+   }
+  ],
+  "3778": [
+   {
+    "date": "2010-05-06",
+    "electorate": 72054,
+    "general": true,
+    "majority": 8235,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2010 General Election",
+    "votes": 40196
+   },
+   {
+    "date": "2015-05-07",
+    "electorate": 71438,
+    "general": true,
+    "majority": 4836,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2015 General Election",
+    "votes": 38654
+   },
+   {
+    "date": "2017-06-08",
+    "electorate": 71558,
+    "general": true,
+    "majority": 2359,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2017 General Election",
+    "votes": 41786
+   },
+   {
+    "date": "2019-12-12",
+    "electorate": 68298,
+    "general": true,
+    "majority": 6286,
+    "party": "Conservative",
+    "result": "Con Gain",
+    "title": "2019 General Election",
+    "votes": 40134
+   }
+  ],
+  "3831": [
+   {
+    "date": "2010-05-06",
+    "electorate": 67800,
+    "general": true,
+    "majority": 3513,
+    "party": "Conservative",
+    "result": "Con Gain",
+    "title": "2010 General Election",
+    "votes": 49032
+   },
+   {
+    "date": "2015-05-07",
+    "electorate": 71578,
+    "general": true,
+    "majority": 6606,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2015 General Election",
+    "votes": 50581
+   },
+   {
+    "date": "2017-06-08",
+    "electorate": 74237,
+    "general": true,
+    "majority": 1206,
+    "party": "Labour",
+    "result": "Lab Gain",
+    "title": "2017 General Election",
+    "votes": 54055
+   },
+   {
+    "date": "2019-12-12",
+    "electorate": 76362,
+    "general": true,
+    "majority": 789,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2019 General Election",
+    "votes": 54205
+   }
+  ],
+  "3834": [
+   {
+    "date": "2010-05-06",
+    "electorate": 78532,
+    "general": true,
+    "majority": 769,
+    "party": "Conservative",
+    "result": "Con Gain",
+    "title": "2010 General Election",
+    "votes": 51141
+   },
+   {
+    "date": "2015-05-07",
+    "electorate": 80166,
+    "general": true,
+    "majority": 2408,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2015 General Election",
+    "votes": 52196
+   },
+   {
+    "date": "2017-06-08",
+    "electorate": 80763,
+    "general": true,
+    "majority": 9215,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2017 General Election",
+    "votes": 52674
+   },
+   {
+    "date": "2019-12-12",
+    "electorate": 82791,
+    "general": true,
+    "majority": 18002,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2019 General Election",
+    "votes": 51129
+   }
+  ],
+  "3855": [
+   {
+    "date": "2010-05-06",
+    "electorate": 69511,
+    "general": true,
+    "majority": 19054,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2010 General Election",
+    "votes": 49588
+   },
+   {
+    "date": "2015-05-07",
+    "electorate": 71538,
+    "general": true,
+    "majority": 25083,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2015 General Election",
+    "votes": 50160
+   },
+   {
+    "date": "2017-06-08",
+    "electorate": 73595,
+    "general": true,
+    "majority": 22384,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2017 General Election",
+    "votes": 53921
+   },
+   {
+    "date": "2019-12-12",
+    "electorate": 75038,
+    "general": true,
+    "majority": 20079,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2019 General Election",
+    "votes": 53750
+   }
+  ],
+  "3859": [
+   {
+    "date": "2010-05-06",
+    "electorate": 78766,
+    "general": true,
+    "majority": 22740,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2010 General Election",
+    "votes": 57769
+   },
+   {
+    "date": "2015-05-07",
+    "electorate": 79767,
+    "general": true,
+    "majority": 25155,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2015 General Election",
+    "votes": 58482
+   },
+   {
+    "date": "2016-10-20",
+    "electorate": 82277,
+    "general": false,
+    "majority": 5702,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2016-10-20 Witney By-election",
+    "votes": 38455
+   },
+   {
+    "date": "2017-06-08",
+    "electorate": 82727,
+    "general": true,
+    "majority": 21241,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2017 General Election",
+    "votes": 60927
+   },
+   {
+    "date": "2019-12-12",
+    "electorate": 83845,
+    "general": true,
+    "majority": 15177,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2019 General Election",
+    "votes": 61305
+   }
+  ],
+  "3864": [
+   {
+    "date": "2010-05-06",
+    "electorate": 58845,
+    "general": true,
+    "majority": 691,
+    "party": "Conservative",
+    "result": "Con Gain",
+    "title": "2010 General Election",
+    "votes": 40160
+   },
+   {
+    "date": "2015-05-07",
+    "electorate": 60368,
+    "general": true,
+    "majority": 801,
+    "party": "Labour",
+    "result": "Lab Gain",
+    "title": "2015 General Election",
+    "votes": 40209
+   },
+   {
+    "date": "2017-06-08",
+    "electorate": 59971,
+    "general": true,
+    "majority": 2185,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2017 General Election",
+    "votes": 42346
+   },
+   {
+    "date": "2019-12-12",
+    "electorate": 60534,
+    "general": true,
+    "majority": 1661,
+    "party": "Conservative",
+    "result": "Con Gain",
+    "title": "2019 General Election",
+    "votes": 41136
+   }
+  ],
+  "3873": [
+   {
+    "date": "2010-05-06",
+    "electorate": 79923,
+    "general": true,
+    "majority": 7575,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2010 General Election",
+    "votes": 40751
+   },
+   {
+    "date": "2014-02-13",
+    "electorate": 85058,
+    "general": false,
+    "majority": 8960,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2014-02-13 Wythenshawe and Sale East By-election ",
+    "votes": 23865
+   },
+   {
+    "date": "2015-05-07",
+    "electorate": 75994,
+    "general": true,
+    "majority": 10569,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2015 General Election",
+    "votes": 43263
+   },
+   {
+    "date": "2017-06-08",
+    "electorate": 76361,
+    "general": true,
+    "majority": 14944,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2017 General Election",
+    "votes": 45846
+   },
+   {
+    "date": "2019-12-12",
+    "electorate": 76313,
+    "general": true,
+    "majority": 10396,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2019 General Election",
+    "votes": 44759
+   }
+  ],
+  "3883": [
+   {
+    "date": "2024-07-04",
+    "electorate": 68929,
+    "general": true,
+    "majority": 5508,
+    "party": "Reform UK",
+    "result": "RUK Gain",
+    "title": "2024 General Election",
+    "votes": 39882
+   }
+  ],
+  "3888": [
+   {
+    "date": "2024-07-04",
+    "electorate": 79822,
+    "general": true,
+    "majority": 11054,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2024 General Election",
+    "votes": 36477
+   }
+  ],
+  "3889": [
+   {
+    "date": "2024-07-04",
+    "electorate": 78274,
+    "general": true,
+    "majority": 7811,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2024 General Election",
+    "votes": 36894
+   }
+  ],
+  "3901": [
+   {
+    "date": "2024-07-04",
+    "electorate": 81439,
+    "general": true,
+    "majority": 1689,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2024 General Election",
+    "votes": 46647
+   }
+  ],
+  "3902": [
+   {
+    "date": "2024-07-04",
+    "electorate": 71994,
+    "general": true,
+    "majority": 124,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2024 General Election",
+    "votes": 44897
+   }
+  ],
+  "3931": [
+   {
+    "date": "2024-07-04",
+    "electorate": 70259,
+    "general": true,
+    "majority": 3224,
+    "party": "Labour",
+    "result": "Lab Gain",
+    "title": "2024 General Election",
+    "votes": 39418
+   }
+  ],
+  "3941": [
+   {
+    "date": "2024-07-04",
+    "electorate": 71571,
+    "general": true,
+    "majority": 1349,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2024 General Election",
+    "votes": 40129
+   }
+  ],
+  "3942": [
+   {
+    "date": "2024-07-04",
+    "electorate": 74438,
+    "general": true,
+    "majority": 3125,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2024 General Election",
+    "votes": 42937
+   }
+  ],
+  "3945": [
+   {
+    "date": "2024-07-04",
+    "electorate": 74786,
+    "general": true,
+    "majority": 14290,
+    "party": "Green Party",
+    "result": "Green Hold",
+    "title": "2024 General Election",
+    "votes": 52363
+   }
+  ],
+  "3978": [
+   {
+    "date": "2024-07-04",
+    "electorate": 70215,
+    "general": true,
+    "majority": 11870,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2024 General Election",
+    "votes": 44694
+   }
+  ],
+  "3981": [
+   {
+    "date": "2024-07-04",
+    "electorate": 78374,
+    "general": true,
+    "majority": 12172,
+    "party": "Liberal Democrat",
+    "result": "LD Gain",
+    "title": "2024 General Election",
+    "votes": 51947
+   }
+  ],
+  "3985": [
+   {
+    "date": "2024-07-04",
+    "electorate": 74801,
+    "general": true,
+    "majority": 20575,
+    "party": "Independent",
+    "result": "Spk Hold",
+    "title": "2024 General Election",
+    "votes": 33964
+   }
+  ],
+  "4003": [
+   {
+    "date": "2024-07-04",
+    "electorate": 77891,
+    "general": true,
+    "majority": 14226,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2024 General Election",
+    "votes": 38122
+   }
+  ],
+  "4007": [
+   {
+    "date": "2024-07-04",
+    "electorate": 80879,
+    "general": true,
+    "majority": 3012,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2024 General Election",
+    "votes": 53082
+   }
+  ],
+  "4043": [
+   {
+    "date": "2024-07-04",
+    "electorate": 71501,
+    "general": true,
+    "majority": 5859,
+    "party": "Labour",
+    "result": "Lab Gain",
+    "title": "2024 General Election",
+    "votes": 43006
+   }
+  ],
+  "4053": [
+   {
+    "date": "2024-07-04",
+    "electorate": 77500,
+    "general": true,
+    "majority": 4581,
+    "party": "Labour",
+    "result": "Lab Gain",
+    "title": "2024 General Election",
+    "votes": 49289
+   }
+  ],
+  "4070": [
+   {
+    "date": "2024-07-04",
+    "electorate": 76157,
+    "general": true,
+    "majority": 4803,
+    "party": "Labour",
+    "result": "Lab Gain",
+    "title": "2024 General Election",
+    "votes": 36619
+   }
+  ],
+  "4071": [
+   {
+    "date": "2024-07-04",
+    "electorate": 73317,
+    "general": true,
+    "majority": 1426,
+    "party": "Reform UK",
+    "result": "RUK Gain",
+    "title": "2024 General Election",
+    "votes": 40748
+   }
+  ],
+  "4074": [
+   {
+    "date": "2024-07-04",
+    "electorate": 77812,
+    "general": true,
+    "majority": 15080,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2024 General Election",
+    "votes": 40959
+   }
+  ],
+  "4084": [
+   {
+    "date": "2024-07-04",
+    "electorate": 77955,
+    "general": true,
+    "majority": 8238,
+    "party": "Liberal Democrat",
+    "result": "LD Gain",
+    "title": "2024 General Election",
+    "votes": 52064
+   }
+  ],
+  "4087": [
+   {
+    "date": "2024-07-04",
+    "electorate": 71437,
+    "general": true,
+    "majority": 7698,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2024 General Election",
+    "votes": 35511
+   }
+  ],
+  "4113": [
+   {
+    "date": "2024-07-04",
+    "electorate": 79074,
+    "general": true,
+    "majority": 1499,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2024 General Election",
+    "votes": 52040
+   }
+  ],
+  "4117": [
+   {
+    "date": "2024-07-04",
+    "electorate": 75396,
+    "general": true,
+    "majority": 7403,
+    "party": "Labour",
+    "result": "Lab Gain",
+    "title": "2024 General Election",
+    "votes": 44071
+   }
+  ],
+  "4118": [
+   {
+    "date": "2024-07-04",
+    "electorate": 55855,
+    "general": true,
+    "majority": 3323,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2024 General Election",
+    "votes": 34078
+   }
+  ],
+  "4120": [
+   {
+    "date": "2024-07-04",
+    "electorate": 72852,
+    "general": true,
+    "majority": 7247,
+    "party": "Independent",
+    "result": "Ind Gain",
+    "title": "2024 General Election",
+    "votes": 49006
+   }
+  ],
+  "4130": [
+   {
+    "date": "2024-07-04",
+    "electorate": 73252,
+    "general": true,
+    "majority": 8979,
+    "party": "Labour",
+    "result": "Lab Gain",
+    "title": "2024 General Election",
+    "votes": 38178
+   }
+  ],
+  "4138": [
+   {
+    "date": "2024-07-04",
+    "electorate": 75953,
+    "general": true,
+    "majority": 11279,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2024 General Election",
+    "votes": 31678
+   }
+  ],
+  "4155": [
+   {
+    "date": "2024-07-04",
+    "electorate": 70581,
+    "general": true,
+    "majority": 16304,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2024 General Election",
+    "votes": 39815
+   }
+  ],
+  "4158": [
+   {
+    "date": "2024-07-04",
+    "electorate": 76880,
+    "general": true,
+    "majority": 5506,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2024 General Election",
+    "votes": 46479
+   }
+  ],
+  "4172": [
+   {
+    "date": "2024-07-04",
+    "electorate": 74316,
+    "general": true,
+    "majority": 5396,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2024 General Election",
+    "votes": 45986
+   }
+  ],
+  "4174": [
+   {
+    "date": "2024-07-04",
+    "electorate": 75457,
+    "general": true,
+    "majority": 1321,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2024 General Election",
+    "votes": 49621
+   }
+  ],
+  "4204": [
+   {
+    "date": "2024-07-04",
+    "electorate": 73226,
+    "general": true,
+    "majority": 5873,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2024 General Election",
+    "votes": 41565
+   }
+  ],
+  "4211": [
+   {
+    "date": "2024-07-04",
+    "electorate": 71438,
+    "general": true,
+    "majority": 2585,
+    "party": "Liberal Democrat",
+    "result": "LD Gain",
+    "title": "2024 General Election",
+    "votes": 47043
+   }
+  ],
+  "4212": [
+   {
+    "date": "2024-07-04",
+    "electorate": 74190,
+    "general": true,
+    "majority": 5067,
+    "party": "Labour",
+    "result": "Lab Gain",
+    "title": "2024 General Election",
+    "votes": 48843
+   }
+  ],
+  "4226": [
+   {
+    "date": "2024-07-04",
+    "electorate": 73768,
+    "general": true,
+    "majority": 9427,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2024 General Election",
+    "votes": 35007
+   }
+  ],
+  "4230": [
+   {
+    "date": "2024-07-04",
+    "electorate": 73460,
+    "general": true,
+    "majority": 6357,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2024 General Election",
+    "votes": 40065
+   }
+  ],
+  "4233": [
+   {
+    "date": "2024-07-04",
+    "electorate": 72312,
+    "general": true,
+    "majority": 4542,
+    "party": "Labour",
+    "result": "Lab Gain",
+    "title": "2024 General Election",
+    "votes": 43873
+   }
+  ],
+  "4242": [
+   {
+    "date": "2024-07-04",
+    "electorate": 75313,
+    "general": true,
+    "majority": 13328,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2024 General Election",
+    "votes": 42095
+   }
+  ],
+  "4249": [
+   {
+    "date": "2024-07-04",
+    "electorate": 72686,
+    "general": true,
+    "majority": 12488,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2024 General Election",
+    "votes": 49295
+   }
+  ],
+  "4255": [
+   {
+    "date": "2024-07-04",
+    "electorate": 70241,
+    "general": true,
+    "majority": 3323,
+    "party": "Labour",
+    "result": "Lab Gain",
+    "title": "2024 General Election",
+    "votes": 38209
+   }
+  ],
+  "4281": [
+   {
+    "date": "2024-07-04",
+    "electorate": 70389,
+    "general": true,
+    "majority": 11600,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2024 General Election",
+    "votes": 31612
+   }
+  ],
+  "4294": [
+   {
+    "date": "2024-07-04",
+    "electorate": 71816,
+    "general": true,
+    "majority": 4620,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2024 General Election",
+    "votes": 46877
+   }
+  ],
+  "4302": [
+   {
+    "date": "2024-07-04",
+    "electorate": 78473,
+    "general": true,
+    "majority": 6856,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2024 General Election",
+    "votes": 45930
+   }
+  ],
+  "4304": [
+   {
+    "date": "2024-07-04",
+    "electorate": 74006,
+    "general": true,
+    "majority": 2826,
+    "party": "Labour",
+    "result": "Lab Gain",
+    "title": "2024 General Election",
+    "votes": 49579
+   }
+  ],
+  "4306": [
+   {
+    "date": "2024-07-04",
+    "electorate": 73420,
+    "general": true,
+    "majority": 6501,
+    "party": "Labour",
+    "result": "Lab Gain",
+    "title": "2024 General Election",
+    "votes": 46720
+   }
+  ],
+  "4308": [
+   {
+    "date": "2024-07-04",
+    "electorate": 76677,
+    "general": true,
+    "majority": 1624,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2024 General Election",
+    "votes": 51653
+   }
+  ],
+  "4313": [
+   {
+    "date": "2024-07-04",
+    "electorate": 73071,
+    "general": true,
+    "majority": 3243,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2024 General Election",
+    "votes": 46168
+   }
+  ],
+  "4316": [
+   {
+    "date": "2024-07-04",
+    "electorate": 70217,
+    "general": true,
+    "majority": 4027,
+    "party": "Labour",
+    "result": "Lab Gain",
+    "title": "2024 General Election",
+    "votes": 39656
+   }
+  ],
+  "4322": [
+   {
+    "date": "2024-07-04",
+    "electorate": 72739,
+    "general": true,
+    "majority": 19834,
+    "party": "Liberal Democrat",
+    "result": "LD Hold",
+    "title": "2024 General Election",
+    "votes": 51614
+   }
+  ],
+  "4328": [
+   {
+    "date": "2024-07-04",
+    "electorate": 70608,
+    "general": true,
+    "majority": 4595,
+    "party": "Labour",
+    "result": "Lab Gain",
+    "title": "2024 General Election",
+    "votes": 46009
+   }
+  ],
+  "4334": [
+   {
+    "date": "2024-07-04",
+    "electorate": 71868,
+    "general": true,
+    "majority": 2139,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2024 General Election",
+    "votes": 48638
+   }
+  ],
+  "4347": [
+   {
+    "date": "2024-07-04",
+    "electorate": 71934,
+    "general": true,
+    "majority": 5640,
+    "party": "Liberal Democrat",
+    "result": "LD Gain",
+    "title": "2024 General Election",
+    "votes": 47788
+   }
+  ],
+  "4352": [
+   {
+    "date": "2024-07-04",
+    "electorate": 72575,
+    "general": true,
+    "majority": 9606,
+    "party": "Labour",
+    "result": "Lab Gain",
+    "title": "2024 General Election",
+    "votes": 44794
+   }
+  ],
+  "4355": [
+   {
+    "date": "2024-07-04",
+    "electorate": 78680,
+    "general": true,
+    "majority": 11939,
+    "party": "Liberal Democrat",
+    "result": "LD Gain",
+    "title": "2024 General Election",
+    "votes": 50294
+   }
+  ],
+  "4393": [
+   {
+    "date": "2024-07-04",
+    "electorate": 77145,
+    "general": true,
+    "majority": 3247,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2024 General Election",
+    "votes": 46161
+   }
+  ],
+  "4399": [
+   {
+    "date": "2024-07-04",
+    "electorate": 70161,
+    "general": true,
+    "majority": 16425,
+    "party": "Labour",
+    "result": "Lab Hold",
+    "title": "2024 General Election",
+    "votes": 38116
+   }
+  ],
+  "4401": [
+   {
+    "date": "2024-07-04",
+    "electorate": 76334,
+    "general": true,
+    "majority": 12610,
+    "party": "Liberal Democrat",
+    "result": "LD Gain",
+    "title": "2024 General Election",
+    "votes": 54985
+   }
+  ],
+  "4426": [
+   {
+    "date": "2024-07-04",
+    "electorate": 75707,
+    "general": true,
+    "majority": 179,
+    "party": "Democratic Unionist Party",
+    "result": "DUP Hold",
+    "title": "2024 General Election",
+    "votes": 41277
+   }
+  ],
+  "4432": [
+   {
+    "date": "2024-07-04",
+    "electorate": 74697,
+    "general": true,
+    "majority": 450,
+    "party": "Traditional Unionist Voice",
+    "result": "TUV Gain",
+    "title": "2024 General Election",
+    "votes": 41185
+   }
+  ],
+  "4453": [
+   {
+    "date": "2024-07-04",
+    "electorate": 70680,
+    "general": true,
+    "majority": 6122,
+    "party": "Labour",
+    "result": "Lab Gain",
+    "title": "2024 General Election",
+    "votes": 41201
+   }
+  ],
+  "4471": [
+   {
+    "date": "2024-07-04",
+    "electorate": 76490,
+    "general": true,
+    "majority": 16470,
+    "party": "Liberal Democrat",
+    "result": "LD Hold",
+    "title": "2024 General Election",
+    "votes": 52471
+   }
+  ],
+  "4477": [
+   {
+    "date": "2024-07-04",
+    "electorate": 68871,
+    "general": true,
+    "majority": 3285,
+    "party": "Labour",
+    "result": "Lab Gain",
+    "title": "2024 General Election",
+    "votes": 35669
+   }
+  ],
+  "4480": [
+   {
+    "date": "2024-07-04",
+    "electorate": 69605,
+    "general": true,
+    "majority": 878,
+    "party": "Conservative",
+    "result": "Con Hold",
+    "title": "2024 General Election",
+    "votes": 43848
+   }
+  ],
+  "4485": [
+   {
+    "date": "2024-07-04",
+    "electorate": 75456,
+    "general": true,
+    "majority": 13265,
+    "party": "Labour",
+    "result": "Lab Gain",
+    "title": "2024 General Election",
+    "votes": 48102
+   }
+  ],
+  "4494": [
+   {
+    "date": "2024-07-04",
+    "electorate": 76284,
+    "general": true,
+    "majority": 1394,
+    "party": "Labour",
+    "result": "Lab Gain",
+    "title": "2024 General Election",
+    "votes": 49782
+   }
+  ],
+  "4516": [
+   {
+    "date": "2024-07-04",
+    "electorate": 74823,
+    "general": true,
+    "majority": 3338,
+    "party": "Labour",
+    "result": "Lab Gain",
+    "title": "2024 General Election",
+    "votes": 50844
+   }
+  ],
+  "681": [],
+  "759": [],
+  "760": [],
+  "988": []
+ },
+ "source": "UK Parliament Members API (constituency election results)"
+}

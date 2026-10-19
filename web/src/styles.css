@@ -1,0 +1,3746 @@
+/*
+ * Where They Stand — styles.
+ *
+ * The look borrows from the printed Official Report: ivory paper and black serif
+ * type, small-capital headings between rules, column numbers in the margin, and
+ * the bound volumes' cloth — green for the Commons, red for the Lords — with gilt
+ * lettering. The tone is that of a reference work: the bound record, open, with a ribbon
+ * marking the place as the mark, the name in spaced capitals, square corners, ruled lists and no decoration
+ * that does not carry meaning.
+ * Techniques follow good-css (github.com/vojtaholik/good-css): logical
+ * properties, OKLCH tokens that hold both light and dark values, one fluid type
+ * scale, hover only where hover exists, and motion only when it is welcome.
+ */
+
+/* ---- reset ---------------------------------------------------------------------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+:root {
+  interpolate-size: allow-keywords;
+  scrollbar-gutter: stable;
+  text-wrap: pretty;
+  overflow-wrap: break-word;
+  font-synthesis: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  margin: 0;
+  min-height: 100svh;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+img,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+input,
+textarea,
+select {
+  font-size: max(16px, 1rem);
+}
+
+button,
+a,
+[role="button"] {
+  touch-action: manipulation;
+}
+
+button,
+[role="button"] {
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* ---- tokens ----------------------------------------------------------------------- */
+
+:root {
+  color-scheme: light dark;
+
+  /* paper and ink: an ivory page by day, a dark green binding by night */
+  --paper: light-dark(oklch(97.3% 0.014 88), oklch(19% 0.014 165));
+  --paper-raised: light-dark(oklch(99.2% 0.007 88), oklch(23% 0.016 165));
+  --paper-sunk: light-dark(oklch(94.6% 0.018 86), oklch(16.5% 0.012 165));
+  --ink: light-dark(oklch(22% 0.012 70), oklch(93% 0.016 88));
+  --ink-soft: color-mix(in oklch, var(--ink) 74%, var(--paper));
+  --ink-faint: color-mix(in oklch, var(--ink) 60%, var(--paper));
+  --rule: color-mix(in oklch, var(--ink) 15%, var(--paper));
+  --rule-strong: color-mix(in oklch, var(--ink) 80%, var(--paper));
+
+  /* the Houses, as on the bound volumes and the benches */
+  --commons: light-dark(oklch(41% 0.08 162), oklch(76% 0.09 160));
+  --lords: light-dark(oklch(43% 0.13 24), oklch(75% 0.11 22));
+  --cloth-commons: oklch(33% 0.06 162);
+  --cloth-lords: oklch(33% 0.1 22);
+  --gilt: light-dark(oklch(62% 0.1 80), oklch(80% 0.11 85));
+  --gilt-on-cloth: oklch(83% 0.105 86);
+  --on-cloth: oklch(96% 0.02 88);
+
+  --accent: var(--commons);
+  --accent-strong: color-mix(in oklch, var(--accent), var(--ink) 25%);
+  --accent-subtle: color-mix(in oklch, var(--accent) 11%, var(--paper));
+  --on-accent: light-dark(oklch(98% 0.01 88), oklch(17% 0.02 165));
+  --mark: light-dark(oklch(91% 0.1 95), oklch(47% 0.09 88));
+  --warn: light-dark(oklch(50% 0.12 62), oklch(82% 0.12 78));
+  --warn-subtle: color-mix(in oklch, var(--warn) 13%, var(--paper));
+  --danger: light-dark(oklch(50% 0.17 27), oklch(76% 0.14 25));
+
+  --serif: "Source Serif 4 Variable", "Iowan Old Style", Charter, Georgia, serif;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --radius: 0.18rem;
+  --radius-pill: 999px;
+  --shadow: 0 1px 2px oklch(0.2 0.02 160 / 0.08), 0 8px 28px oklch(0.2 0.02 160 / 0.1);
+
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+
+  /* one fluid scale for type and space (good-css) */
+  --narrow: 20;
+  --wide: 77.5;
+  --size-narrow: 1.0625;
+  --size-wide: 1.1875;
+  --ratio-narrow: 1.2;
+  --ratio-wide: 1.25;
+  --fluid: clamp(0rem, (100vw - var(--narrow) * 1rem) / (var(--wide) - var(--narrow)), 1rem);
+  --at-narrow: calc(var(--size-narrow) * (1rem - var(--fluid)));
+  --at-wide: calc(var(--size-wide) * var(--fluid));
+  /* the smallest text (labels, notes) is never under 12.5px, which is still comfortable to read on a phone */
+  --step--2: max(0.78rem, calc(var(--step-0) / pow(var(--ratio-narrow), 2)));
+  --step--1: calc(var(--step-0) / var(--ratio-narrow));
+  --step-0: calc(var(--at-narrow) + var(--at-wide));
+  --step-1: calc(var(--at-narrow) * var(--ratio-narrow) + var(--at-wide) * var(--ratio-wide));
+  --step-2: calc(var(--at-narrow) * pow(var(--ratio-narrow), 2) + var(--at-wide) * pow(var(--ratio-wide), 2));
+  --step-3: calc(var(--at-narrow) * pow(var(--ratio-narrow), 3) + var(--at-wide) * pow(var(--ratio-wide), 3));
+  --step-4: calc(var(--at-narrow) * pow(var(--ratio-narrow), 4) + var(--at-wide) * pow(var(--ratio-wide), 4));
+  --space-2xs: calc(0.25 * var(--step-0));
+  --space-xs: calc(0.5 * var(--step-0));
+  --space-s: var(--step-0);
+  --space-m: calc(1.5 * var(--step-0));
+  --space-l: calc(2 * var(--step-0));
+  --space-xl: calc(3 * var(--step-0));
+
+  --drawer-w: min(34rem, 100%);
+  --composer-h: 6rem;
+}
+
+[data-theme="light"] {
+  color-scheme: light;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+/* ---- base ------------------------------------------------------------------------- */
+
+html {
+  background: var(--paper);
+  overscroll-behavior-y: none;
+}
+
+@media (any-pointer: coarse) {
+  html {
+    overscroll-behavior-y: auto;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: var(--step-0);
+  line-height: 1.55;
+  font-optical-sizing: auto;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--serif);
+  font-weight: 600;
+  line-height: 1.2;
+  margin-block: 0;
+}
+
+p {
+  margin-block: 0;
+}
+
+a {
+  color: var(--accent);
+  text-decoration-thickness: 0.06em;
+  text-underline-offset: 0.18em;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  a:hover {
+    color: var(--accent-strong);
+    text-decoration-thickness: 0.1em;
+  }
+}
+
+:focus-visible {
+  outline: max(2px, 0.08em) solid var(--accent);
+  outline-offset: 0.2em;
+}
+
+mark {
+  background: var(--mark);
+  color: inherit;
+  padding-inline: 0.1em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+time,
+.num,
+.badge,
+.count,
+.colref,
+table td {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---- controls ----------------------------------------------------------------------- */
+
+button {
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+button.primary,
+button.secondary {
+  font-family: var(--sans);
+  font-size: var(--step--1);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  border-radius: var(--radius);
+  padding-block: 0.6em;
+  padding-inline: 1.2em;
+}
+
+button.primary {
+  background: var(--accent);
+  color: var(--on-accent);
+  border: 1px solid var(--accent);
+}
+
+button.primary:focus-visible {
+  outline-color: var(--accent);
+}
+
+button.secondary {
+  background: var(--paper-raised);
+  color: var(--ink);
+  border: 1px solid var(--rule);
+}
+
+button.link {
+  background: none;
+  border: 0;
+  padding: 0;
+  font-family: var(--sans);
+  font-size: var(--step--1);
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  button.primary:not(:disabled):hover {
+    background: var(--accent-strong);
+    border-color: var(--accent-strong);
+  }
+
+  button.secondary:not(:disabled):hover {
+    border-color: var(--ink-faint);
+  }
+
+  button.link:hover {
+    color: var(--accent-strong);
+  }
+}
+
+:is(button.primary, button.secondary, .example, .chip button, .close):not(:disabled):active {
+  transform: scale(0.97);
+}
+
+.source-card:active {
+  transform: scale(0.98);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  :is(button.primary, button.secondary, .example, .chip button, .close) {
+    transition:
+      transform 160ms var(--ease-out),
+      background-color 160ms var(--ease-out),
+      border-color 160ms var(--ease-out);
+  }
+}
+
+input,
+textarea,
+select {
+  font-family: var(--sans);
+  color: var(--ink);
+  background: var(--paper-raised);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  padding-block: 0.5em;
+  padding-inline: 0.65em;
+  accent-color: var(--accent);
+}
+
+input:user-invalid {
+  border-color: var(--danger);
+}
+
+input[type="checkbox"],
+input[type="radio"],
+input[type="range"] {
+  accent-color: var(--accent);
+}
+
+/* large enough to tap (WCAG 2.2 target size): at least 24px each */
+input[type="checkbox"],
+input[type="radio"] {
+  inline-size: 1.5rem;
+  block-size: 1.5rem;
+  margin: 0;
+  flex: none;
+}
+
+fieldset label {
+  min-block-size: 1.75rem;
+}
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+legend,
+.label {
+  font-family: var(--sans);
+  font-size: var(--step--2);
+  font-weight: 650;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  padding: 0;
+  margin-block-end: var(--space-2xs);
+}
+
+/* ---- page: a content grid with breakouts -------------------------------------------- */
+
+.app {
+  --gutter: 1rem;
+  --content: 46rem;
+  --breakout: 64rem;
+
+  display: grid;
+  grid-template-columns:
+    [full-width-start] minmax(var(--gutter), 1fr)
+    [breakout-start] minmax(0, calc((var(--breakout) - var(--content)) / 2))
+    [content-start] min(100% - var(--gutter) * 2, var(--content)) [content-end]
+    minmax(0, calc((var(--breakout) - var(--content)) / 2)) [breakout-end]
+    minmax(var(--gutter), 1fr) [full-width-end];
+  align-content: start;
+  min-block-size: 100svh;
+  row-gap: var(--space-m);
+}
+
+:is(.app, .full-width) > * {
+  grid-column: content;
+}
+
+:is(.app, .full-width) > .breakout {
+  grid-column: breakout;
+}
+
+:is(.app, .full-width) > .full-width {
+  grid-column: full-width;
+  display: grid;
+  grid-template-columns: inherit;
+}
+
+@media (width >= 80rem) {
+  .app.with-drawer {
+    padding-inline-end: var(--drawer-w);
+  }
+}
+
+.loading {
+  padding: var(--space-xl);
+  text-align: center;
+  color: var(--ink-faint);
+  font-style: italic;
+}
+
+/* ---- masthead: the title page of a daily part ----------------------------------------- */
+
+.masthead {
+  padding-block: var(--space-xs) var(--space-s);
+  text-align: center;
+  position: relative;
+}
+
+.masthead::after {
+  /* thick-and-thin rule under the title, as on the printed report */
+  content: "";
+  grid-column: breakout;
+  block-size: 6px;
+  margin-block-start: var(--space-s);
+  border-block-start: 3px solid var(--rule-strong);
+  border-block-end: 1px solid var(--rule-strong);
+}
+
+/* Every page but the home page: the name and seal on one line with the menu, so the page's own content starts near the
+   top of the screen (the full title page is for the front door only) */
+.masthead.compact {
+  padding-block-end: 0;
+}
+
+.masthead.compact > .phase-banner {
+  grid-row: 1;
+}
+
+.masthead.compact > .running-head {
+  grid-row: 2;
+  justify-self: end;
+  align-self: center;
+  padding-block: var(--space-2xs);
+}
+
+.masthead.compact > .running-head > span:first-child,
+.masthead.compact .tagline,
+.masthead.compact .imprint {
+  display: none;
+}
+
+.masthead.compact > .title-block {
+  grid-row: 2;
+  grid-column: breakout;
+  justify-self: start;
+  align-self: center;
+  flex-direction: row;
+  gap: var(--space-xs);
+  padding-block: var(--space-2xs);
+}
+
+.masthead.compact .title-block .mark {
+  block-size: 2rem;
+  margin: 0;
+}
+
+.masthead.compact .wordmark {
+  font-size: var(--step-0);
+  letter-spacing: 0.12em;
+  margin-inline-end: 0;
+}
+
+.masthead.compact::after {
+  grid-row: 3;
+  margin-block-start: var(--space-2xs);
+}
+
+/* on a phone the menu takes the whole line, with the name under it */
+@media (width < 52rem) {
+  .masthead.compact > .running-head {
+    justify-self: stretch;
+  }
+
+  .masthead.compact > .title-block {
+    grid-row: 3;
+    justify-self: center;
+  }
+
+  .masthead.compact::after {
+    grid-row: 4;
+  }
+}
+
+/* GOV.UK-style phase banner: the service is in beta */
+.phase-banner {
+  grid-column: breakout;
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-xs);
+  font-family: var(--sans);
+  font-size: var(--step--1);
+  color: var(--ink-soft);
+  text-align: start;
+  padding-block-end: var(--space-xs);
+  margin-block-end: var(--space-xs);
+  border-block-end: 1px solid var(--rule);
+}
+
+.phase-tag {
+  flex: none;
+  font-size: var(--step--2);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--paper);
+  background: var(--ink-soft);
+  padding: 0.1em 0.5em;
+  border-radius: var(--radius);
+}
+
+.running-head {
+  grid-column: breakout;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-xs) var(--space-s);
+  font-family: var(--sans);
+  font-size: var(--step--2);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  text-align: start;
+  padding-block-end: var(--space-xs);
+}
+
+.masthead-actions {
+  margin-inline-start: auto;
+  display: flex;
+  align-items: center;
+  gap: var(--space-s);
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.masthead-actions > button {
+  flex: none;
+  white-space: nowrap;
+}
+
+.title-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2xs);
+  padding-block-start: var(--space-s);
+}
+
+.title-block > .mark {
+  block-size: calc(3.2 * var(--step-1));
+  inline-size: auto;
+  margin-block-end: var(--space-xs);
+}
+
+/* the name in spaced capitals, as on the title page of a bound volume */
+.wordmark {
+  font-size: var(--step-3);
+  font-weight: 600;
+  font-variation-settings: "opsz" 60;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  line-height: 1.1;
+  /* tracking adds space after the last letter too; give it back so the name centres */
+  margin-inline-end: -0.14em;
+}
+
+.tagline {
+  font-style: italic;
+  font-size: var(--step-0);
+  color: var(--ink-soft);
+}
+
+.imprint {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0 var(--space-s);
+  margin-block-start: var(--space-xs);
+  font-family: var(--sans);
+  font-size: var(--step--2);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.imprint > span + span::before {
+  content: "·" / "";
+  margin-inline-end: var(--space-s);
+}
+
+/* on a narrow screen (or paper) the items stack, so separators would dangle */
+@media (width < 40rem), print {
+  .imprint {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.15em;
+  }
+
+  .imprint > span + span::before {
+    content: none;
+  }
+}
+
+.banner {
+  font-family: var(--sans);
+  font-size: var(--step--1);
+  background: var(--warn-subtle);
+  color: var(--ink);
+  border-inline-start: 3px solid var(--warn);
+  padding-block: var(--space-xs);
+  padding-inline: var(--space-s);
+  border-radius: var(--radius);
+}
+
+/* ---- settings ------------------------------------------------------------------------ */
+
+.controls {
+  grid-column: breakout;
+  display: grid;
+  gap: var(--space-m);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
+  background: var(--paper-raised);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  padding: var(--space-m);
+  font-family: var(--sans);
+  font-size: var(--step--1);
+}
+
+.controls fieldset,
+.slider {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs);
+}
+
+.controls label {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.slider > span {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-xs);
+}
+
+.slider > span label {
+  font-size: var(--step--2);
+  font-weight: 650;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.slider output {
+  font-variant-numeric: tabular-nums;
+  color: var(--accent);
+  font-weight: 600;
+  text-align: end;
+}
+
+.slider small {
+  font-size: var(--step--2);
+}
+
+/* ---- the thread ---------------------------------------------------------------------- */
+
+.thread {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+  padding-block-end: var(--space-l);
+}
+
+.empty {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-s);
+  padding-block: var(--space-m);
+}
+
+.empty h2 {
+  font-size: var(--step-3);
+  font-weight: 600;
+}
+
+.empty .lede {
+  font-size: var(--step-0);
+  color: var(--ink-soft);
+}
+
+/* the other ways into the record, under the examples */
+.start-from {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-2xs) var(--space-s);
+  font-family: var(--sans);
+  font-size: var(--step--1);
+}
+
+.start-from > .examples-head {
+  margin: 0;
+  flex-basis: 100%;
+}
+
+.examples-head {
+  font-family: var(--sans);
+  font-size: var(--step--2);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-block-start: var(--space-s);
+}
+
+/* example questions: a numbered, ruled list, as on the Order Paper */
+.examples {
+  list-style: none;
+  counter-reset: example;
+  margin: 0;
+  padding: 0;
+  border-block-start: 1px solid var(--rule-strong);
+}
+
+.examples li {
+  counter-increment: example;
+  border-block-end: 1px solid var(--rule);
+}
+
+.example {
+  display: grid;
+  grid-template-columns: 2.2em 1fr;
+  align-items: baseline;
+  inline-size: 100%;
+  text-align: start;
+  background: none;
+  border: 0;
+  padding-block: var(--space-xs);
+  padding-inline: 0;
+  color: var(--ink);
+}
+
+.example::before {
+  content: counter(example) "." / "";
+  font-family: var(--sans);
+  font-size: var(--step--1);
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-faint);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .example:hover {
+    color: var(--accent);
+    text-decoration: underline;
+    text-decoration-thickness: 0.06em;
+    text-underline-offset: 0.2em;
+  }
+}
+
+.turn {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-s);
+}
+
+/* a question reads like a debate heading: a small-capital kicker, then the title */
+.turn > .question {
+  font-size: var(--step-2);
+  font-weight: 600;
+  padding-block-start: var(--space-s);
+  border-block-start: 1px solid var(--rule);
+}
+
+.turn > .question::before {
+  content: "Question" / "";
+  display: block;
+  font-family: var(--sans);
+  font-size: var(--step--2);
+  font-weight: 650;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-block-end: var(--space-2xs);
+}
+
+.status {
+  font-style: italic;
+  color: var(--ink-soft);
+}
+
+.status::before {
+  content: "" / "";
+  display: inline-block;
+  inline-size: 0.45em;
+  block-size: 0.45em;
+  margin-inline-end: 0.6em;
+  background: var(--gilt);
+  vertical-align: 0.12em;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .status::before {
+    animation: pulse 1.2s var(--ease-in-out) infinite alternate;
+  }
+}
+
+@keyframes pulse {
+  from {
+    opacity: 0.3;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* a quoted member's registered interests that may relate to what they said */
+.interest-flag {
+  display: inline-block;
+  inline-size: fit-content;
+  padding: 0 0.4em;
+  border-inline-start: 3px solid var(--warn);
+  background: var(--warn-subtle);
+  color: var(--ink);
+  font-size: 0.85em;
+}
+
+.interests-note {
+  font-size: var(--step--1, 0.9rem);
+  color: var(--ink);
+  padding: var(--space-xs) var(--space-s);
+  border-inline-start: 4px solid var(--warn);
+  background: var(--warn-subtle);
+}
+
+/* a citation bubble or source card whose speaker had a registered interest that may relate: amber, not green */
+.cite.interest {
+  border-color: var(--warn);
+  background: var(--warn);
+  color: var(--paper);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .cite.interest:hover {
+    background: var(--ink);
+    border-color: var(--ink);
+    color: var(--paper);
+  }
+}
+
+.source-card.has-interest {
+  border-inline-start: 4px solid var(--warn);
+  background: var(--warn-subtle);
+}
+
+.interest-box {
+  margin-block-end: var(--space-m);
+  padding: var(--space-s);
+  border: 1px solid var(--warn);
+  border-inline-start-width: 4px;
+  background: var(--warn-subtle);
+}
+
+.interest-box h3 {
+  margin: 0 0 var(--space-xs);
+  font-size: var(--step-0, 1rem);
+}
+
+.interest-box ul {
+  margin: 0 0 var(--space-xs);
+  padding-inline-start: 1.1em;
+}
+
+.interest-box li + li {
+  margin-block-start: var(--space-xs);
+}
+
+/* the steps of preparing a briefing, ticked off as they finish */
+.progress {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--space-2xs);
+  color: var(--ink-soft);
+  font-size: var(--step--1, 0.9rem);
+}
+
+.progress li {
+  display: grid;
+  grid-template-columns: 1.1em 1fr auto;
+  column-gap: 0.5em;
+  align-items: baseline;
+}
+
+.progress li::before {
+  content: "○" / "";
+  color: var(--ink-faint);
+  grid-row: 1;
+}
+
+.progress li.done::before {
+  content: "✓" / "";
+  color: var(--ok, var(--accent));
+}
+
+.progress li.active::before {
+  content: "" / "";
+  inline-size: 0.45em;
+  block-size: 0.45em;
+  align-self: center;
+  justify-self: center;
+  background: var(--gilt);
+}
+
+.progress li.active .progress-label {
+  color: var(--ink);
+}
+
+.progress li.pending {
+  color: var(--ink-faint);
+}
+
+.progress-time {
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-faint);
+}
+
+.progress-detail {
+  grid-column: 2 / -1;
+  color: var(--ink-faint);
+  overflow-wrap: anywhere;
+}
+
+.progress.compact {
+  margin-block-end: var(--space-xs);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .progress li.active::before {
+    animation: pulse 1.2s var(--ease-in-out) infinite alternate;
+  }
+}
+
+.error {
+  color: var(--danger);
+  font-family: var(--sans);
+  font-size: var(--step--1);
+}
+
+/* ---- filter chips ---------------------------------------------------------------------- */
+
+.plan {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  font-family: var(--sans);
+  font-size: var(--step--1);
+}
+
+.plan-head {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-s);
+}
+
+.plan-head > span {
+  flex: 1 1 auto;
+  min-inline-size: 0; /* the interpretation wraps, so "Edit filters" stays on screen on a phone */
+}
+
+.plan-head > button {
+  flex: none;
+  margin-inline-start: auto;
+  white-space: nowrap;
+}
+
+.plan > button {
+  align-self: start;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2xs) var(--space-xs);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
+  padding-block: 0.25em;
+  padding-inline: 0.7em;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  background: var(--paper-raised);
+  font-size: var(--step--2);
+}
+
+.chip.search-text {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: var(--step--1);
+  background: none;
+  border-style: dashed;
+}
+
+.chip.warn {
+  border-color: var(--warn);
+  background: var(--warn-subtle);
+}
+
+.chip button {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  min-inline-size: 1.5rem;
+  min-block-size: 1.5rem;
+  margin-block: -0.4rem;
+  margin-inline-end: -0.35rem;
+  border: 0;
+  background: none;
+  padding: 0;
+  line-height: 1;
+  color: var(--ink-faint);
+}
+
+.chip button::after {
+  /* a 44px target around a small cross */
+  content: "";
+  position: absolute;
+  inset: min(0px, (100% - 44px) / 2);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .chip button:hover {
+    color: var(--danger);
+  }
+}
+
+.plan-editor {
+  display: grid;
+  gap: var(--space-s);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+  background: var(--paper-raised);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  padding: var(--space-s);
+}
+
+.plan-editor label {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs);
+}
+
+.plan-editor fieldset label {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.plan-editor .row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-s);
+}
+
+.plan-editor .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 11rem), 1fr));
+}
+
+/* ---- evidence base ---------------------------------------------------------------------- */
+
+.evidence-warning {
+  margin: 0;
+  padding: var(--space-2xs) var(--space-xs);
+  border-inline-start: 3px solid var(--warn);
+  background: var(--warn-subtle);
+}
+
+.evidence {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  padding-block: var(--space-xs);
+  border-block: 1px solid var(--rule);
+  font-family: var(--sans);
+  font-size: var(--step--1);
+}
+
+.evidence-head strong {
+  font-size: var(--step--2);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-inline-end: 0.3em;
+}
+
+.evidence-groups {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2xs) var(--space-xs);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.evidence-groups li {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.45em;
+  padding-block: 0.15em;
+  padding-inline: 0.6em;
+  border-radius: var(--radius);
+  background: var(--paper-sunk);
+  font-size: var(--step--2);
+}
+
+.evidence-groups .count {
+  font-weight: 700;
+  color: var(--accent);
+}
+
+/* a labelled row: "Parties  Labour 7  Conservative 4" (the label column lines up across rows) */
+.evidence-row {
+  display: grid;
+  grid-template-columns: 6.5rem 1fr;
+  align-items: baseline;
+  gap: var(--space-xs);
+}
+
+.evidence-label {
+  font-size: var(--step--2);
+  font-weight: 650;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+@media (width < 40rem) {
+  .evidence-row {
+    grid-template-columns: 1fr;
+    gap: var(--space-2xs);
+  }
+}
+
+/* ---- the briefing: a printed page ------------------------------------------------------ */
+
+.answer {
+  position: relative;
+  background: var(--paper-raised);
+  border: 1px solid var(--rule);
+  border-block-start: 3px solid var(--accent);
+  border-radius: var(--radius);
+  padding: var(--space-m);
+  padding-block-start: var(--space-s);
+  box-shadow: var(--shadow);
+}
+
+/* the briefing's label, with the result of checking its citations beside it */
+.answer-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-2xs) var(--space-s);
+  margin-block-end: var(--space-s);
+  font-family: var(--sans);
+  font-size: var(--step--2);
+}
+
+.answer-label {
+  font-weight: 650;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.check-badge {
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.15em 0.6em;
+  border-radius: 999px;
+  border: 1px solid currentcolor;
+}
+
+.check-badge.ok {
+  color: var(--accent);
+}
+
+.check-badge.warn {
+  color: var(--warn);
+  background: var(--warn-subtle);
+}
+
+/* "Where they stand": the briefing's sections at a glance */
+.stances {
+  margin-block-end: var(--space-m);
+  padding-block-end: var(--space-s);
+  border-block-end: 1px solid var(--rule);
+}
+
+.stances-head {
+  font-family: var(--sans);
+  font-size: var(--step--2);
+  font-weight: 650;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-block-end: var(--space-2xs);
+}
+
+.stances table {
+  inline-size: 100%;
+  border-collapse: collapse;
+  font-size: var(--step--1);
+}
+
+.stances :is(th, td) {
+  text-align: start;
+  vertical-align: baseline;
+  padding-block: 0.45em;
+  padding-inline-end: var(--space-s);
+  border-block-end: 1px solid var(--rule);
+}
+
+.stances thead th {
+  font-family: var(--sans);
+  font-size: var(--step--2);
+  font-weight: 600;
+  color: var(--ink-faint);
+}
+
+.stances tbody th {
+  font-weight: 600;
+  inline-size: 30%;
+}
+
+.stances tbody th .link {
+  font-family: var(--serif);
+  font-size: inherit;
+  font-weight: 600;
+  text-align: start;
+}
+
+.stances .num {
+  text-align: end;
+  padding-inline-end: 0;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+/* exporting a briefing: one menu instead of a row of buttons */
+.export-menu {
+  position: relative;
+}
+
+.export-menu > summary {
+  list-style: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5em 1em;
+  border-radius: var(--radius);
+  background: var(--paper-raised);
+  color: var(--ink);
+  border: 1px solid var(--rule);
+  font-family: var(--sans);
+  font-size: var(--step--1);
+}
+
+.export-menu > summary::-webkit-details-marker {
+  display: none;
+}
+
+.export-menu > summary::after {
+  content: " ▾" / "";
+  white-space: pre;
+}
+
+.export-list {
+  position: absolute;
+  inset-block-end: calc(100% + var(--space-2xs));
+  inset-inline-start: 0;
+  z-index: 6;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs);
+  min-inline-size: 14rem;
+  padding: var(--space-xs);
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  box-shadow: 0 0.5rem 1.5rem rgb(0 0 0 / 0.12);
+}
+
+.export-list > button {
+  text-align: start;
+  min-block-size: 2.75rem;
+}
+
+.answer-body {
+  line-height: 1.62;
+  hyphens: auto;
+}
+
+.answer-body > * {
+  margin-block: 0;
+}
+
+.answer-body > * + * {
+  margin-block-start: var(--flow-space, 0.85em);
+}
+
+.answer-body > :is(h2, h3, h4) {
+  --flow-space: 1.4em;
+  font-size: var(--step-1);
+}
+
+.answer-body > :is(h2, h3, h4) + * {
+  --flow-space: 0.4em;
+}
+
+.answer-body :is(ul, ol) {
+  padding-inline-start: 1.2em;
+}
+
+.answer-body li + li {
+  margin-block-start: 0.45em;
+}
+
+.answer-body strong {
+  font-weight: 650;
+}
+
+.answer-body.streaming {
+  color: var(--ink-soft);
+}
+
+/* a citation is a small numbered reference that opens the speech */
+.cite {
+  display: inline-block;
+  min-inline-size: 1.55em;
+  margin-inline-start: 0.15em;
+  padding-block: 0.05em;
+  padding-inline: 0.35em;
+  border: 1px solid color-mix(in oklch, var(--accent) 35%, transparent);
+  border-radius: 999px;
+  background: var(--accent-subtle);
+  color: var(--accent);
+  font-family: var(--sans);
+  font-size: 0.68em;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.3;
+  vertical-align: 0.35em;
+  text-align: center;
+}
+
+.cite + .cite {
+  margin-inline-start: 0.1em;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .cite:hover {
+    background: var(--accent);
+    color: var(--on-accent);
+  }
+}
+
+.cite:active {
+  transform: scale(0.95);
+}
+
+.shared-note {
+  font-family: var(--sans);
+  font-size: var(--step--1);
+  color: var(--ink-soft);
+  border-inline-start: 3px solid var(--gilt);
+  padding-inline-start: var(--space-s);
+}
+
+/* a judgemental word in the briefing's own voice: flagged for the reader, never silently changed */
+.loaded {
+  text-decoration: underline wavy var(--danger);
+  text-decoration-thickness: 0.06em;
+  text-underline-offset: 0.22em;
+  text-decoration-skip-ink: none;
+}
+
+/* a quotation the server could not find word for word in its cited source */
+.misquote {
+  background: var(--warn-subtle);
+  text-decoration: underline dashed var(--warn);
+  text-decoration-thickness: 0.06em;
+  text-underline-offset: 0.22em;
+}
+
+.ai-note {
+  margin-block-start: var(--space-xs);
+  font-family: var(--sans);
+  font-size: var(--step--2);
+  color: var(--ink-faint);
+}
+
+.answer-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-xs) var(--space-s);
+  margin-block-start: var(--space-s);
+  padding-block-start: var(--space-s);
+  border-block-start: 1px solid var(--rule);
+}
+
+.feedback {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-xs);
+  margin-inline-start: auto;
+  font-family: var(--sans);
+  font-size: var(--step--1);
+  color: var(--ink-soft);
+}
+
+/* ---- report a problem -------------------------------------------------------------------- */
+
+/* author styles such as display: grid must never override the hidden attribute */
+[hidden] {
+  display: none !important;
+}
+
+.report-open {
+  margin-block-start: var(--space-2xs);
+}
+
+.report-form {
+  position: relative;
+  display: grid;
+  gap: var(--space-xs);
+  max-inline-size: 38rem;
+  margin-block-start: var(--space-s);
+  padding: var(--space-s);
+  background: var(--paper-raised);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  font-family: var(--sans);
+  font-size: var(--step--1);
+}
+
+.report-form h3,
+.report-form h2 {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: var(--step-0);
+}
+
+.report-form label {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs);
+}
+
+.report-form fieldset label {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.report-form textarea,
+.report-form input:not([type="radio"]) {
+  inline-size: 100%;
+}
+
+/* A field people never see; spam bots fill it in. Kept out of view and out of the tab order. */
+.report-form .trap {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.form-actions {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-s);
+}
+
+.form-error {
+  margin: 0;
+  color: var(--danger);
+}
+
+.admin-alert {
+  margin-block: var(--space-2xs);
+  padding: var(--space-xs) var(--space-s);
+  border-inline-start: 3px solid var(--warn);
+  background: var(--warn-subtle);
+  font-family: var(--sans);
+}
+
+.admin-alert.error {
+  border-color: var(--danger);
+}
+
+.admin-alert.ok {
+  border-color: var(--accent);
+  background: var(--accent-subtle);
+}
+
+.admin section {
+  margin-block-start: var(--space-l);
+}
+
+.admin h3 {
+  margin-block: var(--space-s) var(--space-2xs);
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+.admin-table {
+  inline-size: 100%;
+  border-collapse: collapse;
+  font-family: var(--sans);
+  font-size: var(--step--1);
+}
+
+.admin-table th,
+.admin-table td {
+  padding: var(--space-2xs) var(--space-xs);
+  border-block-end: 1px solid var(--rule);
+  text-align: start;
+  vertical-align: top;
+}
+
+.report-message {
+  white-space: pre-wrap;
+}
+
+.licence {
+  margin-block: var(--space-2xs);
+  line-height: 2;
+}
+
+/* ---- MPs and peers ------------------------------------------------------------------------ */
+
+.eyebrow {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: var(--step--1);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.ask-about {
+  display: grid;
+  gap: var(--space-2xs);
+  margin-block: var(--space-m, 1.5rem);
+  font-family: var(--sans);
+}
+
+.ask-row {
+  display: flex;
+  gap: var(--space-xs);
+}
+
+.ask-row input {
+  flex: 1;
+  min-inline-size: 0;
+}
+
+.people-search {
+  inline-size: 100%;
+  margin-block: var(--space-2xs) var(--space-s);
+}
+
+#people-live h3 {
+  margin-block: var(--space-m) var(--space-2xs);
+}
+
+.people-list {
+  padding: 0;
+  list-style: none;
+  columns: 2 18rem;
+  column-gap: var(--space-l);
+}
+
+.people-list li {
+  break-inside: avoid;
+  padding-block: 0.15em;
+}
+
+.person .seat h3,
+.person section h3 {
+  margin-block: var(--space-s) var(--space-2xs);
+  font-size: var(--step-0);
+}
+
+.person .roles,
+.person .contributions {
+  padding: 0;
+  list-style: none;
+}
+
+.person .contributions li {
+  padding-block: var(--space-xs);
+  border-block-end: 1px solid var(--rule);
+}
+
+.person .contributions p {
+  margin-block: 0.2em;
+}
+
+.corrections-list {
+  padding: 0;
+  list-style: none;
+}
+
+.corrections-list li {
+  padding-block: var(--space-xs);
+  border-block-end: 1px solid var(--rule);
+}
+
+.corrections-list time {
+  font-family: var(--sans);
+  font-size: var(--step--1);
+  color: var(--ink-soft);
+}
+
+.corrections-list p {
+  margin-block: var(--space-2xs) 0;
+}
+
+.report-sent {
+  margin-block-start: var(--space-xs);
+}
+
+/* statements without a citation are only marked when the reader asks to see them */
+.show-uncited .unsupported {
+  background: var(--warn-subtle);
+  text-decoration: underline dotted var(--warn);
+  text-underline-offset: 0.2em;
+}
+
+.grounding {
+  margin-block-start: var(--space-s);
+  padding-block-start: var(--space-xs);
+  border-block-start: 1px solid var(--rule);
+  font-family: var(--sans);
+  font-size: var(--step--2);
+  color: var(--ink-soft);
+}
+
+.grounding::before {
+  content: "✓" / "";
+  margin-inline-end: 0.5em;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.grounding.warn::before {
+  content: "!" / "";
+  color: var(--warn);
+}
+
+.grounding.neutral::before {
+  content: "–" / "";
+  color: var(--ink-faint);
+}
+
+/* ---- sources ---------------------------------------------------------------------------- */
+
+.sources {
+  font-family: var(--sans);
+}
+
+.sources > summary {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  list-style: none;
+  cursor: pointer;
+  font-size: var(--step--1);
+  font-weight: 600;
+  color: var(--ink-soft);
+  padding-block: var(--space-2xs);
+}
+
+.sources > summary::-webkit-details-marker {
+  display: none;
+}
+
+.sources > summary::before {
+  content: "▸" / "";
+  color: var(--gilt);
+  display: inline-block;
+}
+
+.sources[open] > summary::before {
+  rotate: 90deg;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .sources > summary::before {
+    transition: rotate 200ms var(--ease-out);
+  }
+}
+
+.sources::details-content {
+  block-size: 0;
+  overflow: clip;
+}
+
+.sources[open]::details-content {
+  block-size: auto;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .sources::details-content {
+    transition:
+      block-size 300ms var(--ease-out),
+      content-visibility 300ms allow-discrete;
+  }
+}
+
+.sources-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-m);
+  padding-block: var(--space-s);
+}
+
+/* group headings sit between rules, like the section headings of the printed report */
+.source-group h3 {
+  display: flex;
+  align-items: center;
+  gap: var(--space-s);
+  font-family: var(--sans);
+  font-size: var(--step--2);
+  font-weight: 650;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-block-end: var(--space-xs);
+}
+
+.source-group h3::before,
+.source-group h3::after {
+  content: "";
+  flex: 1;
+  border-block-start: 1px solid var(--rule);
+}
+
+.source-group ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.source-card {
+  --house: var(--commons);
+  --cloth: var(--cloth-commons);
+
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: start;
+  gap: var(--space-2xs) var(--space-s);
+  inline-size: 100%;
+  text-align: start;
+  background: var(--paper-raised);
+  border: 1px solid var(--rule);
+  border-inline-start: 3px solid var(--house);
+  border-radius: var(--radius);
+  padding-block: var(--space-xs);
+  padding-inline: var(--space-s);
+}
+
+:is(.source-card, .drawer)[data-house="lords"] {
+  --house: var(--lords);
+  --cloth: var(--cloth-lords);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .source-card:hover {
+    background: color-mix(in oklch, var(--house) 5%, var(--paper-raised));
+    border-color: color-mix(in oklch, var(--house) 40%, var(--rule));
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .source-card {
+    transition:
+      transform 160ms var(--ease-out),
+      background-color 160ms var(--ease-out),
+      border-color 160ms var(--ease-out);
+  }
+}
+
+/* source numbers are gilt on cloth, like the lettering on a volume's spine */
+.badge {
+  flex: none;
+  display: inline-grid;
+  place-items: center;
+  min-inline-size: 1.9em;
+  block-size: 1.9em;
+  padding-inline: 0.3em;
+  border-radius: 0.2rem;
+  background: var(--cloth, var(--cloth-commons));
+  color: var(--gilt-on-cloth);
+  box-shadow: inset 0 0 0 1px color-mix(in oklch, var(--gilt-on-cloth) 45%, transparent);
+  font-family: var(--serif);
+  font-size: var(--step--1);
+  font-weight: 650;
+}
+
+.source-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1em;
+  font-size: var(--step--1);
+}
+
+.att {
+  font-family: var(--serif);
+  font-size: var(--step-0);
+  color: var(--ink);
+}
+
+.att b {
+  font-weight: 650;
+}
+
+.role {
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--house, var(--accent));
+}
+
+.seat,
+.where {
+  font-size: var(--step--2);
+  color: var(--ink-soft);
+}
+
+.colref {
+  font-size: var(--step--2);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  white-space: nowrap;
+  padding-block-start: 0.35em;
+}
+
+/* ---- composer ----------------------------------------------------------------------------- */
+
+.composer {
+  position: sticky;
+  inset-block-end: 0;
+  z-index: 5;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: start; /* the question box level with Ask, the smaller links under the button */
+  gap: var(--space-xs);
+  padding-block: var(--space-s) calc(var(--space-s) + env(safe-area-inset-bottom, 0px));
+  background: linear-gradient(to bottom, transparent, var(--paper) 30%);
+  /* the faded strip along the top must not swallow taps meant for the content behind it */
+  pointer-events: none;
+}
+
+.composer > * {
+  pointer-events: auto;
+}
+
+/* keep anything in the briefing that is scrolled to or focused by keyboard clear of the question box pinned to the
+   bottom (WCAG 2.4.11). On the briefing's own links and buttons only: a margin on the whole page would count the
+   question box itself as hidden, and the page would scroll a step each time it grows while someone types. */
+.thread :is(a, button, summary, input, select, [tabindex]) {
+  scroll-margin-block-end: 9rem;
+}
+
+/* Under a briefing the question box and, when open, the settings above it are pinned to the foot of the screen. */
+.composer-dock {
+  position: sticky;
+  inset-block-end: 0;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.composer-dock > * {
+  pointer-events: auto;
+}
+
+.composer-dock .composer {
+  position: static;
+}
+
+.composer-dock .controls {
+  max-block-size: 55vh;
+  overflow: auto;
+  box-shadow: 0 -0.25rem 1rem rgb(0 0 0 / 0.08);
+}
+
+/* On the empty home page the question box sits under the introduction, above the examples. */
+.composer-inline {
+  position: static;
+  padding-block: var(--space-xs) var(--space-s);
+  background: none;
+}
+
+.composer textarea {
+  flex: 1;
+  field-sizing: content;
+  min-block-size: 2lh;
+  max-block-size: 9lh;
+  resize: none;
+  font-family: var(--serif);
+  font-size: max(16px, var(--step-0));
+  line-height: 1.45;
+  padding-block: 0.7em;
+  padding-inline: 1.1em;
+  border-color: color-mix(in oklch, var(--ink) 25%, var(--paper));
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.composer textarea:focus-visible {
+  outline-offset: 0;
+}
+
+.composer-buttons {
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.2rem;
+}
+
+.composer-buttons .primary {
+  padding-block: 0.85em;
+}
+
+.composer-buttons .link {
+  white-space: nowrap;
+  text-align: center;
+}
+
+/* a written briefing or the sources only: a plain choice under the box, rather than a second button */
+.answer-kind {
+  flex-basis: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2xs) var(--space-m);
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: var(--sans);
+  font-size: var(--step--1);
+}
+
+.answer-kind label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  min-block-size: 2.75rem; /* a comfortable tap target */
+  cursor: pointer;
+}
+
+.answer-kind input {
+  accent-color: var(--accent);
+  inline-size: 1.1em;
+  block-size: 1.1em;
+  margin: 0;
+}
+
+.answer-kind .muted {
+  color: var(--ink-faint);
+}
+
+.q-hint {
+  color: var(--danger, #a4262c);
+  font-weight: 600;
+}
+
+/* on a phone the two choices sit side by side, without their notes */
+@media (width < 30rem) {
+  .answer-kind {
+    gap: var(--space-2xs) var(--space-s);
+  }
+
+  .answer-kind .muted {
+    display: none;
+  }
+}
+
+/* under a briefing the pinned box stays short: the choice sits on one tight line */
+.composer-dock .answer-kind label {
+  min-block-size: 2rem;
+}
+
+/* ---- drawer: a page from the report --------------------------------------------------------- */
+
+.drawer {
+  --house: var(--commons);
+  --cloth: var(--cloth-commons);
+
+  position: fixed;
+  inset-block: 0;
+  inset-inline-end: 0;
+  z-index: 20;
+  inline-size: var(--drawer-w);
+  display: flex;
+  flex-direction: column;
+  background: var(--paper);
+  border-inline-start: 1px solid var(--rule);
+  box-shadow: var(--shadow);
+  font-family: var(--sans);
+  font-size: var(--step--1);
+}
+
+.drawer:focus-visible {
+  outline-offset: -3px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .drawer {
+    transition:
+      translate 320ms var(--ease-out),
+      opacity 200ms var(--ease-out);
+  }
+
+  @starting-style {
+    .drawer {
+      translate: 2rem 0;
+      opacity: 0;
+    }
+  }
+}
+
+.drawer-head {
+  flex: none;
+  display: flex;
+  align-items: start;
+  gap: var(--space-s);
+  padding-block: var(--space-s) calc(var(--space-s) + 3px);
+  padding-inline: var(--space-m) var(--space-s);
+  padding-block-start: calc(var(--space-s) + env(safe-area-inset-top, 0px));
+  background: var(--cloth);
+  color: var(--on-cloth);
+  border-block-end: 3px double var(--gilt-on-cloth);
+}
+
+.drawer-head .badge {
+  background: color-mix(in oklch, var(--cloth), black 20%);
+}
+
+.drawer-head h2 {
+  flex: 1;
+  font-size: var(--step-1);
+  font-weight: 600;
+  color: var(--on-cloth);
+  padding-block-start: 0.1em;
+}
+
+.close {
+  position: relative;
+  flex: none;
+  display: grid;
+  place-items: center;
+  inline-size: 2rem;
+  block-size: 2rem;
+  border: 1px solid color-mix(in oklch, var(--gilt-on-cloth) 50%, transparent);
+  border-radius: 50%;
+  background: none;
+  color: var(--gilt-on-cloth);
+}
+
+.close::after {
+  content: "";
+  position: absolute;
+  inset: min(0px, (100% - 44px) / 2);
+}
+
+.close svg {
+  inline-size: 0.85rem;
+  block-size: 0.85rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+}
+
+.close:focus-visible {
+  outline-color: var(--gilt-on-cloth);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .close:hover {
+    background: color-mix(in oklch, var(--gilt-on-cloth) 18%, transparent);
+  }
+}
+
+/* a plain way back, in reach of the thumb: on a phone the source covers the whole screen */
+.drawer-foot {
+  flex: none;
+  padding-block: var(--space-xs) calc(var(--space-xs) + env(safe-area-inset-bottom, 0px));
+  padding-inline: var(--space-m);
+  border-block-start: 1px solid var(--rule);
+  background: var(--paper);
+}
+
+.drawer-foot button {
+  inline-size: 100%;
+}
+
+@media (min-width: 64rem) {
+  .drawer-foot {
+    display: none; /* beside the briefing on a wide screen: the close button is enough */
+  }
+}
+
+.drawer-body {
+  flex: 1;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-m);
+  padding-block: var(--space-m) calc(var(--space-l) + env(safe-area-inset-bottom, 0px));
+  padding-inline: var(--space-m);
+}
+
+.facts {
+  display: grid;
+  grid-template-columns: minmax(6.5rem, max-content) 1fr;
+  gap: var(--space-2xs) var(--space-s);
+  margin: 0;
+}
+
+.facts dt {
+  font-size: var(--step--2);
+  font-weight: 650;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  padding-block-start: 0.2em;
+}
+
+.facts dd {
+  margin: 0;
+}
+
+.facts .links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em;
+}
+
+/* the verbatim text is set like a printed column */
+.verbatim {
+  font-family: var(--serif);
+  font-size: var(--step-0);
+  line-height: 1.55;
+  hyphens: auto;
+  background: var(--paper-raised);
+  border: 1px solid var(--rule);
+  padding: var(--space-m);
+  display: flex;
+  flex-direction: column;
+  gap: 0.7em;
+}
+
+.page-head {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-s);
+  font-family: var(--sans);
+  font-size: var(--step--2);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  text-align: start;
+  padding-block-end: var(--space-2xs);
+  border-block-end: 1px solid var(--rule-strong);
+}
+
+.page-heading {
+  font-size: var(--step--1);
+  font-weight: 650;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-align: center;
+  margin-block: 0.4em 0.2em;
+}
+
+.verbatim .question {
+  margin: 0;
+  padding: 0;
+  font-style: italic;
+  color: var(--ink-soft);
+  text-align: start;
+}
+
+.verbatim p {
+  text-indent: 0;
+}
+
+.verbatim p + p {
+  text-indent: 1.2em;
+}
+
+.verbatim .att {
+  font-size: inherit;
+}
+
+.ranking {
+  font-size: var(--step--2);
+  color: var(--ink-soft);
+}
+
+.ranking summary {
+  cursor: pointer;
+}
+
+.ranking dl {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.2em var(--space-s);
+  margin-block: var(--space-xs) 0;
+}
+
+.ranking dd {
+  margin: 0;
+  font-variant-numeric: tabular-nums;
+}
+
+.licence {
+  border-block-start: 1px solid var(--rule);
+  padding-block-start: var(--space-xs);
+}
+
+.division {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.division .tally {
+  display: flex;
+  gap: var(--space-m);
+  font-size: var(--step-0);
+}
+
+.division table {
+  border-collapse: collapse;
+  inline-size: 100%;
+}
+
+.division :is(th, td) {
+  text-align: start;
+  padding-block: 0.3em;
+  padding-inline: 0.5em;
+  border-block-end: 1px solid var(--rule);
+}
+
+.division td {
+  text-align: end;
+}
+
+.division caption {
+  caption-side: bottom;
+  text-align: start;
+  padding-block-start: var(--space-2xs);
+}
+
+.division h3 {
+  font-size: var(--step-0);
+}
+
+.about-record {
+  font-family: var(--sans);
+  font-size: var(--step--1);
+  color: var(--ink-soft);
+  border-inline-start: 3px solid var(--rule);
+  padding-inline-start: var(--space-s);
+}
+
+.about-record summary {
+  cursor: pointer;
+  color: var(--ink);
+}
+
+.about-record p {
+  margin-block-start: var(--space-2xs);
+}
+
+/* ---- footer: the imprint ---------------------------------------------------------------------- */
+
+.footer {
+  border-block-start: 1px solid var(--rule);
+  padding-block: var(--space-s) var(--space-m);
+  font-family: var(--sans);
+  font-size: var(--step--2);
+  color: var(--ink-faint);
+  text-align: center;
+}
+
+.footer > a,
+.login .footer > a {
+  display: block;
+  padding-block: 0.2em; /* at least 24px tall, so each line is easy to tap */
+  color: inherit;
+}
+
+.footer > .independence {
+  font-weight: 600;
+  color: var(--ink-soft);
+  margin-block-end: var(--space-xs);
+}
+
+.login .footer > .independence {
+  color: inherit;
+}
+
+.footer > a + a {
+  margin-block-start: 0.2em;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .footer > a:hover {
+    color: var(--ink);
+  }
+}
+
+/* ---- sign-in: the cover of a bound volume ------------------------------------------------------ */
+
+html:has(.login),
+html:has(.login) body {
+  background-color: var(--cloth-commons);
+}
+
+.login {
+  min-block-size: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-l);
+  padding-block: var(--space-xl) var(--space-m);
+  padding-inline: 1rem;
+  color: var(--on-cloth);
+  background-color: var(--cloth-commons);
+  background-image:
+    repeating-linear-gradient(45deg, oklch(1 0 none / 0.025) 0 1px, transparent 1px 4px),
+    repeating-linear-gradient(-45deg, oklch(0 0 none / 0.05) 0 1px, transparent 1px 5px);
+}
+
+.cover {
+  text-align: center;
+  color: var(--gilt-on-cloth);
+  padding-block: var(--space-m);
+  padding-inline: var(--space-l);
+  border-block: 3px double color-mix(in oklch, var(--gilt-on-cloth) 75%, transparent);
+}
+
+.cover p {
+  text-wrap: balance;
+}
+
+.cover-mark {
+  block-size: 3.4rem;
+  inline-size: auto;
+  margin-inline: auto;
+  margin-block-end: var(--space-s);
+}
+
+
+.cover-kicker,
+.cover-years {
+  font-family: var(--sans);
+  font-size: var(--step--2);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.cover-title {
+  font-size: var(--step-4);
+  font-weight: 650;
+  letter-spacing: 0.04em;
+  font-variation-settings: "opsz" 60;
+  line-height: 1.05;
+  margin-block: var(--space-xs);
+  text-shadow: 0 1px 0 oklch(0 0 none / 0.35);
+}
+
+.login-card {
+  inline-size: min(26rem, 100%);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-s);
+  background: var(--paper);
+  color: var(--ink);
+  padding: var(--space-m);
+  border-radius: 0.15rem;
+  outline: 1px solid color-mix(in oklch, var(--gilt-on-cloth) 70%, transparent);
+  outline-offset: 0.4rem;
+  box-shadow: 0 10px 40px oklch(0 0 none / 0.35);
+}
+
+.login-card h1 {
+  font-size: var(--step-1);
+}
+
+.login-card label {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs);
+  font-family: var(--sans);
+  font-size: var(--step--1);
+  font-weight: 600;
+}
+
+.login-card button {
+  align-self: stretch;
+}
+
+.login .footer {
+  border: 0;
+  color: color-mix(in oklch, var(--on-cloth) 70%, transparent);
+  max-inline-size: 40rem;
+}
+
+/* ---- static pages: methodology, status and the like --------------------------------------------- */
+
+.page-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs) var(--space-s);
+}
+
+.page-nav a {
+  color: var(--ink-soft);
+  text-decoration: none;
+}
+
+.page-nav a[aria-current="page"] {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 0.3em;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .page-nav a:hover {
+    color: var(--accent);
+  }
+}
+
+.home-link {
+  display: block;
+  color: inherit;
+}
+
+.title-block > .home-link > .mark {
+  block-size: calc(3.2 * var(--step-1));
+  inline-size: auto;
+  margin-block-end: var(--space-xs);
+}
+
+.prose {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-s);
+  padding-block: var(--space-m) var(--space-xl);
+  max-inline-size: 42rem;
+}
+
+.prose h1 {
+  font-size: var(--step-3);
+}
+
+.prose h2 {
+  font-size: var(--step-1);
+  margin-block-start: var(--space-m);
+  padding-block-start: var(--space-s);
+  border-block-start: 1px solid var(--rule);
+  scroll-margin-block-start: var(--space-m);
+}
+
+.prose :is(ul, ol) {
+  margin: 0;
+  padding-inline-start: 1.3em;
+}
+
+.prose li + li {
+  margin-block-start: 0.5em;
+}
+
+.lede {
+  font-size: var(--step-1);
+  font-style: italic;
+  color: var(--ink-soft);
+}
+
+.toc {
+  font-family: var(--sans);
+  font-size: var(--step--1);
+  border-inline-start: 3px solid var(--rule);
+  padding-inline-start: var(--space-s);
+}
+
+.toc ol {
+  columns: 2 14rem;
+}
+
+.defs {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: var(--space-xs) var(--space-m);
+  margin: 0;
+}
+
+.defs dd {
+  margin: 0;
+}
+
+@media (width < 40rem) {
+  .defs {
+    grid-template-columns: 1fr;
+  }
+
+  .defs dd {
+    margin-block-end: var(--space-xs);
+  }
+}
+
+.status-list {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: var(--space-xs) var(--space-m);
+  margin: 0;
+  padding: var(--space-s);
+  background: var(--paper-raised);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  font-family: var(--sans);
+  font-size: var(--step--1);
+}
+
+.status-list dt {
+  font-weight: 650;
+  color: var(--ink-soft);
+}
+
+.status-list dd {
+  margin: 0;
+}
+
+.status-list dd[data-state]::before {
+  content: "" / "";
+  display: inline-block;
+  inline-size: 0.6em;
+  block-size: 0.6em;
+  margin-inline-end: 0.5em;
+  border-radius: 50%;
+  background: var(--commons);
+}
+
+.status-list dd[data-state="paused"]::before {
+  background: var(--warn);
+}
+
+.status-list dd[data-state="unavailable"]::before {
+  background: var(--danger);
+}
+
+@media (width < 40rem) {
+  .status-list {
+    grid-template-columns: 1fr;
+    gap: 0.15em;
+  }
+
+  .status-list dd + dt {
+    margin-block-start: var(--space-xs);
+  }
+}
+
+.footer-nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--space-s);
+  margin-block-end: var(--space-xs);
+}
+
+.footer-nav a {
+  color: var(--ink-soft);
+}
+
+/* ---- utilities ------------------------------------------------------------------------------------ */
+
+.muted {
+  color: var(--ink-soft);
+}
+
+.small {
+  font-size: var(--step--1);
+}
+
+/* hidden until a keyboard user tabs to it */
+.skip-link {
+  position: absolute;
+  inset-block-start: var(--space-2xs);
+  inset-inline-start: var(--space-2xs);
+  z-index: 50;
+  padding: var(--space-2xs) var(--space-s);
+  background: var(--paper-raised);
+  color: var(--accent-strong);
+  border: 2px solid var(--accent);
+  border-radius: var(--radius);
+  font-family: var(--sans);
+  transform: translateY(-200%);
+}
+
+.skip-link:focus-visible {
+  transform: none;
+}
+
+main:focus {
+  outline: none;
+}
+
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* ---- narrow screens -------------------------------------------------------------------------------- */
+
+@media (width < 40rem) {
+  .running-head > span:first-child {
+    display: none;
+  }
+
+  .source-card {
+    grid-template-columns: auto 1fr;
+  }
+
+  .colref {
+    grid-column: 2;
+    padding-block-start: 0;
+  }
+
+  .facts {
+    grid-template-columns: 1fr;
+  }
+
+  .facts dd + dt {
+    margin-block-start: var(--space-xs);
+  }
+}
+
+/* ---- print: a briefing as a document ------------------------------------------------------------------ */
+
+.print-only {
+  display: none;
+}
+
+@media print {
+  :root {
+    color-scheme: light;
+  }
+
+  @page {
+    margin: 18mm 16mm;
+  }
+
+  html,
+  body {
+    background: #fff;
+  }
+
+  .running-head,
+  .controls,
+  .composer,
+  .drawer,
+  .answer-actions,
+  .plan-head > button,
+  .chip button,
+  .empty .examples,
+  .examples-head,
+  .footer-nav,
+  .banner,
+  .phase-banner,
+  .status::before {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block;
+  }
+
+  .app {
+    display: block;
+  }
+
+  .masthead {
+    padding-block: 0 var(--space-s);
+  }
+
+  .answer {
+    box-shadow: none;
+    border-color: #999;
+    break-inside: auto;
+  }
+
+  .answer-body :is(h2, h3, h4) {
+    break-after: avoid;
+  }
+
+  .turn + .turn {
+    break-before: page;
+  }
+
+  .cite {
+    border: 0;
+    background: none;
+    padding: 0;
+    vertical-align: super;
+    font-size: 0.65em;
+  }
+
+  .cite::before {
+    content: "[";
+  }
+
+  .cite::after {
+    content: "]";
+  }
+
+  .source-card {
+    break-inside: avoid;
+    box-shadow: none;
+  }
+
+  .source-card .print-only {
+    grid-column: 2 / -1;
+    font-size: var(--step--2);
+    color: #444;
+    overflow-wrap: anywhere;
+  }
+
+  .footer {
+    border-block-start: 1px solid #999;
+  }
+}
+
+@media (forced-colors: active) {
+  .badge,
+  .cite {
+    border: 1px solid;
+  }
+}
+
+/* ---- other resources: a site, then what it is best for ------------------------------- */
+
+.resources {
+  display: grid;
+  gap: var(--space-2xs);
+}
+
+.resources dt {
+  font-weight: 600;
+  margin-block-start: var(--space-s);
+}
+
+.resources dt:first-child {
+  margin-block-start: 0;
+}
+
+.resources dd {
+  margin-inline-start: 0;
+  color: var(--ink-soft);
+}
+
+/* ---- the note on what the site costs (every tenth new briefing in a day) ------------- */
+
+.support-reminder {
+  max-inline-size: min(34rem, calc(100vw - 2rem));
+  border: 1px solid var(--rule-strong);
+  border-block-start: 3px solid var(--accent);
+  border-radius: var(--radius);
+  background: var(--paper-raised);
+  color: var(--ink);
+  padding: var(--space-m);
+  box-shadow: 0 1rem 3rem rgb(0 0 0 / 0.25);
+}
+
+.support-reminder::backdrop {
+  background: rgb(0 0 0 / 0.45);
+}
+
+.support-reminder h2 {
+  font-size: var(--step-1);
+  margin-block-end: var(--space-s);
+}
+
+.support-reminder p + p {
+  margin-block-start: var(--space-xs);
+}
+
+.support-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-s);
+  align-items: center;
+  margin-block: var(--space-m) var(--space-s);
+}
+
+.support-actions .button {
+  font-family: var(--sans);
+  font-size: var(--step--1);
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: var(--radius);
+  padding-block: 0.6em;
+  padding-inline: 1.2em;
+  background: var(--accent);
+  color: var(--on-accent);
+  border: 1px solid var(--accent);
+}
+
+/* ---- topic briefings ------------------------------------------------------------------ */
+
+.topic-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: var(--space-s);
+}
+
+.topic-list > li {
+  border-block-start: 1px solid var(--rule);
+  padding-block-start: var(--space-s);
+}
+
+.topic-link {
+  font-weight: 600;
+  font-size: var(--step-0);
+}
+
+.topic-summary {
+  margin-block: var(--space-2xs);
+  color: var(--ink-soft);
+}
+
+.topic-header {
+  margin-block-end: var(--space-s);
+}
+
+.topic-title {
+  margin: 0;
+  font-size: var(--step-2);
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+.topic-description {
+  color: var(--ink-soft);
+  font-style: italic;
+}
+
+.topic-note,
+.topic-versions {
+  font-family: var(--sans);
+  font-size: var(--step--1);
+  color: var(--ink-soft);
+  margin-block-start: var(--space-xs);
+}
+
+.topic-versions summary {
+  cursor: pointer;
+}
+
+/* ---- timelines ------------------------------------------------------------------------ */
+
+.timeline-list {
+  list-style: none;
+  padding: 0;
+  border-inline-start: 2px solid var(--rule);
+  margin-inline-start: var(--space-2xs);
+}
+
+.timeline-item {
+  position: relative;
+  padding-inline-start: var(--space-m);
+  padding-block-end: var(--space-m);
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  inset-inline-start: calc(-0.4rem - 1px);
+  inset-block-start: 0.35rem;
+  inline-size: 0.8rem;
+  block-size: 0.8rem;
+  border-radius: 50%;
+  background: var(--paper);
+  border: 2px solid var(--accent);
+}
+
+.timeline-item.voted::before {
+  border-radius: 2px;
+  background: var(--accent);
+}
+
+.timeline-date {
+  font-family: var(--sans);
+  font-size: var(--step--1);
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+
+.timeline-head {
+  margin-block: var(--space-2xs);
+}
+
+.timeline-excerpt {
+  color: var(--ink-soft);
+  margin-block-end: var(--space-2xs);
+}
+
+.vote-badge {
+  font-family: var(--sans);
+  font-size: var(--step--2);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--on-accent);
+  background: var(--accent);
+  padding: 0.05em 0.45em;
+  border-radius: var(--radius);
+}
+
+.ask-about select {
+  font: inherit;
+  max-inline-size: 100%;
+  margin-block-end: var(--space-xs);
+}
+
+/* ---- charts ----------------------------------------------------------------------------- */
+
+:root {
+  --series-0: light-dark(#1f5f8b, #7fb8e0);
+  --series-1: light-dark(#b0451c, #f0a07a);
+  --series-2: light-dark(#2e7d4f, #8fd1a8);
+  --series-3: light-dark(#7a4fa0, #c5a6e3);
+  --series-4: light-dark(#8a6d00, #e0c35a);
+  --series-5: light-dark(#a3245e, #ee9cc3);
+  --series-6: light-dark(#555, #bbb);
+  /* the colours readers associate with each party, darkened or lightened for contrast */
+  --party-labour: light-dark(#c8102e, #ff7a85);
+  --party-conservative: light-dark(#0063a8, #6fb8f0);
+  --party-liberal-democrat: light-dark(#b85f00, #ffb257);
+  --party-scottish-national-party: light-dark(#7d6a00, #f2db4b);
+  --party-reform: light-dark(#007a8a, #5fd6e6);
+  --party-green: light-dark(#2e7d32, #8fd694);
+  --party-other: light-dark(#666, #aaa);
+}
+
+.chart {
+  margin: var(--space-s) 0;
+}
+
+.chart svg {
+  inline-size: 100%;
+  block-size: auto;
+  font-family: var(--sans);
+}
+
+.chart .grid line {
+  stroke: var(--rule);
+}
+
+.chart text {
+  fill: var(--ink-soft);
+  font-size: 12px;
+}
+
+.chart .series polyline {
+  stroke: var(--c);
+  stroke-width: 2.5;
+}
+
+.chart .series :is(circle, rect, polygon) {
+  fill: var(--c);
+}
+
+.chart .series .open {
+  fill: var(--paper);
+  stroke: var(--c);
+  stroke-width: 2;
+}
+
+.chart .series .stroke-only {
+  stroke: var(--c);
+  stroke-width: 2.5;
+  fill: none;
+}
+
+/* each series' colour: a class on the series (s0, s1…), or the party's own colour (g-labour…), which wins */
+.s0 { --c: var(--series-0); }
+.s1 { --c: var(--series-1); }
+.s2 { --c: var(--series-2); }
+.s3 { --c: var(--series-3); }
+.s4 { --c: var(--series-4); }
+.s5 { --c: var(--series-5); }
+.s6 { --c: var(--series-6); }
+.g-labour { --c: var(--party-labour); }
+.g-conservative { --c: var(--party-conservative); }
+.g-liberal-democrat { --c: var(--party-liberal-democrat); }
+.g-scottish-national-party { --c: var(--party-scottish-national-party); }
+.g-reform { --c: var(--party-reform); }
+.g-green { --c: var(--party-green); }
+.g-other { --c: var(--party-other); }
+
+.legend {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2xs) var(--space-s);
+  font-family: var(--sans);
+  font-size: var(--step--1);
+}
+
+.legend li {
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+  margin: 0;
+}
+
+.prose .legend li + li {
+  margin: 0; /* not the spacing of ordinary lists */
+}
+
+.legend svg {
+  inline-size: 1em;
+  block-size: 1em;
+}
+
+.legend :is(circle, rect, polygon) {
+  fill: var(--c);
+}
+
+.legend .open {
+  fill: var(--paper);
+  stroke: var(--c);
+  stroke-width: 2;
+}
+
+.legend .stroke-only {
+  stroke: var(--c);
+  stroke-width: 2.5;
+  fill: none;
+}
+
+.chart-options {
+  border: 0;
+  padding: 0;
+  margin-block: var(--space-xs);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2xs) var(--space-s);
+  font-family: var(--sans);
+  font-size: var(--step--1);
+}
+
+.chart-options legend {
+  font-weight: 600;
+  margin-block-end: var(--space-2xs);
+}
+
+.chart-context {
+  font-size: var(--step--1);
+  color: var(--ink-soft);
+}
+
+.compare-form select,
+.compare-form input:not([type="radio"]) {
+  font: inherit;
+  max-inline-size: 100%;
+  margin-block-end: var(--space-xs);
+}
+
+/* ---- kinds of vote and the glossary ------------------------------------------------------ */
+
+.vote-kind-note,
+.vote-kind-question,
+.vote-kind-outcome {
+  color: var(--ink-soft);
+}
+
+.vote-kind-key {
+  display: grid;
+  grid-template-columns: minmax(8rem, 14rem) 1fr;
+  gap: var(--space-2xs) var(--space-m);
+  margin: 0;
+}
+
+.vote-kind-key dt {
+  font-weight: 600;
+}
+
+.vote-kind-key dd {
+  margin: 0;
+  color: var(--ink-soft);
+}
+
+.glossary {
+  grid-template-columns: minmax(10rem, 16rem) 1fr;
+}
+
+.glossary dt {
+  font-weight: 600;
+  scroll-margin-block-start: var(--space-l);
+}
+
+.glossary dt:target,
+.glossary dt:target + dd {
+  background: var(--mark);
+  color: var(--ink);
+}
+
+@media (width < 40rem) {
+  .vote-kind-key,
+  .glossary {
+    grid-template-columns: 1fr;
+  }
+
+  .vote-kind-key dd {
+    margin-block-end: var(--space-2xs);
+  }
+}
+
+/* ---- debate pages ------------------------------------------------------------------------- */
+
+.debate-section {
+  font-size: var(--step-1);
+  margin-block: var(--space-l) var(--space-xs);
+  scroll-margin-block-start: var(--space-l);
+}
+
+.contrib {
+  padding-block: var(--space-xs);
+  border-block-end: 1px solid var(--rule);
+  scroll-margin-block-start: var(--space-l);
+}
+
+.contrib p {
+  margin-block: 0 var(--space-xs);
+}
+
+.contrib-speaker {
+  margin-block-end: var(--space-2xs);
+}
+
+.contrib-role {
+  display: block;
+  font-size: var(--step--1);
+  color: var(--ink-soft);
+}
+
+.contrib-ref {
+  margin-block-end: 0;
+}
+
+.contrib.procedural {
+  font-style: italic;
+  color: var(--ink-soft);
+}
+
+.contrib.is-target,
+.debate-division.is-target {
+  background: color-mix(in oklch, var(--mark) 45%, transparent);
+  padding-inline: var(--space-xs);
+}
+
+.debate-division {
+  margin-block: var(--space-s);
+  padding: var(--space-xs) var(--space-s);
+  border-inline-start: 3px solid var(--accent);
+  background: color-mix(in oklch, var(--accent) 6%, transparent);
+  scroll-margin-block-start: var(--space-l);
+}
+
+.debate-division p {
+  margin-block: 0 var(--space-2xs);
+}
+
+.same-day {
+  margin-block-start: var(--space-l);
+}
+
+.ask-row select {
+  flex: 1;
+  min-inline-size: 0;
+  margin-block-end: 0;
+}
+
+.drawer-ask {
+  padding-block-start: var(--space-s);
+  border-block-start: 1px solid var(--rule);
+}
+
+/* ---- the week in Parliament ---------------------------------------------------------------- */
+
+.week-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-s);
+  flex-wrap: wrap;
+  font-family: var(--sans);
+  font-size: var(--step--1);
+}
+
+.week-day {
+  margin-block-start: var(--space-l);
+}
+
+.week-chamber h3 {
+  font-size: var(--step-0);
+  margin-block: var(--space-s) var(--space-2xs);
+}
+
+.prose .week-debates,
+.prose .week-votes {
+  padding-inline-start: 0;
+  list-style: none;
+}
+
+.week-debates li,
+.week-votes li {
+  padding-block: var(--space-2xs);
+  border-block-end: 1px solid var(--rule);
+}
+
+.week-kind {
+  display: inline-block;
+  margin-inline-end: var(--space-xs);
+  font-family: var(--sans);
+  font-size: var(--step--2);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+/* ---- early day motions -------------------------------------------------------------------- */
+
+.prose .edm-list,
+.prose .edm-sponsors {
+  padding-inline-start: 0;
+  list-style: none;
+}
+
+.edm-sponsors .week-kind {
+  margin-inline: var(--space-xs) 0;
+}
+
+.edm-list li,
+.edm-sponsors li {
+  padding-block: var(--space-2xs);
+  border-block-end: 1px solid var(--rule);
+}
+
+.edm-sponsors {
+  columns: 2 16rem;
+  column-gap: var(--space-m);
+}
+
+.edm-sponsors li {
+  break-inside: avoid;
+}
+
+.edm-text {
+  margin-inline: 0;
+  padding: var(--space-s);
+  border-inline-start: 3px solid var(--accent);
+  background: color-mix(in oklch, var(--accent) 5%, transparent);
+}
+
+.evidence-note {
+  margin: 0;
+  padding: var(--space-2xs) var(--space-xs);
+  border-inline-start: 3px solid var(--accent);
+  background: color-mix(in oklch, var(--accent) 6%, transparent);
+}
+
+/* ---- registered interests ------------------------------------------------------------------ */
+
+.interest-category {
+  margin-block: var(--space-2xs);
+  border-block-end: 1px solid var(--rule);
+  padding-block: var(--space-2xs);
+}
+
+.interest-category > summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.prose .interests,
+.prose .interest-children ul {
+  padding-inline-start: 0;
+  list-style: none;
+}
+
+.interest {
+  padding-block: var(--space-xs);
+  border-block-start: 1px solid var(--rule);
+}
+
+.interest p {
+  margin-block: 0 var(--space-2xs);
+}
+
+.interest-summary {
+  font-weight: 600;
+}
+
+.interest-details {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0 var(--space-s);
+  margin: 0 0 var(--space-2xs);
+}
+
+.interest-details div {
+  display: contents;
+}
+
+.interest-details dt {
+  color: var(--ink-soft);
+}
+
+.interest-details dd {
+  margin: 0;
+}
+
+.interest-children {
+  margin-inline-start: var(--space-s);
+}
+
+@media (width < 40rem) {
+  .interest-details {
+    grid-template-columns: 1fr;
+  }
+
+  .interest-details dd {
+    margin-block-end: var(--space-2xs);
+  }
+}
+
+/* ---- committees -------------------------------------------------------------------------- */
+
+.prose .witness-list {
+  padding-inline-start: var(--space-s);
+  margin-block: 0;
+}
+
+.small-button {
+  padding: 0.1em 0.5em;
+  font-size: var(--step--1);
+}
+
+.debate-subsection {
+  font-size: var(--step-0);
+  margin-block: var(--space-m) var(--space-2xs);
+}
+
+/* "Elsewhere": a line of links to other free sites for what this one does not do */
+.elsewhere {
+  margin-block: var(--space-s);
+}
+.elsewhere a {
+  white-space: normal;
+}
+
+/* the MPs and peers page: each House's full list folds away until opened */
+.people-group > summary {
+  cursor: pointer;
+}
+
+.people-group > summary > h3 {
+  display: inline;
+}
+
+/* the Ask page: say plainly that briefings are written by AI, and what that adds */
+.ai-tag {
+  display: inline-block;
+  vertical-align: middle;
+  font-family: var(--sans);
+  font-size: var(--step--2);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--paper);
+  background: var(--accent);
+  padding: 0.15em 0.55em;
+  border-radius: var(--radius);
+}
+
+.ask-why {
+  display: grid;
+  gap: var(--space-2xs);
+  padding-inline-start: 1.2em;
+}
+
+.ai-caution {
+  font-family: var(--sans);
+  font-size: var(--step--1);
+  color: var(--ink-soft);
+  border-inline-start: 3px solid var(--gilt);
+  padding-inline-start: var(--space-s);
+}
+
+/* the header's "More" menu: the ways to browse the record */
+.nav-more {
+  position: relative;
+}
+
+.nav-more > summary {
+  cursor: pointer;
+  color: var(--ink-soft);
+  list-style: none;
+}
+
+.nav-more > summary::-webkit-details-marker {
+  display: none;
+}
+
+.nav-more > summary::after {
+  content: " ▾";
+}
+
+.nav-more.current > summary {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 0.3em;
+}
+
+.nav-more-list {
+  position: absolute;
+  inset-block-start: calc(100% + var(--space-2xs));
+  inset-inline-end: 0;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs);
+  min-inline-size: 13rem;
+  max-inline-size: calc(100vw - 2rem);
+  padding: var(--space-xs) var(--space-s);
+  background: var(--paper);
+  border: 1px solid var(--rule, var(--ink-faint));
+  border-radius: var(--radius);
+  box-shadow: 0 0.5rem 1.5rem rgb(0 0 0 / 0.12);
+  text-align: start;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .nav-more > summary:hover {
+    color: var(--accent);
+  }
+}
+
+/* on a phone the header's links fit on one line, and an open menu spans the width of the line, under it, so it
+   stays on screen wherever its name sits */
+@media (max-width: 40rem) {
+  .masthead-actions.page-nav,
+  .masthead-actions > .page-nav {
+    position: relative;
+    flex-wrap: nowrap;
+    gap: var(--space-xs) 0.7rem;
+    white-space: nowrap;
+  }
+
+  .masthead-actions .nav-more {
+    position: static;
+  }
+
+  .masthead-actions .nav-more-list {
+    inset-inline: 0;
+    min-inline-size: 0;
+    max-inline-size: none;
+    white-space: normal;
+  }
+}
+
+/* the narrowest phones (360px): slightly smaller type and spacing, so the whole menu still fits on one line */
+@media (max-width: 24rem) {
+  .masthead-actions.page-nav,
+  .masthead-actions > .page-nav {
+    gap: var(--space-xs) 0.4rem;
+    font-size: 0.72rem;
+  }
+}
+
+/* on touch screens, menu and footer links get a comfortable tap area (32px tall) */
+@media (pointer: coarse) {
+  .page-nav a,
+  .nav-more > summary,
+  .nav-more-list a,
+  .footer-nav a {
+    display: inline-flex;
+    align-items: center;
+    min-block-size: 2rem;
+  }
+}
+
+/* suggested follow-up questions under the latest briefing */
+.follow-ups {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2xs, 0.35rem) var(--space-xs);
+  margin-block: var(--space-s);
+}
+
+.follow-up {
+  font-family: var(--serif);
+  font-size: var(--step-0);
+  text-align: start;
+  color: var(--ink);
+  background: var(--paper-raised);
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  padding-block: 0.35em;
+  padding-inline: 0.9em;
+  min-block-size: 2.75rem;
+}
+
+.follow-up:hover {
+  border-color: var(--ink-faint);
+}
+
+.follows {
+  margin-block-end: 0;
+}
+
+/* a page's secondary parts, folded away under the main task: a ruled line with the heading as its handle */
+.page-more {
+  border-block-end: 1px solid var(--rule);
+  padding-block: var(--space-2xs);
+}
+
+.page-more > summary {
+  cursor: pointer;
+  font-family: var(--sans);
+  font-size: var(--step--1);
+  font-weight: 600;
+  color: var(--ink-soft);
+  min-block-size: 2.75rem;
+  display: flex;
+  align-items: center;
+}
+
+.page-more[open] > summary {
+  margin-block-end: var(--space-xs);
+}
+
+.page-more > summary {
+  list-style: none;
+}
+
+.page-more > summary::-webkit-details-marker {
+  display: none;
+}
+
+.page-more > summary::before {
+  content: "▸" / "";
+  flex: none;
+  inline-size: 1.2em;
+  color: var(--gilt);
+}
+
+.page-more[open] > summary::before {
+  content: "▾" / "";
+}
+
+/* on a phone each group's row stacks: who and how many sources on one line, the position under it */
+@media (width < 30rem) {
+  .stances thead {
+    display: none;
+  }
+
+  .stances tr {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0 var(--space-s);
+    padding-block: 0.45em;
+    border-block-end: 1px solid var(--rule);
+  }
+
+  .stances :is(th, td) {
+    padding: 0;
+    border: 0;
+  }
+
+  .stances tbody th {
+    inline-size: auto;
+  }
+
+  .stances td:not(.num) {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+
+  .stances .num .unit {
+    display: inline;
+    color: var(--ink-faint);
+  }
+}
+
+.stances .num .unit {
+  display: none;
+}
+
+/* a member's page: the essentials at a glance, under their name */
+.glance {
+  display: grid;
+  gap: var(--space-2xs);
+  margin-block: var(--space-s);
+  padding: var(--space-s);
+  background: var(--paper-raised);
+  border: 1px solid var(--rule);
+  border-inline-start: 3px solid var(--accent);
+  border-radius: var(--radius);
+  font-size: var(--step--1);
+}
+
+.glance > div {
+  display: grid;
+  grid-template-columns: 9rem 1fr;
+  gap: var(--space-s);
+  align-items: baseline;
+}
+
+.glance dt {
+  font-family: var(--sans);
+  font-size: var(--step--2);
+  font-weight: 650;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.glance dd {
+  margin: 0;
+}
+
+.glance-topics {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: var(--space-2xs);
+}
+
+.chip-button {
+  font-family: var(--sans);
+  font-size: var(--step--1);
+  padding: 0.3em 0.7em;
+  min-block-size: 2.25rem;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  background: var(--paper);
+  color: var(--ink);
+  text-align: start;
+}
+
+.chip-button .count {
+  color: var(--accent);
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .chip-button:hover {
+    border-color: var(--accent);
+  }
+}
+
+@media (width < 30rem) {
+  .glance > div {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
+
+/* on a phone the briefing's card keeps a slimmer margin, so lines are not cut too short to read comfortably */
+@media (width < 30rem) {
+  .answer {
+    padding-inline: var(--space-s);
+  }
+}
+
+.footer > .social {
+  margin-block: 0 var(--space-xs);
+  color: var(--ink-soft);
+}
+
+.footer > .social a {
+  display: inline-block;
+  padding-block: 0.2em; /* easy to tap, like the lines below */
+  color: var(--ink-soft);
+}

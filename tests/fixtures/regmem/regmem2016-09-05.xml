@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE publicwhip
+[
+<!ENTITY pound  "&#163;" >
+]>
+<!-- Invented entries in the format of older register editions, for tests only. -->
+<publicwhip>
+<regmem personid="uk.org.publicwhip/person/99999" membername="Test Former Member" date="2016-09-05">
+	<category type="4" name="Visits outside the UK">
+		<record>
+			<item>Name of donor: Example Foundation<br>Address of donor: 3 Example Square, London</br><br>Estimate of the probable value: &pound;1,500</br><br>Destination of visit: Paris</br> (Registered 1 June 2016)</item>
+		</record>
+	</category>
+	<category type="8" name="Miscellaneous">
+		<record>
+			<item>Trustee of an example charity. (Registered 2 May 2015)</item>
+		</record>
+	</category>
+</regmem>
+</publicwhip>

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <!--#include head-->
+    <link rel="alternate" type="application/rss+xml" title="Where They Stand: new sittings of bills" href="/feeds/bills.xml" />
+    <title>Bills — Where They Stand</title>
+    <meta name="description" content="Every bill debated in Parliament since 1997: its journey through the Commons and the Lords, stage by stage, with every vote, from the official record." />
+    <link rel="canonical" href="https://wheretheystand.uk/bills" />
+  </head>
+  <body>
+    <div class="app page">
+      <!--#include header-->
+      <main id="main" tabindex="-1" class="prose">
+        <h1>Bills</h1>
+        <p class="lede">Every bill debated since 1997: its journey through the Commons and the Lords, with every vote.</p>
+        <label for="bills-search">Search by name</label>
+        <input id="bills-search" type="search" class="people-search" placeholder="for example Rwanda, Finance or Renters" />
+        <div id="bills-live" aria-live="polite"><p class="muted">Loading…</p></div>
+        <p class="muted small">
+          Built from the record itself, so a bill appears once it has been debated. For each bill's official
+          documents, amendments and progress, see <a href="https://bills.parliament.uk">Parliament's bills site</a>.
+        </p>
+        <p class="small feed-link"><a href="/feeds/bills.xml">Follow new sittings of bills in a feed reader (RSS)</a></p>
+      </main>
+      <!--#include footer-->
+    </div>
+    <script type="module" src="/src/billsIndex.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,18 @@
+year,date,constituency,region,electorate,votes,winner,winner_votes,runner_up,runner_up_votes,majority,result,winner_name,paper
+1997,1997-07-31,Uxbridge,,,31867,Conservative,16288,Labour,12522,3766,Con Hold,John Randall,M16
+1997,1997-11-06,Paisley South,,,23435,Labour,10346,Scottish National Party,7615,2731,Lab Hold,Douglas Alexander,M16
+1997,1997-11-20,Beckenham,,,31908,Conservative,13162,Labour,11935,1227,Con Hold,Jacqui Lait,M16
+1997,1997-11-20,Winchester,,,54384,Liberal Democrat,37006,Conservative,15450,21556,LD Win,Mark Oaten,M16
+1999,1999-06-10,Leeds Central,,,13187,Labour,6361,Liberal Democrat,4068,2293,Lab Hold,Hilary Benn,M16
+1999,1999-07-22,Eddisbury,,,34497,Conservative,15465,Labour,13859,1606,Con Hold,Stephen O'Brien,M16
+1999,1999-09-23,Hamilton South,,,19472,Labour,7172,Scottish National Party,6616,556,Lab Hold,Bill Tynan,M16
+1999,1999-09-23,Wigan,,,16187,Labour,9641,Conservative,2912,6729,Lab Hold,Neil Turner,M16
+1999,1999-11-25,Kensington and Chelsea,,,19513,Conservative,11004,Labour,4298,6706,Con Hold,Michael Portillo,M16
+2000,2000-02-03,Ceredigion,,,25065,Plaid Cymru,10716,Liberal Democrat,5768,4948,PC Hold,Simon Thomas,M16
+2000,2000-05-04,Romsey,,,38709,Liberal Democrat,19571,Conservative,16260,3311,LD Gain,Sandra Gidley,M16
+2000,2000-06-22,Tottenham,,,16417,Labour,8785,Liberal Democrat,3139,5646,Lab Hold,David Lammy,M16
+2000,2000-09-21,South Antrim,,,30567,Democratic Unionist Party,11601,Ulster Unionist Party,10779,822,DUP Gain,William McCrea,M16
+2000,2000-11-23,"Glasgow, Anniesland",,,20212,Labour,10539,Scottish National Party,4202,6337,Lab Hold,John Robertson,M16
+2000,2000-11-23,Preston,,,21363,Labour,9765,Conservative,5339,4426,Lab Hold,Mark Hendrick,M16
+2000,2000-11-23,West Bromwich West,,,18879,Labour,9640,Conservative,6408,3232,Lab Gain,Adrian Bailey,M16
+2000,2000-12-21,Falkirk West,,,19504,Labour,8492,Scottish National Party,7787,705,Lab Hold,Eric Joyce,M16

@@ -1,0 +1,1301 @@
+gss_code,name,region,nation,boundary_set,valid_from,valid_to,settlement,density_per_km2,main_area,urban_area,urban_area_pop,urban_share
+W07000049,Aberavon,Wales,Wales,2010,2010-05-06,2024-07-03,city,388,Neath Port Talbot,Swansea,300352,0.8065
+W07000058,Aberconwy,Wales,Wales,2010,2010-05-06,2024-07-03,town,98,Conwy,Llandudno,15371,0.5559
+S14000001,Aberdeen North,Scotland,Scotland,2010,2010-05-06,2024-07-03,city,2115,Aberdeen City,"Aberdeen, Milltimber, and Peterculter",215300,0.9462
+S14000002,Aberdeen South,Scotland,Scotland,2010,2010-05-06,2024-07-03,city,1169,Aberdeen City,"Aberdeen, Milltimber, and Peterculter",215300,0.9685
+S14000003,Airdrie and Shotts,Scotland,Scotland,2010,2010-05-06,2024-07-03,city,373,North Lanarkshire,"Airdrie, Hamilton and Motherwell",300316,0.6756
+E14000530,Aldershot,South East,England,2010,2010-05-06,2024-07-03,city,1986,Rushmoor,Farnborough/Aldershot,252397,0.9845
+E14000531,Aldridge-Brownhills,West Midlands,England,2010,2010-05-06,2024-07-03,city,1770,Walsall,West Midlands,2395268,0.9647
+E14000532,Altrincham and Sale West,North West,England,2010,2010-05-06,2024-07-03,city,2000,Trafford,Greater Manchester,2461366,0.9915
+W07000043,Alyn and Deeside,Wales,Wales,2010,2010-05-06,2024-07-03,town,554,Flintshire,Buckley,63576,0.7536
+E14000533,Amber Valley,East Midlands,England,2010,2010-05-06,2024-07-03,city,737,Amber Valley,Nottingham,729977,0.8238
+S14000004,Angus,Scotland,Scotland,2010,2010-05-06,2024-07-03,town,44,Angus,Arbroath,23487,0.5952
+W07000057,Arfon,Wales,Wales,2010,2010-05-06,2024-07-03,rural,153,Gwynedd,Bangor,17988,0.297
+S14000005,Argyll and Bute,Scotland,Scotland,2010,2010-05-06,2024-07-03,rural,12,Argyll and Bute,Helensburgh,16036,0.3065
+E14000534,Arundel and South Downs,South East,England,2010,2010-05-06,2024-07-03,rural,158,Horsham,Hurstpierpoint,12730,0.2076
+E14000535,Ashfield,East Midlands,England,2010,2010-05-06,2024-07-03,town,999,Ashfield,Mansfield,171958,0.9911
+E14000536,Ashford,South East,England,2010,2010-05-06,2024-07-03,town,247,Ashford,Ashford (Ashford),74733,0.6617
+E14000537,Ashton-under-Lyne,North West,England,2010,2010-05-06,2024-07-03,city,3396,Tameside,Greater Manchester,2461366,0.996
+E14000538,Aylesbury,South East,England,2010,2010-05-06,2024-07-03,town,677,Buckinghamshire,Aylesbury,74748,0.7573
+S14000006,"Ayr, Carrick and Cumnock",Scotland,Scotland,2010,2010-05-06,2024-07-03,rural,56,South Ayrshire,Ayr,61964,0.4849
+E14000539,Banbury,South East,England,2010,2010-05-06,2024-07-03,town,272,Cherwell,Banbury,48651,0.6996
+S14000007,Banff and Buchan,Scotland,Scotland,2010,2010-05-06,2024-07-03,rural,57,Aberdeenshire,Peterhead,19793,0.3529
+E14000540,Barking,London,England,2010,2010-05-06,2024-07-03,city,6905,Barking and Dagenham,Greater London,8135667,1.0
+E14000541,Barnsley Central,Yorkshire and The Humber,England,2010,2010-05-06,2024-07-03,city,1906,Barnsley,Barnsley/Dearne Valley,223281,1.0
+E14000542,Barnsley East,Yorkshire and The Humber,England,2010,2010-05-06,2024-07-03,city,1101,Barnsley,Barnsley/Dearne Valley,223281,0.8688
+E14000543,Barrow and Furness,North West,England,2010,2010-05-06,2024-07-03,town,308,Westmorland and Furness,Barrow-in-Furness,45865,0.6442
+E14000544,Basildon and Billericay,East of England,England,2010,2010-05-06,2024-07-03,town,1609,Basildon,Basildon,144859,0.9972
+E14000545,Basingstoke,South East,England,2010,2010-05-06,2024-07-03,town,1954,Basingstoke and Deane,Basingstoke,107642,0.9921
+E14000546,Bassetlaw,East Midlands,England,2010,2010-05-06,2024-07-03,town,225,Bassetlaw,Worksop,43252,0.6288
+E14000547,Bath,South West,England,2010,2010-05-06,2024-07-03,town,3401,Bath and North East Somerset,Bath,94782,0.9935
+E14000548,Batley and Spen,Yorkshire and The Humber,England,2010,2010-05-06,2024-07-03,city,2042,Kirklees,West Yorkshire,1777387,0.9944
+E14000549,Battersea,London,England,2010,2010-05-06,2024-07-03,city,11694,Wandsworth,Greater London,8135667,1.0
+E14000550,Beaconsfield,South East,England,2010,2010-05-06,2024-07-03,town,583,Buckinghamshire,Slough,163777,0.7635
+E14000551,Beckenham,London,England,2010,2010-05-06,2024-07-03,city,2704,Bromley,Greater London,8135667,0.9985
+E14000552,Bedford,East of England,England,2010,2010-05-06,2024-07-03,town,3149,Bedford,Bedford,106940,0.9931
+N06000001,Belfast East,Northern Ireland,Northern Ireland,2010,2010-05-06,2024-07-03,city,1740,Belfast,Belfast City,293303,0.9907
+N06000002,Belfast North,Northern Ireland,Northern Ireland,2010,2010-05-06,2024-07-03,city,2078,Belfast,Belfast City,293303,1.0
+N06000003,Belfast South,Northern Ireland,Northern Ireland,2010,2010-05-06,2024-07-03,city,2578,Belfast,Belfast City,293303,0.9418
+N06000004,Belfast West,Northern Ireland,Northern Ireland,2010,2010-05-06,2024-07-03,city,2124,Belfast,Belfast City,293303,1.0
+E14000553,Bermondsey and Old Southwark,London,England,2010,2010-05-06,2024-07-03,city,14271,Southwark,Greater London,8135667,1.0
+E14000554,Berwick-upon-Tweed,North East,England,2010,2010-05-06,2024-07-03,rural,32,Northumberland,Berwick-upon-Tweed,13265,0.1752
+S14000008,"Berwickshire, Roxburgh and Selkirk",Scotland,Scotland,2010,2010-05-06,2024-07-03,rural,25,Scottish Borders,Galashiels,15650,0.3019
+E14000555,Bethnal Green and Bow,London,England,2010,2010-05-06,2024-07-03,city,16688,Tower Hamlets,Greater London,8135667,1.0
+E14000556,Beverley and Holderness,Yorkshire and The Humber,England,2010,2010-05-06,2024-07-03,rural,130,East Riding of Yorkshire,Beverley,30587,0.4313
+E14000557,Bexhill and Battle,South East,England,2010,2010-05-06,2024-07-03,rural,202,Rother,Hastings,133422,0.4591
+E14000558,Bexleyheath and Crayford,London,England,2010,2010-05-06,2024-07-03,city,4406,Bexley,Greater London,8135667,1.0
+E14000559,Birkenhead,North West,England,2010,2010-05-06,2024-07-03,city,3596,Wirral,Birkenhead,260588,1.0
+E14000560,"Birmingham, Edgbaston",West Midlands,England,2010,2010-05-06,2024-07-03,city,3745,Birmingham,West Midlands,2395268,1.0
+E14000561,"Birmingham, Erdington",West Midlands,England,2010,2010-05-06,2024-07-03,city,4734,Birmingham,West Midlands,2395268,1.0
+E14000562,"Birmingham, Hall Green",West Midlands,England,2010,2010-05-06,2024-07-03,city,6000,Birmingham,West Midlands,2395268,1.0
+E14000563,"Birmingham, Hodge Hill",West Midlands,England,2010,2010-05-06,2024-07-03,city,6278,Birmingham,West Midlands,2395268,1.0
+E14000564,"Birmingham, Ladywood",West Midlands,England,2010,2010-05-06,2024-07-03,city,5798,Birmingham,West Midlands,2395268,1.0
+E14000565,"Birmingham, Northfield",West Midlands,England,2010,2010-05-06,2024-07-03,city,4232,Birmingham,West Midlands,2395268,1.0
+E14000566,"Birmingham, Perry Barr",West Midlands,England,2010,2010-05-06,2024-07-03,city,4552,Birmingham,West Midlands,2395268,1.0
+E14000567,"Birmingham, Selly Oak",West Midlands,England,2010,2010-05-06,2024-07-03,city,5034,Birmingham,West Midlands,2395268,1.0
+E14000568,"Birmingham, Yardley",West Midlands,England,2010,2010-05-06,2024-07-03,city,5058,Birmingham,West Midlands,2395268,1.0
+E14000569,Bishop Auckland,North East,England,2010,2010-05-06,2024-07-03,town,97,County Durham,Bishop Auckland,26050,0.5028
+E14000570,Blackburn,North West,England,2010,2010-05-06,2024-07-03,town,2735,Blackburn with Darwen,Blackburn,146521,0.9958
+E14000571,Blackley and Broughton,North West,England,2010,2010-05-06,2024-07-03,city,4431,Manchester,Greater Manchester,2461366,1.0
+E14000572,Blackpool North and Cleveleys,North West,England,2010,2010-05-06,2024-07-03,city,3612,Blackpool,Blackpool,239409,0.9933
+E14000573,Blackpool South,North West,England,2010,2010-05-06,2024-07-03,city,3947,Blackpool,Blackpool,239409,1.0
+W07000072,Blaenau Gwent,Wales,Wales,2010,2010-05-06,2024-07-03,town,643,Blaenau Gwent,Ebbw Vale,33068,0.8653
+E14000574,Blaydon,North East,England,2010,2010-05-06,2024-07-03,city,799,Gateshead,Tyneside,774891,0.818
+E14000575,Blyth Valley,North East,England,2010,2010-05-06,2024-07-03,town,1206,Northumberland,Blyth (Northumberland),37339,0.7913
+E14000576,Bognor Regis and Littlehampton,South East,England,2010,2010-05-06,2024-07-03,town,1761,Arun,Bognor Regis,63885,0.9314
+E14000577,Bolsover,East Midlands,England,2010,2010-05-06,2024-07-03,town,443,Bolsover,Alfreton/South Normanton,38460,0.5249
+E14000578,Bolton North East,North West,England,2010,2010-05-06,2024-07-03,city,2737,Bolton,Greater Manchester,2461366,0.9971
+E14000579,Bolton South East,North West,England,2010,2010-05-06,2024-07-03,city,2919,Bolton,Greater Manchester,2461366,0.998
+E14000580,Bolton West,North West,England,2010,2010-05-06,2024-07-03,city,1361,Bolton,Greater Manchester,2461366,0.9787
+E14000581,Bootle,North West,England,2010,2010-05-06,2024-07-03,city,3888,Sefton,Liverpool,864122,1.0
+E14000582,Boston and Skegness,East Midlands,England,2010,2010-05-06,2024-07-03,town,153,Boston,Boston,41340,0.6179
+E14000583,Bosworth,East Midlands,England,2010,2010-05-06,2024-07-03,town,368,Hinckley and Bosworth,Hinckley,45249,0.6612
+E14000584,Bournemouth East,South West,England,2010,2010-05-06,2024-07-03,city,4163,"Bournemouth, Christchurch and Poole",Bournemouth/Poole,466266,0.9986
+E14000585,Bournemouth West,South West,England,2010,2010-05-06,2024-07-03,city,3869,"Bournemouth, Christchurch and Poole",Bournemouth/Poole,466266,1.0
+E14000586,Bracknell,South East,England,2010,2010-05-06,2024-07-03,town,1524,Bracknell Forest,Bracknell,77256,0.9772
+E14000587,Bradford East,Yorkshire and The Humber,England,2010,2010-05-06,2024-07-03,city,4345,Bradford,West Yorkshire,1777387,1.0
+E14000588,Bradford South,Yorkshire and The Humber,England,2010,2010-05-06,2024-07-03,city,2437,Bradford,West Yorkshire,1777387,0.9862
+E14000589,Bradford West,Yorkshire and The Humber,England,2010,2010-05-06,2024-07-03,city,3322,Bradford,West Yorkshire,1777387,0.983
+E14000590,Braintree,East of England,England,2010,2010-05-06,2024-07-03,town,217,Braintree,Braintree,53477,0.6652
+W07000068,Brecon and Radnorshire,Wales,Wales,2010,2010-05-06,2024-07-03,rural,23,Powys,Swansea,300352,0.0947
+E14000591,Brent Central,London,England,2010,2010-05-06,2024-07-03,city,8127,Brent,Greater London,8135667,1.0
+E14000592,Brent North,London,England,2010,2010-05-06,2024-07-03,city,6546,Brent,Greater London,8135667,1.0
+E14000593,Brentford and Isleworth,London,England,2010,2010-05-06,2024-07-03,city,5216,Hounslow,Greater London,8135667,1.0
+E14000594,Brentwood and Ongar,East of England,England,2010,2010-05-06,2024-07-03,town,306,Brentwood,Brentwood,52586,0.5691
+W07000073,Bridgend,Wales,Wales,2010,2010-05-06,2024-07-03,town,1009,Bridgend,Bridgend,58380,0.9634
+E14000595,Bridgwater and West Somerset,South West,England,2010,2010-05-06,2024-07-03,town,106,Somerset,Bridgwater,41276,0.5029
+E14000596,Brigg and Goole,Yorkshire and The Humber,England,2010,2010-05-06,2024-07-03,rural,140,North Lincolnshire,Goole,20810,0.2836
+E14000597,"Brighton, Kemptown",South East,England,2010,2010-05-06,2024-07-03,city,2433,Brighton and Hove,Brighton and Hove,474485,0.9881
+E14000598,"Brighton, Pavilion",South East,England,2010,2010-05-06,2024-07-03,city,3909,Brighton and Hove,Brighton and Hove,474485,0.9688
+E14000599,Bristol East,South West,England,2010,2010-05-06,2024-07-03,city,4252,"Bristol, City of",Bristol,617280,1.0
+E14000600,Bristol North West,South West,England,2010,2010-05-06,2024-07-03,city,2403,"Bristol, City of",Bristol,617280,1.0
+E14000601,Bristol South,South West,England,2010,2010-05-06,2024-07-03,city,4621,"Bristol, City of",Bristol,617280,1.0
+E14000602,Bristol West,South West,England,2010,2010-05-06,2024-07-03,city,8291,"Bristol, City of",Bristol,617280,1.0
+E14000603,Broadland,East of England,England,2010,2010-05-06,2024-07-03,rural,131,Broadland,Norwich,213166,0.1881
+E14000604,Bromley and Chislehurst,London,England,2010,2010-05-06,2024-07-03,city,3283,Bromley,Greater London,8135667,1.0
+E14000605,Bromsgrove,West Midlands,England,2010,2010-05-06,2024-07-03,town,460,Bromsgrove,Bromsgrove,49117,0.6924
+E14000606,Broxbourne,East of England,England,2010,2010-05-06,2024-07-03,town,1535,Broxbourne,Cheshunt,45832,0.946
+E14000607,Broxtowe,East Midlands,England,2010,2010-05-06,2024-07-03,city,1501,Broxtowe,Nottingham,729977,0.9955
+E14000608,Buckingham,South East,England,2010,2010-05-06,2024-07-03,rural,125,Buckinghamshire,Buckingham,12890,0.1502
+E14000609,Burnley,North West,England,2010,2010-05-06,2024-07-03,town,803,Burnley,Burnley,149422,0.9485
+E14000610,Burton,West Midlands,England,2010,2010-05-06,2024-07-03,town,446,East Staffordshire,Burton upon Trent,122199,0.8509
+E14000611,Bury North,North West,England,2010,2010-05-06,2024-07-03,city,1772,Bury,Greater Manchester,2461366,0.9708
+E14000612,Bury South,North West,England,2010,2010-05-06,2024-07-03,city,2076,Bury,Greater Manchester,2461366,0.9736
+E14000613,Bury St Edmunds,East of England,England,2010,2010-05-06,2024-07-03,town,237,Mid Suffolk,Bury St Edmunds,42812,0.5616
+W07000076,Caerphilly,Wales,Wales,2010,2010-05-06,2024-07-03,city,771,Caerphilly,Cardiff,447287,0.836
+S14000009,"Caithness, Sutherland and Easter Ross",Scotland,Scotland,2010,2010-05-06,2024-07-03,rural,7,Highland,,,0.0
+E14000614,Calder Valley,Yorkshire and The Humber,England,2010,2010-05-06,2024-07-03,city,344,Calderdale,West Yorkshire,1777387,0.6436
+E14000615,Camberwell and Peckham,London,England,2010,2010-05-06,2024-07-03,city,11523,Southwark,Greater London,8135667,1.0
+E14000616,Camborne and Redruth,South West,England,2010,2010-05-06,2024-07-03,town,337,Cornwall,Redruth,42690,0.5359
+E14000617,Cambridge,East of England,England,2010,2010-05-06,2024-07-03,town,3196,Cambridge,Cambridge,158434,0.9969
+E14000618,Cannock Chase,West Midlands,England,2010,2010-05-06,2024-07-03,town,1277,Cannock Chase,Cannock,86121,0.8895
+E14000619,Canterbury,South East,England,2010,2010-05-06,2024-07-03,town,485,Canterbury,Canterbury,55240,0.7992
+W07000050,Cardiff Central,Wales,Wales,2010,2010-05-06,2024-07-03,city,5586,Cardiff,Cardiff,447287,1.0
+W07000051,Cardiff North,Wales,Wales,2010,2010-05-06,2024-07-03,city,2137,Cardiff,Cardiff,447287,1.0
+W07000080,Cardiff South and Penarth,Wales,Wales,2010,2010-05-06,2024-07-03,city,2456,Cardiff,Cardiff,447287,0.9957
+W07000079,Cardiff West,Wales,Wales,2010,2010-05-06,2024-07-03,city,1847,Cardiff,Cardiff,447287,0.935
+E14000620,Carlisle,North West,England,2010,2010-05-06,2024-07-03,town,412,Cumberland,Carlisle,78470,0.8966
+W07000067,Carmarthen East and Dinefwr,Wales,Wales,2010,2010-05-06,2024-07-03,rural,47,Carmarthenshire,Ammanford,23709,0.2723
+W07000066,Carmarthen West and South Pembrokeshire,Wales,Wales,2010,2010-05-06,2024-07-03,rural,77,Pembrokeshire,Carmarthen,15854,0.1811
+E14000621,Carshalton and Wallington,London,England,2010,2010-05-06,2024-07-03,city,4051,Sutton,Greater London,8135667,1.0
+E14000622,Castle Point,East of England,England,2010,2010-05-06,2024-07-03,city,2023,Castle Point,Southend-on-Sea,295310,1.0
+S14000010,Central Ayrshire,Scotland,Scotland,2010,2010-05-06,2024-07-03,town,380,South Ayrshire,Irvine,37367,0.8379
+E14000623,Central Devon,South West,England,2010,2010-05-06,2024-07-03,rural,67,Teignbridge,Exeter,117763,0.0059
+E14000624,Central Suffolk and North Ipswich,East of England,England,2010,2010-05-06,2024-07-03,rural,129,East Suffolk,Ipswich,178835,0.4841
+W07000064,Ceredigion,Wales,Wales,2010,2010-05-06,2024-07-03,rural,41,Ceredigion,Aberystwyth,18749,0.247
+E14000625,Charnwood,East Midlands,England,2010,2010-05-06,2024-07-03,city,608,Charnwood,Leicester,508916,0.7989
+E14000626,Chatham and Aylesford,South East,England,2010,2010-05-06,2024-07-03,city,1671,Medway,Medway Towns,243931,0.9502
+E14000627,Cheadle,North West,England,2010,2010-05-06,2024-07-03,city,2401,Stockport,Greater Manchester,2461366,1.0
+E14000628,Chelmsford,East of England,England,2010,2010-05-06,2024-07-03,town,2645,Chelmsford,Chelmsford,111511,0.9985
+E14000629,Chelsea and Fulham,London,England,2010,2010-05-06,2024-07-03,city,13203,Hammersmith and Fulham,Greater London,8135667,1.0
+E14000630,Cheltenham,South West,England,2010,2010-05-06,2024-07-03,town,2832,Cheltenham,Cheltenham,116447,0.9969
+E14000631,Chesham and Amersham,South East,England,2010,2010-05-06,2024-07-03,town,489,Buckinghamshire,Amersham/Chesham,46122,0.719
+E14000632,Chesterfield,East Midlands,England,2010,2010-05-06,2024-07-03,town,1996,Chesterfield,Chesterfield,113057,0.9821
+E14000633,Chichester,South East,England,2010,2010-05-06,2024-07-03,town,180,Chichester,Chichester,31654,0.5124
+E14000634,Chingford and Woodford Green,London,England,2010,2010-05-06,2024-07-03,city,4963,Waltham Forest,Greater London,8135667,1.0
+E14000635,Chippenham,South West,England,2010,2010-05-06,2024-07-03,town,594,Wiltshire,Chippenham (Wiltshire),35800,0.7603
+E14000636,Chipping Barnet,London,England,2010,2010-05-06,2024-07-03,city,3436,Barnet,Greater London,8135667,1.0
+E14000637,Chorley,North West,England,2010,2010-05-06,2024-07-03,city,678,Chorley,Preston,313332,0.7804
+E14000638,Christchurch,South West,England,2010,2010-05-06,2024-07-03,city,807,"Bournemouth, Christchurch and Poole",Bournemouth/Poole,466266,0.9087
+E14000639,Cities of London and Westminster,London,England,2010,2010-05-06,2024-07-03,city,8221,Westminster,Greater London,8135667,1.0
+E14000640,City of Chester,North West,England,2010,2010-05-06,2024-07-03,town,729,Cheshire West and Chester,Chester,90524,0.8964
+E14000641,City of Durham,North East,England,2010,2010-05-06,2024-07-03,town,560,County Durham,Durham,47785,0.5063
+E14000642,Clacton,East of England,England,2010,2010-05-06,2024-07-03,town,691,Tendring,Clacton-on-Sea,50548,0.7967
+E14000643,Cleethorpes,Yorkshire and The Humber,England,2010,2010-05-06,2024-07-03,town,285,North East Lincolnshire,Grimsby,134160,0.7237
+W07000062,Clwyd South,Wales,Wales,2010,2010-05-06,2024-07-03,town,116,Wrexham,Rhosllanerchrugog,25362,0.5173
+W07000059,Clwyd West,Wales,Wales,2010,2010-05-06,2024-07-03,town,79,Conwy,Colwyn Bay,34284,0.6508
+S14000011,"Coatbridge, Chryston and Bellshill",Scotland,Scotland,2010,2010-05-06,2024-07-03,city,1177,North Lanarkshire,"Airdrie, Hamilton and Motherwell",300316,0.7953
+E14000644,Colchester,East of England,England,2010,2010-05-06,2024-07-03,town,2742,Colchester,Colchester,121859,0.9968
+E14000645,Colne Valley,Yorkshire and The Humber,England,2010,2010-05-06,2024-07-03,city,619,Kirklees,West Yorkshire,1777387,0.8276
+E14000646,Congleton,North West,England,2010,2010-05-06,2024-07-03,town,462,Cheshire East,Congleton,26178,0.812
+E14000647,Copeland,North West,England,2010,2010-05-06,2024-07-03,rural,66,Cumberland,Whitehaven,24900,0.3078
+E14000648,Corby,East Midlands,England,2010,2010-05-06,2024-07-03,town,226,North Northamptonshire,Corby,56810,0.516
+E14000649,Coventry North East,West Midlands,England,2010,2010-05-06,2024-07-03,city,4732,Coventry,Coventry,316395,1.0
+E14000650,Coventry North West,West Midlands,England,2010,2010-05-06,2024-07-03,city,2949,Coventry,Coventry,316395,0.9944
+E14000651,Coventry South,West Midlands,England,2010,2010-05-06,2024-07-03,city,3925,Coventry,Coventry,316395,1.0
+E14000652,Crawley,South East,England,2010,2010-05-06,2024-07-03,town,2500,Crawley,Crawley,180508,0.9967
+E14000653,Crewe and Nantwich,North West,England,2010,2010-05-06,2024-07-03,town,820,Cheshire East,Crewe,75556,0.866
+E14000654,Croydon Central,London,England,2010,2010-05-06,2024-07-03,city,4770,Croydon,Greater London,8135667,1.0
+E14000655,Croydon North,London,England,2010,2010-05-06,2024-07-03,city,8363,Croydon,Greater London,8135667,1.0
+E14000656,Croydon South,London,England,2010,2010-05-06,2024-07-03,city,2714,Croydon,Greater London,8135667,1.0
+S14000012,"Cumbernauld, Kilsyth and Kirkintilloch East",Scotland,Scotland,2010,2010-05-06,2024-07-03,town,450,North Lanarkshire,"Bonnybridge, Croy and Cumbernauld",78639,0.8655
+W07000070,Cynon Valley,Wales,Wales,2010,2010-05-06,2024-07-03,town,391,Rhondda Cynon Taf,Aberdare,31135,0.6558
+E14000657,Dagenham and Rainham,London,England,2010,2010-05-06,2024-07-03,city,2759,Barking and Dagenham,Greater London,8135667,0.9975
+E14000658,Darlington,North East,England,2010,2010-05-06,2024-07-03,town,3065,Darlington,Darlington,92363,1.0
+E14000659,Dartford,South East,England,2010,2010-05-06,2024-07-03,town,1380,Dartford,Dartford,58920,0.8682
+E14000660,Daventry,East Midlands,England,2010,2010-05-06,2024-07-03,rural,137,West Northamptonshire,Daventry,23879,0.3031
+W07000042,Delyn,Wales,Wales,2010,2010-05-06,2024-07-03,town,246,Flintshire,Flint,26442,0.6147
+E14000661,Denton and Reddish,North West,England,2010,2010-05-06,2024-07-03,city,3371,Tameside,Greater Manchester,2461366,1.0
+E14000662,Derby North,East Midlands,England,2010,2010-05-06,2024-07-03,city,3461,Derby,Derby,270468,1.0
+E14000663,Derby South,East Midlands,England,2010,2010-05-06,2024-07-03,city,3750,Derby,Derby,270468,1.0
+E14000664,Derbyshire Dales,East Midlands,England,2010,2010-05-06,2024-07-03,rural,89,Derbyshire Dales,Matlock,14956,0.1901
+E14000665,Devizes,South West,England,2010,2010-05-06,2024-07-03,rural,101,Wiltshire,Devizes,18064,0.1862
+E14000666,Dewsbury,Yorkshire and The Humber,England,2010,2010-05-06,2024-07-03,city,902,Kirklees,West Yorkshire,1777387,0.7372
+E14000667,Don Valley,Yorkshire and The Humber,England,2010,2010-05-06,2024-07-03,town,402,Doncaster,Doncaster,158141,0.7545
+E14000668,Doncaster Central,Yorkshire and The Humber,England,2010,2010-05-06,2024-07-03,town,1840,Doncaster,Doncaster,158141,1.0
+E14000669,Doncaster North,Yorkshire and The Humber,England,2010,2010-05-06,2024-07-03,town,388,Doncaster,Doncaster,158141,0.8183
+E14000670,Dover,South East,England,2010,2010-05-06,2024-07-03,town,484,Dover,Dover,41709,0.7403
+E14000671,Dudley North,West Midlands,England,2010,2010-05-06,2024-07-03,city,3703,Dudley,West Midlands,2395268,0.9966
+E14000672,Dudley South,West Midlands,England,2010,2010-05-06,2024-07-03,city,3231,Dudley,West Midlands,2395268,1.0
+E14000673,Dulwich and West Norwood,London,England,2010,2010-05-06,2024-07-03,city,7826,Lambeth,Greater London,8135667,1.0
+S14000013,Dumfries and Galloway,Scotland,Scotland,2010,2010-05-06,2024-07-03,rural,24,Dumfries and Galloway,Dumfries,34213,0.3369
+S14000014,"Dumfriesshire, Clydesdale and Tweeddale",Scotland,Scotland,2010,2010-05-06,2024-07-03,rural,20,Dumfries and Galloway,Dumfries,34213,0.0312
+S14000015,Dundee East,Scotland,Scotland,2010,2010-05-06,2024-07-03,town,582,Dundee City,Dundee,158455,0.9411
+S14000016,Dundee West,Scotland,Scotland,2010,2010-05-06,2024-07-03,town,764,Dundee City,Dundee,158455,0.9316
+S14000017,Dunfermline and West Fife,Scotland,Scotland,2010,2010-05-06,2024-07-03,town,452,Fife,Dunfermline,77628,0.7641
+W07000061,Dwyfor Meirionnydd,Wales,Wales,2010,2010-05-06,2024-07-03,rural,29,Gwynedd,,,0.0
+E14000674,Ealing Central and Acton,London,England,2010,2010-05-06,2024-07-03,city,6891,Ealing,Greater London,8135667,1.0
+E14000675,Ealing North,London,England,2010,2010-05-06,2024-07-03,city,5142,Ealing,Greater London,8135667,1.0
+E14000676,"Ealing, Southall",London,England,2010,2010-05-06,2024-07-03,city,6880,Ealing,Greater London,8135667,1.0
+E14000677,Easington,North East,England,2010,2010-05-06,2024-07-03,town,701,County Durham,Peterlee,37015,0.7175
+N06000005,East Antrim,Northern Ireland,Northern Ireland,2010,2010-05-06,2024-07-03,town,153,Mid and East Antrim,Carrickfergus,28135,0.6809
+E14000678,East Devon,South West,England,2010,2010-05-06,2024-07-03,town,324,East Devon,Exmouth,34432,0.6199
+S14000018,East Dunbartonshire,Scotland,Scotland,2010,2010-05-06,2024-07-03,city,1005,East Dunbartonshire,Greater Glasgow,1024026,0.96
+E14000679,East Ham,London,England,2010,2010-05-06,2024-07-03,city,8725,Newham,Greater London,8135667,1.0
+E14000680,East Hampshire,South East,England,2010,2010-05-06,2024-07-03,town,216,East Hampshire,Bordon,20978,0.5728
+S14000019,"East Kilbride, Strathaven and Lesmahagow",Scotland,Scotland,2010,2010-05-06,2024-07-03,town,253,South Lanarkshire,East Kilbride,77528,0.7426
+N06000006,East Londonderry,Northern Ireland,Northern Ireland,2010,2010-05-06,2024-07-03,rural,80,Causeway Coast and Glens,Coleraine,24479,0.3631
+S14000020,East Lothian,Scotland,Scotland,2010,2010-05-06,2024-07-03,city,158,East Lothian,Edinburgh,520804,0.6318
+S14000021,East Renfrewshire,Scotland,Scotland,2010,2010-05-06,2024-07-03,city,548,East Renfrewshire,Greater Glasgow,1024026,0.9129
+E14000681,East Surrey,South East,England,2010,2010-05-06,2024-07-03,town,439,Tandridge,Crawley,180508,0.5694
+E14000682,East Worthing and Shoreham,South East,England,2010,2010-05-06,2024-07-03,city,1805,Adur,Brighton and Hove,474485,0.9916
+E14000683,East Yorkshire,Yorkshire and The Humber,England,2010,2010-05-06,2024-07-03,rural,98,East Riding of Yorkshire,Bridlington,35154,0.4805
+E14000684,Eastbourne,South East,England,2010,2010-05-06,2024-07-03,town,2025,Eastbourne,Eastbourne,118219,0.9984
+E14000685,Eastleigh,South East,England,2010,2010-05-06,2024-07-03,city,1544,Eastleigh,South Hampshire,855569,0.8864
+E14000686,Eddisbury,North West,England,2010,2010-05-06,2024-07-03,rural,130,Cheshire West and Chester,Winsford (Cheshire West and Chester),30259,0.4368
+S14000022,Edinburgh East,Scotland,Scotland,2010,2010-05-06,2024-07-03,city,4153,City of Edinburgh,Edinburgh,520804,1.0
+S14000023,Edinburgh North and Leith,Scotland,Scotland,2010,2010-05-06,2024-07-03,city,5855,City of Edinburgh,Edinburgh,520804,1.0
+S14000024,Edinburgh South,Scotland,Scotland,2010,2010-05-06,2024-07-03,city,3220,City of Edinburgh,Edinburgh,520804,0.9991
+S14000025,Edinburgh South West,Scotland,Scotland,2010,2010-05-06,2024-07-03,city,1214,City of Edinburgh,Edinburgh,520804,0.995
+S14000026,Edinburgh West,Scotland,Scotland,2010,2010-05-06,2024-07-03,city,996,City of Edinburgh,Edinburgh,520804,0.9065
+E14000687,Edmonton,London,England,2010,2010-05-06,2024-07-03,city,6103,Enfield,Greater London,8135667,1.0
+E14000688,Ellesmere Port and Neston,North West,England,2010,2010-05-06,2024-07-03,town,715,Cheshire West and Chester,Ellesmere Port,61090,0.8762
+E14000689,Elmet and Rothwell,Yorkshire and The Humber,England,2010,2010-05-06,2024-07-03,city,410,Leeds,West Yorkshire,1777387,0.6536
+E14000690,Eltham,London,England,2010,2010-05-06,2024-07-03,city,4419,Greenwich,Greater London,8135667,1.0
+E14000691,Enfield North,London,England,2010,2010-05-06,2024-07-03,city,2944,Enfield,Greater London,8135667,0.9905
+E14000692,"Enfield, Southgate",London,England,2010,2010-05-06,2024-07-03,city,4113,Enfield,Greater London,8135667,0.9949
+E14000693,Epping Forest,East of England,England,2010,2010-05-06,2024-07-03,town,801,Epping Forest,Loughton,31106,0.8898
+E14000694,Epsom and Ewell,South East,England,2010,2010-05-06,2024-07-03,town,2152,Epsom and Ewell,Ewell,51727,0.9729
+E14000695,Erewash,East Midlands,England,2010,2010-05-06,2024-07-03,city,1619,Erewash,Nottingham,729977,1.0
+E14000696,Erith and Thamesmead,London,England,2010,2010-05-06,2024-07-03,city,5241,Bexley,Greater London,8135667,1.0
+E14000697,Esher and Walton,South East,England,2010,2010-05-06,2024-07-03,town,1420,Elmbridge,Esher,50346,0.9391
+E14000698,Exeter,South West,England,2010,2010-05-06,2024-07-03,town,3069,Exeter,Exeter,117763,1.0
+S14000028,Falkirk,Scotland,Scotland,2010,2010-05-06,2024-07-03,town,642,Falkirk,Falkirk,105175,0.9359
+E14000699,Fareham,South East,England,2010,2010-05-06,2024-07-03,city,1612,Fareham,South Hampshire,855569,0.9963
+E14000700,Faversham and Mid Kent,South East,England,2010,2010-05-06,2024-07-03,town,260,Maidstone,Maidstone,107627,0.6736
+E14000701,Feltham and Heston,London,England,2010,2010-05-06,2024-07-03,city,4526,Hounslow,Greater London,8135667,1.0
+N06000007,Fermanagh and South Tyrone,Northern Ireland,Northern Ireland,2010,2010-05-06,2024-07-03,rural,43,Fermanagh and Omagh,Dungannon,16284,0.2781
+E14000702,Filton and Bradley Stoke,South West,England,2010,2010-05-06,2024-07-03,city,1303,South Gloucestershire,Bristol,617280,0.9469
+E14000703,Finchley and Golders Green,London,England,2010,2010-05-06,2024-07-03,city,6421,Barnet,Greater London,8135667,1.0
+E14000704,Folkestone and Hythe,South East,England,2010,2010-05-06,2024-07-03,town,273,Folkestone and Hythe,Folkestone,66429,0.5879
+E14000705,Forest of Dean,South West,England,2010,2010-05-06,2024-07-03,rural,156,Forest of Dean,Cinderford,12942,0.3152
+N06000008,Foyle,Northern Ireland,Northern Ireland,2010,2010-05-06,2024-07-03,town,564,Derry City and Strabane,Derry City,85277,0.8227
+E14000706,Fylde,North West,England,2010,2010-05-06,2024-07-03,city,500,Fylde,Blackpool,239409,0.7905
+E14000707,Gainsborough,East Midlands,England,2010,2010-05-06,2024-07-03,rural,82,West Lindsey,Gainsborough,20842,0.2327
+E14000708,Garston and Halewood,North West,England,2010,2010-05-06,2024-07-03,city,1967,Liverpool,Liverpool,864122,0.9942
+E14000709,Gateshead,North East,England,2010,2010-05-06,2024-07-03,city,3953,Gateshead,Tyneside,774891,1.0
+E14000710,Gedling,East Midlands,England,2010,2010-05-06,2024-07-03,city,2501,Gedling,Nottingham,729977,0.961
+E14000711,Gillingham and Rainham,South East,England,2010,2010-05-06,2024-07-03,city,3378,Medway,Medway Towns,243931,0.9881
+S14000029,Glasgow Central,Scotland,Scotland,2010,2010-05-06,2024-07-03,city,5373,Glasgow City,Greater Glasgow,1024026,1.0
+S14000030,Glasgow East,Scotland,Scotland,2010,2010-05-06,2024-07-03,city,2430,Glasgow City,Greater Glasgow,1024026,0.9909
+S14000031,Glasgow North,Scotland,Scotland,2010,2010-05-06,2024-07-03,city,4682,Glasgow City,Greater Glasgow,1024026,0.999
+S14000032,Glasgow North East,Scotland,Scotland,2010,2010-05-06,2024-07-03,city,3146,Glasgow City,Greater Glasgow,1024026,0.9987
+S14000033,Glasgow North West,Scotland,Scotland,2010,2010-05-06,2024-07-03,city,4864,Glasgow City,Greater Glasgow,1024026,1.0
+S14000034,Glasgow South,Scotland,Scotland,2010,2010-05-06,2024-07-03,city,3340,Glasgow City,Greater Glasgow,1024026,0.986
+S14000035,Glasgow South West,Scotland,Scotland,2010,2010-05-06,2024-07-03,city,3324,Glasgow City,Greater Glasgow,1024026,0.9958
+S14000036,Glenrothes,Scotland,Scotland,2010,2010-05-06,2024-07-03,town,497,Fife,Glenrothes and Thornton,45734,0.8581
+E14000712,Gloucester,South West,England,2010,2010-05-06,2024-07-03,town,3176,Gloucester,Gloucester,150053,1.0
+S14000037,Gordon,Scotland,Scotland,2010,2010-05-06,2024-07-03,city,70,Aberdeenshire,"Aberdeen, Milltimber, and Peterculter",215300,0.5427
+E14000713,Gosport,South East,England,2010,2010-05-06,2024-07-03,city,2724,Gosport,South Hampshire,855569,0.9946
+W07000046,Gower,Wales,Wales,2010,2010-05-06,2024-07-03,city,269,Swansea,Swansea,300352,0.6496
+E14000714,Grantham and Stamford,East Midlands,England,2010,2010-05-06,2024-07-03,town,163,South Kesteven,Grantham,43833,0.7162
+E14000715,Gravesham,South East,England,2010,2010-05-06,2024-07-03,town,1080,Gravesham,Gravesend,55467,0.8124
+E14000716,Great Grimsby,Yorkshire and The Humber,England,2010,2010-05-06,2024-07-03,town,3140,North East Lincolnshire,Grimsby,134160,1.0
+E14000717,Great Yarmouth,East of England,England,2010,2010-05-06,2024-07-03,town,570,Great Yarmouth,Great Yarmouth,63434,0.6521
+E14000718,Greenwich and Woolwich,London,England,2010,2010-05-06,2024-07-03,city,7974,Greenwich,Greater London,8135667,1.0
+E14000719,Guildford,South East,England,2010,2010-05-06,2024-07-03,town,615,Guildford,Guildford,77057,0.8427
+E14000720,Hackney North and Stoke Newington,London,England,2010,2010-05-06,2024-07-03,city,15856,Hackney,Greater London,8135667,0.9951
+E14000721,Hackney South and Shoreditch,London,England,2010,2010-05-06,2024-07-03,city,13768,Hackney,Greater London,8135667,1.0
+E14000722,Halesowen and Rowley Regis,West Midlands,England,2010,2010-05-06,2024-07-03,city,3045,Dudley,West Midlands,2395268,1.0
+E14000723,Halifax,Yorkshire and The Humber,England,2010,2010-05-06,2024-07-03,city,1841,Calderdale,West Yorkshire,1777387,0.975
+E14000724,Haltemprice and Howden,Yorkshire and The Humber,England,2010,2010-05-06,2024-07-03,city,209,East Riding of Yorkshire,Kingston upon Hull,314018,0.6828
+E14000725,Halton,North West,England,2010,2010-05-06,2024-07-03,town,1944,Halton,Widnes,61464,0.9806
+E14000726,Hammersmith,London,England,2010,2010-05-06,2024-07-03,city,10511,Hammersmith and Fulham,Greater London,8135667,1.0
+E14000727,Hampstead and Kilburn,London,England,2010,2010-05-06,2024-07-03,city,11854,Camden,Greater London,8135667,1.0
+E14000728,Harborough,East Midlands,England,2010,2010-05-06,2024-07-03,city,524,Oadby and Wigston,Leicester,508916,0.7856
+E14000729,Harlow,East of England,England,2010,2010-05-06,2024-07-03,town,1226,Harlow,Harlow,82059,0.9324
+E14000730,Harrogate and Knaresborough,Yorkshire and The Humber,England,2010,2010-05-06,2024-07-03,town,698,North Yorkshire,Harrogate,89060,0.8789
+E14000731,Harrow East,London,England,2010,2010-05-06,2024-07-03,city,4577,Harrow,Greater London,8135667,0.9942
+E14000732,Harrow West,London,England,2010,2010-05-06,2024-07-03,city,6223,Harrow,Greater London,8135667,1.0
+E14000733,Hartlepool,North East,England,2010,2010-05-06,2024-07-03,town,999,Hartlepool,Hartlepool,88855,0.9655
+E14000734,Harwich and North Essex,East of England,England,2010,2010-05-06,2024-07-03,rural,248,Tendring,Harwich,20723,0.2431
+E14000735,Hastings and Rye,South East,England,2010,2010-05-06,2024-07-03,town,630,Hastings,Hastings,133422,0.8432
+E14000736,Havant,South East,England,2010,2010-05-06,2024-07-03,city,2027,Havant,South Hampshire,855569,0.9794
+E14000737,Hayes and Harlington,London,England,2010,2010-05-06,2024-07-03,city,2864,Hillingdon,Greater London,8135667,1.0
+E14000738,Hazel Grove,North West,England,2010,2010-05-06,2024-07-03,city,1371,Stockport,Greater Manchester,2461366,0.9842
+E14000739,Hemel Hempstead,East of England,England,2010,2010-05-06,2024-07-03,town,1027,Dacorum,Hemel Hempstead,94932,0.9282
+E14000740,Hemsworth,Yorkshire and The Humber,England,2010,2010-05-06,2024-07-03,rural,671,Wakefield,South Elmsall/South Kirkby,18899,0.4988
+E14000741,Hendon,London,England,2010,2010-05-06,2024-07-03,city,4572,Barnet,Greater London,8135667,1.0
+E14000742,Henley,South East,England,2010,2010-05-06,2024-07-03,rural,147,South Oxfordshire,Henley-on-Thames,11494,0.3252
+E14000743,Hereford and South Herefordshire,West Midlands,England,2010,2010-05-06,2024-07-03,town,140,"Herefordshire, County of",Hereford,60415,0.7114
+E14000744,Hertford and Stortford,East of England,England,2010,2010-05-06,2024-07-03,town,737,East Hertfordshire,Hertford/Ware,45457,0.7855
+E14000745,Hertsmere,East of England,England,2010,2010-05-06,2024-07-03,town,1037,Hertsmere,Borehamwood,35247,0.83
+E14000746,Hexham,North East,England,2010,2010-05-06,2024-07-03,rural,32,Northumberland,Prudhoe,12075,0.4407
+E14000747,Heywood and Middleton,North West,England,2010,2010-05-06,2024-07-03,city,1505,Rochdale,Greater Manchester,2461366,0.9847
+E14000748,High Peak,East Midlands,England,2010,2010-05-06,2024-07-03,town,172,High Peak,Glossop,26775,0.6422
+E14000749,Hitchin and Harpenden,East of England,England,2010,2010-05-06,2024-07-03,town,408,North Hertfordshire,Hitchin,36099,0.7712
+E14000750,Holborn and St Pancras,London,England,2010,2010-05-06,2024-07-03,city,12414,Camden,Greater London,8135667,1.0
+E14000751,Hornchurch and Upminster,London,England,2010,2010-05-06,2024-07-03,city,1937,Havering,Greater London,8135667,0.9844
+E14000752,Hornsey and Wood Green,London,England,2010,2010-05-06,2024-07-03,city,7737,Haringey,Greater London,8135667,1.0
+E14000753,Horsham,South East,England,2010,2010-05-06,2024-07-03,town,334,Horsham,Horsham,51472,0.6006
+E14000754,Houghton and Sunderland South,North East,England,2010,2010-05-06,2024-07-03,city,1330,Sunderland,Sunderland,292024,0.9828
+E14000755,Hove,South East,England,2010,2010-05-06,2024-07-03,city,4344,Brighton and Hove,Brighton and Hove,474485,1.0
+E14000756,Huddersfield,Yorkshire and The Humber,England,2010,2010-05-06,2024-07-03,city,2169,Kirklees,West Yorkshire,1777387,0.9941
+E14000757,Huntingdon,East of England,England,2010,2010-05-06,2024-07-03,town,360,Huntingdonshire,St Neots,30811,0.6542
+E14000758,Hyndburn,North West,England,2010,2010-05-06,2024-07-03,town,1031,Hyndburn,Accrington/Rossendale,125059,0.9105
+E14000759,Ilford North,London,England,2010,2010-05-06,2024-07-03,city,3833,Redbridge,Greater London,8135667,1.0
+E14000760,Ilford South,London,England,2010,2010-05-06,2024-07-03,city,9349,Redbridge,Greater London,8135667,1.0
+S14000038,Inverclyde,Scotland,Scotland,2010,2010-05-06,2024-07-03,town,480,Inverclyde,Greenock,67202,0.8572
+S14000039,"Inverness, Nairn, Badenoch and Strathspey",Scotland,Scotland,2010,2010-05-06,2024-07-03,town,21,Highland,Inverness and Culloden,65056,0.6155
+E14000761,Ipswich,East of England,England,2010,2010-05-06,2024-07-03,town,3591,Ipswich,Ipswich,178835,1.0
+E14000762,Isle of Wight,South East,England,2010,2010-05-06,2024-07-03,town,373,Isle of Wight,Ryde,26082,0.6767
+E14000763,Islington North,London,England,2010,2010-05-06,2024-07-03,city,16042,Islington,Greater London,8135667,1.0
+E14000764,Islington South and Finsbury,London,England,2010,2010-05-06,2024-07-03,city,16586,Islington,Greater London,8135667,1.0
+W07000077,Islwyn,Wales,Wales,2010,2010-05-06,2024-07-03,city,684,Caerphilly,Newport (Newport),306844,0.8985
+E14000765,Jarrow,North East,England,2010,2010-05-06,2024-07-03,city,1762,South Tyneside,Tyneside,774891,0.9948
+E14000766,Keighley,Yorkshire and The Humber,England,2010,2010-05-06,2024-07-03,city,594,Bradford,West Yorkshire,1777387,0.822
+E14000767,Kenilworth and Southam,West Midlands,England,2010,2010-05-06,2024-07-03,rural,138,Warwick,Kenilworth,22413,0.3456
+E14000768,Kensington,London,England,2010,2010-05-06,2024-07-03,city,12662,Kensington and Chelsea,Greater London,8135667,1.0
+E14000769,Kettering,East Midlands,England,2010,2010-05-06,2024-07-03,town,436,North Northamptonshire,Kettering,63675,0.7956
+S14000040,Kilmarnock and Loudoun,Scotland,Scotland,2010,2010-05-06,2024-07-03,town,139,East Ayrshire,Kilmarnock,51433,0.5372
+E14000770,Kingston and Surbiton,London,England,2010,2010-05-06,2024-07-03,city,4532,Kingston upon Thames,Greater London,8135667,0.9964
+E14000771,Kingston upon Hull East,Yorkshire and The Humber,England,2010,2010-05-06,2024-07-03,city,3104,"Kingston upon Hull, City of",Kingston upon Hull,314018,1.0
+E14000772,Kingston upon Hull North,Yorkshire and The Humber,England,2010,2010-05-06,2024-07-03,city,3961,"Kingston upon Hull, City of",Kingston upon Hull,314018,1.0
+E14000773,Kingston upon Hull West and Hessle,Yorkshire and The Humber,England,2010,2010-05-06,2024-07-03,city,3687,"Kingston upon Hull, City of",Kingston upon Hull,314018,1.0
+E14000774,Kingswood,South West,England,2010,2010-05-06,2024-07-03,city,2131,South Gloucestershire,Bristol,617280,0.9856
+S14000041,Kirkcaldy and Cowdenbeath,Scotland,Scotland,2010,2010-05-06,2024-07-03,town,668,Fife,Kirkcaldy and Dysart,51135,0.6564
+E14000775,Knowsley,North West,England,2010,2010-05-06,2024-07-03,city,1983,Knowsley,Liverpool,864122,0.9971
+N06000009,Lagan Valley,Northern Ireland,Northern Ireland,2010,2010-05-06,2024-07-03,town,236,Lisburn and Castlereagh,Lisburn City,51452,0.5206
+S14000042,Lanark and Hamilton East,Scotland,Scotland,2010,2010-05-06,2024-07-03,city,273,South Lanarkshire,"Airdrie, Hamilton and Motherwell",300316,0.7168
+E14000776,Lancaster and Fleetwood,North West,England,2010,2010-05-06,2024-07-03,town,212,Lancaster,Lancaster/Morecambe,97150,0.6994
+E14000777,Leeds Central,Yorkshire and The Humber,England,2010,2010-05-06,2024-07-03,city,3855,Leeds,West Yorkshire,1777387,0.9963
+E14000778,Leeds East,Yorkshire and The Humber,England,2010,2010-05-06,2024-07-03,city,3004,Leeds,West Yorkshire,1777387,1.0
+E14000779,Leeds North East,Yorkshire and The Humber,England,2010,2010-05-06,2024-07-03,city,2385,Leeds,West Yorkshire,1777387,0.9987
+E14000780,Leeds North West,Yorkshire and The Humber,England,2010,2010-05-06,2024-07-03,city,1374,Leeds,West Yorkshire,1777387,0.9229
+E14000781,Leeds West,Yorkshire and The Humber,England,2010,2010-05-06,2024-07-03,city,3082,Leeds,West Yorkshire,1777387,0.9971
+E14000782,Leicester East,East Midlands,England,2010,2010-05-06,2024-07-03,city,5001,Leicester,Leicester,508916,1.0
+E14000783,Leicester South,East Midlands,England,2010,2010-05-06,2024-07-03,city,6083,Leicester,Leicester,508916,1.0
+E14000784,Leicester West,East Midlands,England,2010,2010-05-06,2024-07-03,city,3772,Leicester,Leicester,508916,0.9946
+E14000785,Leigh,North West,England,2010,2010-05-06,2024-07-03,city,1577,Wigan,Greater Manchester,2461366,0.9699
+E14000786,Lewes,South East,England,2010,2010-05-06,2024-07-03,town,253,Lewes,Seaford,22584,0.6949
+E14000787,Lewisham East,London,England,2010,2010-05-06,2024-07-03,city,7565,Lewisham,Greater London,8135667,1.0
+E14000788,Lewisham West and Penge,London,England,2010,2010-05-06,2024-07-03,city,7342,Lewisham,Greater London,8135667,1.0
+E14000789,"Lewisham, Deptford",London,England,2010,2010-05-06,2024-07-03,city,10630,Lewisham,Greater London,8135667,1.0
+E14000790,Leyton and Wanstead,London,England,2010,2010-05-06,2024-07-03,city,7231,Waltham Forest,Greater London,8135667,1.0
+E14000791,Lichfield,West Midlands,England,2010,2010-05-06,2024-07-03,town,295,Lichfield,Lichfield,32877,0.6681
+E14000792,Lincoln,East Midlands,England,2010,2010-05-06,2024-07-03,town,1769,Lincoln,Lincoln,114879,0.9142
+S14000043,Linlithgow and East Falkirk,Scotland,Scotland,2010,2010-05-06,2024-07-03,town,422,West Lothian,Falkirk,105175,0.8961
+E14000793,"Liverpool, Riverside",North West,England,2010,2010-05-06,2024-07-03,city,5648,Liverpool,Liverpool,864122,1.0
+E14000794,"Liverpool, Walton",North West,England,2010,2010-05-06,2024-07-03,city,4769,Liverpool,Liverpool,864122,1.0
+E14000795,"Liverpool, Wavertree",North West,England,2010,2010-05-06,2024-07-03,city,5631,Liverpool,Liverpool,864122,1.0
+E14000796,"Liverpool, West Derby",North West,England,2010,2010-05-06,2024-07-03,city,4470,Liverpool,Liverpool,864122,1.0
+S14000044,Livingston,Scotland,Scotland,2010,2010-05-06,2024-07-03,town,419,West Lothian,Livingston,65015,0.7476
+W07000045,Llanelli,Wales,Wales,2010,2010-05-06,2024-07-03,town,356,Carmarthenshire,Llanelli,49591,0.6868
+E14000797,Loughborough,East Midlands,England,2010,2010-05-06,2024-07-03,town,852,Charnwood,Loughborough,59932,0.945
+E14000798,Louth and Horncastle,East Midlands,England,2010,2010-05-06,2024-07-03,rural,73,East Lindsey,Louth,16419,0.3337
+E14000799,Ludlow,West Midlands,England,2010,2010-05-06,2024-07-03,rural,56,Shropshire,Bridgnorth,12657,0.335
+E14000800,Luton North,East of England,England,2010,2010-05-06,2024-07-03,city,5321,Luton,Luton,258018,1.0
+E14000801,Luton South,East of England,England,2010,2010-05-06,2024-07-03,city,2148,Luton,Luton,258018,0.9462
+E14000802,Macclesfield,North West,England,2010,2010-05-06,2024-07-03,town,310,Cheshire East,Macclesfield,63954,0.882
+E14000803,Maidenhead,South East,England,2010,2010-05-06,2024-07-03,town,584,Windsor and Maidenhead,Maidenhead,64831,0.7776
+E14000804,Maidstone and The Weald,South East,England,2010,2010-05-06,2024-07-03,town,494,Maidstone,Maidstone,107627,0.6818
+E14000805,Makerfield,North West,England,2010,2010-05-06,2024-07-03,town,1809,Wigan,Wigan,134229,0.9778
+E14000806,Maldon,East of England,England,2010,2010-05-06,2024-07-03,town,246,Maldon,Maldon,21462,0.5162
+E14000807,Manchester Central,North West,England,2010,2010-05-06,2024-07-03,city,5897,Manchester,Greater Manchester,2461366,1.0
+E14000808,"Manchester, Gorton",North West,England,2010,2010-05-06,2024-07-03,city,6885,Manchester,Greater Manchester,2461366,1.0
+E14000809,"Manchester, Withington",North West,England,2010,2010-05-06,2024-07-03,city,5115,Manchester,Greater Manchester,2461366,1.0
+E14000810,Mansfield,East Midlands,England,2010,2010-05-06,2024-07-03,town,1425,Mansfield,Mansfield,171958,0.8688
+E14000811,Meon Valley,South East,England,2010,2010-05-06,2024-07-03,city,239,Winchester,South Hampshire,855569,0.5764
+E14000812,Meriden,West Midlands,England,2010,2010-05-06,2024-07-03,city,780,Solihull,West Midlands,2395268,0.8109
+W07000071,Merthyr Tydfil and Rhymney,Wales,Wales,2010,2010-05-06,2024-07-03,town,472,Merthyr Tydfil,Merthyr Tydfil,43820,0.685
+E14000813,Mid Bedfordshire,East of England,England,2010,2010-05-06,2024-07-03,rural,251,Central Bedfordshire,Ampthill,20026,0.3497
+E14000814,Mid Derbyshire,East Midlands,England,2010,2010-05-06,2024-07-03,city,910,Derby,Derby,270468,0.9713
+E14000815,Mid Dorset and North Poole,South West,England,2010,2010-05-06,2024-07-03,city,473,Dorset,Bournemouth/Poole,466266,0.8123
+E14000816,Mid Norfolk,East of England,England,2010,2010-05-06,2024-07-03,rural,142,Breckland,Dereham,20651,0.4486
+E14000817,Mid Sussex,South East,England,2010,2010-05-06,2024-07-03,town,608,Mid Sussex,Haywards Heath,33845,0.865
+N06000010,Mid Ulster,Northern Ireland,Northern Ireland,2010,2010-05-06,2024-07-03,rural,78,Mid Ulster,Cookstown,12545,0.118
+E14000818,Mid Worcestershire,West Midlands,England,2010,2010-05-06,2024-07-03,town,239,Wychavon,Droitwich,23834,0.5278
+E14000819,Middlesbrough,North East,England,2010,2010-05-06,2024-07-03,city,3300,Middlesbrough,Teesside,376663,1.0
+E14000820,Middlesbrough South and East Cleveland,North East,England,2010,2010-05-06,2024-07-03,city,478,Redcar and Cleveland,Teesside,376663,0.6525
+S14000045,Midlothian,Scotland,Scotland,2010,2010-05-06,2024-07-03,town,260,Midlothian,"Bonnyrigg, Dalkeith, Mayfield and Gorebridge",56891,0.7597
+E14000821,Milton Keynes North,South East,England,2010,2010-05-06,2024-07-03,city,581,Milton Keynes,Milton Keynes,229941,0.8459
+E14000822,Milton Keynes South,South East,England,2010,2010-05-06,2024-07-03,city,1711,Milton Keynes,Milton Keynes,229941,0.9773
+E14000823,Mitcham and Morden,London,England,2010,2010-05-06,2024-07-03,city,6493,Merton,Greater London,8135667,1.0
+E14000824,Mole Valley,South East,England,2010,2010-05-06,2024-07-03,town,263,Mole Valley,Leatherhead,32522,0.5388
+W07000054,Monmouth,Wales,Wales,2010,2010-05-06,2024-07-03,town,104,Monmouthshire,Abergavenny,14651,0.5636
+W07000063,Montgomeryshire,Wales,Wales,2010,2010-05-06,2024-07-03,rural,29,Powys,Newtown (Powys),11357,0.1781
+S14000046,Moray,Scotland,Scotland,2010,2010-05-06,2024-07-03,rural,43,Moray,Elgin,24617,0.372
+E14000825,Morecambe and Lunesdale,North West,England,2010,2010-05-06,2024-07-03,town,369,Lancaster,Lancaster/Morecambe,97150,0.706
+E14000826,Morley and Outwood,Yorkshire and The Humber,England,2010,2010-05-06,2024-07-03,city,1451,Leeds,West Yorkshire,1777387,0.987
+S14000047,Motherwell and Wishaw,Scotland,Scotland,2010,2010-05-06,2024-07-03,city,1623,North Lanarkshire,"Airdrie, Hamilton and Motherwell",300316,0.9376
+S14000027,Na h-Eileanan an Iar,Scotland,Scotland,2010,2010-05-06,2024-07-03,rural,9,Na h-Eileanan Siar,,,0.0
+W07000069,Neath,Wales,Wales,2010,2010-05-06,2024-07-03,city,281,Neath Port Talbot,Swansea,300352,0.7158
+E14000827,New Forest East,South East,England,2010,2010-05-06,2024-07-03,town,237,New Forest,Totton,34169,0.7505
+E14000828,New Forest West,South East,England,2010,2010-05-06,2024-07-03,city,242,New Forest,Bournemouth/Poole,466266,0.6866
+E14000829,Newark,East Midlands,England,2010,2010-05-06,2024-07-03,rural,150,Newark and Sherwood,Newark-on-Trent,43363,0.4383
+E14000830,Newbury,South East,England,2010,2010-05-06,2024-07-03,town,188,West Berkshire,Newbury/Thatcham,68258,0.6388
+E14000831,Newcastle upon Tyne Central,North East,England,2010,2010-05-06,2024-07-03,city,4543,Newcastle upon Tyne,Tyneside,774891,0.9972
+E14000832,Newcastle upon Tyne East,North East,England,2010,2010-05-06,2024-07-03,city,5350,Newcastle upon Tyne,Tyneside,774891,1.0
+E14000833,Newcastle upon Tyne North,North East,England,2010,2010-05-06,2024-07-03,city,1312,Newcastle upon Tyne,Tyneside,774891,0.9398
+E14000834,Newcastle-under-Lyme,West Midlands,England,2010,2010-05-06,2024-07-03,city,1156,Newcastle-under-Lyme,Stoke-on-Trent,372775,0.8446
+W07000055,Newport East,Wales,Wales,2010,2010-05-06,2024-07-03,city,674,Newport,Newport (Newport),306844,0.8367
+W07000056,Newport West,Wales,Wales,2010,2010-05-06,2024-07-03,city,934,Newport,Newport (Newport),306844,0.8488
+N06000011,Newry and Armagh,Northern Ireland,Northern Ireland,2010,2010-05-06,2024-07-03,rural,112,"Armagh City, Banbridge and Craigavon",Newry,28537,0.3398
+E14000835,Newton Abbot,South West,England,2010,2010-05-06,2024-07-03,town,457,Teignbridge,Newton Abbot,36474,0.7614
+E14000836,"Normanton, Pontefract and Castleford",Yorkshire and The Humber,England,2010,2010-05-06,2024-07-03,town,1323,Wakefield,Castleford,60509,0.9628
+N06000012,North Antrim,Northern Ireland,Northern Ireland,2010,2010-05-06,2024-07-03,rural,82,Mid and East Antrim,Ballymena,31199,0.3763
+S14000048,North Ayrshire and Arran,Scotland,Scotland,2010,2010-05-06,2024-07-03,town,113,North Ayrshire,Kilwinning and Saltcoats,47391,0.6074
+E14000837,North Cornwall,South West,England,2010,2010-05-06,2024-07-03,rural,79,Cornwall,Bodmin,14614,0.1669
+E14000838,North Devon,South West,England,2010,2010-05-06,2024-07-03,rural,89,North Devon,Barnstaple,31616,0.4569
+E14000839,North Dorset,South West,England,2010,2010-05-06,2024-07-03,rural,112,Dorset,Verwood,13360,0.3791
+N06000013,North Down,Northern Ireland,Northern Ireland,2010,2010-05-06,2024-07-03,town,803,Ards and North Down,Bangor,64605,0.8088
+E14000840,North Durham,North East,England,2010,2010-05-06,2024-07-03,town,849,County Durham,Chester-le-Street,24255,0.6211
+E14000841,North East Bedfordshire,East of England,England,2010,2010-05-06,2024-07-03,rural,219,Central Bedfordshire,Biggleswade,16551,0.3515
+E14000842,North East Cambridgeshire,East of England,England,2010,2010-05-06,2024-07-03,town,166,Fenland,Wisbech,32489,0.6487
+E14000843,North East Derbyshire,East Midlands,England,2010,2010-05-06,2024-07-03,town,403,North East Derbyshire,Clay Cross/North Wingfield,28665,0.6791
+S14000049,North East Fife,Scotland,Scotland,2010,2010-05-06,2024-07-03,rural,108,Fife,St Andrews,16465,0.2641
+E14000844,North East Hampshire,South East,England,2010,2010-05-06,2024-07-03,town,255,Hart,Fleet,38726,0.5832
+E14000845,North East Hertfordshire,East of England,England,2010,2010-05-06,2024-07-03,town,202,North Hertfordshire,Letchworth Garden City,43529,0.629
+E14000846,North East Somerset,South West,England,2010,2010-05-06,2024-07-03,town,297,Bath and North East Somerset,Midsomer Norton/Radstock,27136,0.5809
+E14000847,North Herefordshire,West Midlands,England,2010,2010-05-06,2024-07-03,rural,63,"Herefordshire, County of",Leominster,10938,0.1742
+E14000848,North Norfolk,East of England,England,2010,2010-05-06,2024-07-03,rural,120,North Norfolk,North Walsham,12463,0.1472
+E14000849,North Shropshire,West Midlands,England,2010,2010-05-06,2024-07-03,rural,119,Shropshire,Croesowallt,18743,0.2927
+E14000850,North Somerset,South West,England,2010,2010-05-06,2024-07-03,town,449,North Somerset,Portishead,23699,0.7919
+E14000851,North Swindon,South West,England,2010,2010-05-06,2024-07-03,town,1063,Swindon,Swindon,185609,0.9146
+E14000852,North Thanet,South East,England,2010,2010-05-06,2024-07-03,town,730,Thanet,Thanet,125370,0.888
+E14000853,North Tyneside,North East,England,2010,2010-05-06,2024-07-03,city,2418,North Tyneside,Tyneside,774891,0.9317
+E14000854,North Warwickshire,West Midlands,England,2010,2010-05-06,2024-07-03,rural,352,North Warwickshire,Bedworth,30648,0.4616
+E14000855,North West Cambridgeshire,East of England,England,2010,2010-05-06,2024-07-03,rural,181,Peterborough,Peterborough,163379,0.4681
+E14000856,North West Durham,North East,England,2010,2010-05-06,2024-07-03,rural,135,County Durham,Consett,29137,0.3449
+E14000857,North West Hampshire,South East,England,2010,2010-05-06,2024-07-03,town,186,Test Valley,Andover,42276,0.5517
+E14000858,North West Leicestershire,East Midlands,England,2010,2010-05-06,2024-07-03,town,371,North West Leicestershire,Coalville,38245,0.552
+E14000859,North West Norfolk,East of England,England,2010,2010-05-06,2024-07-03,rural,124,King's Lynn and West Norfolk,King's Lynn,46093,0.4846
+E14000860,North Wiltshire,South West,England,2010,2010-05-06,2024-07-03,rural,134,Wiltshire,Calne,17274,0.3668
+E14000861,Northampton North,East Midlands,England,2010,2010-05-06,2024-07-03,city,3910,West Northamptonshire,Northampton,215963,1.0
+E14000862,Northampton South,East Midlands,England,2010,2010-05-06,2024-07-03,city,3087,West Northamptonshire,Northampton,215963,1.0
+E14000863,Norwich North,East of England,England,2010,2010-05-06,2024-07-03,city,2497,Broadland,Norwich,213166,1.0
+E14000864,Norwich South,East of England,England,2010,2010-05-06,2024-07-03,city,3609,Norwich,Norwich,213166,1.0
+E14000865,Nottingham East,East Midlands,England,2010,2010-05-06,2024-07-03,city,5978,Nottingham,Nottingham,729977,1.0
+E14000866,Nottingham North,East Midlands,England,2010,2010-05-06,2024-07-03,city,4281,Nottingham,Nottingham,729977,1.0
+E14000867,Nottingham South,East Midlands,England,2010,2010-05-06,2024-07-03,city,3721,Nottingham,Nottingham,729977,1.0
+E14000868,Nuneaton,West Midlands,England,2010,2010-05-06,2024-07-03,town,1146,Nuneaton and Bedworth,Nuneaton,92698,0.9502
+S14000050,Ochil and South Perthshire,Scotland,Scotland,2010,2010-05-06,2024-07-03,rural,61,Perth and Kinross,Alloa and Sauchie,21046,0.2127
+W07000074,Ogmore,Wales,Wales,2010,2010-05-06,2024-07-03,rural,390,Bridgend,Maesteg,21001,0.4198
+E14000869,Old Bexley and Sidcup,London,England,2010,2010-05-06,2024-07-03,city,3638,Bexley,Greater London,8135667,0.9982
+E14000870,Oldham East and Saddleworth,North West,England,2010,2010-05-06,2024-07-03,city,1016,Oldham,Greater Manchester,2461366,0.9738
+E14000871,Oldham West and Royton,North West,England,2010,2010-05-06,2024-07-03,city,3559,Oldham,Greater Manchester,2461366,1.0
+S14000051,Orkney and Shetland,Scotland,Scotland,2010,2010-05-06,2024-07-03,rural,18,Shetland Islands,,,0.0
+E14000872,Orpington,London,England,2010,2010-05-06,2024-07-03,city,1172,Bromley,Greater London,8135667,0.9625
+E14000873,Oxford East,South East,England,2010,2010-05-06,2024-07-03,town,3969,Oxford,Oxford,171380,1.0
+E14000874,Oxford West and Abingdon,South East,England,2010,2010-05-06,2024-07-03,town,854,Vale of White Horse,Oxford,171380,0.9019
+S14000052,Paisley and Renfrewshire North,Scotland,Scotland,2010,2010-05-06,2024-07-03,city,757,Renfrewshire,Greater Glasgow,1024026,0.8651
+S14000053,Paisley and Renfrewshire South,Scotland,Scotland,2010,2010-05-06,2024-07-03,city,620,Renfrewshire,Greater Glasgow,1024026,0.9365
+E14000875,Pendle,North West,England,2010,2010-05-06,2024-07-03,town,544,Pendle,Burnley,149422,0.8601
+E14000876,Penistone and Stocksbridge,Yorkshire and The Humber,England,2010,2010-05-06,2024-07-03,town,304,Sheffield,Chapeltown,23056,0.805
+E14000877,Penrith and The Border,North West,England,2010,2010-05-06,2024-07-03,rural,27,Westmorland and Furness,Penrith,15181,0.2023
+S14000054,Perth and North Perthshire,Scotland,Scotland,2010,2010-05-06,2024-07-03,rural,26,Perth and Kinross,Perth,47885,0.4934
+E14000878,Peterborough,East of England,England,2010,2010-05-06,2024-07-03,town,711,Peterborough,Peterborough,163379,0.9154
+E14000879,"Plymouth, Moor View",South West,England,2010,2010-05-06,2024-07-03,city,2866,Plymouth,Plymouth,260203,1.0
+E14000880,"Plymouth, Sutton and Devonport",South West,England,2010,2010-05-06,2024-07-03,city,5376,Plymouth,Plymouth,260203,1.0
+W07000075,Pontypridd,Wales,Wales,2010,2010-05-06,2024-07-03,city,787,Rhondda Cynon Taf,Cardiff,447287,0.8433
+E14000881,Poole,South West,England,2010,2010-05-06,2024-07-03,city,3177,"Bournemouth, Christchurch and Poole",Bournemouth/Poole,466266,1.0
+E14000882,Poplar and Limehouse,London,England,2010,2010-05-06,2024-07-03,city,16198,Tower Hamlets,Greater London,8135667,1.0
+E14000883,Portsmouth North,South East,England,2010,2010-05-06,2024-07-03,city,3691,Portsmouth,South Hampshire,855569,1.0
+E14000884,Portsmouth South,South East,England,2010,2010-05-06,2024-07-03,city,8593,Portsmouth,South Hampshire,855569,1.0
+W07000065,Preseli Pembrokeshire,Wales,Wales,2010,2010-05-06,2024-07-03,rural,67,Pembrokeshire,Haverfordwest,14596,0.3679
+E14000885,Preston,North West,England,2010,2010-05-06,2024-07-03,city,3663,Preston,Preston,313332,1.0
+E14000886,Pudsey,Yorkshire and The Humber,England,2010,2010-05-06,2024-07-03,city,1692,Leeds,West Yorkshire,1777387,0.9873
+E14000887,Putney,London,England,2010,2010-05-06,2024-07-03,city,7840,Wandsworth,Greater London,8135667,1.0
+E14000888,Rayleigh and Wickford,East of England,England,2010,2010-05-06,2024-07-03,city,925,Rochford,Southend-on-Sea,295310,0.962
+E14000889,Reading East,South East,England,2010,2010-05-06,2024-07-03,city,4193,Reading,Reading,318014,0.9957
+E14000890,Reading West,South East,England,2010,2010-05-06,2024-07-03,city,2041,Reading,Reading,318014,0.9657
+E14000891,Redcar,North East,England,2010,2010-05-06,2024-07-03,city,1209,Redcar and Cleveland,Teesside,376663,0.8552
+E14000892,Redditch,West Midlands,England,2010,2010-05-06,2024-07-03,town,613,Redditch,Redditch,82253,0.9135
+E14000893,Reigate,South East,England,2010,2010-05-06,2024-07-03,town,957,Reigate and Banstead,Redhill (Reigate and Banstead),56621,0.8508
+W07000052,Rhondda,Wales,Wales,2010,2010-05-06,2024-07-03,town,698,Rhondda Cynon Taf,Tonypandy,62545,0.8742
+E14000894,Ribble Valley,North West,England,2010,2010-05-06,2024-07-03,city,161,Ribble Valley,Preston,313332,0.592
+E14000895,Richmond (Yorks),Yorkshire and The Humber,England,2010,2010-05-06,2024-07-03,rural,53,North Yorkshire,Northallerton,16832,0.2669
+E14000896,Richmond Park,London,England,2010,2010-05-06,2024-07-03,city,3467,Richmond upon Thames,Greater London,8135667,1.0
+E14000897,Rochdale,North West,England,2010,2010-05-06,2024-07-03,city,1323,Rochdale,Greater Manchester,2461366,0.9908
+E14000898,Rochester and Strood,South East,England,2010,2010-05-06,2024-07-03,city,766,Medway,Medway Towns,243931,0.7409
+E14000899,Rochford and Southend East,East of England,England,2010,2010-05-06,2024-07-03,city,1147,Southend-on-Sea,Southend-on-Sea,295310,0.9223
+E14000900,Romford,London,England,2010,2010-05-06,2024-07-03,city,3628,Havering,Greater London,8135667,1.0
+E14000901,Romsey and Southampton North,South East,England,2010,2010-05-06,2024-07-03,city,219,Test Valley,South Hampshire,855569,0.6778
+S14000055,"Ross, Skye and Lochaber",Scotland,Scotland,2010,2010-05-06,2024-07-03,rural,5,Highland,Fort William,10313,0.1485
+E14000902,Rossendale and Darwen,North West,England,2010,2010-05-06,2024-07-03,town,455,Rossendale,Accrington/Rossendale,125059,0.797
+E14000903,Rother Valley,Yorkshire and The Humber,England,2010,2010-05-06,2024-07-03,city,585,Rotherham,Sheffield,667260,0.7478
+E14000904,Rotherham,Yorkshire and The Humber,England,2010,2010-05-06,2024-07-03,city,2029,Rotherham,Sheffield,667260,0.9965
+E14000905,Rugby,West Midlands,England,2010,2010-05-06,2024-07-03,town,424,Rugby,Rugby,73150,0.8213
+E14000906,"Ruislip, Northwood and Pinner",London,England,2010,2010-05-06,2024-07-03,city,1973,Hillingdon,Greater London,8135667,0.921
+E14000907,Runnymede and Weybridge,South East,England,2010,2010-05-06,2024-07-03,town,1192,Runnymede,Egham,25996,0.9374
+E14000908,Rushcliffe,East Midlands,England,2010,2010-05-06,2024-07-03,city,328,Rushcliffe,Nottingham,729977,0.5086
+S14000056,Rutherglen and Hamilton West,Scotland,Scotland,2010,2010-05-06,2024-07-03,city,2047,South Lanarkshire,Greater Glasgow,1024026,0.9978
+E14000909,Rutland and Melton,East Midlands,England,2010,2010-05-06,2024-07-03,rural,94,Melton,Melton Mowbray,27158,0.4338
+E14000910,Saffron Walden,East of England,England,2010,2010-05-06,2024-07-03,rural,146,Uttlesford,Saffron Walden,15210,0.2039
+E14000911,Salford and Eccles,North West,England,2010,2010-05-06,2024-07-03,city,3843,Salford,Greater Manchester,2461366,1.0
+E14000912,Salisbury,South West,England,2010,2010-05-06,2024-07-03,town,160,Wiltshire,Salisbury,44748,0.5996
+E14000913,Scarborough and Whitby,Yorkshire and The Humber,England,2010,2010-05-06,2024-07-03,town,132,North Yorkshire,Scarborough,61749,0.7696
+E14000914,Scunthorpe,Yorkshire and The Humber,England,2010,2010-05-06,2024-07-03,town,507,North Lincolnshire,Scunthorpe,79977,0.8557
+E14000915,Sedgefield,North East,England,2010,2010-05-06,2024-07-03,rural,231,County Durham,Newton Aycliffe,25964,0.32
+E14000916,Sefton Central,North West,England,2010,2010-05-06,2024-07-03,city,992,Sefton,Liverpool,864122,0.9532
+E14000917,Selby and Ainsty,Yorkshire and The Humber,England,2010,2010-05-06,2024-07-03,rural,124,North Yorkshire,Selby,24859,0.2586
+E14000918,Sevenoaks,South East,England,2010,2010-05-06,2024-07-03,town,392,Sevenoaks,Sevenoaks,29506,0.6167
+E14000919,Sheffield Central,Yorkshire and The Humber,England,2010,2010-05-06,2024-07-03,city,6883,Sheffield,Sheffield,667260,1.0
+E14000920,Sheffield South East,Yorkshire and The Humber,England,2010,2010-05-06,2024-07-03,city,2196,Sheffield,Sheffield,667260,0.9958
+E14000921,"Sheffield, Brightside and Hillsborough",Yorkshire and The Humber,England,2010,2010-05-06,2024-07-03,city,4034,Sheffield,Sheffield,667260,1.0
+E14000922,"Sheffield, Hallam",Yorkshire and The Humber,England,2010,2010-05-06,2024-07-03,city,667,Sheffield,Sheffield,667260,0.9627
+E14000923,"Sheffield, Heeley",Yorkshire and The Humber,England,2010,2010-05-06,2024-07-03,city,3729,Sheffield,Sheffield,667260,0.9961
+E14000924,Sherwood,East Midlands,England,2010,2010-05-06,2024-07-03,rural,333,Newark and Sherwood,Nottingham,729977,0.4283
+E14000925,Shipley,Yorkshire and The Humber,England,2010,2010-05-06,2024-07-03,city,1010,Bradford,West Yorkshire,1777387,0.8405
+E14000926,Shrewsbury and Atcham,West Midlands,England,2010,2010-05-06,2024-07-03,town,181,Shropshire,Shrewsbury,71715,0.7005
+E14000927,Sittingbourne and Sheppey,South East,England,2010,2010-05-06,2024-07-03,town,506,Swale,Sittingbourne,48948,0.7768
+E14000928,Skipton and Ripon,Yorkshire and The Humber,England,2010,2010-05-06,2024-07-03,rural,48,North Yorkshire,Ripon,16363,0.3884
+E14000929,Sleaford and North Hykeham,East Midlands,England,2010,2010-05-06,2024-07-03,rural,106,North Kesteven,Sleaford,17359,0.3355
+E14000930,Slough,South East,England,2010,2010-05-06,2024-07-03,town,5312,Slough,Slough,163777,1.0
+E14000931,Solihull,West Midlands,England,2010,2010-05-06,2024-07-03,city,3141,Solihull,West Midlands,2395268,1.0
+E14000932,Somerton and Frome,South West,England,2010,2010-05-06,2024-07-03,rural,114,Somerset,Frome,26203,0.2538
+N06000014,South Antrim,Northern Ireland,Northern Ireland,2010,2010-05-06,2024-07-03,rural,132,Antrim and Newtownabbey,Antrim,25607,0.4482
+E14000933,South Basildon and East Thurrock,East of England,England,2010,2010-05-06,2024-07-03,town,773,Basildon,Basildon,144859,0.8721
+E14000934,South Cambridgeshire,East of England,England,2010,2010-05-06,2024-07-03,rural,187,South Cambridgeshire,Cambridge,158434,0.1867
+E14000935,South Derbyshire,East Midlands,England,2010,2010-05-06,2024-07-03,town,317,South Derbyshire,Burton upon Trent,122199,0.5659
+E14000936,South Dorset,South West,England,2010,2010-05-06,2024-07-03,town,254,Dorset,Weymouth,57691,0.6782
+N06000015,South Down,Northern Ireland,Northern Ireland,2010,2010-05-06,2024-07-03,rural,91,"Newry, Mourne and Down",Downpatrick,11544,0.1276
+E14000937,South East Cambridgeshire,East of England,England,2010,2010-05-06,2024-07-03,rural,162,East Cambridgeshire,Cambridge,158434,0.3902
+E14000938,South East Cornwall,South West,England,2010,2010-05-06,2024-07-03,rural,126,Cornwall,Saltash,15566,0.1767
+E14000939,South Holland and The Deepings,East Midlands,England,2010,2010-05-06,2024-07-03,rural,140,South Holland,Spalding,31588,0.4395
+E14000940,South Leicestershire,East Midlands,England,2010,2010-05-06,2024-07-03,city,380,Blaby,Leicester,508916,0.5425
+E14000941,South Norfolk,East of England,England,2010,2010-05-06,2024-07-03,rural,141,South Norfolk,Norwich,213166,0.2146
+E14000942,South Northamptonshire,East Midlands,England,2010,2010-05-06,2024-07-03,rural,198,West Northamptonshire,Northampton,215963,0.4109
+E14000943,South Ribble,North West,England,2010,2010-05-06,2024-07-03,city,505,South Ribble,Preston,313332,0.7043
+E14000944,South Shields,North East,England,2010,2010-05-06,2024-07-03,city,3429,South Tyneside,Tyneside,774891,0.998
+E14000945,South Staffordshire,West Midlands,England,2010,2010-05-06,2024-07-03,town,356,South Staffordshire,Cannock,86121,0.6562
+E14000946,South Suffolk,East of England,England,2010,2010-05-06,2024-07-03,rural,147,Babergh,Sudbury,22213,0.2941
+E14000947,South Swindon,South West,England,2010,2010-05-06,2024-07-03,town,882,Swindon,Swindon,185609,0.8558
+E14000948,South Thanet,South East,England,2010,2010-05-06,2024-07-03,town,792,Thanet,Thanet,125370,0.8357
+E14000949,South West Bedfordshire,East of England,England,2010,2010-05-06,2024-07-03,city,904,Central Bedfordshire,Luton,258018,0.8919
+E14000950,South West Devon,South West,England,2010,2010-05-06,2024-07-03,city,244,Plymouth,Plymouth,260203,0.7917
+E14000951,South West Hertfordshire,East of England,England,2010,2010-05-06,2024-07-03,town,636,Three Rivers,Rickmansworth,23973,0.7964
+E14000952,South West Norfolk,East of England,England,2010,2010-05-06,2024-07-03,rural,84,Breckland,Thetford,24833,0.3803
+E14000953,South West Surrey,South East,England,2010,2010-05-06,2024-07-03,city,418,Waverley,Farnborough/Aldershot,252397,0.701
+E14000954,South West Wiltshire,South West,England,2010,2010-05-06,2024-07-03,town,140,Wiltshire,Trowbridge,40952,0.7032
+E14000955,"Southampton, Itchen",South East,England,2010,2010-05-06,2024-07-03,city,5417,Southampton,South Hampshire,855569,1.0
+E14000956,"Southampton, Test",South East,England,2010,2010-05-06,2024-07-03,city,5093,Southampton,South Hampshire,855569,1.0
+E14000957,Southend West,East of England,England,2010,2010-05-06,2024-07-03,city,4747,Southend-on-Sea,Southend-on-Sea,295310,1.0
+E14000958,Southport,North West,England,2010,2010-05-06,2024-07-03,town,1982,Sefton,Southport,91703,1.0
+E14000959,Spelthorne,South East,England,2010,2010-05-06,2024-07-03,town,1951,Spelthorne,Walton-on-Thames,66566,0.9858
+E14000960,St Albans,East of England,England,2010,2010-05-06,2024-07-03,town,1546,St Albans,St Albans,82146,0.8765
+E14000961,St Austell and Newquay,South West,England,2010,2010-05-06,2024-07-03,rural,273,Cornwall,St Austell,25447,0.4608
+E14000962,St Helens North,North West,England,2010,2010-05-06,2024-07-03,city,1181,St. Helens,Liverpool,864122,0.9129
+E14000963,St Helens South and Whiston,North West,England,2010,2010-05-06,2024-07-03,city,1624,St. Helens,Liverpool,864122,0.9856
+E14000964,St Ives,South West,England,2010,2010-05-06,2024-07-03,rural,164,Cornwall,Penzance,19872,0.3768
+E14000965,Stafford,West Midlands,England,2010,2010-05-06,2024-07-03,town,342,Stafford,Stafford,69217,0.7266
+E14000966,Staffordshire Moorlands,West Midlands,England,2010,2010-05-06,2024-07-03,town,153,Staffordshire Moorlands,Leek,19903,0.6825
+E14000967,Stalybridge and Hyde,North West,England,2010,2010-05-06,2024-07-03,city,1504,Tameside,Greater Manchester,2461366,0.9969
+E14000968,Stevenage,East of England,England,2010,2010-05-06,2024-07-03,town,1550,Stevenage,Stevenage,90232,0.9331
+S14000057,Stirling,Scotland,Scotland,2010,2010-05-06,2024-07-03,town,42,Stirling,Stirling,49921,0.5391
+E14000969,Stockport,North West,England,2010,2010-05-06,2024-07-03,city,4138,Stockport,Greater Manchester,2461366,1.0
+E14000970,Stockton North,North East,England,2010,2010-05-06,2024-07-03,city,781,Stockton-on-Tees,Teesside,376663,0.9363
+E14000971,Stockton South,North East,England,2010,2010-05-06,2024-07-03,city,1224,Stockton-on-Tees,Teesside,376663,0.9832
+E14000972,Stoke-on-Trent Central,West Midlands,England,2010,2010-05-06,2024-07-03,city,2886,Stoke-on-Trent,Stoke-on-Trent,372775,1.0
+E14000973,Stoke-on-Trent North,West Midlands,England,2010,2010-05-06,2024-07-03,city,2362,Stoke-on-Trent,Stoke-on-Trent,372775,0.9881
+E14000974,Stoke-on-Trent South,West Midlands,England,2010,2010-05-06,2024-07-03,city,2730,Stoke-on-Trent,Stoke-on-Trent,372775,1.0
+E14000975,Stone,West Midlands,England,2010,2010-05-06,2024-07-03,rural,141,Stafford,Stone (Stafford),16385,0.4535
+E14000976,Stourbridge,West Midlands,England,2010,2010-05-06,2024-07-03,city,3302,Dudley,West Midlands,2395268,1.0
+N06000016,Strangford,Northern Ireland,Northern Ireland,2010,2010-05-06,2024-07-03,rural,141,Ards and North Down,Newtownards,29673,0.3168
+E14000977,Stratford-on-Avon,West Midlands,England,2010,2010-05-06,2024-07-03,rural,142,Stratford-on-Avon,Stratford-upon-Avon,27830,0.3183
+E14000978,Streatham,London,England,2010,2010-05-06,2024-07-03,city,11877,Lambeth,Greater London,8135667,1.0
+E14000979,Stretford and Urmston,North West,England,2010,2010-05-06,2024-07-03,city,2179,Trafford,Greater Manchester,2461366,1.0
+E14000980,Stroud,South West,England,2010,2010-05-06,2024-07-03,town,276,Stroud,Stroud,60155,0.7699
+E14000981,Suffolk Coastal,East of England,England,2010,2010-05-06,2024-07-03,rural,138,East Suffolk,Felixstowe,29171,0.4775
+E14000982,Sunderland Central,North East,England,2010,2010-05-06,2024-07-03,city,3516,Sunderland,Sunderland,292024,1.0
+E14000983,Surrey Heath,South East,England,2010,2010-05-06,2024-07-03,city,1013,Surrey Heath,Farnborough/Aldershot,252397,0.8324
+E14000985,Sutton Coldfield,West Midlands,England,2010,2010-05-06,2024-07-03,city,1628,Birmingham,West Midlands,2395268,0.9942
+E14000984,Sutton and Cheam,London,England,2010,2010-05-06,2024-07-03,city,5613,Sutton,Greater London,8135667,1.0
+W07000048,Swansea East,Wales,Wales,2010,2010-05-06,2024-07-03,city,1726,Swansea,Swansea,300352,0.9834
+W07000047,Swansea West,Wales,Wales,2010,2010-05-06,2024-07-03,city,2539,Swansea,Swansea,300352,1.0
+E14000986,Tamworth,West Midlands,England,2010,2010-05-06,2024-07-03,town,533,Tamworth,Tamworth,81964,0.8562
+E14000987,Tatton,North West,England,2010,2010-05-06,2024-07-03,town,262,Cheshire East,Wilmslow,35945,0.7357
+E14000988,Taunton Deane,South West,England,2010,2010-05-06,2024-07-03,town,260,Somerset,Taunton,64621,0.7119
+E14000989,Telford,West Midlands,England,2010,2010-05-06,2024-07-03,town,1957,Telford and Wrekin,Telford,147980,0.9895
+E14000990,Tewkesbury,South West,England,2010,2010-05-06,2024-07-03,town,300,Tewkesbury,Gloucester,150053,0.8008
+E14000991,The Cotswolds,South West,England,2010,2010-05-06,2024-07-03,rural,83,Cotswold,Cirencester,17153,0.2158
+E14000992,The Wrekin,West Midlands,England,2010,2010-05-06,2024-07-03,town,282,Telford and Wrekin,Telford,147980,0.7266
+E14000993,Thirsk and Malton,Yorkshire and The Humber,England,2010,2010-05-06,2024-07-03,rural,48,North Yorkshire,Norton-on-Derwent/Malton,11937,0.1231
+E14000994,Thornbury and Yate,South West,England,2010,2010-05-06,2024-07-03,town,236,South Gloucestershire,Yate,34406,0.6601
+E14000995,Thurrock,East of England,England,2010,2010-05-06,2024-07-03,town,1938,Thurrock,Grays,89755,0.9313
+E14000996,Tiverton and Honiton,South West,England,2010,2010-05-06,2024-07-03,rural,115,Mid Devon,Tiverton,19544,0.3172
+E14000997,Tonbridge and Malling,South East,England,2010,2010-05-06,2024-07-03,rural,360,Tonbridge and Malling,Tonbridge,38657,0.4662
+E14000998,Tooting,London,England,2010,2010-05-06,2024-07-03,city,9748,Wandsworth,Greater London,8135667,1.0
+E14000999,Torbay,South West,England,2010,2010-05-06,2024-07-03,town,2809,Torbay,Paignton/Torquay,115410,1.0
+W07000053,Torfaen,Wales,Wales,2010,2010-05-06,2024-07-03,city,715,Torfaen,Newport (Newport),306844,0.9165
+E14001000,Torridge and West Devon,South West,England,2010,2010-05-06,2024-07-03,rural,60,Torridge,Bideford,28672,0.4214
+E14001001,Totnes,South West,England,2010,2010-05-06,2024-07-03,rural,153,South Hams,Paignton/Torquay,115410,0.4224
+E14001002,Tottenham,London,England,2010,2010-05-06,2024-07-03,city,10749,Haringey,Greater London,8135667,1.0
+E14001003,Truro and Falmouth,South West,England,2010,2010-05-06,2024-07-03,town,219,Cornwall,Falmouth,31988,0.5816
+E14001004,Tunbridge Wells,South East,England,2010,2010-05-06,2024-07-03,town,438,Tunbridge Wells,Royal Tunbridge Wells,68910,0.6558
+E14001005,Twickenham,London,England,2010,2010-05-06,2024-07-03,city,4055,Richmond upon Thames,Greater London,8135667,1.0
+E14001006,Tynemouth,North East,England,2010,2010-05-06,2024-07-03,city,2652,North Tyneside,Tyneside,774891,0.9842
+N06000017,Upper Bann,Northern Ireland,Northern Ireland,2010,2010-05-06,2024-07-03,town,267,"Armagh City, Banbridge and Craigavon",Craigavon Urban Area,72297,0.6926
+E14001007,Uxbridge and South Ruislip,London,England,2010,2010-05-06,2024-07-03,city,3716,Hillingdon,Greater London,8135667,1.0
+W07000060,Vale of Clwyd,Wales,Wales,2010,2010-05-06,2024-07-03,town,335,Denbighshire,Rhyl/Prestatyn,46267,0.6507
+W07000078,Vale of Glamorgan,Wales,Wales,2010,2010-05-06,2024-07-03,town,329,Vale of Glamorgan,Barry,54673,0.7537
+E14001008,Vauxhall,London,England,2010,2010-05-06,2024-07-03,city,14511,Lambeth,Greater London,8135667,1.0
+E14001009,Wakefield,Yorkshire and The Humber,England,2010,2010-05-06,2024-07-03,city,1302,Wakefield,West Yorkshire,1777387,0.941
+E14001010,Wallasey,North West,England,2010,2010-05-06,2024-07-03,city,3871,Wirral,Birkenhead,260588,0.9919
+E14001011,Walsall North,West Midlands,England,2010,2010-05-06,2024-07-03,city,3719,Walsall,West Midlands,2395268,1.0
+E14001012,Walsall South,West Midlands,England,2010,2010-05-06,2024-07-03,city,3253,Walsall,West Midlands,2395268,0.9971
+E14001013,Walthamstow,London,England,2010,2010-05-06,2024-07-03,city,7374,Waltham Forest,Greater London,8135667,1.0
+E14001014,Wansbeck,North East,England,2010,2010-05-06,2024-07-03,town,610,Northumberland,Ashington (Northumberland),27670,0.721
+E14001015,Wantage,South East,England,2010,2010-05-06,2024-07-03,town,211,Vale of White Horse,Didcot,29341,0.5547
+E14001016,Warley,West Midlands,England,2010,2010-05-06,2024-07-03,city,5073,Sandwell,West Midlands,2395268,1.0
+E14001017,Warrington North,North West,England,2010,2010-05-06,2024-07-03,town,1061,Warrington,Warrington,165456,0.79
+E14001018,Warrington South,North West,England,2010,2010-05-06,2024-07-03,town,1266,Warrington,Warrington,165456,0.9517
+E14001019,Warwick and Leamington,West Midlands,England,2010,2010-05-06,2024-07-03,town,1142,Warwick,Royal Leamington Spa,95172,0.9181
+E14001020,Washington and Sunderland West,North East,England,2010,2010-05-06,2024-07-03,city,2070,Sunderland,Sunderland,292024,1.0
+E14001021,Watford,East of England,England,2010,2010-05-06,2024-07-03,town,3318,Watford,Watford,131982,1.0
+E14001022,Waveney,East of England,England,2010,2010-05-06,2024-07-03,town,426,East Suffolk,Lowestoft,70945,0.8277
+E14001023,Wealden,South East,England,2010,2010-05-06,2024-07-03,town,193,Wealden,Crowborough,20607,0.6228
+E14001024,Weaver Vale,North West,England,2010,2010-05-06,2024-07-03,town,547,Cheshire West and Chester,Runcorn,62872,0.6735
+E14001025,Wellingborough,East Midlands,England,2010,2010-05-06,2024-07-03,town,689,North Northamptonshire,Wellingborough,50577,0.8222
+E14001026,Wells,South West,England,2010,2010-05-06,2024-07-03,town,193,Somerset,Burnham-on-Sea,23325,0.5581
+E14001027,Welwyn Hatfield,East of England,England,2010,2010-05-06,2024-07-03,town,1031,Welwyn Hatfield,Welwyn Garden City,59910,0.925
+E14001028,Wentworth and Dearne,Yorkshire and The Humber,England,2010,2010-05-06,2024-07-03,city,1107,Rotherham,Sheffield,667260,0.9703
+S14000058,West Aberdeenshire and Kincardine,Scotland,Scotland,2010,2010-05-06,2024-07-03,rural,30,Aberdeenshire,Westhill (Aberdeenshire),11778,0.2353
+E14001029,West Bromwich East,West Midlands,England,2010,2010-05-06,2024-07-03,city,3373,Sandwell,West Midlands,2395268,1.0
+E14001030,West Bromwich West,West Midlands,England,2010,2010-05-06,2024-07-03,city,3522,Sandwell,West Midlands,2395268,1.0
+E14001031,West Dorset,South West,England,2010,2010-05-06,2024-07-03,rural,97,Dorset,Dorchester (West Dorset),19060,0.4038
+S14000059,West Dunbartonshire,Scotland,Scotland,2010,2010-05-06,2024-07-03,city,502,West Dunbartonshire,Greater Glasgow,1024026,0.986
+E14001032,West Ham,London,England,2010,2010-05-06,2024-07-03,city,10877,Newham,Greater London,8135667,1.0
+E14001033,West Lancashire,North West,England,2010,2010-05-06,2024-07-03,town,374,West Lancashire,Skelmersdale,34455,0.6313
+E14001034,West Suffolk,East of England,England,2010,2010-05-06,2024-07-03,town,148,West Suffolk,Haverhill,27041,0.5262
+N06000018,West Tyrone,Northern Ireland,Northern Ireland,2010,2010-05-06,2024-07-03,rural,47,Fermanagh and Omagh,Omagh Town,20457,0.3652
+E14001035,West Worcestershire,West Midlands,England,2010,2010-05-06,2024-07-03,rural,138,Malvern Hills,Great Malvern,36770,0.3876
+E14001036,Westminster North,London,England,2010,2010-05-06,2024-07-03,city,17076,Westminster,Greater London,8135667,1.0
+E14001037,Westmorland and Lonsdale,North West,England,2010,2010-05-06,2024-07-03,rural,63,Westmorland and Furness,Kendal,29147,0.3473
+E14001038,Weston-Super-Mare,South West,England,2010,2010-05-06,2024-07-03,town,768,North Somerset,Weston-Super-Mare,84452,0.839
+E14001039,Wigan,North West,England,2010,2010-05-06,2024-07-03,town,1750,Wigan,Wigan,134229,0.8538
+E14001040,Wimbledon,London,England,2010,2010-05-06,2024-07-03,city,4714,Merton,Greater London,8135667,1.0
+E14001041,Winchester,South East,England,2010,2010-05-06,2024-07-03,town,314,Winchester,Winchester,46074,0.6968
+E14001042,Windsor,South East,England,2010,2010-05-06,2024-07-03,town,721,Windsor and Maidenhead,Windsor,33348,0.7985
+E14001043,Wirral South,North West,England,2010,2010-05-06,2024-07-03,city,1149,Wirral,Birkenhead,260588,0.9767
+E14001044,Wirral West,North West,England,2010,2010-05-06,2024-07-03,town,1445,Wirral,West Kirby/Hoylake,25868,0.9836
+E14001045,Witham,East of England,England,2010,2010-05-06,2024-07-03,rural,252,Braintree,Witham,25353,0.4276
+E14001046,Witney,South East,England,2010,2010-05-06,2024-07-03,rural,155,West Oxfordshire,Witney,29103,0.4339
+E14001047,Woking,South East,England,2010,2010-05-06,2024-07-03,town,1091,Woking,Woking,105367,0.9026
+E14001048,Wokingham,South East,England,2010,2010-05-06,2024-07-03,city,729,Wokingham,Reading,318014,0.7784
+E14001049,Wolverhampton North East,West Midlands,England,2010,2010-05-06,2024-07-03,city,3662,Wolverhampton,West Midlands,2395268,1.0
+E14001050,Wolverhampton South East,West Midlands,England,2010,2010-05-06,2024-07-03,city,3844,Wolverhampton,West Midlands,2395268,1.0
+E14001051,Wolverhampton South West,West Midlands,England,2010,2010-05-06,2024-07-03,city,3894,Wolverhampton,West Midlands,2395268,1.0
+E14001052,Worcester,West Midlands,England,2010,2010-05-06,2024-07-03,town,3042,Worcester,Worcester,101659,0.9987
+E14001053,Workington,North West,England,2010,2010-05-06,2024-07-03,rural,118,Cumberland,Workington,27120,0.3461
+E14001054,Worsley and Eccles South,North West,England,2010,2010-05-06,2024-07-03,city,1750,Salford,Greater Manchester,2461366,0.9971
+E14001055,Worthing West,South East,England,2010,2010-05-06,2024-07-03,city,3287,Worthing,Brighton and Hove,474485,1.0
+W07000044,Wrexham,Wales,Wales,2010,2010-05-06,2024-07-03,town,691,Wrexham,Wrexham,65692,0.7633
+E14001056,Wycombe,South East,England,2010,2010-05-06,2024-07-03,town,797,Buckinghamshire,High Wycombe,133204,0.9182
+E14001058,Wyre Forest,West Midlands,England,2010,2010-05-06,2024-07-03,town,518,Wyre Forest,Kidderminster,57059,0.7866
+E14001057,Wyre and Preston North,North West,England,2010,2010-05-06,2024-07-03,city,345,Wyre,Preston,313332,0.6756
+E14001059,Wythenshawe and Sale East,North West,England,2010,2010-05-06,2024-07-03,city,2966,Manchester,Greater Manchester,2461366,0.999
+E14001060,Yeovil,South West,England,2010,2010-05-06,2024-07-03,town,278,Somerset,Yeovil,45784,0.5512
+W07000041,Ynys Môn,Wales,Wales,2010,2010-05-06,2024-07-03,rural,98,Isle of Anglesey,Holyhead,11431,0.1639
+E14001061,York Central,Yorkshire and The Humber,England,2010,2010-05-06,2024-07-03,town,4843,York,York,153717,1.0
+E14001062,York Outer,Yorkshire and The Humber,England,2010,2010-05-06,2024-07-03,town,390,York,York,153717,0.6538
+W07000081,Aberafan Maesteg,Wales,Wales,2024,2024-07-04,9999-12-31,city,387,Neath Port Talbot,Swansea,300352,0.8322
+S14000060,Aberdeen North,Scotland,Scotland,2024,2024-07-04,9999-12-31,city,1131,Aberdeen City,"Aberdeen, Milltimber, and Peterculter",215300,0.9482
+S14000061,Aberdeen South,Scotland,Scotland,2024,2024-07-04,9999-12-31,city,1316,Aberdeen City,"Aberdeen, Milltimber, and Peterculter",215300,0.9739
+S14000062,Aberdeenshire North and Moray East,Scotland,Scotland,2024,2024-07-04,9999-12-31,rural,73,Aberdeenshire,Peterhead,19793,0.3354
+S14000063,Airdrie and Shotts,Scotland,Scotland,2024,2024-07-04,9999-12-31,city,390,North Lanarkshire,"Airdrie, Hamilton and Motherwell",300316,0.6689
+E14001063,Aldershot,South East,England,2024,2024-07-04,9999-12-31,city,1945,Rushmoor,Farnborough/Aldershot,252397,0.9853
+E14001064,Aldridge-Brownhills,West Midlands,England,2024,2024-07-04,9999-12-31,city,1758,Walsall,West Midlands,2395268,0.9675
+S14000064,Alloa and Grangemouth,Scotland,Scotland,2024,2024-07-04,9999-12-31,town,537,Clackmannanshire,Falkirk,105175,0.683
+E14001065,Altrincham and Sale West,North West,England,2024,2024-07-04,9999-12-31,city,2000,Trafford,Greater Manchester,2461366,0.9915
+W07000082,Alyn and Deeside,Wales,Wales,2024,2024-07-04,9999-12-31,town,543,Flintshire,Buckley,63576,0.7872
+E14001066,Amber Valley,East Midlands,England,2024,2024-07-04,9999-12-31,city,736,Amber Valley,Nottingham,729977,0.8238
+S14000065,Angus and Perthshire Glens,Scotland,Scotland,2024,2024-07-04,9999-12-31,rural,18,Angus,Forfar,13774,0.2751
+S14000066,Arbroath and Broughty Ferry,Scotland,Scotland,2024,2024-07-04,9999-12-31,town,242,Angus,Dundee,158455,0.876
+S14000067,"Argyll, Bute and South Lochaber",Scotland,Scotland,2024,2024-07-04,9999-12-31,rural,10,Argyll and Bute,Helensburgh,16036,0.2891
+E14001067,Arundel and South Downs,South East,England,2024,2024-07-04,9999-12-31,rural,115,Horsham,Haslemere,13651,0.0229
+E14001068,Ashfield,East Midlands,England,2024,2024-07-04,9999-12-31,town,969,Ashfield,Mansfield,171958,0.9901
+E14001069,Ashford,South East,England,2024,2024-07-04,9999-12-31,town,464,Ashford,Ashford (Ashford),74733,0.7528
+E14001070,Ashton-under-Lyne,North West,England,2024,2024-07-04,9999-12-31,city,3372,Tameside,Greater Manchester,2461366,0.9962
+E14001071,Aylesbury,South East,England,2024,2024-07-04,9999-12-31,town,573,Buckinghamshire,Aylesbury,74748,0.7442
+S14000107,"Ayr, Carrick and Cumnock",Scotland,Scotland,2024,2024-07-04,9999-12-31,rural,56,South Ayrshire,Ayr,61964,0.4849
+E14001072,Banbury,South East,England,2024,2024-07-04,9999-12-31,town,185,Cherwell,Banbury,48651,0.5381
+W07000083,Bangor Aberconwy,Wales,Wales,2024,2024-07-04,9999-12-31,town,69,Conwy,Bangor,17988,0.525
+E14001073,Barking,London,England,2024,2024-07-04,9999-12-31,city,6645,Barking and Dagenham,Greater London,8135667,1.0
+E14001074,Barnsley North,Yorkshire and The Humber,England,2024,2024-07-04,9999-12-31,city,1420,Barnsley,Barnsley/Dearne Valley,223281,0.8989
+E14001075,Barnsley South,Yorkshire and The Humber,England,2024,2024-07-04,9999-12-31,city,1383,Barnsley,Barnsley/Dearne Valley,223281,0.9724
+E14001076,Barrow and Furness,North West,England,2024,2024-07-04,9999-12-31,town,156,Westmorland and Furness,Barrow-in-Furness,45865,0.5743
+E14001077,Basildon and Billericay,East of England,England,2024,2024-07-04,9999-12-31,town,1738,Basildon,Basildon,144859,0.9975
+E14001078,Basingstoke,South East,England,2024,2024-07-04,9999-12-31,town,1331,Basingstoke and Deane,Basingstoke,107642,0.9353
+E14001079,Bassetlaw,East Midlands,England,2024,2024-07-04,9999-12-31,town,260,Bassetlaw,Worksop,43252,0.6552
+E14001080,Bath,South West,England,2024,2024-07-04,9999-12-31,town,1423,Bath and North East Somerset,Bath,94782,0.9853
+S14000068,Bathgate and Linlithgow,Scotland,Scotland,2024,2024-07-04,9999-12-31,town,449,West Lothian,Bathgate,27492,0.8512
+E14001081,Battersea,London,England,2024,2024-07-04,9999-12-31,city,11827,Wandsworth,Greater London,8135667,1.0
+E14001082,Beaconsfield,South East,England,2024,2024-07-04,9999-12-31,town,571,Buckinghamshire,Slough,163777,0.7428
+E14001083,Beckenham and Penge,London,England,2024,2024-07-04,9999-12-31,city,4817,Bromley,Greater London,8135667,1.0
+E14001084,Bedford,East of England,England,2024,2024-07-04,9999-12-31,town,3580,Bedford,Bedford,106940,1.0
+N05000001,Belfast East,Northern Ireland,Northern Ireland,2024,2024-07-04,9999-12-31,city,1862,Belfast,Belfast City,293303,0.9913
+N05000002,Belfast North,Northern Ireland,Northern Ireland,2024,2024-07-04,9999-12-31,city,1924,Belfast,Belfast City,293303,1.0
+N05000003,Belfast South and Mid Down,Northern Ireland,Northern Ireland,2024,2024-07-04,9999-12-31,city,977,Belfast,Belfast City,293303,0.8472
+N05000004,Belfast West,Northern Ireland,Northern Ireland,2024,2024-07-04,9999-12-31,city,2657,Belfast,Belfast City,293303,0.9842
+E14001085,Bermondsey and Old Southwark,London,England,2024,2024-07-04,9999-12-31,city,13602,Southwark,Greater London,8135667,1.0
+S14000108,"Berwickshire, Roxburgh and Selkirk",Scotland,Scotland,2024,2024-07-04,9999-12-31,rural,25,Scottish Borders,Galashiels,15650,0.3019
+E14001086,Bethnal Green and Stepney,London,England,2024,2024-07-04,9999-12-31,city,19942,Tower Hamlets,Greater London,8135667,1.0
+E14001087,Beverley and Holderness,Yorkshire and The Humber,England,2024,2024-07-04,9999-12-31,rural,121,East Riding of Yorkshire,Beverley,30587,0.4802
+E14001088,Bexhill and Battle,South East,England,2024,2024-07-04,9999-12-31,rural,195,Rother,Hastings,133422,0.4988
+E14001089,Bexleyheath and Crayford,London,England,2024,2024-07-04,9999-12-31,city,4504,Bexley,Greater London,8135667,1.0
+E14001090,Bicester and Woodstock,South East,England,2024,2024-07-04,9999-12-31,town,213,Cherwell,Bicester,33846,0.5562
+E14001091,Birkenhead,North West,England,2024,2024-07-04,9999-12-31,city,3264,Wirral,Birkenhead,260588,0.9985
+E14001092,Birmingham Edgbaston,West Midlands,England,2024,2024-07-04,9999-12-31,city,3859,Birmingham,West Midlands,2395268,1.0
+E14001093,Birmingham Erdington,West Midlands,England,2024,2024-07-04,9999-12-31,city,4789,Birmingham,West Midlands,2395268,1.0
+E14001094,Birmingham Hall Green and Moseley,West Midlands,England,2024,2024-07-04,9999-12-31,city,5825,Birmingham,West Midlands,2395268,1.0
+E14001095,Birmingham Hodge Hill and Solihull North,West Midlands,England,2024,2024-07-04,9999-12-31,city,4897,Birmingham,West Midlands,2395268,1.0
+E14001096,Birmingham Ladywood,West Midlands,England,2024,2024-07-04,9999-12-31,city,6135,Birmingham,West Midlands,2395268,1.0
+E14001097,Birmingham Northfield,West Midlands,England,2024,2024-07-04,9999-12-31,city,4239,Birmingham,West Midlands,2395268,1.0
+E14001098,Birmingham Perry Barr,West Midlands,England,2024,2024-07-04,9999-12-31,city,4917,Birmingham,West Midlands,2395268,1.0
+E14001099,Birmingham Selly Oak,West Midlands,England,2024,2024-07-04,9999-12-31,city,5010,Birmingham,West Midlands,2395268,1.0
+E14001100,Birmingham Yardley,West Midlands,England,2024,2024-07-04,9999-12-31,city,5584,Birmingham,West Midlands,2395268,1.0
+E14001101,Bishop Auckland,North East,England,2024,2024-07-04,9999-12-31,rural,70,County Durham,Bishop Auckland,26050,0.2831
+E14001102,Blackburn,North West,England,2024,2024-07-04,9999-12-31,town,2734,Blackburn with Darwen,Blackburn,146521,0.9958
+E14001103,Blackley and Middleton South,North West,England,2024,2024-07-04,9999-12-31,city,3720,Manchester,Greater Manchester,2461366,1.0
+E14001104,Blackpool North and Fleetwood,North West,England,2024,2024-07-04,9999-12-31,city,2770,Wyre,Blackpool,239409,0.9881
+E14001105,Blackpool South,North West,England,2024,2024-07-04,9999-12-31,city,4089,Blackpool,Blackpool,239409,1.0
+W07000084,Blaenau Gwent and Rhymney,Wales,Wales,2024,2024-07-04,9999-12-31,town,590,Blaenau Gwent,Ebbw Vale,33068,0.7369
+E14001106,Blaydon and Consett,North East,England,2024,2024-07-04,9999-12-31,city,809,County Durham,Tyneside,774891,0.6987
+E14001107,Blyth and Ashington,North East,England,2024,2024-07-04,9999-12-31,town,1155,Northumberland,Blyth (Northumberland),37339,0.8224
+E14001108,Bognor Regis and Littlehampton,South East,England,2024,2024-07-04,9999-12-31,town,2272,Arun,Bognor Regis,63885,0.9394
+E14001109,Bolsover,East Midlands,England,2024,2024-07-04,9999-12-31,town,441,Bolsover,Alfreton/South Normanton,38460,0.5208
+E14001110,Bolton North East,North West,England,2024,2024-07-04,9999-12-31,city,2711,Bolton,Greater Manchester,2461366,0.9975
+E14001111,Bolton South and Walkden,North West,England,2024,2024-07-04,9999-12-31,city,3543,Bolton,Greater Manchester,2461366,0.9968
+E14001112,Bolton West,North West,England,2024,2024-07-04,9999-12-31,city,1233,Bolton,Greater Manchester,2461366,0.9785
+E14001113,Bootle,North West,England,2024,2024-07-04,9999-12-31,city,3901,Sefton,Liverpool,864122,1.0
+E14001114,Boston and Skegness,East Midlands,England,2024,2024-07-04,9999-12-31,town,141,Boston,Boston,41340,0.6109
+E14001115,Bournemouth East,South West,England,2024,2024-07-04,9999-12-31,city,4074,"Bournemouth, Christchurch and Poole",Bournemouth/Poole,466266,0.9986
+E14001116,Bournemouth West,South West,England,2024,2024-07-04,9999-12-31,city,3975,"Bournemouth, Christchurch and Poole",Bournemouth/Poole,466266,1.0
+E14001117,Bracknell,South East,England,2024,2024-07-04,9999-12-31,town,2149,Bracknell Forest,Bracknell,77256,0.9973
+E14001118,Bradford East,Yorkshire and The Humber,England,2024,2024-07-04,9999-12-31,city,4368,Bradford,West Yorkshire,1777387,1.0
+E14001119,Bradford South,Yorkshire and The Humber,England,2024,2024-07-04,9999-12-31,city,2460,Bradford,West Yorkshire,1777387,0.9865
+E14001120,Bradford West,Yorkshire and The Humber,England,2024,2024-07-04,9999-12-31,city,3322,Bradford,West Yorkshire,1777387,0.983
+E14001121,Braintree,East of England,England,2024,2024-07-04,9999-12-31,town,199,Braintree,Braintree,53477,0.6505
+W07000085,"Brecon, Radnor and Cwm Tawe",Wales,Wales,2024,2024-07-04,9999-12-31,rural,30,Powys,Swansea,300352,0.2485
+E14001122,Brent East,London,England,2024,2024-07-04,9999-12-31,city,7307,Brent,Greater London,8135667,1.0
+E14001123,Brent West,London,England,2024,2024-07-04,9999-12-31,city,6638,Brent,Greater London,8135667,1.0
+E14001124,Brentford and Isleworth,London,England,2024,2024-07-04,9999-12-31,city,5254,Hounslow,Greater London,8135667,1.0
+E14001125,Brentwood and Ongar,East of England,England,2024,2024-07-04,9999-12-31,town,306,Brentwood,Brentwood,52586,0.5704
+W07000086,Bridgend,Wales,Wales,2024,2024-07-04,9999-12-31,town,779,Bridgend,Bridgend,58380,0.838
+E14001126,Bridgwater,South West,England,2024,2024-07-04,9999-12-31,town,311,Somerset,Bridgwater,41276,0.7245
+E14001127,Bridlington and The Wolds,Yorkshire and The Humber,England,2024,2024-07-04,9999-12-31,town,97,East Riding of Yorkshire,Bridlington,35154,0.5277
+E14001128,Brigg and Immingham,Yorkshire and The Humber,England,2024,2024-07-04,9999-12-31,rural,182,North East Lincolnshire,Grimsby,134160,0.4965
+E14001129,Brighton Kemptown and Peacehaven,South East,England,2024,2024-07-04,9999-12-31,city,2410,Brighton and Hove,Brighton and Hove,474485,0.9883
+E14001130,Brighton Pavilion,South East,England,2024,2024-07-04,9999-12-31,city,3880,Brighton and Hove,Brighton and Hove,474485,0.9683
+E14001131,Bristol Central,South West,England,2024,2024-07-04,9999-12-31,city,8887,"Bristol, City of",Bristol,617280,1.0
+E14001132,Bristol East,South West,England,2024,2024-07-04,9999-12-31,city,4857,"Bristol, City of",Bristol,617280,1.0
+E14001133,Bristol North East,South West,England,2024,2024-07-04,9999-12-31,city,4517,"Bristol, City of",Bristol,617280,1.0
+E14001134,Bristol North West,South West,England,2024,2024-07-04,9999-12-31,city,2403,"Bristol, City of",Bristol,617280,1.0
+E14001135,Bristol South,South West,England,2024,2024-07-04,9999-12-31,city,4486,"Bristol, City of",Bristol,617280,1.0
+E14001136,Broadland and Fakenham,East of England,England,2024,2024-07-04,9999-12-31,rural,129,Broadland,Norwich,213166,0.1406
+E14001137,Bromley and Biggin Hill,London,England,2024,2024-07-04,9999-12-31,city,2076,Bromley,Greater London,8135667,0.9985
+E14001138,Bromsgrove,West Midlands,England,2024,2024-07-04,9999-12-31,town,460,Bromsgrove,Bromsgrove,49117,0.6924
+E14001139,Broxbourne,East of England,England,2024,2024-07-04,9999-12-31,town,1233,Broxbourne,Cheshunt,45832,0.9141
+E14001140,Broxtowe,East Midlands,England,2024,2024-07-04,9999-12-31,city,1602,Broxtowe,Nottingham,729977,0.9955
+E14001141,Buckingham and Bletchley,South East,England,2024,2024-07-04,9999-12-31,city,260,Milton Keynes,Milton Keynes,229941,0.7047
+E14001142,Burnley,North West,England,2024,2024-07-04,9999-12-31,town,859,Burnley,Burnley,149422,0.9537
+E14001143,Burton and Uttoxeter,West Midlands,England,2024,2024-07-04,9999-12-31,town,446,East Staffordshire,Burton upon Trent,122199,0.8509
+E14001144,Bury North,North West,England,2024,2024-07-04,9999-12-31,city,1737,Bury,Greater Manchester,2461366,0.9701
+E14001145,Bury South,North West,England,2024,2024-07-04,9999-12-31,city,2353,Bury,Greater Manchester,2461366,0.9783
+E14001146,Bury St Edmunds and Stowmarket,East of England,England,2024,2024-07-04,9999-12-31,town,254,West Suffolk,Bury St Edmunds,42812,0.6347
+W07000087,Caerfyrddin,Wales,Wales,2024,2024-07-04,9999-12-31,rural,46,Carmarthenshire,Carmarthen,15854,0.3259
+W07000088,Caerphilly,Wales,Wales,2024,2024-07-04,9999-12-31,city,705,Caerphilly,Cardiff,447287,0.8238
+S14000069,"Caithness, Sutherland and Easter Ross",Scotland,Scotland,2024,2024-07-04,9999-12-31,rural,8,Highland,,,0.0
+E14001147,Calder Valley,Yorkshire and The Humber,England,2024,2024-07-04,9999-12-31,city,335,Calderdale,West Yorkshire,1777387,0.6344
+E14001148,Camborne and Redruth,South West,England,2024,2024-07-04,9999-12-31,town,354,Cornwall,Redruth,42690,0.5066
+E14001149,Cambridge,East of England,England,2024,2024-07-04,9999-12-31,town,3328,Cambridge,Cambridge,158434,0.9966
+E14001150,Cannock Chase,West Midlands,England,2024,2024-07-04,9999-12-31,town,1277,Cannock Chase,Cannock,86121,0.8895
+E14001151,Canterbury,South East,England,2024,2024-07-04,9999-12-31,town,488,Canterbury,Canterbury,55240,0.8432
+W07000089,Cardiff East,Wales,Wales,2024,2024-07-04,9999-12-31,city,3720,Cardiff,Cardiff,447287,1.0
+W07000090,Cardiff North,Wales,Wales,2024,2024-07-04,9999-12-31,city,1925,Cardiff,Cardiff,447287,1.0
+W07000091,Cardiff South and Penarth,Wales,Wales,2024,2024-07-04,9999-12-31,city,1948,Cardiff,Cardiff,447287,0.9923
+W07000092,Cardiff West,Wales,Wales,2024,2024-07-04,9999-12-31,city,1617,Cardiff,Cardiff,447287,0.9281
+E14001152,Carlisle,North West,England,2024,2024-07-04,9999-12-31,town,111,Cumberland,Carlisle,78470,0.7733
+E14001153,Carshalton and Wallington,London,England,2024,2024-07-04,9999-12-31,city,4047,Sutton,Greater London,8135667,1.0
+E14001154,Castle Point,East of England,England,2024,2024-07-04,9999-12-31,city,1537,Castle Point,Southend-on-Sea,295310,0.9974
+S14000109,Central Ayrshire,Scotland,Scotland,2024,2024-07-04,9999-12-31,town,375,South Ayrshire,Irvine,37367,0.8379
+E14001155,Central Devon,South West,England,2024,2024-07-04,9999-12-31,rural,67,Teignbridge,Exeter,117763,0.0061
+E14001156,Central Suffolk and North Ipswich,East of England,England,2024,2024-07-04,9999-12-31,town,172,East Suffolk,Ipswich,178835,0.518
+W07000093,Ceredigion Preseli,Wales,Wales,2024,2024-07-04,9999-12-31,rural,39,Ceredigion,Aberystwyth,18749,0.1905
+E14001157,Chatham and Aylesford,South East,England,2024,2024-07-04,9999-12-31,city,1891,Medway,Medway Towns,243931,0.9519
+E14001158,Cheadle,North West,England,2024,2024-07-04,9999-12-31,city,2401,Stockport,Greater Manchester,2461366,1.0
+E14001159,Chelmsford,East of England,England,2024,2024-07-04,9999-12-31,town,3186,Chelmsford,Chelmsford,111511,0.9984
+E14001160,Chelsea and Fulham,London,England,2024,2024-07-04,9999-12-31,city,13397,Hammersmith and Fulham,Greater London,8135667,1.0
+E14001161,Cheltenham,South West,England,2024,2024-07-04,9999-12-31,town,2802,Cheltenham,Cheltenham,116447,0.9967
+E14001162,Chesham and Amersham,South East,England,2024,2024-07-04,9999-12-31,town,675,Buckinghamshire,Amersham/Chesham,46122,0.8721
+E14001163,Chester North and Neston,North West,England,2024,2024-07-04,9999-12-31,town,814,Cheshire West and Chester,Chester,90524,0.8948
+E14001164,Chester South and Eddisbury,North West,England,2024,2024-07-04,9999-12-31,rural,115,Cheshire West and Chester,Chester,90524,0.2609
+E14001165,Chesterfield,East Midlands,England,2024,2024-07-04,9999-12-31,town,1996,Chesterfield,Chesterfield,113057,0.9821
+E14001166,Chichester,South East,England,2024,2024-07-04,9999-12-31,town,330,Chichester,Chichester,31654,0.6985
+E14001167,Chingford and Woodford Green,London,England,2024,2024-07-04,9999-12-31,city,4789,Waltham Forest,Greater London,8135667,1.0
+E14001168,Chippenham,South West,England,2024,2024-07-04,9999-12-31,town,344,Wiltshire,Chippenham (Wiltshire),35800,0.8291
+E14001169,Chipping Barnet,London,England,2024,2024-07-04,9999-12-31,city,2831,Barnet,Greater London,8135667,1.0
+E14001170,Chorley,North West,England,2024,2024-07-04,9999-12-31,city,740,Chorley,Preston,313332,0.8022
+E14001171,Christchurch,South West,England,2024,2024-07-04,9999-12-31,city,777,"Bournemouth, Christchurch and Poole",Bournemouth/Poole,466266,0.8912
+E14001172,Cities of London and Westminster,London,England,2024,2024-07-04,9999-12-31,city,8585,Westminster,Greater London,8135667,1.0
+E14001173,City of Durham,North East,England,2024,2024-07-04,9999-12-31,rural,495,County Durham,Durham,47785,0.4928
+E14001174,Clacton,East of England,England,2024,2024-07-04,9999-12-31,town,461,Tendring,Clacton-on-Sea,50548,0.7514
+E14001175,Clapham and Brixton Hill,London,England,2024,2024-07-04,9999-12-31,city,13922,Lambeth,Greater London,8135667,1.0
+W07000094,Clwyd East,Wales,Wales,2024,2024-07-04,9999-12-31,town,148,Flintshire,Rhyl/Prestatyn,46267,0.5168
+W07000095,Clwyd North,Wales,Wales,2024,2024-07-04,9999-12-31,town,607,Conwy,Colwyn Bay,34284,0.7467
+S14000070,Coatbridge and Bellshill,Scotland,Scotland,2024,2024-07-04,9999-12-31,city,1413,North Lanarkshire,"Airdrie, Hamilton and Motherwell",300316,0.857
+E14001176,Colchester,East of England,England,2024,2024-07-04,9999-12-31,town,2732,Colchester,Colchester,121859,0.9966
+E14001177,Colne Valley,Yorkshire and The Humber,England,2024,2024-07-04,9999-12-31,city,533,Kirklees,West Yorkshire,1777387,0.7994
+E14001178,Congleton,North West,England,2024,2024-07-04,9999-12-31,town,397,Cheshire East,Congleton,26178,0.7769
+E14001179,Corby and East Northamptonshire,East Midlands,England,2024,2024-07-04,9999-12-31,town,216,North Northamptonshire,Corby,56810,0.5694
+E14001180,Coventry East,West Midlands,England,2024,2024-07-04,9999-12-31,city,4260,Coventry,Coventry,316395,1.0
+E14001181,Coventry North West,West Midlands,England,2024,2024-07-04,9999-12-31,city,2949,Coventry,Coventry,316395,0.9944
+E14001182,Coventry South,West Midlands,England,2024,2024-07-04,9999-12-31,city,4318,Coventry,Coventry,316395,1.0
+S14000071,Cowdenbeath and Kirkcaldy,Scotland,Scotland,2024,2024-07-04,9999-12-31,town,625,Fife,Kirkcaldy and Dysart,51135,0.7512
+E14001183,Cramlington and Killingworth,North East,England,2024,2024-07-04,9999-12-31,town,954,Northumberland,Cramlington,33180,0.6714
+E14001184,Crawley,South East,England,2024,2024-07-04,9999-12-31,town,2500,Crawley,Crawley,180508,0.9967
+E14001185,Crewe and Nantwich,North West,England,2024,2024-07-04,9999-12-31,town,1192,Cheshire East,Crewe,75556,0.908
+E14001186,Croydon East,London,England,2024,2024-07-04,9999-12-31,city,4129,Croydon,Greater London,8135667,1.0
+E14001187,Croydon South,London,England,2024,2024-07-04,9999-12-31,city,2634,Croydon,Greater London,8135667,1.0
+E14001188,Croydon West,London,England,2024,2024-07-04,9999-12-31,city,8276,Croydon,Greater London,8135667,1.0
+S14000072,Cumbernauld and Kirkintilloch,Scotland,Scotland,2024,2024-07-04,9999-12-31,town,639,North Lanarkshire,"Bonnybridge, Croy and Cumbernauld",78639,0.8996
+E14001189,Dagenham and Rainham,London,England,2024,2024-07-04,9999-12-31,city,2924,Barking and Dagenham,Greater London,8135667,0.9975
+E14001190,Darlington,North East,England,2024,2024-07-04,9999-12-31,town,852,Darlington,Darlington,92363,0.9571
+E14001191,Dartford,South East,England,2024,2024-07-04,9999-12-31,town,1683,Dartford,Dartford,58920,0.9006
+E14001192,Daventry,East Midlands,England,2024,2024-07-04,9999-12-31,rural,128,West Northamptonshire,Daventry,23879,0.3391
+E14001193,Derby North,East Midlands,England,2024,2024-07-04,9999-12-31,city,3461,Derby,Derby,270468,1.0
+E14001194,Derby South,East Midlands,England,2024,2024-07-04,9999-12-31,city,3750,Derby,Derby,270468,1.0
+E14001195,Derbyshire Dales,East Midlands,England,2024,2024-07-04,9999-12-31,rural,100,Derbyshire Dales,Matlock,14956,0.1698
+E14001196,Dewsbury and Batley,Yorkshire and The Humber,England,2024,2024-07-04,9999-12-31,city,1914,Kirklees,West Yorkshire,1777387,0.9656
+E14001197,Didcot and Wantage,South East,England,2024,2024-07-04,9999-12-31,town,245,South Oxfordshire,Didcot,29341,0.674
+E14001198,Doncaster Central,Yorkshire and The Humber,England,2024,2024-07-04,9999-12-31,town,1032,Doncaster,Doncaster,158141,0.9282
+E14001199,Doncaster East and the Isle of Axholme,Yorkshire and The Humber,England,2024,2024-07-04,9999-12-31,town,222,Doncaster,Thorne,17295,0.5736
+E14001200,Doncaster North,Yorkshire and The Humber,England,2024,2024-07-04,9999-12-31,town,407,Doncaster,Doncaster,158141,0.8152
+E14001201,Dorking and Horley,South East,England,2024,2024-07-04,9999-12-31,town,327,Mole Valley,Crawley,180508,0.7081
+E14001202,Dover and Deal,South East,England,2024,2024-07-04,9999-12-31,town,475,Dover,Dover,41709,0.7355
+E14001203,Droitwich and Evesham,West Midlands,England,2024,2024-07-04,9999-12-31,town,248,Wychavon,Droitwich,23834,0.556
+E14001204,Dudley,West Midlands,England,2024,2024-07-04,9999-12-31,city,3512,Dudley,West Midlands,2395268,0.9971
+E14001205,Dulwich and West Norwood,London,England,2024,2024-07-04,9999-12-31,city,7599,Lambeth,Greater London,8135667,1.0
+S14000073,Dumfries and Galloway,Scotland,Scotland,2024,2024-07-04,9999-12-31,rural,25,Dumfries and Galloway,Dumfries,34213,0.3576
+S14000074,"Dumfriesshire, Clydesdale and Tweeddale",Scotland,Scotland,2024,2024-07-04,9999-12-31,rural,20,Dumfries and Galloway,,,0.0
+S14000075,Dundee Central,Scotland,Scotland,2024,2024-07-04,9999-12-31,town,2610,Dundee City,Dundee,158455,0.9854
+S14000076,Dunfermline and Dollar,Scotland,Scotland,2024,2024-07-04,9999-12-31,town,346,Fife,Dunfermline,77628,0.7254
+E14001206,Dunstable and Leighton Buzzard,East of England,England,2024,2024-07-04,9999-12-31,city,1366,Central Bedfordshire,Luton,258018,0.9581
+W07000096,Dwyfor Meirionnydd,Wales,Wales,2024,2024-07-04,9999-12-31,rural,39,Gwynedd,,,0.0
+E14001207,Ealing Central and Acton,London,England,2024,2024-07-04,9999-12-31,city,6224,Ealing,Greater London,8135667,1.0
+E14001208,Ealing North,London,England,2024,2024-07-04,9999-12-31,city,5101,Ealing,Greater London,8135667,1.0
+E14001209,Ealing Southall,London,England,2024,2024-07-04,9999-12-31,city,7099,Ealing,Greater London,8135667,1.0
+E14001210,Earley and Woodley,South East,England,2024,2024-07-04,9999-12-31,city,2088,Wokingham,Reading,318014,0.9588
+E14001211,Easington,North East,England,2024,2024-07-04,9999-12-31,town,631,County Durham,Peterlee,37015,0.6299
+N05000005,East Antrim,Northern Ireland,Northern Ireland,2024,2024-07-04,9999-12-31,town,115,Mid and East Antrim,Carrickfergus,28135,0.6185
+E14001212,East Grinstead and Uckfield,South East,England,2024,2024-07-04,9999-12-31,town,250,Mid Sussex,Crawley,180508,0.6702
+E14001213,East Ham,London,England,2024,2024-07-04,9999-12-31,city,13144,Newham,Greater London,8135667,1.0
+E14001214,East Hampshire,South East,England,2024,2024-07-04,9999-12-31,city,175,East Hampshire,South Hampshire,855569,0.6367
+S14000077,East Kilbride and Strathaven,Scotland,Scotland,2024,2024-07-04,9999-12-31,town,309,South Lanarkshire,East Kilbride,77528,0.8085
+N05000006,East Londonderry,Northern Ireland,Northern Ireland,2024,2024-07-04,9999-12-31,rural,82,Causeway Coast and Glens,Coleraine,24479,0.3506
+S14000021,East Renfrewshire,Scotland,Scotland,2024,2024-07-04,9999-12-31,city,548,East Renfrewshire,Greater Glasgow,1024026,0.9129
+E14001215,East Surrey,South East,England,2024,2024-07-04,9999-12-31,rural,383,Tandridge,Caterham,21437,0.4942
+E14001216,East Thanet,South East,England,2024,2024-07-04,9999-12-31,town,3119,Thanet,Thanet,125370,0.9785
+E14001217,East Wiltshire,South West,England,2024,2024-07-04,9999-12-31,rural,95,Wiltshire,Amesbury,10116,0.1086
+E14001218,East Worthing and Shoreham,South East,England,2024,2024-07-04,9999-12-31,city,1773,Adur,Brighton and Hove,474485,0.9916
+E14001219,Eastbourne,South East,England,2024,2024-07-04,9999-12-31,town,2328,Eastbourne,Eastbourne,118219,1.0
+E14001220,Eastleigh,South East,England,2024,2024-07-04,9999-12-31,city,1817,Eastleigh,South Hampshire,855569,0.9932
+S14000078,Edinburgh East and Musselburgh,Scotland,Scotland,2024,2024-07-04,9999-12-31,city,3592,City of Edinburgh,Edinburgh,520804,0.9981
+S14000079,Edinburgh North and Leith,Scotland,Scotland,2024,2024-07-04,9999-12-31,city,5836,City of Edinburgh,Edinburgh,520804,1.0
+S14000080,Edinburgh South,Scotland,Scotland,2024,2024-07-04,9999-12-31,city,3182,City of Edinburgh,Edinburgh,520804,0.9992
+S14000081,Edinburgh South West,Scotland,Scotland,2024,2024-07-04,9999-12-31,city,1215,City of Edinburgh,Edinburgh,520804,0.995
+S14000082,Edinburgh West,Scotland,Scotland,2024,2024-07-04,9999-12-31,city,955,City of Edinburgh,Edinburgh,520804,0.9094
+E14001221,Edmonton and Winchmore Hill,London,England,2024,2024-07-04,9999-12-31,city,5932,Enfield,Greater London,8135667,1.0
+E14001222,Ellesmere Port and Bromborough,North West,England,2024,2024-07-04,9999-12-31,town,2345,Cheshire West and Chester,Ellesmere Port,61090,0.9942
+E14001223,Eltham and Chislehurst,London,England,2024,2024-07-04,9999-12-31,city,3533,Greenwich,Greater London,8135667,1.0
+E14001224,Ely and East Cambridgeshire,East of England,England,2024,2024-07-04,9999-12-31,rural,148,East Cambridgeshire,Ely,19090,0.2564
+E14001225,Enfield North,London,England,2024,2024-07-04,9999-12-31,city,3126,Enfield,Greater London,8135667,0.9918
+E14001226,Epping Forest,East of England,England,2024,2024-07-04,9999-12-31,town,801,Epping Forest,Loughton,31106,0.8898
+E14001227,Epsom and Ewell,South East,England,2024,2024-07-04,9999-12-31,town,1845,Epsom and Ewell,Epsom,31474,0.9706
+E14001228,Erewash,East Midlands,England,2024,2024-07-04,9999-12-31,city,1619,Erewash,Nottingham,729977,1.0
+E14001229,Erith and Thamesmead,London,England,2024,2024-07-04,9999-12-31,city,5362,Greenwich,Greater London,8135667,1.0
+E14001230,Esher and Walton,South East,England,2024,2024-07-04,9999-12-31,town,2101,Elmbridge,Esher,50346,0.9418
+E14001231,Exeter,South West,England,2024,2024-07-04,9999-12-31,town,3097,Exeter,Exeter,117763,1.0
+E14001232,Exmouth and Exeter East,South West,England,2024,2024-07-04,9999-12-31,town,382,East Devon,Exmouth,34432,0.6898
+S14000083,Falkirk,Scotland,Scotland,2024,2024-07-04,9999-12-31,town,490,Falkirk,Falkirk,105175,0.9067
+E14001233,Fareham and Waterlooville,South East,England,2024,2024-07-04,9999-12-31,city,1011,Fareham,South Hampshire,855569,0.8667
+E14001234,Farnham and Bordon,South East,England,2024,2024-07-04,9999-12-31,city,572,Waverley,Farnborough/Aldershot,252397,0.7611
+E14001235,Faversham and Mid Kent,South East,England,2024,2024-07-04,9999-12-31,town,259,Maidstone,Maidstone,107627,0.6946
+E14001236,Feltham and Heston,London,England,2024,2024-07-04,9999-12-31,city,4447,Hounslow,Greater London,8135667,1.0
+N05000007,Fermanagh and South Tyrone,Northern Ireland,Northern Ireland,2024,2024-07-04,9999-12-31,rural,44,Fermanagh and Omagh,Dungannon,16284,0.2717
+E14001237,Filton and Bradley Stoke,South West,England,2024,2024-07-04,9999-12-31,city,2332,South Gloucestershire,Bristol,617280,1.0
+E14001238,Finchley and Golders Green,London,England,2024,2024-07-04,9999-12-31,city,6400,Barnet,Greater London,8135667,1.0
+E14001239,Folkestone and Hythe,South East,England,2024,2024-07-04,9999-12-31,town,406,Folkestone and Hythe,Folkestone,66429,0.7341
+E14001240,Forest of Dean,South West,England,2024,2024-07-04,9999-12-31,rural,154,Forest of Dean,Cinderford,12942,0.3152
+N05000008,Foyle,Northern Ireland,Northern Ireland,2024,2024-07-04,9999-12-31,town,808,Derry City and Strabane,Derry City,85277,0.8764
+E14001241,Frome and East Somerset,South West,England,2024,2024-07-04,9999-12-31,town,193,Somerset,Frome,26203,0.5637
+E14001242,Fylde,North West,England,2024,2024-07-04,9999-12-31,city,544,Fylde,Blackpool,239409,0.8117
+E14001243,Gainsborough,East Midlands,England,2024,2024-07-04,9999-12-31,rural,83,West Lindsey,Gainsborough,20842,0.2391
+E14001244,Gateshead Central and Whickham,North East,England,2024,2024-07-04,9999-12-31,city,2469,Gateshead,Tyneside,774891,0.9938
+E14001245,Gedling,East Midlands,England,2024,2024-07-04,9999-12-31,city,1589,Gedling,Nottingham,729977,0.9297
+E14001246,Gillingham and Rainham,South East,England,2024,2024-07-04,9999-12-31,city,3214,Medway,Medway Towns,243931,0.9881
+S14000084,Glasgow East,Scotland,Scotland,2024,2024-07-04,9999-12-31,city,3620,Glasgow City,Greater Glasgow,1024026,1.0
+S14000085,Glasgow North,Scotland,Scotland,2024,2024-07-04,9999-12-31,city,3937,Glasgow City,Greater Glasgow,1024026,0.9993
+S14000086,Glasgow North East,Scotland,Scotland,2024,2024-07-04,9999-12-31,city,2802,Glasgow City,Greater Glasgow,1024026,0.9911
+S14000087,Glasgow South,Scotland,Scotland,2024,2024-07-04,9999-12-31,city,3488,Glasgow City,Greater Glasgow,1024026,0.9865
+S14000088,Glasgow South West,Scotland,Scotland,2024,2024-07-04,9999-12-31,city,3246,Glasgow City,Greater Glasgow,1024026,0.9962
+S14000089,Glasgow West,Scotland,Scotland,2024,2024-07-04,9999-12-31,city,5442,Glasgow City,Greater Glasgow,1024026,1.0
+E14001247,Glastonbury and Somerton,South West,England,2024,2024-07-04,9999-12-31,rural,130,Somerset,Street,12911,0.1364
+S14000090,Glenrothes and Mid Fife,Scotland,Scotland,2024,2024-07-04,9999-12-31,town,539,Fife,Glenrothes and Thornton,45734,0.7339
+E14001248,Gloucester,South West,England,2024,2024-07-04,9999-12-31,town,3133,Gloucester,Gloucester,150053,1.0
+E14001249,Godalming and Ash,South East,England,2024,2024-07-04,9999-12-31,town,277,Waverley,Godalming,22689,0.5973
+E14001250,Goole and Pocklington,Yorkshire and The Humber,England,2024,2024-07-04,9999-12-31,rural,141,East Riding of Yorkshire,Goole,20810,0.419
+S14000091,Gordon and Buchan,Scotland,Scotland,2024,2024-07-04,9999-12-31,rural,44,Aberdeenshire,Inverurie,15115,0.2729
+E14001251,Gorton and Denton,North West,England,2024,2024-07-04,9999-12-31,city,4837,Manchester,Greater Manchester,2461366,1.0
+E14001252,Gosport,South East,England,2024,2024-07-04,9999-12-31,city,2651,Gosport,South Hampshire,855569,0.9946
+W07000097,Gower,Wales,Wales,2024,2024-07-04,9999-12-31,city,304,Swansea,Swansea,300352,0.719
+E14001253,Grantham and Bourne,East Midlands,England,2024,2024-07-04,9999-12-31,town,130,South Kesteven,Grantham,43833,0.6316
+E14001254,Gravesham,South East,England,2024,2024-07-04,9999-12-31,town,1072,Gravesham,Gravesend,55467,0.8124
+E14001255,Great Grimsby and Cleethorpes,Yorkshire and The Humber,England,2024,2024-07-04,9999-12-31,town,3234,North East Lincolnshire,Grimsby,134160,1.0
+E14001256,Great Yarmouth,East of England,England,2024,2024-07-04,9999-12-31,town,550,Great Yarmouth,Great Yarmouth,63434,0.6521
+E14001257,Greenwich and Woolwich,London,England,2024,2024-07-04,9999-12-31,city,7347,Greenwich,Greater London,8135667,1.0
+E14001258,Guildford,South East,England,2024,2024-07-04,9999-12-31,town,853,Guildford,Guildford,77057,0.7862
+E14001259,Hackney North and Stoke Newington,London,England,2024,2024-07-04,9999-12-31,city,13819,Hackney,Greater London,8135667,0.9946
+E14001260,Hackney South and Shoreditch,London,England,2024,2024-07-04,9999-12-31,city,15635,Hackney,Greater London,8135667,1.0
+E14001261,Halesowen,West Midlands,England,2024,2024-07-04,9999-12-31,city,2999,Dudley,West Midlands,2395268,1.0
+E14001262,Halifax,Yorkshire and The Humber,England,2024,2024-07-04,9999-12-31,city,1791,Calderdale,West Yorkshire,1777387,0.9733
+E14001263,Hamble Valley,South East,England,2024,2024-07-04,9999-12-31,city,1073,Eastleigh,South Hampshire,855569,0.8466
+S14000092,Hamilton and Clyde Valley,Scotland,Scotland,2024,2024-07-04,9999-12-31,city,375,South Lanarkshire,"Airdrie, Hamilton and Motherwell",300316,0.7433
+E14001264,Hammersmith and Chiswick,London,England,2024,2024-07-04,9999-12-31,city,9075,Hammersmith and Fulham,Greater London,8135667,1.0
+E14001265,Hampstead and Highgate,London,England,2024,2024-07-04,9999-12-31,city,9476,Camden,Greater London,8135667,1.0
+E14001266,"Harborough, Oadby and Wigston",East Midlands,England,2024,2024-07-04,9999-12-31,city,600,Oadby and Wigston,Leicester,508916,0.8474
+E14001267,Harlow,East of England,England,2024,2024-07-04,9999-12-31,town,684,Harlow,Harlow,82059,0.8713
+E14001268,Harpenden and Berkhamsted,East of England,England,2024,2024-07-04,9999-12-31,town,384,St Albans,Harpenden,30240,0.7502
+E14001269,Harrogate and Knaresborough,Yorkshire and The Humber,England,2024,2024-07-04,9999-12-31,town,747,North Yorkshire,Harrogate,89060,0.9063
+E14001270,Harrow East,London,England,2024,2024-07-04,9999-12-31,city,4588,Harrow,Greater London,8135667,0.9945
+E14001271,Harrow West,London,England,2024,2024-07-04,9999-12-31,city,6644,Harrow,Greater London,8135667,1.0
+E14001272,Hartlepool,North East,England,2024,2024-07-04,9999-12-31,town,974,Hartlepool,Hartlepool,88855,0.9655
+E14001273,Harwich and North Essex,East of England,England,2024,2024-07-04,9999-12-31,rural,293,Colchester,Harwich,20723,0.3155
+E14001274,Hastings and Rye,South East,England,2024,2024-07-04,9999-12-31,town,748,Hastings,Hastings,133422,0.8677
+E14001275,Havant,South East,England,2024,2024-07-04,9999-12-31,city,1652,Havant,South Hampshire,855569,0.9794
+E14001276,Hayes and Harlington,London,England,2024,2024-07-04,9999-12-31,city,2864,Hillingdon,Greater London,8135667,1.0
+E14001277,Hazel Grove,North West,England,2024,2024-07-04,9999-12-31,city,1518,Stockport,Greater Manchester,2461366,0.9865
+E14001278,Hemel Hempstead,East of England,England,2024,2024-07-04,9999-12-31,town,1794,Dacorum,Hemel Hempstead,94932,0.9179
+E14001279,Hendon,London,England,2024,2024-07-04,9999-12-31,city,5582,Barnet,Greater London,8135667,1.0
+E14001280,Henley and Thame,South East,England,2024,2024-07-04,9999-12-31,rural,167,South Oxfordshire,Henley-on-Thames,11494,0.3428
+E14001281,Hereford and South Herefordshire,West Midlands,England,2024,2024-07-04,9999-12-31,town,135,"Herefordshire, County of",Hereford,60415,0.7038
+E14001282,Herne Bay and Sandwich,South East,England,2024,2024-07-04,9999-12-31,town,406,Canterbury,Herne Bay/Whitstable,70485,0.6879
+E14001283,Hertford and Stortford,East of England,England,2024,2024-07-04,9999-12-31,town,872,East Hertfordshire,Hertford/Ware,45457,0.8542
+E14001284,Hertsmere,East of England,England,2024,2024-07-04,9999-12-31,town,861,Hertsmere,Borehamwood,35247,0.7698
+E14001285,Hexham,North East,England,2024,2024-07-04,9999-12-31,rural,33,Northumberland,Prudhoe,12075,0.4642
+E14001286,Heywood and Middleton North,North West,England,2024,2024-07-04,9999-12-31,city,1396,Rochdale,Greater Manchester,2461366,0.9811
+E14001287,High Peak,East Midlands,England,2024,2024-07-04,9999-12-31,town,172,High Peak,Glossop,26775,0.6422
+E14001288,Hinckley and Bosworth,East Midlands,England,2024,2024-07-04,9999-12-31,town,338,Hinckley and Bosworth,Hinckley,45249,0.7187
+E14001289,Hitchin,East of England,England,2024,2024-07-04,9999-12-31,town,436,North Hertfordshire,Hitchin,36099,0.59
+E14001290,Holborn and St Pancras,London,England,2024,2024-07-04,9999-12-31,city,14849,Camden,Greater London,8135667,1.0
+E14001291,Honiton and Sidmouth,South West,England,2024,2024-07-04,9999-12-31,rural,138,East Devon,Sidmouth,12569,0.2886
+E14001292,Hornchurch and Upminster,London,England,2024,2024-07-04,9999-12-31,city,1874,Havering,Greater London,8135667,0.9836
+E14001293,Hornsey and Friern Barnet,London,England,2024,2024-07-04,9999-12-31,city,7497,Haringey,Greater London,8135667,1.0
+E14001294,Horsham,South East,England,2024,2024-07-04,9999-12-31,town,325,Horsham,Horsham,51472,0.57
+E14001295,Houghton and Sunderland South,North East,England,2024,2024-07-04,9999-12-31,city,1431,Sunderland,Sunderland,292024,0.9848
+E14001296,Hove and Portslade,South East,England,2024,2024-07-04,9999-12-31,city,4339,Brighton and Hove,Brighton and Hove,474485,1.0
+E14001297,Huddersfield,Yorkshire and The Humber,England,2024,2024-07-04,9999-12-31,city,2401,Kirklees,West Yorkshire,1777387,0.9916
+E14001298,Huntingdon,East of England,England,2024,2024-07-04,9999-12-31,rural,178,Huntingdonshire,Huntingdon,23937,0.4335
+E14001299,Hyndburn,North West,England,2024,2024-07-04,9999-12-31,town,1031,Hyndburn,Accrington/Rossendale,125059,0.9105
+E14001300,Ilford North,London,England,2024,2024-07-04,9999-12-31,city,4255,Redbridge,Greater London,8135667,1.0
+E14001301,Ilford South,London,England,2024,2024-07-04,9999-12-31,city,8413,Redbridge,Greater London,8135667,1.0
+S14000093,Inverclyde and Renfrewshire West,Scotland,Scotland,2024,2024-07-04,9999-12-31,town,454,Inverclyde,Greenock,67202,0.7466
+S14000094,"Inverness, Skye and West Ross-shire",Scotland,Scotland,2024,2024-07-04,9999-12-31,town,11,Highland,Inverness and Culloden,65056,0.7176
+E14001302,Ipswich,East of England,England,2024,2024-07-04,9999-12-31,town,3557,Ipswich,Ipswich,178835,1.0
+E14001303,Isle of Wight East,South East,England,2024,2024-07-04,9999-12-31,town,607,Isle of Wight,Ryde,26082,0.6762
+E14001304,Isle of Wight West,South East,England,2024,2024-07-04,9999-12-31,town,260,Isle of Wight,Newport (Isle of Wight),24884,0.6772
+E14001305,Islington North,London,England,2024,2024-07-04,9999-12-31,city,16043,Islington,Greater London,8135667,1.0
+E14001306,Islington South and Finsbury,London,England,2024,2024-07-04,9999-12-31,city,16545,Islington,Greater London,8135667,1.0
+E14001307,Jarrow and Gateshead East,North East,England,2024,2024-07-04,9999-12-31,city,2193,South Tyneside,Tyneside,774891,0.9954
+E14001308,Keighley and Ilkley,Yorkshire and The Humber,England,2024,2024-07-04,9999-12-31,city,594,Bradford,West Yorkshire,1777387,0.822
+E14001309,Kenilworth and Southam,West Midlands,England,2024,2024-07-04,9999-12-31,rural,135,Warwick,Kenilworth,22413,0.2899
+E14001310,Kensington and Bayswater,London,England,2024,2024-07-04,9999-12-31,city,12785,Kensington and Chelsea,Greater London,8135667,1.0
+E14001311,Kettering,East Midlands,England,2024,2024-07-04,9999-12-31,town,409,North Northamptonshire,Kettering,63675,0.7722
+S14000110,Kilmarnock and Loudoun,Scotland,Scotland,2024,2024-07-04,9999-12-31,town,139,East Ayrshire,Kilmarnock,51433,0.5372
+E14001312,Kingston and Surbiton,London,England,2024,2024-07-04,9999-12-31,city,4599,Kingston upon Thames,Greater London,8135667,0.9961
+E14001313,Kingston upon Hull East,Yorkshire and The Humber,England,2024,2024-07-04,9999-12-31,city,2917,"Kingston upon Hull, City of",Kingston upon Hull,314018,1.0
+E14001314,Kingston upon Hull North and Cottingham,Yorkshire and The Humber,England,2024,2024-07-04,9999-12-31,city,3048,"Kingston upon Hull, City of",Kingston upon Hull,314018,0.9956
+E14001315,Kingston upon Hull West and Haltemprice,Yorkshire and The Humber,England,2024,2024-07-04,9999-12-31,city,2745,"Kingston upon Hull, City of",Kingston upon Hull,314018,1.0
+E14001316,Kingswinford and South Staffordshire,West Midlands,England,2024,2024-07-04,9999-12-31,city,480,South Staffordshire,West Midlands,2395268,0.8392
+E14001317,Knowsley,North West,England,2024,2024-07-04,9999-12-31,city,1780,Knowsley,Liverpool,864122,0.9966
+N05000009,Lagan Valley,Northern Ireland,Northern Ireland,2024,2024-07-04,9999-12-31,rural,224,Lisburn and Castlereagh,Lisburn City,51452,0.4914
+E14001318,Lancaster and Wyre,North West,England,2024,2024-07-04,9999-12-31,town,236,Lancaster,Lancaster/Morecambe,97150,0.5378
+E14001319,Leeds Central and Headingley,Yorkshire and The Humber,England,2024,2024-07-04,9999-12-31,city,5436,Leeds,West Yorkshire,1777387,1.0
+E14001320,Leeds East,Yorkshire and The Humber,England,2024,2024-07-04,9999-12-31,city,1882,Leeds,West Yorkshire,1777387,0.9656
+E14001321,Leeds North East,Yorkshire and The Humber,England,2024,2024-07-04,9999-12-31,city,2388,Leeds,West Yorkshire,1777387,0.9987
+E14001322,Leeds North West,Yorkshire and The Humber,England,2024,2024-07-04,9999-12-31,city,1026,Leeds,West Yorkshire,1777387,0.9118
+E14001323,Leeds South,Yorkshire and The Humber,England,2024,2024-07-04,9999-12-31,city,3245,Leeds,West Yorkshire,1777387,0.9956
+E14001324,Leeds South West and Morley,Yorkshire and The Humber,England,2024,2024-07-04,9999-12-31,city,1624,Leeds,West Yorkshire,1777387,1.0
+E14001325,Leeds West and Pudsey,Yorkshire and The Humber,England,2024,2024-07-04,9999-12-31,city,2654,Leeds,West Yorkshire,1777387,0.997
+E14001326,Leicester East,East Midlands,England,2024,2024-07-04,9999-12-31,city,5272,Leicester,Leicester,508916,1.0
+E14001327,Leicester South,East Midlands,England,2024,2024-07-04,9999-12-31,city,6298,Leicester,Leicester,508916,1.0
+E14001328,Leicester West,East Midlands,England,2024,2024-07-04,9999-12-31,city,3677,Leicester,Leicester,508916,0.9951
+E14001329,Leigh and Atherton,North West,England,2024,2024-07-04,9999-12-31,city,1989,Wigan,Greater Manchester,2461366,0.973
+E14001330,Lewes,South East,England,2024,2024-07-04,9999-12-31,town,277,Lewes,Seaford,22584,0.785
+E14001331,Lewisham East,London,England,2024,2024-07-04,9999-12-31,city,7548,Lewisham,Greater London,8135667,1.0
+E14001332,Lewisham North,London,England,2024,2024-07-04,9999-12-31,city,9817,Lewisham,Greater London,8135667,1.0
+E14001333,Lewisham West and East Dulwich,London,England,2024,2024-07-04,9999-12-31,city,9068,Lewisham,Greater London,8135667,1.0
+E14001334,Leyton and Wanstead,London,England,2024,2024-07-04,9999-12-31,city,7044,Waltham Forest,Greater London,8135667,1.0
+E14001335,Lichfield,West Midlands,England,2024,2024-07-04,9999-12-31,town,300,Lichfield,Lichfield,32877,0.6856
+E14001336,Lincoln,East Midlands,England,2024,2024-07-04,9999-12-31,town,1768,Lincoln,Lincoln,114879,0.9142
+E14001337,Liverpool Garston,North West,England,2024,2024-07-04,9999-12-31,city,2753,Liverpool,Liverpool,864122,1.0
+E14001338,Liverpool Riverside,North West,England,2024,2024-07-04,9999-12-31,city,5874,Liverpool,Liverpool,864122,1.0
+E14001339,Liverpool Walton,North West,England,2024,2024-07-04,9999-12-31,city,3957,Liverpool,Liverpool,864122,1.0
+E14001340,Liverpool Wavertree,North West,England,2024,2024-07-04,9999-12-31,city,5511,Liverpool,Liverpool,864122,1.0
+E14001341,Liverpool West Derby,North West,England,2024,2024-07-04,9999-12-31,city,5116,Liverpool,Liverpool,864122,1.0
+S14000095,Livingston,Scotland,Scotland,2024,2024-07-04,9999-12-31,town,419,West Lothian,Livingston,65015,0.7876
+W07000098,Llanelli,Wales,Wales,2024,2024-07-04,9999-12-31,town,263,Carmarthenshire,Llanelli,49591,0.6471
+S14000096,Lothian East,Scotland,Scotland,2024,2024-07-04,9999-12-31,town,135,East Lothian,Tranent,12235,0.5785
+E14001342,Loughborough,East Midlands,England,2024,2024-07-04,9999-12-31,town,838,Charnwood,Loughborough,59932,0.9406
+E14001343,Louth and Horncastle,East Midlands,England,2024,2024-07-04,9999-12-31,rural,73,East Lindsey,Louth,16419,0.3125
+E14001344,Lowestoft,East of England,England,2024,2024-07-04,9999-12-31,town,876,East Suffolk,Lowestoft,70945,0.9081
+E14001345,Luton North,East of England,England,2024,2024-07-04,9999-12-31,city,4866,Luton,Luton,258018,1.0
+E14001346,Luton South and South Bedfordshire,East of England,England,2024,2024-07-04,9999-12-31,city,1194,Luton,Luton,258018,0.8823
+E14001347,Macclesfield,North West,England,2024,2024-07-04,9999-12-31,town,310,Cheshire East,Macclesfield,63954,0.882
+E14001348,Maidenhead,South East,England,2024,2024-07-04,9999-12-31,town,559,Windsor and Maidenhead,Maidenhead,64831,0.9122
+E14001349,Maidstone and Malling,South East,England,2024,2024-07-04,9999-12-31,town,2064,Maidstone,Maidstone,107627,0.8724
+E14001350,Makerfield,North West,England,2024,2024-07-04,9999-12-31,town,1829,Wigan,Wigan,134229,0.9785
+E14001351,Maldon,East of England,England,2024,2024-07-04,9999-12-31,town,243,Maldon,Maldon,21462,0.5456
+E14001352,Manchester Central,North West,England,2024,2024-07-04,9999-12-31,city,4693,Manchester,Greater Manchester,2461366,1.0
+E14001353,Manchester Rusholme,North West,England,2024,2024-07-04,9999-12-31,city,7859,Manchester,Greater Manchester,2461366,1.0
+E14001354,Manchester Withington,North West,England,2024,2024-07-04,9999-12-31,city,4972,Manchester,Greater Manchester,2461366,1.0
+E14001355,Mansfield,East Midlands,England,2024,2024-07-04,9999-12-31,town,1487,Mansfield,Mansfield,171958,0.8641
+E14001356,Melksham and Devizes,South West,England,2024,2024-07-04,9999-12-31,town,222,Wiltshire,Melksham,19357,0.5029
+E14001357,Melton and Syston,East Midlands,England,2024,2024-07-04,9999-12-31,town,166,Melton,Melton Mowbray,27158,0.6721
+E14001358,Meriden and Solihull East,West Midlands,England,2024,2024-07-04,9999-12-31,city,742,Solihull,West Midlands,2395268,0.8317
+W07000099,Merthyr Tydfil and Aberdare,Wales,Wales,2024,2024-07-04,9999-12-31,town,413,Merthyr Tydfil,Merthyr Tydfil,43820,0.8308
+E14001359,Mid Bedfordshire,East of England,England,2024,2024-07-04,9999-12-31,rural,266,Central Bedfordshire,Ampthill,20026,0.3316
+E14001360,Mid Buckinghamshire,South East,England,2024,2024-07-04,9999-12-31,rural,169,Buckinghamshire,High Wycombe,133204,0.1512
+E14001361,Mid Cheshire,North West,England,2024,2024-07-04,9999-12-31,town,859,Cheshire West and Chester,Northwich,47421,0.9747
+E14001362,Mid Derbyshire,East Midlands,England,2024,2024-07-04,9999-12-31,city,613,Derby,Derby,270468,0.9414
+E14001363,Mid Dorset and North Poole,South West,England,2024,2024-07-04,9999-12-31,city,301,Dorset,Bournemouth/Poole,466266,0.7671
+S14000097,Mid Dunbartonshire,Scotland,Scotland,2024,2024-07-04,9999-12-31,city,617,East Dunbartonshire,Greater Glasgow,1024026,0.8732
+E14001364,Mid Leicestershire,East Midlands,England,2024,2024-07-04,9999-12-31,city,731,Blaby,Leicester,508916,0.722
+E14001365,Mid Norfolk,East of England,England,2024,2024-07-04,9999-12-31,rural,112,Breckland,Dereham,20651,0.3521
+E14001366,Mid Sussex,South East,England,2024,2024-07-04,9999-12-31,town,584,Mid Sussex,Haywards Heath,33845,0.8707
+N05000010,Mid Ulster,Northern Ireland,Northern Ireland,2024,2024-07-04,9999-12-31,rural,87,Mid Ulster,Cookstown,12545,0.1192
+W07000100,Mid and South Pembrokeshire,Wales,Wales,2024,2024-07-04,9999-12-31,rural,104,Pembrokeshire,Haverfordwest,14596,0.282
+E14001368,Middlesbrough South and East Cleveland,North East,England,2024,2024-07-04,9999-12-31,city,459,Middlesbrough,Teesside,376663,0.7036
+E14001367,Middlesbrough and Thornaby East,North East,England,2024,2024-07-04,9999-12-31,city,3131,Middlesbrough,Teesside,376663,1.0
+S14000045,Midlothian,Scotland,Scotland,2024,2024-07-04,9999-12-31,town,260,Midlothian,"Bonnyrigg, Dalkeith, Mayfield and Gorebridge",56891,0.7597
+E14001369,Milton Keynes Central,South East,England,2024,2024-07-04,9999-12-31,city,1798,Milton Keynes,Milton Keynes,229941,0.9737
+E14001370,Milton Keynes North,South East,England,2024,2024-07-04,9999-12-31,city,417,Milton Keynes,Milton Keynes,229941,0.7959
+E14001371,Mitcham and Morden,London,England,2024,2024-07-04,9999-12-31,city,6219,Merton,Greater London,8135667,1.0
+W07000101,Monmouthshire,Wales,Wales,2024,2024-07-04,9999-12-31,town,110,Monmouthshire,Abergavenny,14651,0.529
+W07000102,Montgomeryshire and Glyndŵr,Wales,Wales,2024,2024-07-04,9999-12-31,rural,41,Powys,Rhosllanerchrugog,25362,0.3867
+S14000098,"Moray West, Nairn and Strathspey",Scotland,Scotland,2024,2024-07-04,9999-12-31,rural,22,Moray,Elgin,24617,0.3517
+E14001372,Morecambe and Lunesdale,North West,England,2024,2024-07-04,9999-12-31,rural,118,Lancaster,Lancaster/Morecambe,97150,0.4976
+S14000099,"Motherwell, Wishaw and Carluke",Scotland,Scotland,2024,2024-07-04,9999-12-31,city,450,North Lanarkshire,"Airdrie, Hamilton and Motherwell",300316,0.8888
+S14000027,Na h-Eileanan an Iar,Scotland,Scotland,2024,2024-07-04,9999-12-31,rural,8,Na h-Eileanan Siar,,,0.0
+W07000103,Neath and Swansea East,Wales,Wales,2024,2024-07-04,9999-12-31,city,463,Neath Port Talbot,Swansea,300352,0.8304
+E14001373,New Forest East,South East,England,2024,2024-07-04,9999-12-31,town,232,New Forest,Totton,34169,0.7505
+E14001374,New Forest West,South East,England,2024,2024-07-04,9999-12-31,city,241,New Forest,Bournemouth/Poole,466266,0.6866
+E14001375,Newark,East Midlands,England,2024,2024-07-04,9999-12-31,rural,137,Newark and Sherwood,Newark-on-Trent,43363,0.4373
+E14001376,Newbury,South East,England,2024,2024-07-04,9999-12-31,town,243,West Berkshire,Newbury/Thatcham,68258,0.7399
+E14001377,Newcastle upon Tyne Central and West,North East,England,2024,2024-07-04,9999-12-31,city,4134,Newcastle upon Tyne,Tyneside,774891,0.9954
+E14001378,Newcastle upon Tyne East and Wallsend,North East,England,2024,2024-07-04,9999-12-31,city,4217,Newcastle upon Tyne,Tyneside,774891,1.0
+E14001379,Newcastle upon Tyne North,North East,England,2024,2024-07-04,9999-12-31,city,3261,Newcastle upon Tyne,Tyneside,774891,0.9959
+E14001380,Newcastle-under-Lyme,West Midlands,England,2024,2024-07-04,9999-12-31,city,962,Newcastle-under-Lyme,Stoke-on-Trent,372775,0.8063
+W07000104,Newport East,Wales,Wales,2024,2024-07-04,9999-12-31,city,844,Newport,Newport (Newport),306844,0.8713
+W07000105,Newport West and Islwyn,Wales,Wales,2024,2024-07-04,9999-12-31,city,688,Caerphilly,Newport (Newport),306844,0.9035
+N05000011,Newry and Armagh,Northern Ireland,Northern Ireland,2024,2024-07-04,9999-12-31,rural,121,"Newry, Mourne and Down",Newry,28537,0.3864
+E14001381,Newton Abbot,South West,England,2024,2024-07-04,9999-12-31,town,466,Teignbridge,Newton Abbot,36474,0.7626
+E14001382,Newton Aycliffe and Spennymoor,North East,England,2024,2024-07-04,9999-12-31,rural,379,County Durham,Newton Aycliffe,25964,0.4823
+E14001383,Normanton and Hemsworth,Yorkshire and The Humber,England,2024,2024-07-04,9999-12-31,town,663,Wakefield,South Elmsall/South Kirkby,18899,0.5029
+N05000012,North Antrim,Northern Ireland,Northern Ireland,2024,2024-07-04,9999-12-31,rural,92,Mid and East Antrim,Ballymena,31199,0.4069
+S14000048,North Ayrshire and Arran,Scotland,Scotland,2024,2024-07-04,9999-12-31,town,111,North Ayrshire,Kilwinning and Saltcoats,47391,0.6074
+E14001384,North Bedfordshire,East of England,England,2024,2024-07-04,9999-12-31,rural,170,Bedford,Biggleswade,16551,0.3842
+E14001385,North Cornwall,South West,England,2024,2024-07-04,9999-12-31,rural,79,Cornwall,Bodmin,14614,0.1556
+E14001386,North Cotswolds,South West,England,2024,2024-07-04,9999-12-31,rural,88,Cotswold,Gloucester,150053,0.3651
+E14001387,North Devon,South West,England,2024,2024-07-04,9999-12-31,rural,88,North Devon,Barnstaple,31616,0.4569
+E14001388,North Dorset,South West,England,2024,2024-07-04,9999-12-31,rural,116,Dorset,Verwood,13360,0.4008
+N05000013,North Down,Northern Ireland,Northern Ireland,2024,2024-07-04,9999-12-31,town,816,Ards and North Down,Bangor,64605,0.818
+E14001389,North Durham,North East,England,2024,2024-07-04,9999-12-31,town,418,County Durham,Chester-le-Street,24255,0.5721
+E14001390,North East Cambridgeshire,East of England,England,2024,2024-07-04,9999-12-31,town,186,Fenland,Wisbech,32489,0.7652
+E14001391,North East Derbyshire,East Midlands,England,2024,2024-07-04,9999-12-31,town,405,North East Derbyshire,Clay Cross/North Wingfield,28665,0.6838
+S14000100,North East Fife,Scotland,Scotland,2024,2024-07-04,9999-12-31,rural,118,Fife,"Methil, Leven and Buckhaven",31590,0.3566
+E14001392,North East Hampshire,South East,England,2024,2024-07-04,9999-12-31,town,302,Hart,Fleet,38726,0.6018
+E14001393,North East Hertfordshire,East of England,England,2024,2024-07-04,9999-12-31,town,202,North Hertfordshire,Letchworth Garden City,43529,0.629
+E14001394,North East Somerset and Hanham,South West,England,2024,2024-07-04,9999-12-31,city,441,Bath and North East Somerset,Bristol,617280,0.7167
+E14001395,North Herefordshire,West Midlands,England,2024,2024-07-04,9999-12-31,rural,64,"Herefordshire, County of",Leominster,10938,0.1893
+E14001396,North Norfolk,East of England,England,2024,2024-07-04,9999-12-31,rural,114,North Norfolk,North Walsham,12463,0.1448
+E14001397,North Northumberland,North East,England,2024,2024-07-04,9999-12-31,rural,42,Northumberland,Morpeth,14403,0.3053
+E14001398,North Shropshire,West Midlands,England,2024,2024-07-04,9999-12-31,rural,132,Shropshire,Croesowallt,18743,0.3192
+E14001399,North Somerset,South West,England,2024,2024-07-04,9999-12-31,town,477,North Somerset,Portishead,23699,0.7855
+E14001400,North Warwickshire and Bedworth,West Midlands,England,2024,2024-07-04,9999-12-31,rural,352,North Warwickshire,Bedworth,30648,0.4616
+E14001401,North West Cambridgeshire,East of England,England,2024,2024-07-04,9999-12-31,town,276,Peterborough,Peterborough,163379,0.6077
+E14001402,North West Essex,East of England,England,2024,2024-07-04,9999-12-31,rural,165,Uttlesford,Saffron Walden,15210,0.2331
+E14001403,North West Hampshire,South East,England,2024,2024-07-04,9999-12-31,town,232,Basingstoke and Deane,Andover,42276,0.6669
+E14001404,North West Leicestershire,East Midlands,England,2024,2024-07-04,9999-12-31,town,415,North West Leicestershire,Coalville,38245,0.5825
+E14001405,North West Norfolk,East of England,England,2024,2024-07-04,9999-12-31,rural,123,King's Lynn and West Norfolk,King's Lynn,46093,0.4745
+E14001406,Northampton North,East Midlands,England,2024,2024-07-04,9999-12-31,city,3934,West Northamptonshire,Northampton,215963,1.0
+E14001407,Northampton South,East Midlands,England,2024,2024-07-04,9999-12-31,city,2068,West Northamptonshire,Northampton,215963,0.9901
+E14001408,Norwich North,East of England,England,2024,2024-07-04,9999-12-31,city,2301,Broadland,Norwich,213166,1.0
+E14001409,Norwich South,East of England,England,2024,2024-07-04,9999-12-31,city,3427,Norwich,Norwich,213166,1.0
+E14001410,Nottingham East,East Midlands,England,2024,2024-07-04,9999-12-31,city,6027,Nottingham,Nottingham,729977,1.0
+E14001411,Nottingham North and Kimberley,East Midlands,England,2024,2024-07-04,9999-12-31,city,2719,Nottingham,Nottingham,729977,1.0
+E14001412,Nottingham South,East Midlands,England,2024,2024-07-04,9999-12-31,city,3413,Nottingham,Nottingham,729977,1.0
+E14001413,Nuneaton,West Midlands,England,2024,2024-07-04,9999-12-31,town,1146,Nuneaton and Bedworth,Nuneaton,92698,0.9502
+E14001414,Old Bexley and Sidcup,London,England,2024,2024-07-04,9999-12-31,city,3740,Bexley,Greater London,8135667,0.9984
+E14001415,Oldham East and Saddleworth,North West,England,2024,2024-07-04,9999-12-31,city,1016,Oldham,Greater Manchester,2461366,0.9738
+E14001416,"Oldham West, Chadderton and Royton",North West,England,2024,2024-07-04,9999-12-31,city,3559,Oldham,Greater Manchester,2461366,1.0
+S14000051,Orkney and Shetland,Scotland,Scotland,2024,2024-07-04,9999-12-31,rural,17,Shetland Islands,,,0.0
+E14001417,Orpington,London,England,2024,2024-07-04,9999-12-31,city,1452,Bromley,Greater London,8135667,0.9645
+E14001418,Ossett and Denby Dale,Yorkshire and The Humber,England,2024,2024-07-04,9999-12-31,city,667,Wakefield,West Yorkshire,1777387,0.6609
+E14001419,Oxford East,South East,England,2024,2024-07-04,9999-12-31,town,3853,Oxford,Oxford,171380,1.0
+E14001420,Oxford West and Abingdon,South East,England,2024,2024-07-04,9999-12-31,town,999,Vale of White Horse,Oxford,171380,0.9138
+S14000101,Paisley and Renfrewshire North,Scotland,Scotland,2024,2024-07-04,9999-12-31,city,1059,Renfrewshire,Greater Glasgow,1024026,0.9845
+S14000102,Paisley and Renfrewshire South,Scotland,Scotland,2024,2024-07-04,9999-12-31,city,617,Renfrewshire,Greater Glasgow,1024026,0.9413
+E14001421,Peckham,London,England,2024,2024-07-04,9999-12-31,city,13231,Southwark,Greater London,8135667,1.0
+E14001422,Pendle and Clitheroe,North West,England,2024,2024-07-04,9999-12-31,town,447,Pendle,Burnley,149422,0.7884
+E14001423,Penistone and Stocksbridge,Yorkshire and The Humber,England,2024,2024-07-04,9999-12-31,town,304,Sheffield,Chapeltown,23056,0.805
+E14001424,Penrith and Solway,North West,England,2024,2024-07-04,9999-12-31,rural,50,Cumberland,Penrith,15181,0.1629
+S14000103,Perth and Kinross-shire,Scotland,Scotland,2024,2024-07-04,9999-12-31,rural,72,Perth and Kinross,Perth,47885,0.482
+E14001425,Peterborough,East of England,England,2024,2024-07-04,9999-12-31,town,714,Peterborough,Peterborough,163379,0.9186
+E14001426,Plymouth Moor View,South West,England,2024,2024-07-04,9999-12-31,city,2929,Plymouth,Plymouth,260203,1.0
+E14001427,Plymouth Sutton and Devonport,South West,England,2024,2024-07-04,9999-12-31,city,5057,Plymouth,Plymouth,260203,1.0
+E14001428,"Pontefract, Castleford and Knottingley",Yorkshire and The Humber,England,2024,2024-07-04,9999-12-31,town,1330,Wakefield,Castleford,60509,0.9666
+W07000106,Pontypridd,Wales,Wales,2024,2024-07-04,9999-12-31,city,727,Rhondda Cynon Taf,Cardiff,447287,0.7427
+E14001429,Poole,South West,England,2024,2024-07-04,9999-12-31,city,2861,"Bournemouth, Christchurch and Poole",Bournemouth/Poole,466266,1.0
+E14001430,Poplar and Limehouse,London,England,2024,2024-07-04,9999-12-31,city,15010,Tower Hamlets,Greater London,8135667,1.0
+E14001431,Portsmouth North,South East,England,2024,2024-07-04,9999-12-31,city,3368,Portsmouth,South Hampshire,855569,1.0
+E14001432,Portsmouth South,South East,England,2024,2024-07-04,9999-12-31,city,8176,Portsmouth,South Hampshire,855569,1.0
+E14001433,Preston,North West,England,2024,2024-07-04,9999-12-31,city,2811,Preston,Preston,313332,0.9974
+E14001434,Putney,London,England,2024,2024-07-04,9999-12-31,city,7857,Wandsworth,Greater London,8135667,1.0
+E14001435,Queen's Park and Maida Vale,London,England,2024,2024-07-04,9999-12-31,city,17637,Westminster,Greater London,8135667,1.0
+E14001436,Rawmarsh and Conisbrough,Yorkshire and The Humber,England,2024,2024-07-04,9999-12-31,city,938,Rotherham,Barnsley/Dearne Valley,223281,0.9723
+E14001437,Rayleigh and Wickford,East of England,England,2024,2024-07-04,9999-12-31,city,1443,Rochford,Southend-on-Sea,295310,0.9853
+E14001438,Reading Central,South East,England,2024,2024-07-04,9999-12-31,city,4202,Reading,Reading,318014,0.9955
+E14001439,Reading West and Mid Berkshire,South East,England,2024,2024-07-04,9999-12-31,city,290,West Berkshire,Reading,318014,0.6353
+E14001440,Redcar,North East,England,2024,2024-07-04,9999-12-31,city,1181,Redcar and Cleveland,Teesside,376663,0.8004
+E14001441,Redditch,West Midlands,England,2024,2024-07-04,9999-12-31,town,514,Redditch,Redditch,82253,0.8662
+E14001442,Reigate,South East,England,2024,2024-07-04,9999-12-31,town,1239,Reigate and Banstead,Redhill (Reigate and Banstead),56621,0.8893
+W07000107,Rhondda and Ogmore,Wales,Wales,2024,2024-07-04,9999-12-31,town,510,Rhondda Cynon Taf,Tonypandy,62545,0.6161
+E14001443,Ribble Valley,North West,England,2024,2024-07-04,9999-12-31,city,146,Ribble Valley,Preston,313332,0.586
+E14001445,Richmond Park,London,England,2024,2024-07-04,9999-12-31,city,3290,Richmond upon Thames,Greater London,8135667,1.0
+E14001444,Richmond and Northallerton,Yorkshire and The Humber,England,2024,2024-07-04,9999-12-31,rural,51,North Yorkshire,Northallerton,16832,0.3014
+E14001446,Rochdale,North West,England,2024,2024-07-04,9999-12-31,city,1279,Rochdale,Greater Manchester,2461366,0.9919
+E14001447,Rochester and Strood,South East,England,2024,2024-07-04,9999-12-31,city,650,Medway,Medway Towns,243931,0.7054
+E14001448,Romford,London,England,2024,2024-07-04,9999-12-31,city,3648,Havering,Greater London,8135667,1.0
+E14001449,Romsey and Southampton North,South East,England,2024,2024-07-04,9999-12-31,city,184,Test Valley,South Hampshire,855569,0.5831
+E14001450,Rossendale and Darwen,North West,England,2024,2024-07-04,9999-12-31,town,463,Rossendale,Accrington/Rossendale,125059,0.8009
+E14001451,Rother Valley,Yorkshire and The Humber,England,2024,2024-07-04,9999-12-31,city,570,Rotherham,Sheffield,667260,0.7706
+E14001452,Rotherham,Yorkshire and The Humber,England,2024,2024-07-04,9999-12-31,city,1865,Rotherham,Sheffield,667260,0.9667
+E14001453,Rugby,West Midlands,England,2024,2024-07-04,9999-12-31,town,426,Rugby,Rugby,73150,0.8213
+E14001454,"Ruislip, Northwood and Pinner",London,England,2024,2024-07-04,9999-12-31,city,2401,Hillingdon,Greater London,8135667,0.9415
+E14001455,Runcorn and Helsby,North West,England,2024,2024-07-04,9999-12-31,town,497,Halton,Runcorn,62872,0.68
+E14001456,Runnymede and Weybridge,South East,England,2024,2024-07-04,9999-12-31,town,1041,Runnymede,Cobham (Elmbridge),17273,0.929
+E14001457,Rushcliffe,East Midlands,England,2024,2024-07-04,9999-12-31,city,345,Rushcliffe,Nottingham,729977,0.5157
+S14000104,Rutherglen,Scotland,Scotland,2024,2024-07-04,9999-12-31,city,2184,South Lanarkshire,Greater Glasgow,1024026,0.999
+E14001458,Rutland and Stamford,East Midlands,England,2024,2024-07-04,9999-12-31,rural,96,Rutland,Stamford,20592,0.4186
+E14001459,Salford,North West,England,2024,2024-07-04,9999-12-31,city,4075,Salford,Greater Manchester,2461366,1.0
+E14001460,Salisbury,South West,England,2024,2024-07-04,9999-12-31,town,131,Wiltshire,Salisbury,44748,0.5214
+E14001461,Scarborough and Whitby,Yorkshire and The Humber,England,2024,2024-07-04,9999-12-31,town,131,North Yorkshire,Scarborough,61749,0.7696
+E14001462,Scunthorpe,Yorkshire and The Humber,England,2024,2024-07-04,9999-12-31,town,373,North Lincolnshire,Scunthorpe,79977,0.7676
+E14001463,Sefton Central,North West,England,2024,2024-07-04,9999-12-31,town,1012,Sefton,Maghull,26997,0.9561
+E14001464,Selby,Yorkshire and The Humber,England,2024,2024-07-04,9999-12-31,rural,194,North Yorkshire,Selby,24859,0.4298
+E14001465,Sevenoaks,South East,England,2024,2024-07-04,9999-12-31,town,392,Sevenoaks,Sevenoaks,29506,0.5789
+E14001466,Sheffield Brightside and Hillsborough,Yorkshire and The Humber,England,2024,2024-07-04,9999-12-31,city,4007,Sheffield,Sheffield,667260,1.0
+E14001467,Sheffield Central,Yorkshire and The Humber,England,2024,2024-07-04,9999-12-31,city,8742,Sheffield,Sheffield,667260,1.0
+E14001468,Sheffield Hallam,Yorkshire and The Humber,England,2024,2024-07-04,9999-12-31,city,693,Sheffield,Sheffield,667260,0.9644
+E14001469,Sheffield Heeley,Yorkshire and The Humber,England,2024,2024-07-04,9999-12-31,city,3732,Sheffield,Sheffield,667260,1.0
+E14001470,Sheffield South East,Yorkshire and The Humber,England,2024,2024-07-04,9999-12-31,city,2291,Sheffield,Sheffield,667260,0.9927
+E14001471,Sherwood Forest,East Midlands,England,2024,2024-07-04,9999-12-31,rural,327,Newark and Sherwood,Nottingham,729977,0.4042
+E14001472,Shipley,Yorkshire and The Humber,England,2024,2024-07-04,9999-12-31,city,1011,Bradford,West Yorkshire,1777387,0.8405
+E14001473,Shrewsbury,West Midlands,England,2024,2024-07-04,9999-12-31,town,298,Shropshire,Shrewsbury,71715,0.7664
+E14001474,Sittingbourne and Sheppey,South East,England,2024,2024-07-04,9999-12-31,town,602,Swale,Sittingbourne,48948,0.8237
+E14001475,Skipton and Ripon,Yorkshire and The Humber,England,2024,2024-07-04,9999-12-31,rural,48,North Yorkshire,Ripon,16363,0.4006
+E14001476,Sleaford and North Hykeham,East Midlands,England,2024,2024-07-04,9999-12-31,rural,132,North Kesteven,Sleaford,17359,0.3955
+E14001477,Slough,South East,England,2024,2024-07-04,9999-12-31,town,5186,Slough,Slough,163777,1.0
+E14001478,Smethwick,West Midlands,England,2024,2024-07-04,9999-12-31,city,5057,Sandwell,West Midlands,2395268,1.0
+E14001479,Solihull West and Shirley,West Midlands,England,2024,2024-07-04,9999-12-31,city,2370,Solihull,West Midlands,2395268,0.95
+N05000014,South Antrim,Northern Ireland,Northern Ireland,2024,2024-07-04,9999-12-31,rural,161,Antrim and Newtownabbey,Antrim,25607,0.4366
+E14001480,South Basildon and East Thurrock,East of England,England,2024,2024-07-04,9999-12-31,town,811,Thurrock,Basildon,144859,0.8716
+E14001481,South Cambridgeshire,East of England,England,2024,2024-07-04,9999-12-31,rural,168,South Cambridgeshire,Cambridge,158434,0.3401
+E14001482,South Cotswolds,South West,England,2024,2024-07-04,9999-12-31,rural,110,Cotswold,Cirencester,17153,0.1994
+E14001483,South Derbyshire,East Midlands,England,2024,2024-07-04,9999-12-31,town,323,South Derbyshire,Burton upon Trent,122199,0.6488
+E14001484,South Devon,South West,England,2024,2024-07-04,9999-12-31,rural,139,South Hams,Paignton/Torquay,115410,0.3968
+E14001485,South Dorset,South West,England,2024,2024-07-04,9999-12-31,town,271,Dorset,Weymouth,57691,0.7046
+N05000015,South Down,Northern Ireland,Northern Ireland,2024,2024-07-04,9999-12-31,rural,92,"Newry, Mourne and Down",Downpatrick,11544,0.1255
+E14001486,South East Cornwall,South West,England,2024,2024-07-04,9999-12-31,rural,124,Cornwall,Saltash,15566,0.1774
+E14001487,South Holland and The Deepings,East Midlands,England,2024,2024-07-04,9999-12-31,rural,140,South Holland,Spalding,31588,0.4395
+E14001488,South Leicestershire,East Midlands,England,2024,2024-07-04,9999-12-31,rural,298,Blaby,Leicester,508916,0.4123
+E14001489,South Norfolk,East of England,England,2024,2024-07-04,9999-12-31,rural,173,South Norfolk,Wymondham (South Norfolk),13587,0.3102
+E14001490,South Northamptonshire,East Midlands,England,2024,2024-07-04,9999-12-31,rural,156,West Northamptonshire,Brackley,13018,0.149
+E14001491,South Ribble,North West,England,2024,2024-07-04,9999-12-31,city,673,South Ribble,Preston,313332,0.8299
+E14001492,South Shields,North East,England,2024,2024-07-04,9999-12-31,city,2560,South Tyneside,Tyneside,774891,0.9981
+E14001493,South Shropshire,West Midlands,England,2024,2024-07-04,9999-12-31,rural,53,Shropshire,Bridgnorth,12657,0.3035
+E14001494,South Suffolk,East of England,England,2024,2024-07-04,9999-12-31,rural,153,Babergh,Sudbury,22213,0.3075
+E14001495,South West Devon,South West,England,2024,2024-07-04,9999-12-31,city,236,Plymouth,Plymouth,260203,0.76
+E14001496,South West Hertfordshire,East of England,England,2024,2024-07-04,9999-12-31,town,1015,Three Rivers,Watford,131982,0.8812
+E14001497,South West Norfolk,East of England,England,2024,2024-07-04,9999-12-31,rural,88,Breckland,Thetford,24833,0.3959
+E14001498,South West Wiltshire,South West,England,2024,2024-07-04,9999-12-31,town,211,Wiltshire,Trowbridge,40952,0.8185
+E14001499,Southampton Itchen,South East,England,2024,2024-07-04,9999-12-31,city,5148,Southampton,South Hampshire,855569,1.0
+E14001500,Southampton Test,South East,England,2024,2024-07-04,9999-12-31,city,5007,Southampton,South Hampshire,855569,1.0
+E14001501,Southend East and Rochford,East of England,England,2024,2024-07-04,9999-12-31,city,684,Southend-on-Sea,Southend-on-Sea,295310,0.8903
+E14001502,Southend West and Leigh,East of England,England,2024,2024-07-04,9999-12-31,city,4332,Southend-on-Sea,Southend-on-Sea,295310,1.0
+E14001503,Southgate and Wood Green,London,England,2024,2024-07-04,9999-12-31,city,5312,Enfield,Greater London,8135667,0.9959
+E14001504,Southport,North West,England,2024,2024-07-04,9999-12-31,town,781,Sefton,Southport,91703,0.8308
+E14001505,Spelthorne,South East,England,2024,2024-07-04,9999-12-31,town,1952,Spelthorne,Walton-on-Thames,66566,0.9858
+E14001506,Spen Valley,Yorkshire and The Humber,England,2024,2024-07-04,9999-12-31,city,1562,Kirklees,West Yorkshire,1777387,0.9886
+E14001507,St Albans,East of England,England,2024,2024-07-04,9999-12-31,town,1671,St Albans,St Albans,82146,0.8835
+E14001508,St Austell and Newquay,South West,England,2024,2024-07-04,9999-12-31,town,335,Cornwall,St Austell,25447,0.5024
+E14001509,St Helens North,North West,England,2024,2024-07-04,9999-12-31,city,1181,St. Helens,Liverpool,864122,0.9129
+E14001510,St Helens South and Whiston,North West,England,2024,2024-07-04,9999-12-31,city,1690,St. Helens,Liverpool,864122,0.9854
+E14001511,St Ives,South West,England,2024,2024-07-04,9999-12-31,rural,153,Cornwall,Penzance,19872,0.3638
+E14001512,St Neots and Mid Cambridgeshire,East of England,England,2024,2024-07-04,9999-12-31,rural,297,South Cambridgeshire,St Neots,30811,0.4888
+E14001513,Stafford,West Midlands,England,2024,2024-07-04,9999-12-31,town,228,Stafford,Stafford,69217,0.7246
+E14001514,Staffordshire Moorlands,West Midlands,England,2024,2024-07-04,9999-12-31,town,164,Staffordshire Moorlands,Leek,19903,0.7059
+E14001515,Stalybridge and Hyde,North West,England,2024,2024-07-04,9999-12-31,city,1504,Tameside,Greater Manchester,2461366,0.9969
+E14001516,Stevenage,East of England,England,2024,2024-07-04,9999-12-31,town,1550,Stevenage,Stevenage,90232,0.9331
+S14000105,Stirling and Strathallan,Scotland,Scotland,2024,2024-07-04,9999-12-31,rural,41,Stirling,Stirling,49921,0.4894
+E14001517,Stockport,North West,England,2024,2024-07-04,9999-12-31,city,4181,Stockport,Greater Manchester,2461366,1.0
+E14001518,Stockton North,North East,England,2024,2024-07-04,9999-12-31,city,1081,Stockton-on-Tees,Teesside,376663,0.9743
+E14001519,Stockton West,North East,England,2024,2024-07-04,9999-12-31,city,463,Stockton-on-Tees,Teesside,376663,0.8369
+E14001520,Stoke-on-Trent Central,West Midlands,England,2024,2024-07-04,9999-12-31,city,3016,Stoke-on-Trent,Stoke-on-Trent,372775,1.0
+E14001521,Stoke-on-Trent North,West Midlands,England,2024,2024-07-04,9999-12-31,city,2112,Stoke-on-Trent,Stoke-on-Trent,372775,0.9882
+E14001522,Stoke-on-Trent South,West Midlands,England,2024,2024-07-04,9999-12-31,city,594,Stoke-on-Trent,Stoke-on-Trent,372775,0.8369
+E14001523,"Stone, Great Wyrley and Penkridge",West Midlands,England,2024,2024-07-04,9999-12-31,rural,225,South Staffordshire,Cannock,86121,0.4916
+E14001524,Stourbridge,West Midlands,England,2024,2024-07-04,9999-12-31,city,3266,Dudley,West Midlands,2395268,1.0
+N05000016,Strangford,Northern Ireland,Northern Ireland,2024,2024-07-04,9999-12-31,rural,144,Ards and North Down,Newtownards,29673,0.3023
+E14001525,Stratford and Bow,London,England,2024,2024-07-04,9999-12-31,city,11827,Newham,Greater London,8135667,1.0
+E14001526,Stratford-on-Avon,West Midlands,England,2024,2024-07-04,9999-12-31,rural,149,Stratford-on-Avon,Stratford-upon-Avon,27830,0.3257
+E14001527,Streatham and Croydon North,London,England,2024,2024-07-04,9999-12-31,city,8966,Lambeth,Greater London,8135667,1.0
+E14001528,Stretford and Urmston,North West,England,2024,2024-07-04,9999-12-31,city,2179,Trafford,Greater Manchester,2461366,1.0
+E14001529,Stroud,South West,England,2024,2024-07-04,9999-12-31,town,352,Stroud,Stroud,60155,0.7711
+E14001530,Suffolk Coastal,East of England,England,2024,2024-07-04,9999-12-31,town,135,East Suffolk,Felixstowe,29171,0.5273
+E14001531,Sunderland Central,North East,England,2024,2024-07-04,9999-12-31,city,3370,Sunderland,Sunderland,292024,1.0
+E14001532,Surrey Heath,South East,England,2024,2024-07-04,9999-12-31,city,740,Surrey Heath,Farnborough/Aldershot,252397,0.7483
+E14001533,Sussex Weald,South East,England,2024,2024-07-04,9999-12-31,rural,189,Wealden,Crowborough,20607,0.4822
+E14001535,Sutton Coldfield,West Midlands,England,2024,2024-07-04,9999-12-31,city,1628,Birmingham,West Midlands,2395268,0.9942
+E14001534,Sutton and Cheam,London,England,2024,2024-07-04,9999-12-31,city,5630,Sutton,Greater London,8135667,1.0
+W07000108,Swansea West,Wales,Wales,2024,2024-07-04,9999-12-31,city,3376,Swansea,Swansea,300352,1.0
+E14001536,Swindon North,South West,England,2024,2024-07-04,9999-12-31,town,962,Swindon,Swindon,185609,0.9016
+E14001537,Swindon South,South West,England,2024,2024-07-04,9999-12-31,town,3377,Swindon,Swindon,185609,0.9917
+E14001538,Tamworth,West Midlands,England,2024,2024-07-04,9999-12-31,town,509,Tamworth,Tamworth,81964,0.8354
+E14001539,Tatton,North West,England,2024,2024-07-04,9999-12-31,town,264,Cheshire East,Wilmslow,35945,0.7465
+E14001540,Taunton and Wellington,South West,England,2024,2024-07-04,9999-12-31,town,367,Somerset,Taunton,64621,0.8168
+E14001541,Telford,West Midlands,England,2024,2024-07-04,9999-12-31,town,1964,Telford and Wrekin,Telford,147980,0.9897
+E14001542,Tewkesbury,South West,England,2024,2024-07-04,9999-12-31,town,298,Tewkesbury,Tewkesbury,19778,0.8218
+E14001543,The Wrekin,West Midlands,England,2024,2024-07-04,9999-12-31,town,206,Telford and Wrekin,Telford,147980,0.6588
+E14001544,Thirsk and Malton,Yorkshire and The Humber,England,2024,2024-07-04,9999-12-31,rural,49,North Yorkshire,Norton-on-Derwent/Malton,11937,0.1289
+E14001545,Thornbury and Yate,South West,England,2024,2024-07-04,9999-12-31,town,226,South Gloucestershire,Yate,34406,0.6327
+E14001546,Thurrock,East of England,England,2024,2024-07-04,9999-12-31,town,1865,Thurrock,Grays,89755,0.9249
+E14001547,Tipton and Wednesbury,West Midlands,England,2024,2024-07-04,9999-12-31,city,3956,Sandwell,West Midlands,2395268,1.0
+E14001548,Tiverton and Minehead,South West,England,2024,2024-07-04,9999-12-31,rural,71,Somerset,Tiverton,19544,0.3553
+E14001549,Tonbridge,South East,England,2024,2024-07-04,9999-12-31,town,324,Tonbridge and Malling,Tonbridge,38657,0.5436
+E14001550,Tooting,London,England,2024,2024-07-04,9999-12-31,city,9749,Wandsworth,Greater London,8135667,1.0
+E14001551,Torbay,South West,England,2024,2024-07-04,9999-12-31,town,2596,Torbay,Paignton/Torquay,115410,1.0
+W07000109,Torfaen,Wales,Wales,2024,2024-07-04,9999-12-31,city,744,Torfaen,Newport (Newport),306844,0.9094
+E14001552,Torridge and Tavistock,South West,England,2024,2024-07-04,9999-12-31,rural,58,Torridge,Bideford,28672,0.4546
+E14001553,Tottenham,London,England,2024,2024-07-04,9999-12-31,city,11597,Haringey,Greater London,8135667,1.0
+E14001554,Truro and Falmouth,South West,England,2024,2024-07-04,9999-12-31,town,209,Cornwall,Falmouth,31988,0.6194
+E14001555,Tunbridge Wells,South East,England,2024,2024-07-04,9999-12-31,town,438,Tunbridge Wells,Royal Tunbridge Wells,68910,0.6558
+E14001556,Twickenham,London,England,2024,2024-07-04,9999-12-31,city,3899,Richmond upon Thames,Greater London,8135667,1.0
+E14001557,Tynemouth,North East,England,2024,2024-07-04,9999-12-31,city,2858,North Tyneside,Tyneside,774891,0.9984
+N05000017,Upper Bann,Northern Ireland,Northern Ireland,2024,2024-07-04,9999-12-31,town,346,"Armagh City, Banbridge and Craigavon",Craigavon Urban Area,72297,0.7305
+E14001558,Uxbridge and South Ruislip,London,England,2024,2024-07-04,9999-12-31,city,2902,Hillingdon,Greater London,8135667,0.9821
+W07000110,Vale of Glamorgan,Wales,Wales,2024,2024-07-04,9999-12-31,town,320,Vale of Glamorgan,Barry,54673,0.7358
+E14001559,Vauxhall and Camberwell Green,London,England,2024,2024-07-04,9999-12-31,city,14701,Lambeth,Greater London,8135667,1.0
+E14001560,Wakefield and Rothwell,Yorkshire and The Humber,England,2024,2024-07-04,9999-12-31,city,1713,Wakefield,West Yorkshire,1777387,0.987
+E14001561,Wallasey,North West,England,2024,2024-07-04,9999-12-31,city,3825,Wirral,Birkenhead,260588,0.9925
+E14001562,Walsall and Bloxwich,West Midlands,England,2024,2024-07-04,9999-12-31,city,3736,Walsall,West Midlands,2395268,1.0
+E14001563,Walthamstow,London,England,2024,2024-07-04,9999-12-31,city,7374,Waltham Forest,Greater London,8135667,1.0
+E14001564,Warrington North,North West,England,2024,2024-07-04,9999-12-31,town,1060,Warrington,Warrington,165456,0.7892
+E14001565,Warrington South,North West,England,2024,2024-07-04,9999-12-31,town,1358,Warrington,Warrington,165456,0.9534
+E14001566,Warwick and Leamington,West Midlands,England,2024,2024-07-04,9999-12-31,town,1133,Warwick,Royal Leamington Spa,95172,0.966
+E14001567,Washington and Gateshead South,North East,England,2024,2024-07-04,9999-12-31,city,1368,Sunderland,Sunderland,292024,0.9842
+E14001568,Watford,East of England,England,2024,2024-07-04,9999-12-31,town,4265,Watford,Watford,131982,1.0
+E14001569,Waveney Valley,East of England,England,2024,2024-07-04,9999-12-31,rural,91,South Norfolk,Diss,10734,0.1477
+E14001570,Weald of Kent,South East,England,2024,2024-07-04,9999-12-31,rural,120,Ashford,Maidstone,107627,0.0775
+E14001571,Wellingborough and Rushden,East Midlands,England,2024,2024-07-04,9999-12-31,town,1216,North Northamptonshire,Wellingborough,50577,0.8243
+E14001572,Wells and Mendip Hills,South West,England,2024,2024-07-04,9999-12-31,rural,132,Somerset,Wells,11343,0.3934
+E14001573,Welwyn Hatfield,East of England,England,2024,2024-07-04,9999-12-31,town,1087,Welwyn Hatfield,Welwyn Garden City,59910,0.9286
+S14000111,West Aberdeenshire and Kincardine,Scotland,Scotland,2024,2024-07-04,9999-12-31,rural,30,Aberdeenshire,Westhill (Aberdeenshire),11778,0.2353
+E14001574,West Bromwich,West Midlands,England,2024,2024-07-04,9999-12-31,city,3041,Sandwell,West Midlands,2395268,1.0
+E14001575,West Dorset,South West,England,2024,2024-07-04,9999-12-31,rural,92,Dorset,Dorchester (West Dorset),19060,0.3743
+S14000106,West Dunbartonshire,Scotland,Scotland,2024,2024-07-04,9999-12-31,city,526,West Dunbartonshire,Greater Glasgow,1024026,0.9864
+E14001576,West Ham and Beckton,London,England,2024,2024-07-04,9999-12-31,city,6977,Newham,Greater London,8135667,1.0
+E14001577,West Lancashire,North West,England,2024,2024-07-04,9999-12-31,town,374,West Lancashire,Skelmersdale,34455,0.6313
+E14001578,West Suffolk,East of England,England,2024,2024-07-04,9999-12-31,town,154,West Suffolk,Haverhill,27041,0.5446
+N05000018,West Tyrone,Northern Ireland,Northern Ireland,2024,2024-07-04,9999-12-31,rural,47,Fermanagh and Omagh,Omagh Town,20457,0.3405
+E14001579,West Worcestershire,West Midlands,England,2024,2024-07-04,9999-12-31,rural,138,Malvern Hills,Great Malvern,36770,0.3876
+E14001580,Westmorland and Lonsdale,North West,England,2024,2024-07-04,9999-12-31,rural,38,Westmorland and Furness,Kendal,29147,0.3243
+E14001581,Weston-super-Mare,South West,England,2024,2024-07-04,9999-12-31,town,1480,North Somerset,Weston-Super-Mare,84452,0.9493
+E14001582,Wetherby and Easingwold,Yorkshire and The Humber,England,2024,2024-07-04,9999-12-31,rural,96,North Yorkshire,Wetherby,13572,0.1608
+E14001583,Whitehaven and Workington,North West,England,2024,2024-07-04,9999-12-31,town,175,Cumberland,Workington,27120,0.5441
+E14001584,Widnes and Halewood,North West,England,2024,2024-07-04,9999-12-31,town,1455,Halton,Widnes,61464,0.9718
+E14001585,Wigan,North West,England,2024,2024-07-04,9999-12-31,town,1750,Wigan,Wigan,134229,0.8538
+E14001586,Wimbledon,London,England,2024,2024-07-04,9999-12-31,city,4780,Merton,Greater London,8135667,1.0
+E14001587,Winchester,South East,England,2024,2024-07-04,9999-12-31,rural,180,Winchester,Winchester,46074,0.4739
+E14001588,Windsor,South East,England,2024,2024-07-04,9999-12-31,town,1015,Windsor and Maidenhead,Windsor,33348,0.8266
+E14001589,Wirral West,North West,England,2024,2024-07-04,9999-12-31,city,1016,Wirral,Birkenhead,260588,0.9761
+E14001590,Witham,East of England,England,2024,2024-07-04,9999-12-31,rural,231,Braintree,Witham,25353,0.4112
+E14001591,Witney,South East,England,2024,2024-07-04,9999-12-31,town,171,West Oxfordshire,Witney,29103,0.5226
+E14001592,Woking,South East,England,2024,2024-07-04,9999-12-31,town,1585,Woking,Woking,105367,0.9605
+E14001593,Wokingham,South East,England,2024,2024-07-04,9999-12-31,city,677,Wokingham,Reading,318014,0.728
+E14001594,Wolverhampton North East,West Midlands,England,2024,2024-07-04,9999-12-31,city,3760,Wolverhampton,West Midlands,2395268,1.0
+E14001595,Wolverhampton South East,West Midlands,England,2024,2024-07-04,9999-12-31,city,3827,Wolverhampton,West Midlands,2395268,1.0
+E14001596,Wolverhampton West,West Midlands,England,2024,2024-07-04,9999-12-31,city,3829,Wolverhampton,West Midlands,2395268,1.0
+E14001597,Worcester,West Midlands,England,2024,2024-07-04,9999-12-31,town,3042,Worcester,Worcester,101659,0.9987
+E14001598,Worsley and Eccles,North West,England,2024,2024-07-04,9999-12-31,city,1479,Salford,Greater Manchester,2461366,0.9955
+E14001599,Worthing West,South East,England,2024,2024-07-04,9999-12-31,city,1307,Worthing,Brighton and Hove,474485,0.9705
+W07000111,Wrexham,Wales,Wales,2024,2024-07-04,9999-12-31,town,339,Wrexham,Wrexham,65692,0.6407
+E14001600,Wycombe,South East,England,2024,2024-07-04,9999-12-31,town,729,Buckinghamshire,High Wycombe,133204,0.9026
+E14001601,Wyre Forest,West Midlands,England,2024,2024-07-04,9999-12-31,town,518,Wyre Forest,Kidderminster,57059,0.7866
+E14001602,Wythenshawe and Sale East,North West,England,2024,2024-07-04,9999-12-31,city,2966,Manchester,Greater Manchester,2461366,0.999
+E14001603,Yeovil,South West,England,2024,2024-07-04,9999-12-31,town,306,Somerset,Yeovil,45784,0.6031
+W07000112,Ynys Môn,Wales,Wales,2024,2024-07-04,9999-12-31,rural,94,Isle of Anglesey,Holyhead,11431,0.1639
+E14001604,York Central,Yorkshire and The Humber,England,2024,2024-07-04,9999-12-31,town,4610,York,York,153717,0.9934
+E14001605,York Outer,Yorkshire and The Humber,England,2024,2024-07-04,9999-12-31,town,383,York,York,153717,0.6489

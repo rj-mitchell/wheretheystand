@@ -1,0 +1,11 @@
+[Unit]
+Description=Where They Stand daily backup (saved briefings, reports, usage)
+After=docker.service
+Requires=docker.service
+
+[Service]
+Type=oneshot
+WorkingDirectory=/opt/hansardgpt/deploy
+ExecStart=/usr/bin/docker compose run --rm -T app hansard backup --to /backups --keep 14
+TimeoutStartSec=30min
+Nice=10
