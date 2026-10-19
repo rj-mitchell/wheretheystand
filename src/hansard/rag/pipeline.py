@@ -111,6 +111,9 @@ def rerank_query(plan: QueryPlan, how: str | None) -> str:
     return f"{plan.question} ({plan.search_text})"
 
 
+# the start of a witness's opening statement
+_INTRODUCTION = re.compile(r"\b(my name is|by way of introduction|thank you (very much )?(for|,)[^.]{0,60}"
+                           r"(opportunity|inviting|having me)|i am the [\w -]{0,60}(of|at) )", re.I)
 # Without an embedding model to compare them, the first few found of each (summary, comprehensive)
 FEW_EDMS, FEW_EVIDENCE, FEW_DEVOLVED = (2, 3), (3, 5), (2, 3)
 # how many may be chosen, at most, of each kind (devolved: of each parliament)
@@ -348,7 +351,7 @@ class Pipeline:
         if plan.speakers or plan.filters.person_ids or plan.compare:
             return []
         from hansard.sources.committees import Committees
-        from hansard.sources.evidence import EvidenceStore, witness_for
+        from hansard.sources.evidence import EvidenceStore, header_witnesses, witness_for
         from hansard.sync import committees_path, evidence_path
         from hansard.votes import keywords
 
@@ -360,7 +363,15 @@ class Pipeline:
                 self._evidence = (EvidenceStore(evidence_path(self.settings)), Committees(committees_path(self.settings)))
             store, committees = self._evidence
             turns = merge_ranked(store.relevant(keywords(plan.search_text)), self.evidence_by_meaning(store, plan))
+            # a witness's opening statement (who they are, what their organisation does) only if nothing else they
+            # said matched: their answers to the committee's questions carry their views
+            turns.sort(key=lambda t: bool(_INTRODUCTION.search(t["text"][:400])))
             sessions = committees.sessions_meta({t["session_id"] for t in turns})
+            # Parliament lists no witnesses for some sessions; the transcript's own header names them
+            unlisted = {sid for sid, s in sessions.items() if not any((w.get("name") or "").strip()
+                                                                      for w in s["witnesses"])}
+            for sid, header in store.headers(unlisted).items():
+                sessions[sid]["witnesses"] = header_witnesses(header)
         except Exception:  # never let the committee record break a briefing
             log.exception("committee evidence unavailable")
             return []

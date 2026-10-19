@@ -100,6 +100,31 @@ def witness_for(speaker: str | None, witnesses: list[dict[str, Any]]) -> dict[st
     return None
 
 
+def header_witnesses(header: list[str]) -> list[dict[str, Any]]:
+    """The witnesses a transcript's own header lists, for sessions Parliament's records list none for: after a
+    "Witnesses" line, panels such as "I: Dr Sarah Scobie, Deputy Director of Research, Nuffield Trust; Professor Sir
+    Nigel Shadbolt, Executive Chair, Open Data Institute; and Matt Hennessy, ..." (name, then role, then body)."""
+    out: list[dict[str, Any]] = []
+    started = False
+    for para in header:
+        m = re.match(r"^\s*Witness(?:es)?\b\s*:?\s*(.*)$", para, re.I)
+        if m:
+            started, para = True, m.group(1)
+        elif not started:
+            continue
+        para = re.sub(r"^\s*[IVX]+\s*[:.]\s*", "", para).strip().rstrip(".")
+        if not para or para.lower().startswith("examination of witness"):
+            continue
+        for item in para.split(";"):
+            item = re.sub(r"^\s*and\s+", "", item.strip())
+            name, _, rest = item.partition(",")
+            if not name.strip() or len(name) > 80:
+                continue
+            role, _, body = rest.strip().rpartition(", ") if ", " in rest else (rest.strip(), "", "")
+            out.append({"name": name.strip(), "role": role.strip() or None, "organisation": body.strip() or None})
+    return out
+
+
 def decode(body: Any) -> str:
     """The API returns {"data": base64 HTML}; older responses may be the HTML itself."""
     if isinstance(body, dict) and body.get("data"):
@@ -155,6 +180,16 @@ class EvidenceStore:
                                 (session_id,)).fetchall()
         return {"session_id": session_id, "title": t["title"], "header": json.loads(t["header"] or "[]"),
                 "turns": [dict(r) for r in turns]}
+
+    def headers(self, session_ids: set[int]) -> dict[int, list[str]]:
+        """{session_id: the transcript's header paragraphs}."""
+        if not session_ids:
+            return {}
+        marks = ", ".join("?" for _ in session_ids)
+        with self.connect() as con:
+            rows = con.execute(f"SELECT session_id, header FROM transcripts WHERE session_id IN ({marks})",
+                               list(session_ids)).fetchall()
+        return {r["session_id"]: json.loads(r["header"] or "[]") for r in rows}
 
     def search(self, q: str, limit: int = 25, offset: int = 0) -> tuple[int, list[dict[str, Any]]]:
         words = re.findall(r"[\w'’-]+", q)[:8]

@@ -18,6 +18,10 @@ What a good briefing does
   views nearly everyone shares (for example that the cost of living is too high, or that the NHS matters); where
   speakers across parties agree on such a generality, say so in one clause and move on to where they differ in
   substance. A sentence that would be true of almost any debate on the subject is not worth writing.
+- From each source it quotes the words that show where the speaker stands: a position taken, an argument, a
+  judgement, a criticism, a warning, a demand or a proposal. It passes over introductions, descriptions of who a
+  speaker is or what their organisation does, and figures given only as background, unless a figure is itself the
+  point in dispute or the evidence for a claim made on the question.
 - It groups speakers in the way that best explains the differences in the evidence, for example:
   government ministers vs opposition frontbench vs backbenchers; MPs for city, town or rural seats; party;
   region or nation; or time period when positions shifted. Each search result title states the speaker's party,
