@@ -43,6 +43,7 @@ def make_backup(settings: Settings, dest: Path | None = None, keep: int = 14, da
             local = settings.data_dir / "settings.local.toml"
             if local.exists():
                 tar.add(local, arcname="settings.local.toml")
+        partial.chmod(0o600)  # it holds password hashes and readers' contact details: its owner only
         partial.replace(out)
     for old in sorted(dest.glob(f"{PREFIX}*.tar.gz"))[:-keep] if keep > 0 else []:
         old.unlink()

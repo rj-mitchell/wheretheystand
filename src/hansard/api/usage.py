@@ -7,6 +7,7 @@ identified by a salted hash of their IP address; the address itself is never sto
 from __future__ import annotations
 
 import hashlib
+import ipaddress
 import json
 import secrets
 import threading
@@ -43,6 +44,22 @@ def cost_usd(usage: dict[str, int] | None, prices: dict[str, Any], model: str | 
     )
 
 
+def network_of(address: str | None) -> str:
+    """The unit limits count by: an IPv4 address, or an IPv6 /64 (one home or phone connection is given a whole
+    /64, so counting single IPv6 addresses would let one person appear as countless visitors)."""
+    if not address:
+        return "-"
+    try:
+        ip = ipaddress.ip_address(address)
+    except ValueError:
+        return address
+    if ip.version == 4:
+        return str(ip)
+    if ip.ipv4_mapped:
+        return str(ip.ipv4_mapped)
+    return str(ip) if ip.is_loopback else str(ipaddress.ip_network(f"{ip}/64", strict=False))
+
+
 def visitor_key(state: StateDB, address: str | None, day: str | None = None) -> str:
     """A code for a visitor's IP address, used for daily limits and visitor counts; the address itself is not kept.
 
@@ -57,7 +74,7 @@ def visitor_key(state: StateDB, address: str | None, day: str | None = None) -> 
             con.execute("DELETE FROM kv WHERE key = 'visitor_salt' OR (key LIKE 'visitor_salt:%' AND key != ?)",
                         (name,))
         salt = state.get(name)
-    return hashlib.sha256(f"{salt}|{address or '-'}".encode()).hexdigest()[:24]
+    return hashlib.sha256(f"{salt}|{network_of(address)}".encode()).hexdigest()[:24]
 
 
 def record_usage(state: StateDB, user_id: int | None, kind: str, model: str | None,
@@ -102,8 +119,10 @@ def support_reminder_due(state: StateDB, visitor: str | None, every: int) -> int
     return n if n > 0 and n % every == 0 and state.get(_supporter_key(visitor)) is None else 0
 
 
-def check_caps(state: StateDB, user_id: int | None, limits: dict[str, Any], visitor: str | None = None) -> str | None:
-    """Return a plain-English reason if this person may not have another briefing written now."""
+def check_caps(state: StateDB, user_id: int | None, limits: dict[str, Any], visitor: str | None = None,
+               pending_usd: float = 0.0) -> str | None:
+    """Return a plain-English reason if this person may not have another briefing written now. ``pending_usd`` is
+    the estimated cost of briefings being written at this moment, whose cost is not recorded yet."""
     now = datetime.now(UTC)
     day = now.strftime("%Y-%m-%d")
     month = now.strftime("%Y-%m")
@@ -121,11 +140,43 @@ def check_caps(state: StateDB, user_id: int | None, limits: dict[str, Any], visi
                         "briefings others have already asked for still load.")
         spent_today = con.execute("SELECT coalesce(sum(cost_usd), 0) FROM usage WHERE at >= ?", (day,)).fetchone()[0]
         spent_month = con.execute("SELECT coalesce(sum(cost_usd), 0) FROM usage WHERE at >= ?", (month,)).fetchone()[0]
-    if spent_today >= float(limits.get("daily_spend_cap_usd", 10.0)):
+    if spent_today + pending_usd >= float(limits.get("daily_spend_cap_usd", 10.0)):
         return "Today's budget for new briefings has been used up. It resets at midnight UTC."
-    if spent_month >= float(limits.get("monthly_spend_cap_usd", 150.0)):
+    if spent_month + pending_usd >= float(limits.get("monthly_spend_cap_usd", 150.0)):
         return "This month's budget for new briefings has been used up."
     return None
+
+
+class InFlight:
+    """Briefings being written right now. Their cost is only known when they finish, so without this, many
+    requests at once would all pass the spending caps before any was counted: each is reserved at an estimated
+    cost while it runs, and each reader (and the site as a whole) may have only a few at once."""
+
+    def __init__(self, per_key: int = 2, total: int = 8, estimate_usd: float = 0.15):
+        self.per_key, self.total, self.estimate_usd = per_key, total, estimate_usd
+        self.running: dict[str, int] = defaultdict(int)
+        self.lock = threading.Lock()
+
+    def start(self, key: str) -> str | None:
+        """Reserve a place, or say why not."""
+        with self.lock:
+            if self.running[key] >= self.per_key:
+                return "A briefing is already being written for you; please wait for it to finish."
+            if sum(self.running.values()) >= self.total:
+                return "Many briefings are being written at the moment; please try again in a minute."
+            self.running[key] += 1
+            return None
+
+    def finish(self, key: str) -> None:
+        with self.lock:
+            self.running[key] -= 1
+            if self.running[key] <= 0:
+                del self.running[key]
+
+    def pending_usd(self, besides: int = 0) -> float:
+        """Estimated cost of the briefings in progress, not counting ``besides`` of them (the caller's own)."""
+        with self.lock:
+            return max(sum(self.running.values()) - besides, 0) * self.estimate_usd
 
 
 class RateLimiter:

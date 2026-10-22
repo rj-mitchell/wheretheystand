@@ -24,7 +24,7 @@ from urllib.parse import urlparse
 from fastapi import Depends, FastAPI, HTTPException, Query, Request, Response
 from fastapi.responses import FileResponse, JSONResponse, RedirectResponse, StreamingResponse
 from fastapi.staticfiles import StaticFiles
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, ValidationInfo, field_validator
 
 from hansard.api.auth import (
     COOKIE,
@@ -75,6 +75,7 @@ from hansard.api.reports import (
     recent_count,
 )
 from hansard.api.usage import (
+    InFlight,
     RateLimiter,
     alerts,
     cache_key,
@@ -82,6 +83,7 @@ from hansard.api.usage import (
     check_caps,
     count_question,
     mark_supporter,
+    network_of,
     popular_questions,
     recent_failures,
     record_event,
@@ -175,6 +177,25 @@ class HitBody(BaseModel):
     event: Literal["source"] | None = None
 
 
+class HistoryItem(BaseModel):
+    """An earlier question in the conversation, as the browser sends it back. Each part is cut to a fixed length
+    (longer than the browser ever sends), so a request cannot inflate the prompt."""
+
+    question: str = ""
+    answer: str = ""
+    topic: str = ""
+    scope: str = ""
+
+    @field_validator("question", "answer", "topic", "scope", mode="before")
+    @classmethod
+    def _trimmed(cls, v: Any, info: ValidationInfo) -> str:
+        return str(v or "")[:HISTORY_LIMITS[info.field_name]]
+
+
+HISTORY_LIMITS = {"question": 2000, "answer": 1000, "topic": 500, "scope": 1000}
+PLAN_MAX_CHARS = 20_000  # an edited plan is a few hundred characters; this is far more than any reader needs
+
+
 class AskBody(BaseModel):
     question: str = Field(min_length=3, max_length=2000)
     mode: Literal["summary", "comprehensive"] = "summary"
@@ -182,10 +203,25 @@ class AskBody(BaseModel):
     role_weight: float | None = Field(default=None, ge=1, le=2)
     scope: ScopeBody = ScopeBody()
     plan: dict[str, Any] | None = None
-    history: list[dict[str, str]] = Field(default_factory=list, max_length=10)
+    history: list[HistoryItem] = Field(default_factory=list, max_length=10)
     sources_only: bool = False  # find and show the sources, but write no briefing (free)
     follows: str | None = Field(default=None, max_length=2000)  # a follow-up: the question it follows (kept with it)
     compare: list[dict[str, str]] = Field(default_factory=list, max_length=3)  # sides, from the Compare page
+
+    @field_validator("plan")
+    @classmethod
+    def _plan_size(cls, v: dict[str, Any] | None) -> dict[str, Any] | None:
+        if v is not None and len(json.dumps(v, default=str)) > PLAN_MAX_CHARS:
+            raise ValueError("the search plan is too large")
+        return v
+
+    @field_validator("compare")
+    @classmethod
+    def _compare_trimmed(cls, v: list[dict[str, str]]) -> list[dict[str, str]]:
+        return [{k[:20]: str(x)[:200] for k, x in list(side.items())[:5]} for side in v]
+
+    def history_dicts(self) -> list[dict[str, str]]:
+        return [h.model_dump() for h in self.history]
 
 
 def donate_url(settings: Settings) -> str | None:
@@ -251,6 +287,10 @@ def create_app(settings: Settings | None = None, pipeline: Pipeline | None = Non
     state = state or StateDB(settings.state_db)
     app = FastAPI(title="Where They Stand", docs_url="/api/docs", openapi_url="/api/openapi.json")
     throttle = LoginThrottle()
+    address_throttle = LoginThrottle(limit=20)  # failed sign-ins from one address, whatever email is tried
+    u = settings.usage
+    inflight = InFlight(int(u.get("briefings_at_once_per_reader", 2)), int(u.get("briefings_at_once", 8)),
+                        float(u.get("briefing_estimate_usd", 0.15)))
     auth_required = bool(settings.section("auth").get("required", False))
     limiter = RateLimiter(int(settings.usage.get("requests_per_minute", 20)))
     hit_limiter = RateLimiter(120)  # page counts: their own allowance, so browsing never uses up the one for questions
@@ -334,12 +374,15 @@ def create_app(settings: Settings | None = None, pipeline: Pipeline | None = Non
     # ---- auth --------------------------------------------------------------------
     @app.post("/api/auth/login")
     def login(body: LoginBody, request: Request, response: Response):
-        key = f"{request.client.host if request.client else '-'}|{body.email.lower()}"
-        if throttle.blocked(key):
+        address = network_of(request.client.host if request.client else None)
+        key = f"{address}|{body.email.lower()}"
+        # per address and email, and per address whatever email is tried
+        if throttle.blocked(key) or address_throttle.blocked(address):
             raise HTTPException(429, "Too many failed sign-in attempts. Try again in 15 minutes.")
         user = authenticate(state, body.email, body.password)
         if user is None:
             throttle.fail(key)
+            address_throttle.fail(address)
             raise HTTPException(401, "Incorrect email or password.")
         throttle.reset(key)
         days = int(settings.section("auth").get("session_days", 14))
@@ -401,12 +444,12 @@ def create_app(settings: Settings | None = None, pipeline: Pipeline | None = Non
     # ---- questions -----------------------------------------------------------------
     @app.post("/api/ask")
     def ask(body: AskBody, request: Request, user=Depends(current_user)):
-        visitor, _ = requester(request, user)
+        visitor, who = requester(request, user)
         p = get_pipeline()
         uid = user["user_id"] if user else None
         req = AskRequest(question=body.question, mode=body.mode, recency=body.recency,
                          role_weight=body.role_weight, scope=Scope(**body.scope.model_dump()), plan=body.plan,
-                         history=body.history, compare=body.compare)
+                         history=body.history_dicts(), compare=body.compare)
         model_on = p.has_model()
         key = None
         if model_on and cache_hours > 0:
@@ -485,7 +528,26 @@ def create_app(settings: Settings | None = None, pipeline: Pipeline | None = Non
                 replay += [{"type": "text", "text": "".join(text)}, {**final, "usage": None, "cached": True}]
                 store_events(state, key, replay, cache_hours)
 
-        return StreamingResponse(sse(events()), media_type="text/event-stream",
+        def guarded() -> Iterator[dict[str, Any]]:
+            """A briefing about to be written is reserved at its estimated cost while it runs, and the caps are
+            checked again counting the others in progress, so many requests at once cannot all slip past them."""
+            if hit is not None or body.sources_only or blocked or not model_on:
+                yield from events()
+                return
+            refused = inflight.start(who)
+            if refused:
+                yield from sources_only_events(body, f"{refused} The sources found are shown below.", uid, visitor)
+                return
+            try:
+                late = check_caps(state, uid, settings.usage, visitor, inflight.pending_usd(besides=1))
+                if late:
+                    yield from sources_only_events(body, f"{late} The sources found are shown below.", uid, visitor)
+                    return
+                yield from events()
+            finally:
+                inflight.finish(who)
+
+        return StreamingResponse(sse(guarded()), media_type="text/event-stream",
                                  headers={"Cache-Control": "no-cache", "X-Accel-Buffering": "no"})
 
     def retrieve(body: AskBody, read_with_model: bool = False, uid: int | None = None,
@@ -499,7 +561,8 @@ def create_app(settings: Settings | None = None, pipeline: Pipeline | None = Non
         if body.plan:
             plan = QueryPlan.from_dict({"question": body.question, **body.plan})
         elif read_with_model and p.has_model():
-            plan, usage = p.make_plan(AskRequest(question=body.question, history=body.history, compare=body.compare))
+            plan, usage = p.make_plan(AskRequest(question=body.question, history=body.history_dicts(),
+                                                 compare=body.compare))
             if plan.parse_error:
                 record_failure(state, "question reading", body.question, plan.parse_error)
             if usage:

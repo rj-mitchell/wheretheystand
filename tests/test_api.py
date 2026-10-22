@@ -528,3 +528,47 @@ def test_pages_carry_readable_text_for_readers_without_scripts():
                           "answer": {"markdown": "Body."},
                           "sources": [{"n": 1, "title": "A <speech>", "official_url": "https://x.example/1"}]})
     assert "<h1>Q?</h1>" in text and "A &lt;speech&gt;" in text and 'href="https://x.example/1"' in text
+
+
+def test_oversized_follow_up_history_and_plans_are_bounded(public):
+    from hansard.api.app import AskBody
+
+    body = AskBody.model_validate({"question": "trial by jury", "history": [
+        {"question": "x" * 600_000, "answer": "y" * 600_000, "topic": "z" * 9_000, "scope": "w" * 9_000}]})
+    h = body.history_dicts()[0]
+    assert (len(h["question"]), len(h["answer"]), len(h["topic"]), len(h["scope"])) == (2000, 1000, 500, 1000)
+    client, _, _ = public
+    huge = {"search_text": "jury", "filters": {"person_ids": [str(i) for i in range(100_000)]}}
+    assert client.post("/api/search", json={"question": "trial by jury", "plan": huge}).status_code == 422
+    from hansard.rag.query_parse import QueryPlan
+
+    plan = QueryPlan.from_dict({"search_text": "a" * 50_000, "filters": {"parties": ["x"] * 500}})
+    assert len(plan.search_text) == 1000 and len(plan.filters.parties) == 50
+
+
+def test_briefings_in_progress_count_against_the_caps():
+    from hansard.api.usage import InFlight
+
+    f = InFlight(per_key=2, total=3, estimate_usd=0.5)
+    assert f.start("a") is None and f.start("a") is None
+    assert "already being written" in f.start("a")
+    assert f.start("b") is None and "Many briefings" in f.start("c")
+    assert f.pending_usd() == 1.5 and f.pending_usd(besides=1) == 1.0
+    f.finish("a")
+    assert f.start("c") is None
+
+
+def test_an_ipv6_connection_counts_as_one_visitor():
+    from hansard.api.usage import network_of
+
+    assert network_of("2001:db8:1:2:aaaa::1") == network_of("2001:db8:1:2:bbbb::9") == "2001:db8:1:2::/64"
+    assert network_of("2001:db8:1:3::1") != network_of("2001:db8:1:2::1")
+    assert network_of("203.0.113.9") == "203.0.113.9" and network_of("::ffff:203.0.113.9") == "203.0.113.9"
+    assert network_of(None) == "-"
+
+
+def test_sign_in_attempts_are_throttled_per_address_whatever_email_is_tried(api):
+    client, _ = api
+    codes = [client.post("/api/auth/login", json={"email": f"guess{i}@example.org", "password": "wrong"}).status_code
+             for i in range(21)]
+    assert codes[:20] == [401] * 20 and codes[20] == 429
