@@ -63,8 +63,9 @@ def test_authority_order_at_equal_relevance():
     ]
     scored = rank(cands, {"transport"}, params(recency=0.0, role_weight=2.0))
     by = {s.candidate.record_id: s for s in scored}
+    # the shadow minister for the subject counts as much as the minister: the opposition's position matters as much
     assert by["transport-minister"].authority == by["transport-chair"].authority == 2.0
-    assert by["shadow-transport"].authority == pytest.approx(1.6)
+    assert by["shadow-transport"].authority == 2.0
     assert by["other-minister"].authority == pytest.approx(1.5)
     assert by["backbencher"].authority == 1.0
     assert ids(scored)[-1] == "backbencher"

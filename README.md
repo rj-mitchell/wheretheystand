@@ -313,10 +313,8 @@ The authority multiplier `m` depends on the speaker's role on the date of the re
 
 | Speaker's role on the date | m |
 |---|---|
-| Government minister or select committee chair whose portfolio matches the question | 1.0 |
-| Shadow minister, matching portfolio | 0.6 |
-| Minister or chair, other portfolio | 0.5 |
-| Shadow minister, other portfolio | 0.3 |
+| Government minister, shadow minister or select committee chair whose portfolio matches the question | 1.0 |
+| Minister, shadow minister or chair, other portfolio | 0.5 |
 | Ordinary member of a select committee on the question's subject | 0.3 |
 | Backbencher | 0 |
 
@@ -325,6 +323,9 @@ The authority multiplier `m` depends on the speaker's role on the date of the re
   → DESNZ all map to `energy_climate`, so an energy question boosts the energy minister of every era. Every
   post-2010 role title in parlparse maps to a portfolio or is deliberately marked as having none, and a test
   enforces this.
+* **Frontbench search.** When the question has a subject, its ministers, shadow ministers and committee chairs
+  are also searched on their own, so the speeches setting out each side's position are considered even on a
+  subject so widely debated that they fall outside the best few hundred passages of the whole record.
 * **Transparency.** The source drawer shows each source's score breakdown.
 
 ## How answers stay grounded

@@ -60,3 +60,22 @@ def test_office_filter_and_role_boost(indexed_settings):
 def test_where_clause_escapes_values():
     w = build_where(Filters(regions=["O'Brien land"]), Scope())
     assert "'O''Brien land'" in w
+
+
+def test_the_frontbench_for_the_subject_is_searched_on_its_own(indexed_settings):
+    """Speeches by the ministers and shadow ministers for the subject are found even when the busiest debates fill
+    the main shortlist (here cut to a handful of passages)."""
+    import dataclasses
+
+    raw = {**indexed_settings.raw, "ranking": {**indexed_settings.ranking, "candidates_bm25": 3,
+                                               "candidates_vector": 3, "rerank": False}}
+    narrow = engine(dataclasses.replace(indexed_settings, raw=raw))
+
+    def frontbench(res):
+        return [r for r in res.records if any(o["kind"] in ("gov", "shadow") and "northern_ireland" in
+                                              (o.get("portfolios") or []) for o in r["speaker"]["offices"])]
+
+    without = narrow.search("security", limit=10, recency=0.0)
+    found = narrow.search("security", portfolios=["northern_ireland"], limit=10, recency=0.0)
+    assert len(found.records) > len(without.records)
+    assert len(frontbench(found)) > len(frontbench(without))

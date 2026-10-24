@@ -25,7 +25,7 @@ from typing import Any
 import lancedb
 import numpy as np
 import pyarrow as pa
-from lancedb.index import FTS, Bitmap, BTree
+from lancedb.index import FTS, Bitmap, BTree, LabelList
 
 log = logging.getLogger(__name__)
 
@@ -51,6 +51,8 @@ FILTER_FIELDS = [
     ("shadow_portfolios", pa.list_(pa.string())),
     ("chair_portfolios", pa.list_(pa.string())),
 ]
+
+PORTFOLIO_COLUMNS = ("gov_portfolios", "shadow_portfolios", "chair_portfolios")
 
 PASSAGE_SCHEMA = pa.schema([
     *FILTER_FIELDS,
@@ -179,11 +181,24 @@ class SearchIndex:
         vt.create_index("passage_id", config=BTree(), replace=True)
         return True
 
+    def ensure_portfolio_indices(self) -> bool:
+        """Indices on the passages' portfolios, for the search of a subject's frontbench (added after the first
+        build, so an existing index gets them once). Returns True if they had to be built."""
+        if not self.has_data():
+            return False
+        tbl = self.passages()
+        have = {c for ix in tbl.list_indices() for c in (ix.columns or [])}
+        missing = [c for c in PORTFOLIO_COLUMNS if c not in have]
+        for col in missing:
+            tbl.create_index(col, config=LabelList(), replace=True)
+        return bool(missing)
+
     def build_scalar_indices(self, tbl) -> None:
         """Indices that let filtered (prefilter) searches skip non-matching rows."""
         specs = [(c, BTree()) for c in ("passage_id", "source_key", "record_id", "person_id", "date")]
         specs += [(c, Bitmap()) for c in ("source", "house", "record_type", "region", "party_id",
                                          "is_gov", "is_shadow", "is_chair", "year")]
+        specs += [(c, LabelList()) for c in PORTFOLIO_COLUMNS]
         for col, cfg in specs:
             try:
                 tbl.create_index(col, config=cfg, replace=True)

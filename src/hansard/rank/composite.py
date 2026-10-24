@@ -14,10 +14,10 @@ recency    = floor + (1 - floor) * 0.5 ** (age_years / half_life)
              otherwise half_life = min_half_life_years / s (s = 1 -> 2 years)
 authority  = 1 + (W - 1) * m        W = role slider in [1.0, 2.0]
              m = strongest office the speaker held on the record date:
-             government minister or select committee chair whose portfolio
-             matches the question 1.0, in another portfolio 0.5; shadow
-             minister matching 0.6, other 0.3; an ordinary member of a
-             select committee on the question's subject 0.3; backbencher 0.
+             government minister, shadow minister or select committee chair
+             whose portfolio matches the question 1.0, in another portfolio
+             0.5; an ordinary member of a select committee on the question's
+             subject 0.3; backbencher 0.
 locality   = local_factor (default 0.7) for a contribution about one place (a town's bus route, a
              constituency's station: see rank.places), unless the question is itself local; otherwise 1
 score      = relevance * recency * authority * locality
@@ -39,8 +39,8 @@ class RankParams:
     min_half_life_years: float = 2.0
     m_gov_match: float = 1.0
     m_gov_other: float = 0.5
-    m_shadow_match: float = 0.6
-    m_shadow_other: float = 0.3
+    m_shadow_match: float = 1.0  # the opposition's position counts as much as the government's
+    m_shadow_other: float = 0.5
     m_chair_match: float = 1.0
     m_chair_other: float = 0.5
     m_member_match: float = 0.3  # an ordinary member of a committee on the question's subject
