@@ -128,7 +128,7 @@ function Funder({ name }: { name: string }) {
       .then((r) => (r.ok ? r.json() : { benefits: [] }))
       .then((d) => setRows(d.benefits))
       .catch(() => setRows([]));
-    document.title = `${name}: funding of all-party groups — Where They Stand`;
+    document.title = `${name}: funding of all-party groups — Where MPs Stand`;
   }, [name]);
   if (!rows) return <p className="muted">Loading…</p>;
   return (

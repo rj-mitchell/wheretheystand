@@ -185,9 +185,9 @@ export function embedCode(link: string, question: string): string {
   const esc = (s: string) => s.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;");
   return (
     `<a href="${esc(link)}" style="display:inline-block;max-width:600px">` +
-    `<img src="${esc(link)}/card.png" alt="${esc(`Where They Stand briefing: ${question}`)}" ` +
+    `<img src="${esc(link)}/card.png" alt="${esc(`Where MPs Stand briefing: ${question}`)}" ` +
     `width="600" style="width:100%;height:auto;border:1px solid #ccc"></a>\n` +
-    `<p style="font-size:0.9em">From <a href="${esc(link)}">Where They Stand</a>, a briefing on the UK ` +
+    `<p style="font-size:0.9em">From <a href="${esc(link)}">Where MPs Stand</a>, a briefing on the UK ` +
     `Parliament written by AI from the Hansard record (CC BY 4.0).</p>`
   );
 }
@@ -212,7 +212,7 @@ function ShareButton({ url, title }: { url: string; title: string }) {
   const canShare = typeof navigator !== "undefined" && typeof navigator.share === "function";
   async function share() {
     try {
-      if (canShare) await navigator.share({ url, title: `${title} — Where They Stand` });
+      if (canShare) await navigator.share({ url, title: `${title} — Where MPs Stand` });
       else {
         await navigator.clipboard.writeText(url);
         setDone(true);

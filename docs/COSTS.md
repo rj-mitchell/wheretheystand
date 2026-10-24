@@ -1,4 +1,4 @@
-# What costs money on Where They Stand
+# What costs money on Where MPs Stand
 
 Last updated 11 October 2026. AI prices are Anthropic's, per call, measured on this site; £1 ≈ $1.27.
 

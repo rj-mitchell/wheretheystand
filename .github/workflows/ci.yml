@@ -57,7 +57,7 @@ jobs:
           done
       - name: Check the pages respond
         run: |
-          curl -fsS http://localhost:8000/ | grep -q "Where They Stand"
+          curl -fsS http://localhost:8000/ | grep -q "Where MPs Stand"
           curl -fsS http://localhost:8000/methodology | grep -q "Methodology"
           curl -fsS http://localhost:8000/corrections | grep -q "Report a problem"
           curl -fsS http://localhost:8000/api/status | grep -q "latest_record"

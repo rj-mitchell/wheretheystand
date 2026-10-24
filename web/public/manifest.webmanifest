@@ -1,7 +1,7 @@
 {
-  "name": "Where They Stand",
-  "short_name": "Where They Stand",
-  "description": "Sourced briefings on the record of the UK Parliament.",
+  "name": "Where MPs Stand",
+  "short_name": "Where MPs Stand",
+  "description": "Sourced briefings on what MPs, peers and the devolved parliaments have said.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#f7f3ea",

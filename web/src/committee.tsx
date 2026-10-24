@@ -28,7 +28,7 @@ function Page({ id }: { id: string }) {
     getJSON<Committee>(`/api/committees/${id}`, "There is no committee with that number.")
       .then((x) => {
         setC(x);
-        document.title = `${x.name} — Where They Stand`;
+        document.title = `${x.name} — Where MPs Stand`;
       })
       .catch((e: unknown) => setError(e instanceof Error ? e.message : "Could not load."));
   }, [id]);

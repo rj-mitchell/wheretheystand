@@ -195,7 +195,7 @@ def page_with_meta(index_html: str, *, title: str, description: str, url: str, i
     tags = [f"<title>{e(title)}</title>",
             f'<meta name="description" content="{e(description)}" />',
             f'<link rel="canonical" href="{e(url)}" />',
-            '<meta property="og:site_name" content="Where They Stand" />',
+            '<meta property="og:site_name" content="Where MPs Stand" />',
             '<meta property="og:type" content="article" />',
             '<meta property="og:locale" content="en_GB" />',
             f'<meta property="og:title" content="{e(title)}" />',

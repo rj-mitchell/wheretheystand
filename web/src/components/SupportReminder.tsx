@@ -21,7 +21,7 @@ export function SupportReminder({ count, donateUrl, onClose }: { count: number; 
 
   return (
     <dialog ref={ref} className="support-reminder" aria-labelledby="support-title" onClose={onClose}>
-      <h2 id="support-title">Help keep Where They Stand free</h2>
+      <h2 id="support-title">Help keep Where MPs Stand free</h2>
       <p>
         You have had {count} new briefings written today. Each one costs the site about 10p to write, and the server
         that searches sixteen years of Parliament's record costs money every month.

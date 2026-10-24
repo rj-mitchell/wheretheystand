@@ -26,7 +26,7 @@ function Page({ id }: { id: string }) {
     getJSON<Transcript>(`/api/evidence/${id}`, "There is no transcript for that session here yet.")
       .then((x) => {
         setT(x);
-        document.title = `${x.title ?? "Oral evidence"} — Where They Stand`;
+        document.title = `${x.title ?? "Oral evidence"} — Where MPs Stand`;
       })
       .catch((e: unknown) => setError(e instanceof Error ? e.message : "Could not load."));
   }, [id]);

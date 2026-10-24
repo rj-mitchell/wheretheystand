@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Install the latest version of Where They Stand (whatever has been merged into `main` on GitHub).
+# Install the latest version of Where MPs Stand (whatever has been merged into `main` on GitHub).
 # Run on the server, as root:
 #   bash /opt/hansardgpt/deploy/update.sh
 # It fetches the new code, rebuilds and restarts the site (a few seconds of downtime), refreshes the timers,

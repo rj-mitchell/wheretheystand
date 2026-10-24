@@ -49,7 +49,7 @@ function Edm({ id }: { id: string }) {
       })
       .then((x) => {
         setE(x);
-        document.title = `${x.title} (early day motion) — Where They Stand`;
+        document.title = `${x.title} (early day motion) — Where MPs Stand`;
       })
       .catch((err: unknown) => setError(err instanceof Error ? err.message : "Could not load."));
   }, [id]);

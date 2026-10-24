@@ -1,4 +1,4 @@
-/** The Where They Stand mark: the bound record, open; handwriting and a pen on the left page, the same words
+/** The Where MPs Stand mark: the bound record, open; handwriting and a pen on the left page, the same words
  * found by search on the right (same as /icon.svg and the header partial). */
 export function Mark({ className = "mark" }: { className?: string }) {
   return (

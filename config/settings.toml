@@ -1,4 +1,4 @@
-# Where They Stand settings. Paths are relative to the repository root unless absolute.
+# Where MPs Stand settings. Paths are relative to the repository root unless absolute.
 # Environment overrides: HANSARD_DATA_DIR, HANSARD_CONFIG, ANTHROPIC_API_KEY.
 
 [paths]

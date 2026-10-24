@@ -1,6 +1,6 @@
 # Data sources and attribution
 
-Where They Stand is built entirely on open data. The application shows these
+Where MPs Stand is built entirely on open data. The application shows these
 attributions in its footer and on its About page.
 
 ## Parliamentary proceedings (Hansard)
@@ -122,7 +122,7 @@ licence.
 
 ## Briefings written by the site
 
-The text of briefings written by Where They Stand is licensed under
+The text of briefings written by Where MPs Stand is licensed under
 [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/).
-Credit "Where They Stand" with a link to the briefing. Quotations from Hansard within a briefing remain under the
+Credit "Where MPs Stand" with a link to the briefing. Quotations from Hansard within a briefing remain under the
 Open Parliament Licence v3.0. The name and mark are not covered by the licence.

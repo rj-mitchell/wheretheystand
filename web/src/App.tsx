@@ -31,6 +31,13 @@ import type {
 } from "./types";
 import { withInterests } from "./types";
 
+/** The name as set in capitals, with "MPs" kept as written. */
+const WORDMARK = (
+  <>
+    Where <span className="keep-case">MPs</span> Stand
+  </>
+);
+
 const SHARED = /^\/b\/([a-km-z2-9]{10})\/?$/;
 const TOPIC = /^\/topics\/([a-z0-9-]+)\/?$/;
 
@@ -185,7 +192,7 @@ export default function App() {
     api
       .topic(slug)
       .then(({ topic, briefing: b, versions }) => {
-        document.title = `${topic.title}: where MPs and peers stand — Where They Stand`;
+        document.title = `${topic.title}: where MPs and peers stand — Where MPs Stand`;
         setTurns([
           b
             ? {
@@ -614,9 +621,9 @@ export default function App() {
           )}
           {/* a topic page's own title is its main heading; elsewhere the site's name is */}
           {TOPIC.test(window.location.pathname) ? (
-            <p className="wordmark">{BRAND.name}</p>
+            <p className="wordmark">{WORDMARK}</p>
           ) : (
-            <h1 className="wordmark">{BRAND.name}</h1>
+            <h1 className="wordmark">{WORDMARK}</h1>
           )}
           <p className="tagline">{BRAND.tagline}</p>
           <p className="imprint">
@@ -654,6 +661,10 @@ export default function App() {
             <p className="lede">
               Ask in your own words. Get a short briefing on who said what, from which side and in what role, with every
               point cited to Hansard, or the most relevant records on their own, without AI.
+            </p>
+            <p className="and-more">
+              Not just MPs, despite the name: peers, select committees and their witnesses, and the Scottish
+              Parliament, the Senedd and the Northern Ireland Assembly are all in here too.
             </p>
             {composer("composer composer-inline")}
             <h3 className="examples-head">Try</h3>

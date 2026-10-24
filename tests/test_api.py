@@ -312,8 +312,8 @@ def _app_with_dist(indexed_settings, tmp_path, monkeypatch=None):
     dist = tmp_path / "dist"
     (dist / "assets").mkdir(parents=True)
     (dist / "index.html").write_text(
-        '<!doctype html><html><head><title>Where They Stand</title>'
-        '<meta property="og:title" content="Where They Stand" />'
+        '<!doctype html><html><head><title>Where MPs Stand</title>'
+        '<meta property="og:title" content="Where MPs Stand" />'
         '<meta property="og:image" content="https://wheretheystand.uk/og-image.png" />'
         '<link rel="canonical" href="https://wheretheystand.uk/" /></head><body>app</body></html>')
     s = dataclasses.replace(indexed_settings, raw={
@@ -339,7 +339,7 @@ def test_every_briefing_gets_a_permanent_shareable_address(indexed_settings, tmp
 
     page = client.get(f"/b/{bid}")
     assert page.status_code == 200 and "<body>app</body>" in page.text
-    assert '<meta property="og:title" content="What has been said about trial by jury? — Where They Stand" />' in page.text
+    assert '<meta property="og:title" content="What has been said about trial by jury? — Where MPs Stand" />' in page.text
     # shared links show the site's own image; the briefing's card is still there for embedding
     assert 'og-image.png" />' in page.text and 'content="noindex"' in page.text
     assert page.text.count("<title>") == 1 and page.text.count('property="og:image"') == 1  # site-wide tags replaced

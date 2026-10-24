@@ -59,7 +59,7 @@ def test_feeds(indexed_settings, tmp_path):
         r = client.get(path)
         assert r.status_code == 200 and r.headers["content-type"].startswith("application/rss+xml")
         channel = ET.fromstring(r.content).find("channel")
-        assert channel is not None and channel.findtext("title").endswith("Where They Stand")
+        assert channel is not None and channel.findtext("title").endswith("Where MPs Stand")
         for item in channel.findall("item"):
             assert item.findtext("title") and item.findtext("link") and item.findtext("pubDate")
     con = duckdb.connect()
