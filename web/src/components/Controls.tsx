@@ -3,7 +3,6 @@ import type { Settings } from "../types";
 interface Props {
   settings: Settings;
   onChange: (s: Settings) => void;
-  answersEnabled: boolean;
 }
 
 export function recencyLabel(v: number): string {
@@ -12,35 +11,13 @@ export function recencyLabel(v: number): string {
   return `Half-life ${halfLife >= 10 ? Math.round(halfLife) : halfLife.toFixed(1)} years`;
 }
 
-export function Controls({ settings, onChange, answersEnabled }: Props) {
+// The kind of answer (executive summary, chronological briefing or sources only) is chosen under the question box,
+// where it can be seen; these are the finer settings of what is searched and how it is ranked.
+export function Controls({ settings, onChange }: Props) {
   const set = (patch: Partial<Settings>) => onChange({ ...settings, ...patch });
   const scope = (patch: Partial<Settings["scope"]>) => set({ scope: { ...settings.scope, ...patch } });
   return (
     <section className="controls" id="search-settings" aria-label="Search settings">
-      <fieldset className="mode">
-        <legend>Answer</legend>
-        <label>
-          <input
-            type="radio"
-            name="mode"
-            checked={settings.mode === "summary"}
-            onChange={() => set({ mode: "summary" })}
-            disabled={!answersEnabled}
-          />
-          Executive summary
-        </label>
-        <label>
-          <input
-            type="radio"
-            name="mode"
-            checked={settings.mode === "comprehensive"}
-            onChange={() => set({ mode: "comprehensive" })}
-            disabled={!answersEnabled}
-          />
-          Chronological briefing
-        </label>
-      </fieldset>
-
       <div className="slider">
         <span>
           <label htmlFor="recency">Recency bias</label>

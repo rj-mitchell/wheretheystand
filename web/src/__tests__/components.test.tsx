@@ -61,7 +61,6 @@ describe("controls", () => {
       <Controls
         settings={{ mode: "summary", recency: 0.5, roleWeight: 1.5, scope: { written: true, pbc: true, votes: true } }}
         onChange={onChange}
-        answersEnabled
       />,
     );
     fireEvent.change(screen.getByLabelText(/Role weighting/), { target: { value: "2" } });
