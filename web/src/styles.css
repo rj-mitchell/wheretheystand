@@ -1,5 +1,5 @@
 /*
- * Where They Stand — styles.
+ * Where MPs Stand — styles.
  *
  * The look borrows from the printed Official Report: ivory paper and black serif
  * type, small-capital headings between rules, column numbers in the margin, and
@@ -3456,6 +3456,18 @@ main:focus {
   display: grid;
   gap: var(--space-2xs);
   padding-inline-start: 1.2em;
+}
+
+/* "MPs" in the capitalised name: "MPS" would read as a different word */
+.keep-case {
+  text-transform: none;
+}
+
+/* the gentle note under the home page's introduction that the site covers more than MPs */
+.and-more {
+  font-family: var(--sans);
+  font-size: var(--step--1);
+  color: var(--ink-soft);
 }
 
 .ai-caution {

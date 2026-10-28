@@ -282,6 +282,8 @@ def _run_sync(settings: Settings, *, fetch: bool = True, embed_minutes: float | 
         passages = indexer.index_pending()
         if idx.ensure_vector_ids():
             log.info("built the vectors table's passage index")
+        if idx.ensure_portfolio_indices():
+            log.info("built the passages' portfolio indices")
         log.info("checking for passages waiting to be merged into the search indices")
         waiting = 0 if first_build else idx.unmerged()  # includes rows an earlier, stopped update added
         if first_build and passages:

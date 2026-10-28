@@ -1,4 +1,4 @@
-# Putting Where They Stand online (Hostkey, London)
+# Putting Where MPs Stand online (Hostkey, London)
 
 This guide takes you from a newly provisioned server to a live site at **wheretheystand.uk**, step by step. It is
 written for your Hostkey virtual server in London, running Ubuntu 24.04, which you log in to with the root password

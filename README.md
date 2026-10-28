@@ -1,8 +1,8 @@
-# Where They Stand
+# Where MPs Stand
 
 **Sourced briefings on what the UK Parliament has said, and who stands where.**
 
-Where They Stand ([wheretheystand.uk](https://wheretheystand.uk)) is an open-source research tool for anyone: journalists, researchers, policy analysts and the public.
+Where MPs Stand ([wheretheystand.uk](https://wheretheystand.uk)) is an open-source research tool for anyone: journalists, researchers, policy analysts and the public.
 The site is open, with no sign-in. It is deliberately
 *not* another keyword search; [Hansard's own search](https://hansard.parliament.uk/search) is excellent at finding
 every speech that mentions a word. Instead, ask a question such as "What have northern Labour MPs said about
@@ -23,7 +23,7 @@ The evidence behind each briefing is chosen for balance across speaker groups, n
 computed from the data, not written by the model, shows how many contributions, from how many speakers, and from
 which groups. If the archive has nothing relevant, the tool says **"No records found."** instead of guessing.
 
-> Where They Stand is an independent project. It is not affiliated with or endorsed by the UK Parliament, and it
+> Where MPs Stand is an independent project. It is not affiliated with or endorsed by the UK Parliament, and it
 > does not use Parliament's logo or the crowned portcullis.
 
 > Status: first public release (beta), covering May 1997 (the 1997 general election) to today: the Commons, the
@@ -313,10 +313,8 @@ The authority multiplier `m` depends on the speaker's role on the date of the re
 
 | Speaker's role on the date | m |
 |---|---|
-| Government minister or select committee chair whose portfolio matches the question | 1.0 |
-| Shadow minister, matching portfolio | 0.6 |
-| Minister or chair, other portfolio | 0.5 |
-| Shadow minister, other portfolio | 0.3 |
+| Government minister, shadow minister or select committee chair whose portfolio matches the question | 1.0 |
+| Minister, shadow minister or chair, other portfolio | 0.5 |
 | Ordinary member of a select committee on the question's subject | 0.3 |
 | Backbencher | 0 |
 
@@ -325,6 +323,9 @@ The authority multiplier `m` depends on the speaker's role on the date of the re
   → DESNZ all map to `energy_climate`, so an energy question boosts the energy minister of every era. Every
   post-2010 role title in parlparse maps to a portfolio or is deliberately marked as having none, and a test
   enforces this.
+* **Frontbench search.** When the question has a subject, its ministers, shadow ministers and committee chairs
+  are also searched on their own, so the speeches setting out each side's position are considered even on a
+  subject so widely debated that they fall outside the best few hundred passages of the whole record.
 * **Transparency.** The source drawer shows each source's score breakdown.
 
 ## How answers stay grounded
@@ -455,7 +456,7 @@ whatever has been embedded so far.
 
 ## How it was built
 
-Most of Where They Stand was built with the assistance of [Claude Code](https://claude.com/claude-code), Anthropic's
+Most of Where MPs Stand was built with the assistance of [Claude Code](https://claude.com/claude-code), Anthropic's
 AI coding assistant, using a $100 free credit grant (available at the time of writing) and a $20-a-month Claude
 plan. Running the public site is a separate cost: the server, and about 5 US cents for each briefing written.
 

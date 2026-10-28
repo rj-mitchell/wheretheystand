@@ -97,7 +97,7 @@ function Week({ start }: { start: string | null }) {
       })
       .then((x) => {
         setW(x);
-        document.title = `In Parliament, week of ${fmtDate(x.start)} — Where They Stand`;
+        document.title = `In Parliament, week of ${fmtDate(x.start)} — Where MPs Stand`;
       })
       .catch((e: unknown) => setError(e instanceof Error ? e.message : "The week could not be loaded."));
   }, [start]);

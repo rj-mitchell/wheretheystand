@@ -101,7 +101,7 @@ def test_people_api_and_page(indexed_settings, tmp_path):
     assert any(p["number"] == 10669 for p in client.get("/api/people?q=benn").json()["people"])
     assert client.get("/api/postcode/xyz").status_code == 400
     page = client.get("/people/10669/hilary-benn")
-    assert page.status_code == 200 and "<title>Hilary Benn — Where They Stand</title>" in page.text
+    assert page.status_code == 200 and "<title>Hilary Benn — Where MPs Stand</title>" in page.text
     assert 'content="noindex"' not in page.text  # member pages are for search engines
     assert "/people/10669/hilary-benn" in client.get("/sitemap-people.xml").text
 

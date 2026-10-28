@@ -24,7 +24,7 @@ from urllib.parse import urlparse
 from fastapi import Depends, FastAPI, HTTPException, Query, Request, Response
 from fastapi.responses import FileResponse, JSONResponse, RedirectResponse, StreamingResponse
 from fastapi.staticfiles import StaticFiles
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, ValidationInfo, field_validator
 
 from hansard.api.auth import (
     COOKIE,
@@ -75,6 +75,7 @@ from hansard.api.reports import (
     recent_count,
 )
 from hansard.api.usage import (
+    InFlight,
     RateLimiter,
     alerts,
     cache_key,
@@ -82,6 +83,7 @@ from hansard.api.usage import (
     check_caps,
     count_question,
     mark_supporter,
+    network_of,
     popular_questions,
     recent_failures,
     record_event,
@@ -175,6 +177,25 @@ class HitBody(BaseModel):
     event: Literal["source"] | None = None
 
 
+class HistoryItem(BaseModel):
+    """An earlier question in the conversation, as the browser sends it back. Each part is cut to a fixed length
+    (longer than the browser ever sends), so a request cannot inflate the prompt."""
+
+    question: str = ""
+    answer: str = ""
+    topic: str = ""
+    scope: str = ""
+
+    @field_validator("question", "answer", "topic", "scope", mode="before")
+    @classmethod
+    def _trimmed(cls, v: Any, info: ValidationInfo) -> str:
+        return str(v or "")[:HISTORY_LIMITS[info.field_name]]
+
+
+HISTORY_LIMITS = {"question": 2000, "answer": 1000, "topic": 500, "scope": 1000}
+PLAN_MAX_CHARS = 20_000  # an edited plan is a few hundred characters; this is far more than any reader needs
+
+
 class AskBody(BaseModel):
     question: str = Field(min_length=3, max_length=2000)
     mode: Literal["summary", "comprehensive"] = "summary"
@@ -182,10 +203,25 @@ class AskBody(BaseModel):
     role_weight: float | None = Field(default=None, ge=1, le=2)
     scope: ScopeBody = ScopeBody()
     plan: dict[str, Any] | None = None
-    history: list[dict[str, str]] = Field(default_factory=list, max_length=10)
+    history: list[HistoryItem] = Field(default_factory=list, max_length=10)
     sources_only: bool = False  # find and show the sources, but write no briefing (free)
     follows: str | None = Field(default=None, max_length=2000)  # a follow-up: the question it follows (kept with it)
     compare: list[dict[str, str]] = Field(default_factory=list, max_length=3)  # sides, from the Compare page
+
+    @field_validator("plan")
+    @classmethod
+    def _plan_size(cls, v: dict[str, Any] | None) -> dict[str, Any] | None:
+        if v is not None and len(json.dumps(v, default=str)) > PLAN_MAX_CHARS:
+            raise ValueError("the search plan is too large")
+        return v
+
+    @field_validator("compare")
+    @classmethod
+    def _compare_trimmed(cls, v: list[dict[str, str]]) -> list[dict[str, str]]:
+        return [{k[:20]: str(x)[:200] for k, x in list(side.items())[:5]} for side in v]
+
+    def history_dicts(self) -> list[dict[str, str]]:
+        return [h.model_dump() for h in self.history]
 
 
 def donate_url(settings: Settings) -> str | None:
@@ -249,8 +285,12 @@ def create_app(settings: Settings | None = None, pipeline: Pipeline | None = Non
                state: StateDB | None = None) -> FastAPI:
     settings = settings or load_settings()
     state = state or StateDB(settings.state_db)
-    app = FastAPI(title="Where They Stand", docs_url="/api/docs", openapi_url="/api/openapi.json")
+    app = FastAPI(title="Where MPs Stand", docs_url="/api/docs", openapi_url="/api/openapi.json")
     throttle = LoginThrottle()
+    address_throttle = LoginThrottle(limit=20)  # failed sign-ins from one address, whatever email is tried
+    u = settings.usage
+    inflight = InFlight(int(u.get("briefings_at_once_per_reader", 2)), int(u.get("briefings_at_once", 8)),
+                        float(u.get("briefing_estimate_usd", 0.15)))
     auth_required = bool(settings.section("auth").get("required", False))
     limiter = RateLimiter(int(settings.usage.get("requests_per_minute", 20)))
     hit_limiter = RateLimiter(120)  # page counts: their own allowance, so browsing never uses up the one for questions
@@ -334,12 +374,15 @@ def create_app(settings: Settings | None = None, pipeline: Pipeline | None = Non
     # ---- auth --------------------------------------------------------------------
     @app.post("/api/auth/login")
     def login(body: LoginBody, request: Request, response: Response):
-        key = f"{request.client.host if request.client else '-'}|{body.email.lower()}"
-        if throttle.blocked(key):
+        address = network_of(request.client.host if request.client else None)
+        key = f"{address}|{body.email.lower()}"
+        # per address and email, and per address whatever email is tried
+        if throttle.blocked(key) or address_throttle.blocked(address):
             raise HTTPException(429, "Too many failed sign-in attempts. Try again in 15 minutes.")
         user = authenticate(state, body.email, body.password)
         if user is None:
             throttle.fail(key)
+            address_throttle.fail(address)
             raise HTTPException(401, "Incorrect email or password.")
         throttle.reset(key)
         days = int(settings.section("auth").get("session_days", 14))
@@ -401,12 +444,12 @@ def create_app(settings: Settings | None = None, pipeline: Pipeline | None = Non
     # ---- questions -----------------------------------------------------------------
     @app.post("/api/ask")
     def ask(body: AskBody, request: Request, user=Depends(current_user)):
-        visitor, _ = requester(request, user)
+        visitor, who = requester(request, user)
         p = get_pipeline()
         uid = user["user_id"] if user else None
         req = AskRequest(question=body.question, mode=body.mode, recency=body.recency,
                          role_weight=body.role_weight, scope=Scope(**body.scope.model_dump()), plan=body.plan,
-                         history=body.history, compare=body.compare)
+                         history=body.history_dicts(), compare=body.compare)
         model_on = p.has_model()
         key = None
         if model_on and cache_hours > 0:
@@ -485,7 +528,26 @@ def create_app(settings: Settings | None = None, pipeline: Pipeline | None = Non
                 replay += [{"type": "text", "text": "".join(text)}, {**final, "usage": None, "cached": True}]
                 store_events(state, key, replay, cache_hours)
 
-        return StreamingResponse(sse(events()), media_type="text/event-stream",
+        def guarded() -> Iterator[dict[str, Any]]:
+            """A briefing about to be written is reserved at its estimated cost while it runs, and the caps are
+            checked again counting the others in progress, so many requests at once cannot all slip past them."""
+            if hit is not None or body.sources_only or blocked or not model_on:
+                yield from events()
+                return
+            refused = inflight.start(who)
+            if refused:
+                yield from sources_only_events(body, f"{refused} The sources found are shown below.", uid, visitor)
+                return
+            try:
+                late = check_caps(state, uid, settings.usage, visitor, inflight.pending_usd(besides=1))
+                if late:
+                    yield from sources_only_events(body, f"{late} The sources found are shown below.", uid, visitor)
+                    return
+                yield from events()
+            finally:
+                inflight.finish(who)
+
+        return StreamingResponse(sse(guarded()), media_type="text/event-stream",
                                  headers={"Cache-Control": "no-cache", "X-Accel-Buffering": "no"})
 
     def retrieve(body: AskBody, read_with_model: bool = False, uid: int | None = None,
@@ -499,7 +561,8 @@ def create_app(settings: Settings | None = None, pipeline: Pipeline | None = Non
         if body.plan:
             plan = QueryPlan.from_dict({"question": body.question, **body.plan})
         elif read_with_model and p.has_model():
-            plan, usage = p.make_plan(AskRequest(question=body.question, history=body.history, compare=body.compare))
+            plan, usage = p.make_plan(AskRequest(question=body.question, history=body.history_dicts(),
+                                                 compare=body.compare))
             if plan.parse_error:
                 record_failure(state, "question reading", body.question, plan.parse_error)
             if usage:
@@ -568,15 +631,15 @@ def create_app(settings: Settings | None = None, pipeline: Pipeline | None = Non
         if b is None or b["withdrawn_at"]:
             gone = b is not None
             html_page = page_with_meta(
-                page, title="Briefing withdrawn — Where They Stand" if gone else "Briefing not found — Where They Stand",
+                page, title="Briefing withdrawn — Where MPs Stand" if gone else "Briefing not found — Where MPs Stand",
                 description="This briefing is no longer available." if gone else "There is no briefing at this address.",
                 url=f"{base}/b/{bid}", image=None)
             return Response(html_page, status_code=410 if gone else 404, media_type="text/html")
         view = public_view(b)
         description = summary_text(view["answer"]) or "A sourced briefing on the record of Parliament."
         html_page = page_with_meta(
-            page, title=f"{b['question']} — Where They Stand", description=description, url=f"{base}/b/{bid}",
-            image=f"{base}/og-image.png", image_alt="Where They Stand: sourced briefings on the record of Parliament",
+            page, title=f"{b['question']} — Where MPs Stand", description=description, url=f"{base}/b/{bid}",
+            image=f"{base}/og-image.png", image_alt="Where MPs Stand: sourced briefings on the record of Parliament",
             noindex=not is_featured(state, bid))  # featured briefings are for search engines to find
         return Response(with_text(html_page, readable(lambda: briefing_text(view))), media_type="text/html")
 
@@ -631,9 +694,9 @@ def create_app(settings: Settings | None = None, pipeline: Pipeline | None = Non
         b = get_briefing(state, cur["briefing_id"]) if cur else None
         description = (summary_text(public_view(b)["answer"]) if b else "") or t.description or t.question
         html_page = page_with_meta(
-            page, title=f"{t.title}: where MPs and peers stand — Where They Stand", description=description,
+            page, title=f"{t.title}: where MPs and peers stand — Where MPs Stand", description=description,
             url=f"{base}/topics/{slug}", image=f"{base}/og-image.png",
-            image_alt="Where They Stand: sourced briefings on the record of Parliament", noindex=False)
+            image_alt="Where MPs Stand: sourced briefings on the record of Parliament", noindex=False)
         text = readable(lambda: briefing_text(public_view(b), heading=t.title)) if b else None
         return Response(with_text(html_page, text), media_type="text/html")
 
@@ -706,13 +769,13 @@ def create_app(settings: Settings | None = None, pipeline: Pipeline | None = Non
         page = index.read_text() if index.is_file() else "<!doctype html><html><head></head><body></body></html>"
         base = str(request.base_url).rstrip("/")
         if b is None:
-            return Response(page_with_meta(page, title="Bill not found — Where They Stand",
+            return Response(page_with_meta(page, title="Bill not found — Where MPs Stand",
                                            description="There is no bill at this address.", url=f"{base}/bills/{slug}",
                                            image=None), status_code=404, media_type="text/html")
         houses = " and ".join("the Lords" if h == "lords" else "the Commons" for h in b["houses"])
         description = (f"The {b['name']} in Parliament: every debate and vote in {houses}, "
                        f"{fmt_date(b['first'])} to {fmt_date(b['last'])}, from the official record.")
-        return Response(with_text(page_with_meta(page, title=f"{b['name']} — Where They Stand", description=description,
+        return Response(with_text(page_with_meta(page, title=f"{b['name']} — Where MPs Stand", description=description,
                                                  url=f"{base}/bills/{slug}", image=None, noindex=False),
                                   readable(lambda: bill_text(b))), media_type="text/html")
 
@@ -757,7 +820,7 @@ def create_app(settings: Settings | None = None, pipeline: Pipeline | None = Non
         page = index.read_text() if index.is_file() else "<!doctype html><html><head></head><body></body></html>"
         url = f"{str(request.base_url).rstrip('/')}/debates/{day}/{chamber}/{slug}"
         if d is None:
-            return Response(page_with_meta(page, title="Debate not found — Where They Stand",
+            return Response(page_with_meta(page, title="Debate not found — Where MPs Stand",
                                            description="There is no debate at this address.", url=url, image=None),
                             status_code=404, media_type="text/html")
         if d.get("kind") == "statement":
@@ -766,7 +829,7 @@ def create_app(settings: Settings | None = None, pipeline: Pipeline | None = Non
         else:
             description = (f"{d['title']}: the debate in the {d['chamber_name']} on {fmt_date(d['date'])}, as "
                            f"recorded in Hansard, with {d['contributions']} contributions from {d['speakers']} members.")
-        return Response(with_text(page_with_meta(page, title=f"{d['title']}, {fmt_date(d['date'])} — Where They Stand",
+        return Response(with_text(page_with_meta(page, title=f"{d['title']}, {fmt_date(d['date'])} — Where MPs Stand",
                                                  description=description, url=url, image=None, noindex=False),
                                   readable(lambda: debate_text(d))), media_type="text/html")
 
@@ -811,14 +874,14 @@ def create_app(settings: Settings | None = None, pipeline: Pipeline | None = Non
         page = index.read_text() if index.is_file() else "<!doctype html><html><head></head><body></body></html>"
         base = str(request.base_url).rstrip("/")
         if w is None:
-            return Response(page_with_meta(page, title="Week not found — Where They Stand",
+            return Response(page_with_meta(page, title="Week not found — Where MPs Stand",
                                            description="Parliament did not sit that week.",
                                            url=f"{base}/weeks/{start}", image=None),
                             status_code=404, media_type="text/html")
         url = f"{base}/this-week" if start is None else f"{base}/weeks/{w['start']}"
         span = f"{fmt_date(w['start'])} to {fmt_date(w['end'])}"
         return Response(with_text(page_with_meta(
-            page, title=f"In Parliament, week of {fmt_date(w['start'])} — Where They Stand",
+            page, title=f"In Parliament, week of {fmt_date(w['start'])} — Where MPs Stand",
             description=f"The debates, votes, bills and statements in Parliament, {span}, from the official record.",
             url=url, image=None, noindex=False), readable(lambda: week_text(w))), media_type="text/html")
 
@@ -963,11 +1026,11 @@ def create_app(settings: Settings | None = None, pipeline: Pipeline | None = Non
         base = str(request.base_url).rstrip("/")
         rows = get_devolved()[0].day(leg, key) if leg in LEGISLATURES else []
         if not rows:
-            return Response(page_with_meta(page, title="Not found — Where They Stand", description="Nothing here.",
+            return Response(page_with_meta(page, title="Not found — Where MPs Stand", description="Nothing here.",
                                            url=f"{base}/devolved/{leg}/{key}", image=None),
                             status_code=404, media_type="text/html")
         name = LEGISLATURES[leg]["name"]
-        return Response(with_text(page_with_meta(page, title=f"{name}, {fmt_date(rows[0]['date'])} — Where They Stand",
+        return Response(with_text(page_with_meta(page, title=f"{name}, {fmt_date(rows[0]['date'])} — Where MPs Stand",
                                                  description=f"What was said in the {name} on {fmt_date(rows[0]['date'])}, "
                                                              "as recorded in its official report, with each member's "
                                                              "party and seat.",
@@ -1043,11 +1106,11 @@ def create_app(settings: Settings | None = None, pipeline: Pipeline | None = Non
         url = f"{str(request.base_url).rstrip('/')}/evidence/{sid}"
         t = get_evidence().transcript(sid)
         if t is None:
-            return Response(page_with_meta(page, title="Transcript not found — Where They Stand",
+            return Response(page_with_meta(page, title="Transcript not found — Where MPs Stand",
                                            description="There is no transcript for that session here yet.", url=url,
                                            image=None), status_code=404, media_type="text/html")
         title = t["title"] or "Oral evidence"
-        return Response(with_text(page_with_meta(page, title=f"{title} — Where They Stand",
+        return Response(with_text(page_with_meta(page, title=f"{title} — Where MPs Stand",
                                                  description=f"{title}: the transcript of a committee evidence session, "
                                                              "with who said what.", url=url, image=None, noindex=False),
                                   readable(lambda: evidence_text({**t, **get_committees().sessions_meta({sid}).get(sid, {})}))),
@@ -1069,7 +1132,7 @@ def create_app(settings: Settings | None = None, pipeline: Pipeline | None = Non
             d = None
         path = f"/committees/{ident}" if kind == "committee" else f"/inquiries/{ident}"
         if d is None:
-            return Response(page_with_meta(page, title="Not found — Where They Stand", description="Nothing here.",
+            return Response(page_with_meta(page, title="Not found — Where MPs Stand", description="Nothing here.",
                                            url=base + path, image=None), status_code=404, media_type="text/html")
         if kind == "committee":
             title, desc = d["name"], (d.get("purpose") or f"The {d['name']}: its inquiries, reports and the "
@@ -1079,7 +1142,7 @@ def create_app(settings: Settings | None = None, pipeline: Pipeline | None = Non
             desc = (f"{d['title']}: an inquiry by the " + " and ".join(x["name"] for x in d["committees"]) +
                     ", with its reports, the government's responses and who gave evidence.")
         text = committee_text if kind == "committee" else inquiry_text
-        return Response(with_text(page_with_meta(page, title=f"{title} — Where They Stand", description=desc[:300],
+        return Response(with_text(page_with_meta(page, title=f"{title} — Where MPs Stand", description=desc[:300],
                                                  url=base + path, image=None, noindex=False), readable(lambda: text(d))),
                         media_type="text/html")
 
@@ -1203,12 +1266,12 @@ def create_app(settings: Settings | None = None, pipeline: Pipeline | None = Non
         g = get_groups().group(slug, parliament)
         base = str(request.base_url).rstrip("/")
         if g is None:
-            return Response(page_with_meta(page, title="Group not found — Where They Stand",
+            return Response(page_with_meta(page, title="Group not found — Where MPs Stand",
                                            description="There is no group at this address.",
                                            url=f"{base}/groups/{parliament}/{slug}", image=None),
                             status_code=404, media_type="text/html")
         desc = (g["purpose"] or g["title"])[:280]
-        return Response(with_text(page_with_meta(page, title=f"{g['title']} — Where They Stand", description=desc,
+        return Response(with_text(page_with_meta(page, title=f"{g['title']} — Where MPs Stand", description=desc,
                                                  url=f"{base}/groups/{parliament}/{slug}", image=None, noindex=False),
                                   readable(lambda: group_text(g))),
                         media_type="text/html")
@@ -1314,12 +1377,12 @@ def create_app(settings: Settings | None = None, pipeline: Pipeline | None = Non
         page = index.read_text() if index.is_file() else "<!doctype html><html><head></head><body></body></html>"
         url = f"{str(request.base_url).rstrip('/')}/edms/{edm_id}"
         if e is None:
-            return Response(page_with_meta(page, title="Early day motion not found — Where They Stand",
+            return Response(page_with_meta(page, title="Early day motion not found — Where MPs Stand",
                                            description="There is no early day motion with that number.", url=url,
                                            image=None), status_code=404, media_type="text/html")
         when = fmt_date(e["date_tabled"]) if e["date_tabled"] else "an unknown date"
         return Response(with_text(page_with_meta(
-            page, title=f"{e['title']} (early day motion) — Where They Stand",
+            page, title=f"{e['title']} (early day motion) — Where MPs Stand",
             description=f"Early day motion tabled on {when} by {e['primary_name']}, with "
                         f"{e['sponsors_count'] or 0} signatures: the text and who signed.",
             url=url, image=None, noindex=False), readable(lambda: edm_text(edm_detail(edm_id)))), media_type="text/html")
@@ -1523,7 +1586,7 @@ def create_app(settings: Settings | None = None, pipeline: Pipeline | None = Non
         info = pp.page(pid) if pid else None
         base = str(request.base_url).rstrip("/")
         if info is None:
-            return Response(page_with_meta(html_doc, title="Member not found — Where They Stand",
+            return Response(page_with_meta(html_doc, title="Member not found — Where MPs Stand",
                                            description="There is no member at this address.",
                                            url=f"{base}/people/{number}", image=None), status_code=404,
                             media_type="text/html")
@@ -1539,8 +1602,8 @@ def create_app(settings: Settings | None = None, pipeline: Pipeline | None = Non
                                    == "commons" else "House of Lords"}} if info.get("current") else {}),
                   **({"affiliation": {"@type": "Organization", "name": info["current"]["party"]}}
                      if (info.get("current") or {}).get("party") else {})}
-        return Response(with_text(page_with_meta(html_doc, title=f"{info['name']} — Where They Stand", description=desc,
-                                                 url=page_url, image=f"{base}/og-image.png", image_alt="Where They Stand",
+        return Response(with_text(page_with_meta(html_doc, title=f"{info['name']} — Where MPs Stand", description=desc,
+                                                 url=page_url, image=f"{base}/og-image.png", image_alt="Where MPs Stand",
                                                  noindex=False, data=person), text), media_type="text/html")
 
     @app.get("/sitemap-people.xml", include_in_schema=False)
@@ -1598,7 +1661,7 @@ def create_app(settings: Settings | None = None, pipeline: Pipeline | None = Non
     # ---- RSS feeds -------------------------------------------------------------------------
     def feed(request: Request, path: str, title: str, link: str, description: str, items: list) -> Response:
         base = str(request.base_url).rstrip("/")
-        return Response(rss(title=f"{title} — Where They Stand", link=base + link, description=description,
+        return Response(rss(title=f"{title} — Where MPs Stand", link=base + link, description=description,
                             self_url=base + path, items=items), media_type=FEED_TYPE)
 
     @app.get("/feeds/people/{number}.xml", include_in_schema=False)

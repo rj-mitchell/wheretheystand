@@ -38,7 +38,7 @@ function Sitting({ path }: { path: string }) {
       })
       .then((x) => {
         setD(x);
-        document.title = `${x.body}, ${fmtDate(x.date)} — Where They Stand`;
+        document.title = `${x.body}, ${fmtDate(x.date)} — Where MPs Stand`;
       })
       .catch((e: unknown) => setError(e instanceof Error ? e.message : "Could not load."));
   }, [path]);

@@ -1,4 +1,4 @@
-# Where They Stand on a single server: the app plus Caddy for automatic HTTPS.
+# Where MPs Stand on a single server: the app plus Caddy for automatic HTTPS.
 # Usage (from this directory): cp .env.example .env && edit, then
 #   docker compose up -d --build
 
@@ -29,7 +29,7 @@ services:
       retries: 3
 
   caddy:
-    image: caddy:2.8.4
+    image: caddy:2.11.7
     logging: *logging
     ports:
       - "80:80"

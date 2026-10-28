@@ -17,7 +17,7 @@ from typing import Any
 
 from hansard.config import Settings
 from hansard.embed.base import Embedder, get_embedder
-from hansard.index.lance import SearchIndex, date_lit, sql_str
+from hansard.index.lance import SearchIndex, date_lit, sql_list, sql_str
 from hansard.rank.composite import Candidate, RankParams, Scored, rank
 from hansard.rank.evidence import evidence_summary, select_evidence
 from hansard.rank.places import places_for
@@ -119,6 +119,14 @@ def build_where(filters: Filters, scope: Scope) -> str:
     if office:
         clauses.append("(" + " OR ".join(office) + ")")
     return " AND ".join(clauses)
+
+
+def frontbench_clause(portfolios: list[str]) -> str:
+    """Passages by a minister, shadow minister or committee chair for one of these portfolios on the day."""
+    p = sql_list(portfolios)
+    return (f"((is_gov = true AND array_has_any(gov_portfolios, {p})) OR "
+            f"(is_shadow = true AND array_has_any(shadow_portfolios, {p})) OR "
+            f"(is_chair = true AND array_has_any(chair_portfolios, {p})))")
 
 
 class Engine:
@@ -309,19 +317,34 @@ class Engine:
             start = time.perf_counter()
             return self.index.bm25(query, where, int(r.get("candidates_bm25", 300)) * widen), time.perf_counter() - start
 
-        # the keyword search runs on its own thread while the question is embedded and searched by meaning
-        with ThreadPoolExecutor(max_workers=1) as pool:
+        # The ministers, shadow ministers and committee chairs for the question's subject are also searched on their
+        # own: on a subject debated at length, the few speeches setting out each side's position can fall outside
+        # the best few hundred passages of the whole record, behind backbench speeches that use the words more.
+        front_where = f"{where} AND {frontbench_clause(portfolios)}" if portfolios and not filters.person_ids else None
+        front = int(r.get("candidates_frontbench", 60)) * widen
+
+        # the keyword searches run on their own threads while the question is embedded and searched by meaning
+        with ThreadPoolExecutor(max_workers=3) as pool:
             by_keyword = pool.submit(keyword)
+            front_keyword = pool.submit(self.index.bm25, query, front_where, front) if front_where else None
             vec_hits: list[dict[str, Any]] = []
+            front_vec = None
             semantic = self.has_vectors() and self.embedder is not None
             if semantic:
                 vec = self.embedder.embed_query(query)
                 lap("embed")
+                if front_where:
+                    front_vec = pool.submit(self.index.vector, vec, front_where, front,
+                                            nprobes=r.get("vector_nprobes"), refine_factor=r.get("vector_refine_factor"))
                 vec_hits = self.index.vector(vec, where, int(r.get("candidates_vector", 300)) * widen,
                                              nprobes=r.get("vector_nprobes"),
                                              refine_factor=r.get("vector_refine_factor"))
                 lap("meaning")
             bm, timings["keyword"] = by_keyword.result()
+            if front_keyword:
+                bm += front_keyword.result()
+            if front_vec:
+                vec_hits += front_vec.result()
             lap("keyword_wait")
 
         cands: dict[str, Candidate] = {}

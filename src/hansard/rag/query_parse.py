@@ -96,25 +96,34 @@ class QueryPlan:
 
     @classmethod
     def from_dict(cls, d: dict[str, Any]) -> QueryPlan:
+        """A plan as the browser sends it back (the reader may have edited it): every list and text is bounded, so
+        an oversized plan cannot become an oversized search or prompt."""
         f = d.get("filters") or {}
+
+        def few(v: Any, n: int = 50) -> list[Any]:
+            return [str(x)[:200] for x in (v if isinstance(v, list) else [])[:n]]
+
         filters = Filters(
             date_from=_iso(f.get("date_from")), date_to=_iso(f.get("date_to")),
-            houses=list(f.get("houses") or []), regions=list(f.get("regions") or []),
-            parties=list(f.get("parties") or []), person_ids=list(f.get("person_ids") or []),
-            offices=list(f.get("offices") or []), record_types=list(f.get("record_types") or []),
+            houses=few(f.get("houses")), regions=few(f.get("regions")),
+            parties=few(f.get("parties")), person_ids=few(f.get("person_ids")),
+            offices=few(f.get("offices")), record_types=few(f.get("record_types")),
             genders=[g for g in f.get("genders") or [] if g in ("F", "M")],
             age_bands=[b for b in f.get("age_bands") or [] if b in AGE_BAND_KEYS],
             tenure=[t for t in f.get("tenure") or [] if t in ("first-term", "returning")],
             majority_bands=[b for b in f.get("majority_bands") or [] if b in ("marginal", "middle", "safe")],
             seat_types=[t for t in f.get("seat_types") or [] if t in SEAT_TYPES],
         )
-        return cls(question=d.get("question", ""), search_text=d.get("search_text") or d.get("question", ""),
-                   filters=filters, portfolios=list(d.get("portfolios") or []),
-                   wants_votes=bool(d.get("wants_votes")), speakers=list(d.get("speakers") or []),
-                   interpretation=d.get("interpretation", ""), parser=d.get("parser", "edited"),
+        speakers = [{k: str(v)[:200] for k, v in x.items()} for x in (d.get("speakers") or [])[:10]
+                    if isinstance(x, dict)]
+        return cls(question=str(d.get("question", ""))[:2000],
+                   search_text=str(d.get("search_text") or d.get("question", ""))[:1000],
+                   filters=filters, portfolios=few(d.get("portfolios")),
+                   wants_votes=bool(d.get("wants_votes")), speakers=speakers,
+                   interpretation=str(d.get("interpretation", ""))[:1000], parser=str(d.get("parser", "edited"))[:20],
                    group_by=d.get("group_by") if d.get("group_by") in GROUP_BY_KEYS else "role",
-                   compare=[{k: str(x.get(k, "")) for k in ("kind", "id", "label")} for x in d.get("compare") or []
-                            if isinstance(x, dict)][:3])
+                   compare=[{k: str(x.get(k, ""))[:200] for k in ("kind", "id", "label")}
+                            for x in d.get("compare") or [] if isinstance(x, dict)][:3])
 
 
 def _iso(v: Any) -> date | None:

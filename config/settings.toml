@@ -1,4 +1,4 @@
-# Where They Stand settings. Paths are relative to the repository root unless absolute.
+# Where MPs Stand settings. Paths are relative to the repository root unless absolute.
 # Environment overrides: HANSARD_DATA_DIR, HANSARD_CONFIG, ANTHROPIC_API_KEY.
 
 [paths]
@@ -29,6 +29,7 @@ devolved_nations = ["Scotland", "Wales", "Northern Ireland"]
 [ranking]
 candidates_bm25 = 300
 candidates_vector = 300
+candidates_frontbench = 60  # also searched alone: ministers, shadow ministers and chairs for the subject
 # Meaning search. The index compares compressed vectors and on its own finds only about two thirds of the truly
 # nearest passages; re-checking 5x the candidates against the full vectors finds over 90% (measured on 14 sample
 # searches) for a few milliseconds more. vector_nprobes is how many index partitions each search reads (LanceDB's
@@ -48,8 +49,8 @@ default_role_weight = 1.5
 # m by speaker's office on the speech date (max over concurrent offices).
 m_gov_match = 1.0
 m_gov_other = 0.5
-m_shadow_match = 0.6
-m_shadow_other = 0.3
+m_shadow_match = 1.0
+m_shadow_other = 0.5
 m_chair_match = 1.0
 m_chair_other = 0.5
 # An ordinary (not chairing) member of a select committee on the question's subject, on the date.

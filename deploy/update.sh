@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Install the latest version of Where They Stand (whatever has been merged into `main` on GitHub).
+# Install the latest version of Where MPs Stand (whatever has been merged into `main` on GitHub).
 # Run on the server, as root:
 #   bash /opt/hansardgpt/deploy/update.sh
 # It fetches the new code, rebuilds and restarts the site (a few seconds of downtime), refreshes the timers,
@@ -32,8 +32,21 @@ local_before=$(cat local/*.caddy 2>/dev/null | sha1sum | cut -d' ' -f1)
 bash "$DIR/deploy/caddy-local.sh"
 local_after=$(cat local/*.caddy | sha1sum | cut -d' ' -f1)
 
-echo "==> Rebuilding and restarting the site"
-docker compose up -d --build
+echo "==> Rebuilding the site"
+docker compose build
+# The app runs as its own user (10001), not root. Anything in its data or backups not yet owned by that user (all of
+# it, the first time after this change; afterwards, nothing) is handed over before the new version starts. The first
+# time takes a minute or two, with the site stopped meanwhile.
+if docker compose run --rm --no-deps -T --user root --entrypoint sh app -c \
+     'find /data /backups ! -user 10001 -print -quit | grep -q .'; then
+  echo "==> Handing the site's data to its own user (once)"
+  docker compose stop app
+  docker compose run --rm --no-deps -T --user root --entrypoint sh app -c \
+    'find /data /backups ! -user 10001 -print0 | xargs -0r chown -h 10001:10001'
+fi
+
+echo "==> Restarting the site"
+docker compose up -d
 if [[ "$(sha1sum Caddyfile | cut -d' ' -f1)" != "$caddy_before" || "$local_after" != "$local_before" ]]; then
   echo "==> The web server's settings changed: restarting it"
   docker compose up -d --force-recreate --no-deps caddy  # a file mounted into the container is re-read only on a fresh start

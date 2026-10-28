@@ -131,7 +131,8 @@ _QUERY_TOPICS: list[tuple[str, re.Pattern[str]]] = [
         r"\bhs2\b|high speed (rail|2)|railways?|\brail\b|\btrains?\b|\broads?\b|motorways?|aviation"
         r"|airports?|\bbus(es)?\b|potholes|crossrail", _I)),
     ("health", re.compile(r"\bnhs\b|hospitals?|\bgps?\b|nurses|doctors|waiting lists?|vaccin", _I)),
-    ("education", re.compile(r"teachers|pupils|ofsted|tuition fees|students", _I)),
+    ("education", re.compile(r"\bschools?\b|teachers|pupils|ofsted|tuition fees|students|universit|curriculum"
+                             r"|academies|special educational needs|nurser(y|ies)|\bgcses?\b|a[- ]levels?", _I)),
     ("home_office", re.compile(r"police|asylum|small boats|knife|prisons?", _I)),
     ("treasury", re.compile(r"\btax(es|ation)?\b|budget|spending review|inflation|\bvat\b|deficit|borrowing", _I)),
     ("environment", re.compile(r"agricultur|farmers?|zoning|land use|pollution|sewage|biodiversity", _I)),

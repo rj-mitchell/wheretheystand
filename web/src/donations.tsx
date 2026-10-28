@@ -89,7 +89,7 @@ function OneDonor({ name }: { name: string }) {
       .then((r) => (r.ok ? r.json() : { donations: [] }))
       .then((d: { donations: Donation[] }) => setRows(d.donations))
       .catch(() => setRows([]));
-    document.title = `${name}: donations to MPs — Where They Stand`;
+    document.title = `${name}: donations to MPs — Where MPs Stand`;
   }, [name]);
   if (!rows) return <p className="muted">Loading…</p>;
   const total = rows.reduce((t, d) => t + (d.value ?? 0), 0);

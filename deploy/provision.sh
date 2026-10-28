@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Provision Where They Stand on a fresh Ubuntu 24.04 server (run as root).
+# Provision Where MPs Stand on a fresh Ubuntu 24.04 server (run as root).
 #
 #   curl -fsSL https://raw.githubusercontent.com/rj-mitchell/wheretheystand/main/deploy/provision.sh | bash
 #   (or copy this file to the server and run: sudo bash provision.sh)
@@ -58,7 +58,7 @@ ufw allow 80/tcp
 ufw allow 443/tcp
 ufw --force enable
 
-echo "==> Fetching Where They Stand into $DIR"
+echo "==> Fetching Where MPs Stand into $DIR"
 if [[ -d $DIR/.git ]]; then
   git -C "$DIR" pull --ff-only
 else
@@ -99,7 +99,7 @@ systemctl enable --now hansard-sync.timer hansard-backup.timer hansard-watchdog.
 
 cat <<MSG
 
-Where They Stand is starting at https://$(grep ^DOMAIN= .env | cut -d= -f2)/
+Where MPs Stand is starting at https://$(grep ^DOMAIN= .env | cut -d= -f2)/
 The first data load takes roughly 30-60 minutes (follow /var/log/hansard-bootstrap.log).
 Semantic search improves as embeddings complete over the next syncs.
 

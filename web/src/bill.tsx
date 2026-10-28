@@ -51,7 +51,7 @@ function Bill({ slug }: { slug: string }) {
       })
       .then((d) => {
         setB(d);
-        document.title = `${d.name} — Where They Stand`;
+        document.title = `${d.name} — Where MPs Stand`;
       })
       .catch((e: unknown) => setError(e instanceof Error ? e.message : "The bill could not be loaded."));
   }, [slug]);

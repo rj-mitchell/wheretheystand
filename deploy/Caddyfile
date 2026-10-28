@@ -9,6 +9,10 @@
 	# (deploy/cloudflare.sh)
 	import /etc/caddy/local/site.caddy
 	encode zstd gzip
+	# nothing this site accepts is more than a few kilobytes: a larger request is turned away before the app reads it
+	request_body {
+		max_size 1MB
+	}
 	# built files have a fingerprint in their name, so a browser can keep them for a year without asking again
 	@fingerprinted path /assets/*
 	header @fingerprinted Cache-Control "public, max-age=31536000, immutable"

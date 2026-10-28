@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Check that Where They Stand is set up and working. Run on the server, as root:
+# Check that Where MPs Stand is set up and working. Run on the server, as root:
 #   bash /opt/hansardgpt/deploy/check.sh
 # It changes nothing. Each line is a tick (fine), a cross (needs attention, with what to do) or a note.
 set -uo pipefail
@@ -15,7 +15,7 @@ bad()  { printf '  \033[31m✗\033[0m %s\n      → %s\n' "$1" "$2"; problems=$(
 note() { printf '  • %s\n' "$1"; }
 env_value() { grep -E "^$1=" .env 2>/dev/null | head -1 | cut -d= -f2- | sed -e 's/^"//' -e 's/"$//'; }
 
-echo "Where They Stand: checking the server"
+echo "Where MPs Stand: checking the server"
 echo
 
 echo "Settings"

@@ -80,7 +80,7 @@ def render_card(question: str, prepared: str, records_up_to: str, evidence: dict
 
     icon = Image.open(STATIC_DIR / "brand" / "icon-192.png").convert("RGBA").resize((76, 76), Image.LANCZOS)
     img.paste(icon, (LEFT, 54), icon)
-    _spaced(d, (LEFT + 100, 58), "WHERE THEY STAND", _font("SourceSerif4-Semibold.ttf", 30), INK, 4.2)
+    _spaced(d, (LEFT + 100, 58), "WHERE MPs STAND", _font("SourceSerif4-Semibold.ttf", 30), INK, 4.2)
     d.text((LEFT + 100, 100), "Sourced briefings on the record of Parliament", font=_font("SourceSerif4-It.ttf", 23),
            fill=INK_SOFT)
     d.rectangle((LEFT, 160, RIGHT, 163), fill=(46, 42, 36))  # thick-and-thin rule, as on the printed report
@@ -118,7 +118,7 @@ def render_brand(icon: Path) -> Image.Image:
     mark = Image.open(icon).convert("RGBA").resize((200, 200), Image.LANCZOS)
     img.paste(mark, (80, 215), mark)
     left = 336
-    _spaced(d, (left, 192), "WHERE THEY STAND", _font("SourceSerif4-Semibold.ttf", 64), INK, 8.0)
+    _spaced(d, (left, 192), "WHERE MPs STAND", _font("SourceSerif4-Semibold.ttf", 64), INK, 8.0)
     d.text((left, 286), "Sourced briefings on the record of Parliament", font=_font("SourceSerif4-It.ttf", 33),
            fill=INK_SOFT)
     d.rectangle((left, 355, RIGHT, 358), fill=(46, 42, 36))  # thick-and-thin rule, as on the printed report

@@ -29,7 +29,7 @@ function Page({ id }: { id: string }) {
     getJSON<Inquiry>(`/api/inquiries/${id}`, "There is no inquiry with that number.")
       .then((x) => {
         setD(x);
-        document.title = `${x.title} — Where They Stand`;
+        document.title = `${x.title} — Where MPs Stand`;
       })
       .catch((e: unknown) => setError(e instanceof Error ? e.message : "Could not load."));
   }, [id]);

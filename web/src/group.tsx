@@ -78,7 +78,7 @@ function Page({ parliament, slug }: { parliament: string; slug: string }) {
       })
       .then((d) => {
         setG(d);
-        document.title = `${d.title} — Where They Stand`;
+        document.title = `${d.title} — Where MPs Stand`;
       })
       .catch((e: unknown) => setError(e instanceof Error ? e.message : "The group could not be loaded."));
   }, [parliament, slug]);

@@ -77,7 +77,7 @@ function Debate({ path }: { path: string }) {
       })
       .then((x) => {
         setD(x);
-        document.title = `${x.title}, ${fmtDate(x.date)} — Where They Stand`;
+        document.title = `${x.title}, ${fmtDate(x.date)} — Where MPs Stand`;
       })
       .catch((e: unknown) => setError(e instanceof Error ? e.message : "The debate could not be loaded."));
   }, [path]);

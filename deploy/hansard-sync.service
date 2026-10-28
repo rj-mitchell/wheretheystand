@@ -1,5 +1,5 @@
 [Unit]
-Description=Where They Stand daily sync (member data, new Hansard, index, embeddings)
+Description=Where MPs Stand daily sync (member data, new Hansard, index, embeddings)
 After=docker.service
 Requires=docker.service
 

@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import hashlib
 import secrets
+import threading
 import time
 from collections import defaultdict, deque
 from datetime import UTC, datetime, timedelta
@@ -17,6 +18,9 @@ from hansard.store.state import StateDB, utcnow
 COOKIE = "hgpt_session"
 _ph = PasswordHasher()
 _DUMMY_HASH = _ph.hash("timing-equaliser")
+# each check deliberately takes about 64 MB and a moment of CPU: only a couple at once, so a flood of sign-in
+# attempts cannot exhaust the server's memory
+_CHECKING = threading.BoundedSemaphore(2)
 
 
 def _token_hash(token: str) -> str:
@@ -36,10 +40,14 @@ def authenticate(state: StateDB, email: str, password: str) -> dict[str, Any] | 
     with state.connect() as con:
         row = con.execute("SELECT * FROM users WHERE email = ? AND disabled = 0",
                           (email.strip().lower(),)).fetchone()
+    if not _CHECKING.acquire(timeout=20):
+        return None
     try:
         _ph.verify(row["password_hash"] if row else _DUMMY_HASH, password)
     except (VerificationError, InvalidHashError):
         return None
+    finally:
+        _CHECKING.release()
     return dict(row) if row else None
 
 
@@ -84,7 +92,11 @@ class LoginThrottle:
         return len(q) >= self.limit
 
     def fail(self, key: str) -> None:
-        self.failures[key].append(time.monotonic())
+        now = time.monotonic()
+        self.failures[key].append(now)
+        if len(self.failures) > 10_000:  # forget keys with no recent failures
+            for k in [k for k, q in self.failures.items() if not q or now - q[-1] > self.window]:
+                del self.failures[k]
 
     def reset(self, key: str) -> None:
         self.failures.pop(key, None)

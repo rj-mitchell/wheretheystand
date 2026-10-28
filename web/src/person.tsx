@@ -116,7 +116,7 @@ function Person({ number }: { number: string }) {
     part("core")
       .then((d) => {
         setCore(d);
-        document.title = `${d.name} — Where They Stand`;
+        document.title = `${d.name} — Where MPs Stand`;
         const want = `/people/${d.number}/${d.slug}`;
         if (window.location.pathname !== want) window.history.replaceState(null, "", want);
       })
