@@ -114,8 +114,8 @@ def test_featuring_a_briefing(site):
     refresh_topics(s, state, pipe, progress=lambda m: None)
     bid = versions(state, "trial-by-jury")[0]["briefing_id"]
     assert 'name="robots" content="noindex"' in client.get(f"/b/{bid}").text  # not featured: hidden from search
-    assert client.post("/api/admin/featured", json={"briefing": f"https://wheretheystand.uk/b/{bid}"}).status_code == 403
-    r = client.post("/api/admin/featured", json={"briefing": f"https://wheretheystand.uk/b/{bid}",
+    assert client.post("/api/admin/featured", json={"briefing": f"https://wherempsstand.com/b/{bid}"}).status_code == 403
+    r = client.post("/api/admin/featured", json={"briefing": f"https://wherempsstand.com/b/{bid}",
                                                   "title": "Juries"}, headers=TOKEN)
     assert r.status_code == 200
     assert client.post("/api/admin/featured", json={"briefing": "bbbbbbbbbb"}, headers=TOKEN).status_code == 404

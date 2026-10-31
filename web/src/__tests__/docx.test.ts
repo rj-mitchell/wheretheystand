@@ -61,9 +61,9 @@ describe("Word download", () => {
 describe("embed code", () => {
   it("links the card back to the briefing and escapes the question", async () => {
     const { embedCode } = await import("../components/AnswerView");
-    const code = embedCode("https://wheretheystand.uk/b/abc", 'What did "MPs" say about <tax> & spending?');
-    expect(code).toContain('<a href="https://wheretheystand.uk/b/abc"');
-    expect(code).toContain('src="https://wheretheystand.uk/b/abc/card.png"');
+    const code = embedCode("https://wherempsstand.com/b/abc", 'What did "MPs" say about <tax> & spending?');
+    expect(code).toContain('<a href="https://wherempsstand.com/b/abc"');
+    expect(code).toContain('src="https://wherempsstand.com/b/abc/card.png"');
     expect(code).toContain("&quot;MPs&quot;");
     expect(code).toContain("&lt;tax> &amp; spending");
     expect(code).toContain("CC BY 4.0");

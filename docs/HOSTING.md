@@ -1,13 +1,13 @@
 # Putting Where MPs Stand online (Hostkey, London)
 
-This guide takes you from a newly provisioned server to a live site at **wheretheystand.uk**, step by step. It is
+This guide takes you from a newly provisioned server to a live site at **wherempsstand.com**, step by step. It is
 written for your Hostkey virtual server in London, running Ubuntu 24.04, which you log in to with the root password
 Hostkey gave you. Allow about an hour, most of it waiting for the Hansard data to load.
 
 You will need:
 - the server's **IP address** and **root password**: they are in the email Hostkey sent when the server was
   ready, and in your Hostkey control panel;
-- the three domains: wheretheystand.uk, wheretheystand.co.uk and wheretheystand.org.uk;
+- the three domains: wherempsstand.com, wheretheystand.co.uk and wheretheystand.org.uk;
 - your Anthropic API key;
 - the code on GitHub's `main` branch (step 1).
 
@@ -22,12 +22,12 @@ change is ready it comes as a pull request: open it, press **Squash and merge**,
 
 At the company where you registered the domains, open each domain's **DNS settings** and add these records,
 using your server's IP address. Remove any existing "parking" **A** records first, but leave any **MX** or **TXT**
-records alone: those deliver your email to admin@wheretheystand.uk.
+records alone: those deliver your email to admin@wherempsstand.com.
 
 | Domain | Type | Name / host | Value |
 |---|---|---|---|
-| wheretheystand.uk | A | `@` | your server's IP |
-| wheretheystand.uk | A | `www` | your server's IP |
+| wherempsstand.com | A | `@` | your server's IP |
+| wherempsstand.com | A | `www` | your server's IP |
 | wheretheystand.co.uk | A | `@` | your server's IP |
 | wheretheystand.co.uk | A | `www` | your server's IP |
 | wheretheystand.org.uk | A | `@` | your server's IP |
@@ -38,7 +38,7 @@ records alone: those deliver your email to admin@wheretheystand.uk.
 instead of your server's, and the site cannot get its first HTTPS certificate. Once the site is working, the main
 address can be put behind Cloudflare's proxy: see [Cloudflare protection](#cloudflare-protection-optional) below.
 
-Changes usually take effect within an hour. To check, run `nslookup wheretheystand.uk` on your computer (in
+Changes usually take effect within an hour. To check, run `nslookup wherempsstand.com` on your computer (in
 Terminal or PowerShell): it should print your server's IP address. Wait until it does before step 4, so that the
 HTTPS certificates can be issued.
 
@@ -82,7 +82,7 @@ bash provision.sh
 ```
 
 It asks three questions:
-1. **Main domain name:** `wheretheystand.uk`
+1. **Main domain name:** `wherempsstand.com`
 2. **Other domain names to redirect:** `wheretheystand.co.uk wheretheystand.org.uk` (the `www` versions are added
    automatically).
 3. **Anthropic API key:** paste it. Nothing appears as you paste; that is deliberate. Press Return.
@@ -163,29 +163,29 @@ On the server (log in again with `ssh root@YOUR.SERVER.IP` if you are not alread
 tail -f /var/log/hansard-bootstrap.log
 ```
 
-Press Ctrl+C to stop watching (the load carries on). When it finishes, open **https://wheretheystand.uk**.
+Press Ctrl+C to stop watching (the load carries on). When it finishes, open **https://wherempsstand.com**.
 Searching works as soon as the load completes. Meaning-based matching is then built in the background during
 each twice-daily update, newest records first; on 8 cores the whole archive takes roughly a day. The
-[status page](https://wheretheystand.uk/status) shows its progress.
+[status page](https://wherempsstand.com/status) shows its progress.
 
 ---
 
 ## Day to day
 
-The easiest way to keep an eye on the site is the admin page, **https://wheretheystand.uk/admin**. Paste your
+The easiest way to keep an eye on the site is the admin page, **https://wherempsstand.com/admin**. Paste your
 admin token (below) to see spending, reports from readers, feedback, visits, recent briefings and update
-history. You can close reports there (adding a public note for the [corrections page](https://wheretheystand.uk/corrections)
+history. You can close reports there (adding a public note for the [corrections page](https://wherempsstand.com/corrections)
 if something was put right) and withdraw a briefing. A withdrawal reason is shown publicly.
 
 | To… | Run on the server |
 |---|---|
 | See usage, spend, visits and feedback | the admin page, or the `curl` command printed at the end of setup |
-| See the update history | `curl -H "Authorization: Bearer YOUR_ADMIN_TOKEN" https://wheretheystand.uk/api/admin/sync` |
+| See the update history | `curl -H "Authorization: Bearer YOUR_ADMIN_TOKEN" https://wherempsstand.com/api/admin/sync` |
 | Install a new version of the site | merge the latest changes into `main` on GitHub (step 1), then on the server: `bash /opt/hansardgpt/deploy/update.sh` (it finishes with the health check) |
 | Restart the site | `cd /opt/hansardgpt/deploy && docker compose restart` |
 | Change the API key | the command below |
 | Change the "Support this site" link (it points to https://ko-fi.com/wheretheystand) | add `HANSARD_DONATE_URL=https://…` to `/opt/hansardgpt/deploy/.env`, then `docker compose up -d` in the same folder |
-| List recent briefings | `curl -H "Authorization: Bearer YOUR_ADMIN_TOKEN" https://wheretheystand.uk/api/admin/briefings` |
+| List recent briefings | `curl -H "Authorization: Bearer YOUR_ADMIN_TOKEN" https://wherempsstand.com/api/admin/briefings` |
 | Feature a briefing (listed on the Topics page and found by search engines) | the admin page: "Feature" next to a recent briefing, or paste its address under "Featured briefings" |
 | Write the topic briefings now, rather than waiting for the twice-daily update (about 11p each) | `cd /opt/hansardgpt/deploy && docker compose exec app hansard topics refresh` (add `--only cost-of-living` for one) |
 | See each topic's state | the admin page, or `docker compose exec app hansard topics list` |
@@ -209,7 +209,7 @@ if something was put right) and withdraw a briefing. A withdrawal reason is show
 | Check that early day motions can be read from Parliament (free) | `cd /opt/hansardgpt/deploy && docker compose exec app hansard edms --check` |
 | Collect all early day motions since 1997 in one go, in the background (free; about 8–10 hours the first time, one request at a time) | `cd /opt/hansardgpt/deploy && docker compose exec -d app hansard edms --months 400 --signatures 60000` |
 | Add, change or remove a topic | edit `config/topics.toml` in the code (ask me), then install it as a new version. Never change a published topic's `slug`: it is its address |
-| Withdraw a briefing (after a complaint, say) | `curl -X POST -H "Authorization: Bearer YOUR_ADMIN_TOKEN" -H "Content-Type: application/json" -d '{"reason": "complaint about attribution"}' https://wheretheystand.uk/api/admin/briefings/THE_ID/withdraw` |
+| Withdraw a briefing (after a complaint, say) | `curl -X POST -H "Authorization: Bearer YOUR_ADMIN_TOKEN" -H "Content-Type: application/json" -d '{"reason": "complaint about attribution"}' https://wherempsstand.com/api/admin/briefings/THE_ID/withdraw` |
 
 Your admin token is in `/opt/hansardgpt/deploy/.env` (`HANSARD_ADMIN_TOKEN=`).
 
@@ -225,22 +225,22 @@ Then run `bash /opt/hansardgpt/deploy/check.sh`: it should say "Anthropic accept
 ## Cloudflare protection (optional)
 
 Cloudflare's proxy (the orange cloud) puts Cloudflare between visitors and the server, so floods of automated
-requests are absorbed before they reach it. For **wheretheystand.uk**, the server then uses a certificate from
+requests are absorbed before they reach it. For **wherempsstand.com**, the server then uses a certificate from
 Cloudflare, closes any connection that does not come through Cloudflare, and still sees each visitor's own address
-(Cloudflare passes it on), so the per-visitor daily limit keeps working. **www.wheretheystand.uk**,
-**wheretheystand.co.uk** and **wheretheystand.org.uk** (with their `www`) are redirected to wheretheystand.uk by
-Cloudflare itself, so no DNS record shows the server's address any more. (Old DNS records can still reveal it, so
+(Cloudflare passes it on), so the per-visitor daily limit keeps working. **www.wherempsstand.com**,
+**wheretheystand.uk** (the site's address until November 2026), **wheretheystand.co.uk** and
+**wheretheystand.org.uk** (with their `www`) are redirected to wherempsstand.com by Cloudflare itself, so no DNS record shows the server's address any more. (Old DNS records can still reveal it, so
 this protects against casual abuse and heavy load more than a determined attack on the server itself.)
 
 1. **Install the latest version** (`bash /opt/hansardgpt/deploy/update.sh`). It fetches Cloudflare's list of
    addresses; that is harmless while nothing is proxied.
-2. **Put all three domains on Cloudflare.** For each of wheretheystand.uk, wheretheystand.co.uk and
-   wheretheystand.org.uk: at dash.cloudflare.com, choose **Add a domain**, enter it, pick the **Free** plan, and check
+2. **Put all the domains on Cloudflare.** For each of wherempsstand.com, wheretheystand.uk, wheretheystand.co.uk
+   and wheretheystand.org.uk: at dash.cloudflare.com, choose **Add a domain**, enter it, pick the **Free** plan, and check
    the records it found: the **A** records for `@` and `www` from step 2 (set them to **DNS only** for now) and every
    **MX** and **TXT** record (email). Then, at the company where you registered the domain, replace its nameservers
    with the two Cloudflare gives you, and wait for Cloudflare to say the domain is **Active** (usually within an
    hour; it emails you).
-3. **Settings in Cloudflare.** For **wheretheystand.uk**:
+3. **Settings in Cloudflare.** For **wherempsstand.com**:
    - **SSL/TLS → Overview**: choose **Full (strict)**. (Not "Flexible": that sends visitors round in circles.)
    - **SSL/TLS → Edge Certificates**: turn on **Always Use HTTPS**.
    - **Security → Settings** (filter by *Client-side abuse*): turn off **Email Address Obfuscation** (on by default;
@@ -251,7 +251,7 @@ this protects against casual abuse and heavy load more than a determined attack 
      lists any crawlers as *Block*, set them to *Allow*.
    - **Speed → Settings → Content Optimization**: make sure **Rocket Loader** is off (off by default).
    - **Web Analytics** (in the account's left-hand menu, under *Analytics & Logs*, not inside the domain): once the
-     domain is proxied, Cloudflare turns it on by itself. Find wheretheystand.uk in the list, choose **Manage site**,
+     domain is proxied, Cloudflare turns it on by itself. Find wherempsstand.com in the list, choose **Manage site**,
      and under automatic setup choose **Disable** (it would add a tracking script; the site has its own cookie-free
      counts).
 
@@ -260,14 +260,15 @@ this protects against casual abuse and heavy load more than a determined attack 
      at *Standard* and *Respect existing headers*, and add no "Cache everything" rule: pages carry live data, and the
      site already tells Cloudflare which files can be kept for a year.
 
-   For **wheretheystand.co.uk** and **wheretheystand.org.uk**, only **SSL/TLS → Full (strict)** matters: Cloudflare
+   For **wheretheystand.uk**, **wheretheystand.co.uk** and **wheretheystand.org.uk**, only **SSL/TLS → Full
+   (strict)** matters: Cloudflare
    answers them itself, so nothing else reaches the server.
-4. **Create the origin certificate** (wheretheystand.uk only): **SSL/TLS → Origin Server → Create Certificate**.
+4. **Create the origin certificate** (wherempsstand.com only): **SSL/TLS → Origin Server → Create Certificate**.
    Keep *Generate private key and CSR with Cloudflare* and key type **RSA (2048)**. Under hostnames, **remove
-   `*.wheretheystand.uk`** so that only `wheretheystand.uk` is listed. Validity: **15 years**. Press **Create** and
+   `*.wherempsstand.com`** so that only `wherempsstand.com` is listed. Validity: **15 years**. Press **Create** and
    leave the page open, with the format on **PEM**: the private key is shown only once.
-5. **Turn the proxy on for the main address**: in wheretheystand.uk's **DNS → Records**, edit the **A** record named
-   `wheretheystand.uk` (`@`) and set it to **Proxied** (orange cloud). If there is an **AAAA** record for `@`, set it
+5. **Turn the proxy on for the main address**: in wherempsstand.com's **DNS → Records**, edit the **A** record named
+   `wherempsstand.com` (`@`) and set it to **Proxied** (orange cloud). If there is an **AAAA** record for `@`, set it
    to Proxied too (or delete it), or visitors using IPv6 would be turned away in the next step. The site carries on
    working (Cloudflare uses the server's current certificate until the next step).
 6. **Switch the server over.** A few minutes later, on the server, run:
@@ -277,20 +278,20 @@ this protects against casual abuse and heavy load more than a determined attack 
    ```
 
    Paste the **Origin Certificate** from the Cloudflare page and press Return, then the **Private Key** and press
-   Return. It checks they belong together and are for wheretheystand.uk, switches the server over, and checks the
+   Return. It checks they belong together and are for wherempsstand.com, switches the server over, and checks the
    site through Cloudflare. If that fails, it puts everything back and says what to check.
 7. **Have Cloudflare do the redirects.** For each domain below, first open **Rules → Redirect Rules** (in some
    accounts, **Rules → Overview → Create rule → Redirect Rule**) and create a rule:
-   - **Rule name**: `To wheretheystand.uk`.
-   - **If incoming requests match**: for **wheretheystand.uk**, choose *Custom filter expression*: field
-     **Hostname**, operator **equals**, value `www.wheretheystand.uk`. For **wheretheystand.co.uk** and
-     **wheretheystand.org.uk**, choose **All incoming requests**.
-   - **Then**: type **Dynamic**, expression `concat("https://wheretheystand.uk", http.request.uri.path)`, status
+   - **Rule name**: `To wherempsstand.com`.
+   - **If incoming requests match**: for **wherempsstand.com**, choose *Custom filter expression*: field
+     **Hostname**, operator **equals**, value `www.wherempsstand.com`. For **wheretheystand.uk**,
+     **wheretheystand.co.uk** and **wheretheystand.org.uk**, choose **All incoming requests**.
+   - **Then**: type **Dynamic**, expression `concat("https://wherempsstand.com", http.request.uri.path)`, status
      code **301**, and tick **Preserve query string**.
    - Press **Deploy**.
 
-   Then, in the same domain's **DNS → Records**, edit each record the rule covers (for wheretheystand.uk, just
-   `www`; for the other two, `@` and `www`): set it to **Proxied**, and change its **IPv4 address** to `192.0.2.1`
+   Then, in the same domain's **DNS → Records**, edit each record the rule covers (for wherempsstand.com, just
+   `www`; for the others, `@` and `www`): set it to **Proxied**, and change its **IPv4 address** to `192.0.2.1`
    (an address that goes nowhere: Cloudflare answers these names itself, and the server's address is no longer
    shown). Delete any **AAAA** records for those names. Leave MX and TXT records alone.
 8. **Hand the redirects over.** A few minutes later, on the server, run:
@@ -299,7 +300,7 @@ this protects against casual abuse and heavy load more than a determined attack 
    bash /opt/hansardgpt/deploy/cloudflare.sh redirects on
    ```
 
-   It checks that Cloudflare redirects each name to the same page on wheretheystand.uk, then stops the server doing
+   It checks that Cloudflare redirects each name to the same page on wherempsstand.com, then stops the server doing
    it. If any name is not ready (a brand-new domain's Cloudflare certificate can take a little while), it changes
    nothing and says which; run it again later.
 9. **Check**: `bash /opt/hansardgpt/deploy/check.sh` should say "goes through Cloudflare's proxy" and that each name

@@ -315,8 +315,8 @@ def _app_with_dist(indexed_settings, tmp_path, monkeypatch=None):
     (dist / "index.html").write_text(
         '<!doctype html><html><head><title>Where MPs Stand</title>'
         '<meta property="og:title" content="Where MPs Stand" />'
-        '<meta property="og:image" content="https://wheretheystand.uk/og-image.png" />'
-        '<link rel="canonical" href="https://wheretheystand.uk/" /></head><body>app</body></html>')
+        '<meta property="og:image" content="https://wherempsstand.com/og-image.png" />'
+        '<link rel="canonical" href="https://wherempsstand.com/" /></head><body>app</body></html>')
     s = dataclasses.replace(indexed_settings, raw={
         **indexed_settings.raw, "paths": {**indexed_settings.raw.get("paths", {}), "web_dist": str(dist)}})
     app, state, _ = make_app(s, tmp_path, auth=False)

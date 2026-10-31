@@ -26,7 +26,7 @@ else
 fi
 DOMAIN="$(env_value DOMAIN)"
 REDIRECTS="$(env_value REDIRECT_DOMAINS)"
-[[ -n "$DOMAIN" ]] && ok "main address: $DOMAIN" || bad "no DOMAIN set" "add DOMAIN=wheretheystand.uk to deploy/.env"
+[[ -n "$DOMAIN" ]] && ok "main address: $DOMAIN" || bad "no DOMAIN set" "add DOMAIN=wherempsstand.com to deploy/.env"
 if [[ -n "$(env_value HANSARD_ANTHROPIC_API_KEY)" || -n "$(env_value ANTHROPIC_API_KEY)" ]]; then
   ok "Anthropic API key is set (not shown)"
 else
@@ -108,7 +108,7 @@ PY
     n="$(echo "$n" | xargs)"
     [[ -z "$n" ]] && continue
     result="$(curl -s -o /dev/null --max-time 20 -w '%{http_code} %{redirect_url}' "https://$n/" 2>/dev/null)"
-    if [[ "$result" =~ ^30[178]\ https://$DOMAIN/ ]]; then
+    if [[ "$result" =~ ^30[1278]\ https://$DOMAIN/ ]]; then
       ok "$n redirects to $DOMAIN"
     else
       if [[ -f "$DIR/deploy/local/redirects-at-cloudflare" ]]; then

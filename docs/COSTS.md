@@ -45,7 +45,7 @@ These run on the server you already pay for, so extra use costs nothing.
 
 - **The server** (Hostkey), monthly.
 - **The domain names**, yearly.
-- **Email** for admin@wheretheystand.uk, if it is a paid service.
+- **Email** for admin@wherempsstand.com, if it is a paid service.
 
 ## How spending is controlled
 

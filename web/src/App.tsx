@@ -834,7 +834,7 @@ export default function App() {
 
       <SiteFooter donateUrl={meta?.donate_url} attribution={meta?.attribution ?? ATTRIBUTION}>
         <p className="print-only">
-          From {BRAND.name} (beta), wheretheystand.uk. Briefings are written by AI from the cited Hansard records; check the
+          From {BRAND.name} (beta), wherempsstand.com. Briefings are written by AI from the cited Hansard records; check the
           sources.
         </p>
       </SiteFooter>
