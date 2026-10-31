@@ -1,4 +1,5 @@
-# Where MPs Stand on a single server: the app plus Caddy for automatic HTTPS.
+# Where MPs Stand on a single server: the app plus Caddy for automatic HTTPS. Caddy is also the front door for the
+# charity's other sites on this server (SITES in .env), each in its own folder under /opt with its own containers.
 # Usage (from this directory): cp .env.example .env && edit, then
 #   docker compose up -d --build
 
@@ -43,9 +44,17 @@ services:
       - ./local:/etc/caddy/local:ro
       - caddy-data:/data
       - caddy-config:/config
+    networks:
+      - default
+      # the other sites' containers join this network too, so Caddy can pass their visitors on
+      - sites
     depends_on:
       - app
     restart: unless-stopped
+
+networks:
+  sites:
+    external: true  # made by update.sh and provision.sh: docker network create sites
 
 volumes:
   hansard-data:

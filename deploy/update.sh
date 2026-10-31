@@ -28,9 +28,10 @@ echo "==> Making sure the server has swap space (spare memory on disk for large 
 bash "$DIR/deploy/swap.sh" || echo "WARNING: could not add swap; carrying on."
 
 echo "==> Refreshing the web server's own settings (Cloudflare's addresses, the certificate)"
-local_before=$(cat local/*.caddy 2>/dev/null | sha1sum | cut -d' ' -f1)
+local_before=$(cat local/*.caddy local/sites/* 2>/dev/null | sha1sum | cut -d' ' -f1)
 bash "$DIR/deploy/caddy-local.sh"
-local_after=$(cat local/*.caddy | sha1sum | cut -d' ' -f1)
+docker network create sites >/dev/null 2>&1 || true  # shared with the other sites on this server
+local_after=$(cat local/*.caddy local/sites/* 2>/dev/null | sha1sum | cut -d' ' -f1)
 
 echo "==> Rebuilding the site"
 docker compose build

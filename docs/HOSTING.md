@@ -313,6 +313,45 @@ to **DNS only**. The certificate is kept, so `cloudflare.sh on` switches back wi
 `--replace` to paste a new one). If the site is ever under attack, **Security → Settings → Under Attack mode** in
 Cloudflare asks every visitor's browser to pass a short check first.
 
+## Other sites on this server
+
+The charity's other sites (Where Countries Stand, Where Councils Stand) run on this server too, each in its own
+folder under `/opt`, with its own containers, data, settings, AI spending caps and update timer. This site's web
+server (Caddy) is the front door for all of them: it answers every domain, with the same protections as this site
+(Cloudflare's certificate, connections not through Cloudflare closed, the 1 MB request limit, the security
+headers), and passes each site's visitors to its container over a shared Docker network called `sites`.
+
+`SITES` in `deploy/.env` lists them, as `domain=container` pairs (see `deploy/.env.example`). A site is served once
+its Cloudflare origin certificate is added; until then Caddy leaves its domain alone.
+
+**Adding a site** (the site's own `docs/DEPLOY.md` has its details, such as the first data load):
+
+1. **Cloudflare**, for the site's domain: the settings in step 3 of "Cloudflare protection" above; an **A** record
+   for `@` pointing at this server, **Proxied**; `www` redirected by a redirect rule (step 7 above); and an origin
+   certificate (step 4 above), with the page left open.
+2. **The site itself**, on the server:
+
+   ```
+   git clone https://github.com/rj-mitchell/<site> /opt/<site>
+   cd /opt/<site>/deploy && cp .env.example .env && nano .env
+   bash /opt/<site>/deploy/update.sh
+   ```
+
+   `update.sh` builds and starts it, and installs its update and backup timers.
+3. **The front door:** make sure the site is in `SITES` in `/opt/hansardgpt/deploy/.env`, then paste its
+   certificate:
+
+   ```
+   bash /opt/hansardgpt/deploy/cloudflare.sh site <domain>
+   ```
+
+4. **Check:** `bash /opt/hansardgpt/deploy/check.sh` lists each site, and the memory left.
+
+**Keeping out of each other's way.** Each site's updates run at their own time, so two are never busy at once:
+this site at 7.15am and 7.15pm (UK time), Where Councils Stand at 3.17am and Where Countries Stand at 5.41am and
+5.41pm (UTC). Their containers have memory limits, so a runaway update stops itself rather than slowing this site.
+If `check.sh` reports less than 3 GB of memory free for long, it is time for more memory or a second server.
+
 ## Backups
 
 Everything can be rebuilt from public sources except the saved briefings, reports from readers, feedback, usage and

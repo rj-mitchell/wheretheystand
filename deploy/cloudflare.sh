@@ -5,6 +5,8 @@
 #   bash /opt/hansardgpt/deploy/cloudflare.sh redirects on    once Cloudflare redirects www and the other domain
 #                                                             names itself: checks each, then stops the server doing it
 #   bash /opt/hansardgpt/deploy/cloudflare.sh redirects off   has the server redirect them again
+#   bash /opt/hansardgpt/deploy/cloudflare.sh site DOMAIN     one of the charity's other sites (SITES in .env): saves
+#                                                             its origin certificate and serves it
 # "on" saves Cloudflare's origin certificate in deploy/local/ and has Caddy use it, and closes any connection that
 # does not come through Cloudflare. If the site does not then answer through Cloudflare, it puts everything back.
 # Add --replace to "on" to paste a new certificate instead of using the saved one. See "Cloudflare" in docs/HOSTING.md.
@@ -36,6 +38,32 @@ read_pem() {
   printf '%s' "$out"
 }
 
+# Ask for an origin certificate and its private key for one domain, check them, and save them (as $2 and $3)
+take_certificate() {
+  local domain="$1" pem="$2" key="$3" cert pkey tmp
+  echo "Paste the origin certificate (from -----BEGIN CERTIFICATE----- to -----END CERTIFICATE-----), then press Return:"
+  cert="$(read_pem)"
+  echo "Now paste the private key (from -----BEGIN PRIVATE KEY----- to -----END PRIVATE KEY-----), then press Return:"
+  pkey="$(read_pem)"
+  tmp="$(mktemp -d)"
+  trap 'rm -rf "$tmp"' EXIT
+  printf '%s' "$cert" > "$tmp/origin.pem"
+  (umask 077; printf '%s' "$pkey" > "$tmp/origin.key")
+  openssl x509 -in "$tmp/origin.pem" -noout 2>/dev/null \
+    || { echo "That certificate could not be read: nothing has been changed. Run this again and paste it whole."; exit 1; }
+  openssl pkey -in "$tmp/origin.key" -noout 2>/dev/null \
+    || { echo "That private key could not be read: nothing has been changed. Run this again and paste it whole."; exit 1; }
+  [[ "$(openssl x509 -in "$tmp/origin.pem" -pubkey -noout | sha256sum)" == \
+     "$(openssl pkey -in "$tmp/origin.key" -pubout | sha256sum)" ]] \
+    || { echo "The private key does not belong to that certificate: nothing has been changed."; exit 1; }
+  openssl x509 -in "$tmp/origin.pem" -noout -checkhost "$domain" | grep -q 'does match' \
+    || { echo "That certificate is not for $domain: nothing has been changed. Create one that lists $domain."; exit 1; }
+  mkdir -p "$(dirname "$pem")"
+  install -m 600 "$tmp/origin.pem" "$pem"
+  install -m 600 "$tmp/origin.key" "$key"
+  echo "Saved: the certificate is valid until $(openssl x509 -in "$pem" -noout -enddate | cut -d= -f2)."
+}
+
 case "${1:-}" in
   on)
     if ! through_cloudflare; then
@@ -47,26 +75,7 @@ MSG
       exit 1
     fi
     if [[ "${2:-}" == "--replace" || ! -f "$LOCAL/origin.pem" || ! -f "$LOCAL/origin.key" ]]; then
-      echo "Paste the origin certificate (from -----BEGIN CERTIFICATE----- to -----END CERTIFICATE-----), then press Return:"
-      cert="$(read_pem)"
-      echo "Now paste the private key (from -----BEGIN PRIVATE KEY----- to -----END PRIVATE KEY-----), then press Return:"
-      key="$(read_pem)"
-      tmp="$(mktemp -d)"
-      trap 'rm -rf "$tmp"' EXIT
-      printf '%s' "$cert" > "$tmp/origin.pem"
-      (umask 077; printf '%s' "$key" > "$tmp/origin.key")
-      openssl x509 -in "$tmp/origin.pem" -noout 2>/dev/null \
-        || { echo "That certificate could not be read: nothing has been changed. Run this again and paste it whole."; exit 1; }
-      openssl pkey -in "$tmp/origin.key" -noout 2>/dev/null \
-        || { echo "That private key could not be read: nothing has been changed. Run this again and paste it whole."; exit 1; }
-      [[ "$(openssl x509 -in "$tmp/origin.pem" -pubkey -noout | sha256sum)" == \
-         "$(openssl pkey -in "$tmp/origin.key" -pubout | sha256sum)" ]] \
-        || { echo "The private key does not belong to that certificate: nothing has been changed."; exit 1; }
-      openssl x509 -in "$tmp/origin.pem" -noout -checkhost "$DOMAIN" | grep -q 'does match' \
-        || { echo "That certificate is not for $DOMAIN: nothing has been changed. Create one that lists $DOMAIN."; exit 1; }
-      install -m 600 "$tmp/origin.pem" "$LOCAL/origin.pem"
-      install -m 600 "$tmp/origin.key" "$LOCAL/origin.key"
-      echo "Saved: the certificate is valid until $(openssl x509 -in "$LOCAL/origin.pem" -noout -enddate | cut -d= -f2)."
+      take_certificate "$DOMAIN" "$LOCAL/origin.pem" "$LOCAL/origin.key"
     else
       echo "Using the origin certificate saved earlier (add --replace to paste a new one)."
     fi
@@ -145,8 +154,34 @@ MSG
     restart_caddy
     echo "✓ Done. Now run: bash $DIR/deploy/check.sh"
     ;;
+  site)
+    # one of the charity's other sites on this server (SITES in .env): save its origin certificate and serve it
+    site="${2:-}"
+    SITES="$(grep -E '^SITES=' .env | head -1 | cut -d= -f2- | tr -d '"' || true)"
+    if [[ -z "$site" || " $SITES " != *" $site="* ]]; then
+      echo "Usage: bash $DIR/deploy/cloudflare.sh site DOMAIN, for a DOMAIN listed in SITES in $DIR/deploy/.env"
+      echo "(SITES is now: ${SITES:-empty})"
+      exit 1
+    fi
+    take_certificate "$site" "$LOCAL/sites/$site.pem" "$LOCAL/sites/$site.key"
+    echo "==> Restarting the web server, which now serves $site"
+    restart_caddy
+    if ! grep -q "^$site {" "$LOCAL/sites.caddy"; then
+      echo "✗ $site is not served: Cloudflare's list of addresses could not be fetched from www.cloudflare.com. Try again later."
+      exit 1
+    fi
+    code="$(curl -s -o /dev/null --max-time 20 -w '%{http_code}' "https://$site/api/health" || true)"
+    if [[ "$code" == 200 ]] && grep -qi '^server: cloudflare' <<<"$(curl -sI --max-time 20 "https://$site/" 2>/dev/null)"; then
+      echo "✓ https://$site answers through Cloudflare, using its certificate on this server."
+    elif [[ "$code" == 502 ]]; then
+      echo "✓ The certificate is in place. https://$site answers once its site is started (its own update.sh)."
+    else
+      echo "• https://$site does not answer yet (got: ${code:-nothing}). Check its DNS record (Proxied, pointing at this"
+      echo "  server) and SSL/TLS \"Full (strict)\" in Cloudflare; the certificate is saved either way."
+    fi
+    ;;
   *)
-    echo "Usage: bash $DIR/deploy/cloudflare.sh on [--replace] | off | redirects on|off"
+    echo "Usage: bash $DIR/deploy/cloudflare.sh on [--replace] | off | redirects on|off | site DOMAIN"
     exit 1
     ;;
 esac

@@ -122,6 +122,27 @@ PY
 fi
 echo
 
+SITES="$(env_value SITES)"
+if [[ -n "$SITES" ]]; then
+  echo "Other sites on this server"
+  for pair in $SITES; do
+    site="${pair%%=*}"
+    if [[ ! -f local/sites/$site.pem ]]; then
+      note "$site: not served yet (its certificate: bash $DIR/deploy/cloudflare.sh site $site)"
+      continue
+    fi
+    code="$(curl -s -o /dev/null --max-time 20 -w '%{http_code}' "https://$site/api/health" 2>/dev/null)"
+    if [[ "$code" == 200 ]]; then
+      ok "https://$site works"
+    elif [[ "$code" == 502 ]]; then
+      bad "$site is not running" "start it: bash /opt/${pair#*=}/deploy/update.sh"
+    else
+      bad "https://$site does not work (got: ${code:-no answer})" "check its DNS record in Cloudflare is Proxied and points at this server"
+    fi
+  done
+  echo
+fi
+
 echo "Data"
 if grep -q "bootstrap" <<<"$(docker ps --format '{{.Command}}' 2>/dev/null)"; then
   note "the first data load is still running: $(tail -n 1 /var/log/hansard-bootstrap.log 2>/dev/null | cut -c1-120)"
@@ -166,6 +187,13 @@ if grep -qi "^passwordauthentication no" <<<"$(sshd -T 2>/dev/null)"; then
   ok "password logins are off (key only)"
 else
   note "password logins are still on: fine for now; step 5 of the guide switches to a key"
+fi
+# several sites share this server: below about 3 GB of free memory, it is time to think about a second server
+avail_gb="$(awk '/^MemAvailable:/ {printf "%d", $2 / 1048576}' /proc/meminfo)"
+if [[ "${avail_gb:-0}" -ge 3 ]]; then
+  ok "memory: ${avail_gb} GB free"
+else
+  bad "memory: only ${avail_gb} GB free" "check what is using it (docker stats --no-stream); if it stays this low, the sites need more memory or a second server"
 fi
 free_pct="$(df --output=pcent / | tail -1 | tr -dc '0-9')"
 [[ "${free_pct:-0}" -lt 85 ]] && ok "disk ${free_pct}% used" || bad "disk ${free_pct}% used" "ask for help freeing space before it fills"

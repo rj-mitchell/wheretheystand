@@ -9,6 +9,8 @@
 #                  the site to Cloudflare's origin certificate, in which case the address list in it is refreshed.
 #   redirects.caddy  The redirect from www and the other domain names to the main address, unless
 #                  "deploy/cloudflare.sh redirects on" has handed the redirects to Cloudflare.
+#   sites.caddy    The charity's other sites on this server (SITES in deploy/.env), each served once its Cloudflare
+#                  origin certificate is in deploy/local/sites/ ("deploy/cloudflare.sh site DOMAIN" puts it there).
 set -euo pipefail
 DIR="${DIR:-/opt/hansardgpt}"
 LOCAL="$DIR/deploy/local"
@@ -58,3 +60,25 @@ else
 }
 CADDY
 fi
+
+# The other sites: "domain=container" pairs, the container being the site's app on the shared "sites" network
+sites="$(grep -E '^SITES=' "$DIR/deploy/.env" 2>/dev/null | head -1 | cut -d= -f2- | tr -d '"' || true)"
+{
+  echo "# The charity's other sites on this server (SITES in deploy/.env); written by deploy/caddy-local.sh"
+  for pair in $sites; do
+    domain="${pair%%=*}"; app="${pair#*=}"
+    if [[ -f "$LOCAL/sites/$domain.pem" && -f "$LOCAL/sites/$domain.key" && -n "$saved" ]]; then
+      cat <<CADDY
+$domain {
+	# Cloudflare's origin certificate for this domain; connections that do not come through Cloudflare are closed
+	tls /etc/caddy/local/sites/$domain.pem /etc/caddy/local/sites/$domain.key
+	@direct not remote_ip $saved
+	abort @direct
+	import other_site $app
+}
+CADDY
+    else
+      echo "# $domain: not served yet (its certificate is added with: bash $DIR/deploy/cloudflare.sh site $domain)"
+    fi
+  done
+} > "$LOCAL/sites.caddy"
