@@ -254,6 +254,23 @@ class SearchIndex:
         search = search.select([*(columns or [name for name, _ in FILTER_FIELDS]), "_distance"])
         return search.limit(limit).to_list()
 
+    def similarities(self, vec: np.ndarray, passage_ids: list[str]) -> dict[str, float]:
+        """Closeness in meaning (cosine similarity, as the search by meaning gives it) of these passages to the query,
+        from their stored vectors."""
+        if not passage_ids or VECTORS not in self._names():
+            return {}
+        rows = self.vectors().search().where(f"passage_id IN ({', '.join(sql_str(p) for p in passage_ids)})") \
+            .select(["passage_id", "vector"]).limit(None).to_list()
+        q = np.asarray(vec, dtype=np.float32)
+        q = q / (np.linalg.norm(q) or 1.0)
+        out = {}
+        for row in rows:
+            v = np.asarray(row["vector"], dtype=np.float32)
+            n = float(np.linalg.norm(v))
+            if n:
+                out[row["passage_id"]] = float(v @ q) / n
+        return out
+
     def rebuild_vector_index(self, rows_per_partition: int = 8192) -> None:
         """Rebuild the meaning-search index with partitions sized for the vectors there are now.
 

@@ -29,7 +29,7 @@ devolved_nations = ["Scotland", "Wales", "Northern Ireland"]
 [ranking]
 candidates_bm25 = 300
 candidates_vector = 300
-candidates_frontbench = 60  # also searched alone: ministers, shadow ministers and chairs for the subject
+candidates_frontbench = 100  # also searched alone: the subject's shadow ministers, and its ministers and chairs
 # Meaning search. The index compares compressed vectors and on its own finds only about two thirds of the truly
 # nearest passages; re-checking 5x the candidates against the full vectors finds over 90% (measured on 14 sample
 # searches) for a few milliseconds more. vector_nprobes is how many index partitions each search reads (LanceDB's

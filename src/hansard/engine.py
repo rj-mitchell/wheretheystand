@@ -121,12 +121,13 @@ def build_where(filters: Filters, scope: Scope) -> str:
     return " AND ".join(clauses)
 
 
-def frontbench_clause(portfolios: list[str]) -> str:
-    """Passages by a minister, shadow minister or committee chair for one of these portfolios on the day."""
+def frontbench_clauses(portfolios: list[str]) -> list[str]:
+    """Passages by the shadow ministers for these portfolios on the day; and by their ministers and committee chairs.
+    The two are searched apart, so the opposition's few speeches are not crowded out by ministers' answers."""
     p = sql_list(portfolios)
-    return (f"((is_gov = true AND array_has_any(gov_portfolios, {p})) OR "
-            f"(is_shadow = true AND array_has_any(shadow_portfolios, {p})) OR "
-            f"(is_chair = true AND array_has_any(chair_portfolios, {p})))")
+    return [f"(is_shadow = true AND array_has_any(shadow_portfolios, {p}))",
+            f"((is_gov = true AND array_has_any(gov_portfolios, {p})) OR "
+            f"(is_chair = true AND array_has_any(chair_portfolios, {p})))"]
 
 
 class Engine:
@@ -320,31 +321,28 @@ class Engine:
         # The ministers, shadow ministers and committee chairs for the question's subject are also searched on their
         # own: on a subject debated at length, the few speeches setting out each side's position can fall outside
         # the best few hundred passages of the whole record, behind backbench speeches that use the words more.
-        front_where = f"{where} AND {frontbench_clause(portfolios)}" if portfolios and not filters.person_ids else None
-        front = int(r.get("candidates_frontbench", 60)) * widen
+        # (by keyword only: their closeness in meaning is then read from their stored vectors, which is far quicker
+        # than a filtered search by meaning)
+        fronts = [f"{where} AND {c}" for c in frontbench_clauses(portfolios)] \
+            if portfolios and not filters.person_ids else []
+        front = int(r.get("candidates_frontbench", 100)) * widen
 
         # the keyword searches run on their own threads while the question is embedded and searched by meaning
-        with ThreadPoolExecutor(max_workers=3) as pool:
+        with ThreadPoolExecutor(max_workers=1 + len(fronts)) as pool:
             by_keyword = pool.submit(keyword)
-            front_keyword = pool.submit(self.index.bm25, query, front_where, front) if front_where else None
+            by_front = [pool.submit(self.index.bm25, query, w, front) for w in fronts]
             vec_hits: list[dict[str, Any]] = []
-            front_vec = None
             semantic = self.has_vectors() and self.embedder is not None
             if semantic:
                 vec = self.embedder.embed_query(query)
                 lap("embed")
-                if front_where:
-                    front_vec = pool.submit(self.index.vector, vec, front_where, front,
-                                            nprobes=r.get("vector_nprobes"), refine_factor=r.get("vector_refine_factor"))
                 vec_hits = self.index.vector(vec, where, int(r.get("candidates_vector", 300)) * widen,
                                              nprobes=r.get("vector_nprobes"),
                                              refine_factor=r.get("vector_refine_factor"))
                 lap("meaning")
             bm, timings["keyword"] = by_keyword.result()
-            if front_keyword:
-                bm += front_keyword.result()
-            if front_vec:
-                vec_hits += front_vec.result()
+            front_hits = [h for f in by_front for h in f.result()]
+            bm += front_hits
             lap("keyword_wait")
 
         cands: dict[str, Candidate] = {}
@@ -382,6 +380,13 @@ class Engine:
                 c.cosine = sim
                 if c.bm25 is None:
                     c.best_passage_id = h["passage_id"]
+        if semantic and front_hits:
+            unread = {h["passage_id"]: cands[h["record_id"]] for h in front_hits
+                      if h["record_id"] in cands and cands[h["record_id"]].cosine is None}
+            for pid, sim in self.index.similarities(vec, list(unread)).items():
+                c = unread[pid]
+                c.cosine = sim if c.cosine is None else max(c.cosine, sim)
+            lap("frontbench_meaning")
 
         if not local_question:
             for c in cands.values():

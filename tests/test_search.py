@@ -79,3 +79,5 @@ def test_the_frontbench_for_the_subject_is_searched_on_its_own(indexed_settings)
     found = narrow.search("security", portfolios=["northern_ireland"], limit=10, recency=0.0)
     assert len(found.records) > len(without.records)
     assert len(frontbench(found)) > len(frontbench(without))
+    # their closeness in meaning is read from their stored vectors, though the search by meaning did not reach them
+    assert all(r["ranking"]["semantic"] is not None for r in frontbench(found))

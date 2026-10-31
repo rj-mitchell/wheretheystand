@@ -22,6 +22,7 @@ from typing import Any, Literal
 from urllib.parse import urlparse
 
 from fastapi import Depends, FastAPI, HTTPException, Query, Request, Response
+from fastapi.encoders import jsonable_encoder
 from fastapi.responses import FileResponse, JSONResponse, RedirectResponse, StreamingResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field, ValidationInfo, field_validator
@@ -575,7 +576,7 @@ def create_app(settings: Settings | None = None, pipeline: Pipeline | None = Non
         req = AskRequest(question=body.question, mode=body.mode, recency=body.recency, role_weight=body.role_weight,
                          scope=Scope(**body.scope.model_dump()))
         res, _, sources = p.find(plan, req)
-        return {"plan": plan.to_dict(), "sources": [s.card() for s in sources if s.kind in ("record", "edm", "devolved", "evidence")],
+        return {"timings": res.timings, "plan": plan.to_dict(), "sources": [s.card() for s in sources if s.kind in ("record", "edm", "devolved", "evidence")],
                 "candidates": res.candidates, "semantic": res.semantic_available,
                 "evidence": {**res.evidence, "devolution": notes_for(plan.question),
                              "edms": sum(1 for s in sources if s.kind == "edm"),
@@ -595,7 +596,9 @@ def create_app(settings: Settings | None = None, pipeline: Pipeline | None = Non
     def search(body: AskBody, request: Request, user=Depends(current_user)):
         """Retrieval only (no model call): ranked sources for the question or edited plan."""
         requester(request, user)
-        return retrieve(body)
+        body = retrieve(body)
+        timings = body.pop("timings", {})
+        return JSONResponse(jsonable_encoder(body), headers={"Server-Timing": server_timing(timings)})
 
     def keep_briefing(body: AskBody, kept: list[dict[str, Any]], final: dict[str, Any]) -> dict[str, Any]:
         return keep(state, body.question, body.model_dump(exclude={"question", "history"}), kept, final)
