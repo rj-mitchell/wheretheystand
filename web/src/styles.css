@@ -1980,7 +1980,8 @@ legend,
   text-align: center;
 }
 
-/* a written briefing or the sources only: a plain choice under the box, rather than a second button */
+/* what to show: an executive summary, a chronological briefing or the sources only, as a plain choice under the box
+   where it can be seen, rather than buttons or a setting */
 .answer-kind {
   flex-basis: 100%;
   display: flex;

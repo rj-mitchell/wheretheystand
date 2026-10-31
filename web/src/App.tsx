@@ -490,7 +490,7 @@ export default function App() {
   const drawerSource = drawerTurn?.sources.find((s) => s.n === drawer?.h.source) ?? null;
 
   const settingsPanel = showControls && (
-    <Controls settings={settings} onChange={setSettings} answersEnabled={meta?.answers_enabled ?? true} />
+    <Controls settings={settings} onChange={setSettings} />
   );
   // On the home page the settings open under the question box; under a briefing the box is pinned to the foot of
   // the screen, so they open just above it, inside the pinned area.
@@ -538,8 +538,28 @@ export default function App() {
         <fieldset className="answer-kind">
           <legend className="visually-hidden">What to show</legend>
           <label>
-            <input type="radio" name="kind" checked={!sourcesOnly} onChange={() => setSourcesOnly(false)} />
-            Briefing <span className="muted">(written by AI)</span>
+            <input
+              type="radio"
+              name="kind"
+              checked={!sourcesOnly && settings.mode === "summary"}
+              onChange={() => {
+                setSourcesOnly(false);
+                setSettings({ ...settings, mode: "summary" });
+              }}
+            />
+            Executive summary <span className="muted">(AI)</span>
+          </label>
+          <label>
+            <input
+              type="radio"
+              name="kind"
+              checked={!sourcesOnly && settings.mode === "comprehensive"}
+              onChange={() => {
+                setSourcesOnly(false);
+                setSettings({ ...settings, mode: "comprehensive" });
+              }}
+            />
+            Chronological briefing <span className="muted">(AI, longer)</span>
           </label>
           <label>
             <input type="radio" name="kind" checked={sourcesOnly} onChange={() => setSourcesOnly(true)} />
