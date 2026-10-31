@@ -3757,13 +3757,3 @@ main:focus {
   }
 }
 
-.footer > .social {
-  margin-block: 0 var(--space-xs);
-  color: var(--ink-soft);
-}
-
-.footer > .social a {
-  display: inline-block;
-  padding-block: 0.2em; /* easy to tap, like the lines below */
-  color: var(--ink-soft);
-}

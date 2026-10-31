@@ -25,17 +25,6 @@ export function SiteFooter({
         ))}
         {donateUrl && <a href={donateUrl}>Support this site</a>}
       </nav>
-      <p className="social">
-        Follow:{" "}
-        {BRAND.social.map((s, i) => (
-          <span key={s.url}>
-            {i > 0 && " · "}
-            <a href={s.url} rel="me noreferrer" target="_blank">
-              {s.name} {s.handle}
-            </a>
-          </span>
-        ))}
-      </p>
       <p className="licence">
         Briefings are licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>; see the{" "}
         <a href="/terms">terms</a> for reuse.

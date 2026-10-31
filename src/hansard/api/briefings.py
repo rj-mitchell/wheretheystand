@@ -201,8 +201,7 @@ def page_with_meta(index_html: str, *, title: str, description: str, url: str, i
             f'<meta property="og:title" content="{e(title)}" />',
             f'<meta property="og:description" content="{e(description)}" />',
             f'<meta property="og:url" content="{e(url)}" />',
-            '<meta name="twitter:card" content="summary_large_image" />',
-            '<meta name="twitter:site" content="@wherestanduk" />']
+            '<meta name="twitter:card" content="summary_large_image" />']
     if image:
         tags += [f'<meta property="og:image" content="{e(image)}" />',
                  '<meta property="og:image:width" content="1200" />',

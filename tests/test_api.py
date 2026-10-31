@@ -140,6 +140,7 @@ def test_search_endpoint_needs_no_model(api):
     body = r.json()
     assert body["sources"] and all(s["kind"] == "record" for s in body["sources"])
     assert all("written" not in s["chamber"].lower() for s in body["sources"])
+    assert "keyword;dur=" in r.headers["server-timing"] and "timings" not in body
 
 
 def test_admin_usage_is_admin_only(api):
