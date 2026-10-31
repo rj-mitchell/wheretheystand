@@ -67,8 +67,8 @@ fi
 cd "$DIR/deploy"
 
 if [[ ! -f .env ]]; then
-  read -rp "Main domain name pointing at this server (e.g. wheretheystand.uk): " DOMAIN
-  read -rp "Other domain names that should redirect to it, space-separated (e.g. wheretheystand.co.uk wheretheystand.org.uk), or blank: " OTHERS
+  read -rp "Main domain name pointing at this server (e.g. wherempsstand.com): " DOMAIN
+  read -rp "Other domain names that should redirect to it, space-separated (e.g. www.wherempsstand.com), or blank: " OTHERS
   REDIRECTS="www.$DOMAIN"
   for d in $OTHERS; do REDIRECTS="$REDIRECTS, $d, www.$d"; done
   read -rsp "Anthropic API key (leave blank for sources-only mode): " KEY

@@ -105,7 +105,7 @@ def render_card(question: str, prepared: str, records_up_to: str, evidence: dict
     stamp = f"Prepared {prepared}" + (f" from records up to {records_up_to}" if records_up_to else "")
     d.text((LEFT, 566), stamp, font=small, fill=INK_FAINT)
     url_font = _font("SourceSans3-Semibold.ttf", 23)
-    d.text((RIGHT - d.textlength("wheretheystand.uk", font=url_font), 566), "wheretheystand.uk", font=url_font,
+    d.text((RIGHT - d.textlength("wherempsstand.com", font=url_font), 566), "wherempsstand.com", font=url_font,
            fill=COMMONS)
     return img
 
@@ -125,7 +125,7 @@ def render_brand(icon: Path) -> Image.Image:
     d.rectangle((left, 366, RIGHT, 367), fill=(46, 42, 36))
     _spaced(d, (left, 392), "INDEPENDENT · SOURCED TO HANSARD", _font("SourceSans3-Regular.ttf", 23), INK_FAINT, 2.6)
     url_font = _font("SourceSans3-Semibold.ttf", 23)
-    d.text((RIGHT - d.textlength("wheretheystand.uk", font=url_font), 570), "wheretheystand.uk", font=url_font,
+    d.text((RIGHT - d.textlength("wherempsstand.com", font=url_font), 570), "wherempsstand.com", font=url_font,
            fill=COMMONS)
     return img
 

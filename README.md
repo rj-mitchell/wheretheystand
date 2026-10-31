@@ -2,7 +2,7 @@
 
 **Sourced briefings on what the UK Parliament has said, and who stands where.**
 
-Where MPs Stand ([wheretheystand.uk](https://wheretheystand.uk)) is an open-source research tool for anyone: journalists, researchers, policy analysts and the public.
+Where MPs Stand ([wherempsstand.com](https://wherempsstand.com)) is an open-source research tool for anyone: journalists, researchers, policy analysts and the public.
 The site is open, with no sign-in. It is deliberately
 *not* another keyword search; [Hansard's own search](https://hansard.parliament.uk/search) is excellent at finding
 every speech that mentions a word. Instead, ask a question such as "What have northern Labour MPs said about
