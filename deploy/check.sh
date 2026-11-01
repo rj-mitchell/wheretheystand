@@ -131,9 +131,12 @@ if [[ -n "$SITES" ]]; then
       note "$site: not served yet (its certificate: bash $DIR/deploy/cloudflare.sh site $site)"
       continue
     fi
-    code="$(curl -s -o /dev/null --max-time 20 -w '%{http_code}' "https://$site/api/health" 2>/dev/null)"
-    if [[ "$code" == 200 ]]; then
+    reply="$(curl -s --max-time 20 -w '\n%{http_code}' "https://$site/api/health" 2>/dev/null)"
+    code="${reply##*$'\n'}"
+    if [[ "$code" == 200 && "$reply" == *'"ok"'* ]]; then
       ok "https://$site works"
+    elif [[ "$code" == 200 ]]; then
+      note "$site still shows another page (a \"coming soon\" page?): its DNS record does not point here yet"
     elif [[ "$code" == 502 ]]; then
       bad "$site is not running" "start it: bash /opt/${pair#*=}/deploy/update.sh"
     else

@@ -170,11 +170,16 @@ MSG
       echo "✗ $site is not served: Cloudflare's list of addresses could not be fetched from www.cloudflare.com. Try again later."
       exit 1
     fi
-    code="$(curl -s -o /dev/null --max-time 20 -w '%{http_code}' "https://$site/api/health" || true)"
-    if [[ "$code" == 200 ]] && grep -qi '^server: cloudflare' <<<"$(curl -sI --max-time 20 "https://$site/" 2>/dev/null)"; then
+    # the site's own answer ({"ok": true}), not just any page: a "coming soon" page answers every address too
+    reply="$(curl -s --max-time 20 -w '\n%{http_code}' "https://$site/api/health" || true)"
+    code="${reply##*$'\n'}"
+    if [[ "$code" == 200 && "$reply" == *'"ok"'* ]] && grep -qi '^server: cloudflare' <<<"$(curl -sI --max-time 20 "https://$site/" 2>/dev/null)"; then
       echo "✓ https://$site answers through Cloudflare, using its certificate on this server."
     elif [[ "$code" == 502 ]]; then
       echo "✓ The certificate is in place. https://$site answers once its site is started (its own update.sh)."
+    elif [[ "$code" == 200 ]]; then
+      echo "✓ The certificate is in place. https://$site still shows another page (a \"coming soon\" page, say): it"
+      echo "  reaches this server once its DNS record points here."
     else
       echo "• https://$site does not answer yet (got: ${code:-nothing}). Check its DNS record (Proxied, pointing at this"
       echo "  server) and SSL/TLS \"Full (strict)\" in Cloudflare; the certificate is saved either way."
