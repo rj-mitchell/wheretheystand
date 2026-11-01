@@ -46,7 +46,8 @@ take_certificate() {
   echo "Now paste the private key (from -----BEGIN PRIVATE KEY----- to -----END PRIVATE KEY-----), then press Return:"
   pkey="$(read_pem)"
   tmp="$(mktemp -d)"
-  trap 'rm -rf "$tmp"' EXIT
+  # removed however the script ends (the name is fixed now: the variable is gone once this function returns)
+  trap "rm -rf -- '$tmp'" EXIT
   printf '%s' "$cert" > "$tmp/origin.pem"
   (umask 077; printf '%s' "$pkey" > "$tmp/origin.key")
   openssl x509 -in "$tmp/origin.pem" -noout 2>/dev/null \
