@@ -35,6 +35,32 @@
 	}
 }
 
+# The charity's other sites on this server: each runs in its own containers (in its own folder under /opt) on the shared
+# "sites" network, and is passed its visitors here, with the same protections as this site (deploy/caddy-local.sh
+# writes one block per site, once its certificate is in place)
+(other_site) {
+	encode zstd gzip
+	request_body {
+		max_size 1MB
+	}
+	@fingerprinted path /assets/*
+	header @fingerprinted Cache-Control "public, max-age=31536000, immutable"
+	reverse_proxy {args[0]}:8000 {
+		flush_interval -1
+		header_up X-Forwarded-For {client_ip}
+	}
+	header {
+		Strict-Transport-Security "max-age=31536000; includeSubDomains"
+		X-Content-Type-Options "nosniff"
+		X-Frame-Options "DENY"
+		Referrer-Policy "strict-origin-when-cross-origin"
+		Content-Security-Policy "default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; connect-src 'self'; frame-ancestors 'none'"
+		+Cache-Control "no-transform"
+		-Server
+	}
+}
+import /etc/caddy/local/sites.caddy
+
 # www and the other domain names: one permanent redirect to the main address, made by this server, or by Cloudflare
 # once its redirect rules are set up (deploy/cloudflare.sh redirects on)
 import /etc/caddy/local/redirects.caddy

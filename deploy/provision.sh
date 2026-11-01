@@ -83,6 +83,7 @@ bash "$DIR/deploy/swap.sh" || echo "WARNING: could not add swap; carrying on."
 
 echo "==> Writing the web server's own settings (Cloudflare's addresses, the certificate)"
 bash "$DIR/deploy/caddy-local.sh"
+docker network create sites >/dev/null 2>&1 || true  # shared with the other sites on this server
 
 echo "==> Building and starting"
 docker compose up -d --build
